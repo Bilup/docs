@@ -9,7 +9,7 @@ This guide outlines how to configure the branding for your MistWarp mod, includi
 
 ## Renaming Your Mod
 
-To rename your mod, update the `APP_NAME` property in `src/lib/brand.js` within your fork of the Scratch GUI repository:
+To rename your mod, update the `APP_NAME` property in `src/lib/constants/brand.js` within your fork of the Scratch GUI repository:
 
 ```js
 module.exports = {
