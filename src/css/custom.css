@@ -1,0 +1,21 @@
+:root {
+  --ifm-color-primary: #d399e5;
+  --ifm-color-primary-dark: #c67dd9;
+  --ifm-color-primary-darker: #bf70d5;
+  --ifm-color-primary-darkest: #a649c3;
+  --ifm-color-primary-light: #e0b5f1;
+  --ifm-color-primary-lighter: #e7c2f5;
+  --ifm-color-primary-lightest: #f3e0fd;
+  --ifm-font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --ifm-container-width: 800px;
+  --ifm-container-width-xl: 1000px;
+  --docusaurus-highlighted-code-line-bg: rgba(211, 153, 229, 0.15);
+}
+
+h1 {
+  font-size: 2.5em !important;
+}
+
+.pagination-nav {
+  display: none;
+}
