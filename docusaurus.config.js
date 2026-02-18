@@ -55,13 +55,12 @@ module.exports = {
         },
       ],
     },
-    // algolia: {
-    //   // This is all supposed to be public
-    //   // Waiting to get review
-    //   appId: '',
-    //   apiKey: '',
-    //   indexName: '',
-    // },
+    algolia: {
+      // This is all supposed to be public
+      appId: 'I0GSY4KZL0',
+      apiKey: '125afb092032b2e4944f1f2090a3c58a',
+      indexName: 'bilup',
+    },
     colorMode: {
       respectPrefersColorScheme: true,
     },
