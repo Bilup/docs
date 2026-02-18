@@ -7,7 +7,7 @@ hide_table_of_contents: true
 
 ## Short Answer {#short}
 
- * If you want to package/HTMLify a project, use https://packager.warp.mistium.com/
+ * If you want to package/HTMLify a project, use https://packager.bilup.org/
  * If you want to convert Scratch projects to readable and editable JavaScript, use https://leopardjs.com/ instead of TurboWarp
 
 ## Long Answer {#long}
@@ -32,7 +32,7 @@ Then the JavaScript will be logged to the console when it gets compiled.
 If you don't know what a "JavaScript console" is or how to access it, then it's in your best interest to not look at the generated JavaScript anyways.
 
 
-MistWarp has an extra feature that allows you to disable this:
+Bilup has an extra feature that allows you to disable this:
 ```js
 vm.disableDebug()
 ```

@@ -4,14 +4,14 @@ title: Deploying
 
 # How do I put my mod online?
 
-This guide focuses on deploying **MistWarp** using **Cloudflare Pages**. Support for other providers may be added in the future.
+This guide focuses on deploying **Bilup** using **Cloudflare Pages**. Support for other providers may be added in the future.
 
 
 ## Prerequisites
 
 Before you begin, ensure the following:
 
-* You have forked MistWarp’s `scratch-gui` repository on GitHub.
+* You have forked Bilup’s `scratch-gui` repository on GitHub.
 * You have a Cloudflare account.
 * You have a domain connected to your Cloudflare account.
 
@@ -39,7 +39,7 @@ Adjust the following settings:
 
 ---
 
-## Step 3: Deploying from MistWarp
+## Step 3: Deploying from Bilup
 
 In your terminal, navigate to your local copy of the `scratch-gui` repository and run:
 
@@ -47,7 +47,7 @@ In your terminal, navigate to your local copy of the `scratch-gui` repository an
 npm run deploy
 ```
 
-MistWarp includes a modified deploy script designed for compatibility with Cloudflare Pages. This command will push your latest build to the `gh-pages` branch on your main repository, which Cloudflare will then automatically detect and deploy.
+Bilup includes a modified deploy script designed for compatibility with Cloudflare Pages. This command will push your latest build to the `gh-pages` branch on your main repository, which Cloudflare will then automatically detect and deploy.
 
 ---
 

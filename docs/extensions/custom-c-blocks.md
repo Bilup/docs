@@ -4,7 +4,7 @@ title: Custom C Blocks
 
 # Custom C Blocks
 
-MistWarp allows unsandboxed extensions to create custom C blocks (loops and conditionals) similar to Scratch's built-in `if`, `repeat`, and `forever` blocks.
+Bilup allows unsandboxed extensions to create custom C blocks (loops and conditionals) similar to Scratch's built-in `if`, `repeat`, and `forever` blocks.
 
 > **⚠️ Requirement:** Custom C blocks only work in **unsandboxed** extensions.
 

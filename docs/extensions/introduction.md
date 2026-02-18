@@ -28,7 +28,7 @@ We will discuss the difference between sandboxed and unsandboxed extensions at [
 
 ## Compatibility
 
-Custom extensions are not compatible with Scratch. Projects made using custom extensions cannot be uploaded to the Scratch website. They can, however, be packaged using the [MistWarp Packager](https://packager.warp.mistium.com/).
+Custom extensions are not compatible with Scratch. Projects made using custom extensions cannot be uploaded to the Scratch website. They can, however, be packaged using the [Bilup Packager](https://packager.bilup.org/).
 
 ## Prerequisites
 

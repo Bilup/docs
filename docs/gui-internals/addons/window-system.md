@@ -4,7 +4,7 @@ title: Window System
 
 # Window System
 
-MistWarp includes a window system used by addons and some UI features. It provides draggable, resizable windows with a consistent look and API.
+Bilup includes a window system used by addons and some UI features. It provides draggable, resizable windows with a consistent look and API.
 
 ## Creating a Window
 

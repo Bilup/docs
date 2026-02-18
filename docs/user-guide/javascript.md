@@ -5,9 +5,9 @@ sidebar_position: 8
 
 # JavaScript Integration
 
-MistWarp supports powerful extension APIs and embedding workflows. Arbitrary “JavaScript blocks” are not part of MistWarp; instead, use unsandboxed extensions for advanced behavior or the Packager to include custom JavaScript in standalone builds.
+Bilup supports powerful extension APIs and embedding workflows. Arbitrary “JavaScript blocks” are not part of Bilup; instead, use unsandboxed extensions for advanced behavior or the Packager to include custom JavaScript in standalone builds.
 
-## Understanding JavaScript in MistWarp
+## Understanding JavaScript in Bilup
 
 ### What is supported?
 - **Unsandboxed extensions**: Write extensions that run in the editor context and interact with the VM, renderer, and runtime.
@@ -24,7 +24,7 @@ MistWarp supports powerful extension APIs and embedding workflows. Arbitrary “
 ### Unsandboxed Extensions
 Load your extension via URL or register directly in an IIFE:
 ```
-https://warp.mistium.com/?extension=https://example.com/extension.js
+https://editor.bilup.org/?extension=https://example.com/extension.js
 ```
 
 ### Packager
@@ -442,4 +442,4 @@ console.time('operation');
 console.timeEnd('operation');
 ```
 
-JavaScript integration in MistWarp opens up unlimited possibilities for creating sophisticated, interactive projects. Use these features responsibly and always consider security implications when working with custom code!
+JavaScript integration in Bilup opens up unlimited possibilities for creating sophisticated, interactive projects. Use these features responsibly and always consider security implications when working with custom code!

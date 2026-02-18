@@ -3,16 +3,16 @@ title: Project Structure
 sidebar_position: 3
 ---
 
-# MistWarp Project Structure
+# Bilup Project Structure
 
-Understanding MistWarp's project structure is essential for effective development. This guide explains how the codebase is organized and how different components interact.
+Understanding Bilup's project structure is essential for effective development. This guide explains how the codebase is organized and how different components interact.
 
 ## Repository Overview
 
-MistWarp consists of several interconnected repositories:
+Bilup consists of several interconnected repositories:
 
 ```
-MistWarp Ecosystem
+Bilup Ecosystem
 ├── scratch-gui/          # Main GUI application (React-based editor)
 ├── scratch-vm/           # Virtual machine and runtime engine
 ├── scratch-render/       # WebGL-based rendering engine  
@@ -164,7 +164,7 @@ src/lib/
         theme: {                  // Theme state
             theme: 'dark'
         },
-        tw: {                     // MistWarp-specific state
+        tw: {                     // Bilup-specific state
             customStageSize: { width: 480, height: 360 },
             isWindowFullScreen: false
         }
@@ -353,9 +353,9 @@ For local development with linked packages:
 
 ```bash
 # Clone repositories
-git clone https://github.com/MistWarp/scratch-gui.git
-git clone https://github.com/MistWarp/scratch-vm.git
-git clone https://github.com/MistWarp/scratch-render.git
+git clone https://github.com/Bilup/scratch-gui.git
+git clone https://github.com/Bilup/scratch-vm.git
+git clone https://github.com/Bilup/scratch-render.git
 
 # Link VM and Render to GUI
 cd scratch-vm && npm link
@@ -468,7 +468,7 @@ docs/
 └── package.json                  # Dependencies and scripts
 ```
 
-Understanding this structure will help you navigate the codebase effectively and contribute to MistWarp development. Each part has a specific purpose and clear interfaces with other components.
+Understanding this structure will help you navigate the codebase effectively and contribute to Bilup development. Each part has a specific purpose and clear interfaces with other components.
 
 ---
 

@@ -27,7 +27,7 @@ Unshared projects were always something that just happened to work and weren't t
 
 **For collaborations:** The best way to share a project with other people is to simply share it on the Scratch website. The Scratch community is really nice. This is what Scratch wants you to do. It's okay to share unfinished projects. Scratch is 15 years old while TurboWarp is two years old. Collaborations happened just fine during the 13 years without TurboWarp and will continue just fine.
 
-**For embedding in other websites:** To embed unshared projects in other websites, either Share the project on Scratch or download the project to your computer with the File > Save to your computer menu in the Scratch editor, and use the [MistWarp Packager](https://packager.warp.mistium.com/) to convert this project to a standalone file that [can be embedded](/packager/embedding).
+**For embedding in other websites:** To embed unshared projects in other websites, either Share the project on Scratch or download the project to your computer with the File > Save to your computer menu in the Scratch editor, and use the [Bilup Packager](https://packager.bilup.org/) to convert this project to a standalone file that [can be embedded](/packager/embedding).
 
 ## This is a good thing {#good-thing}
 

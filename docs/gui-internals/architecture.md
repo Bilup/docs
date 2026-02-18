@@ -3,15 +3,15 @@ title: Architecture Deep Dive
 sidebar_position: 2
 ---
 
-# MistWarp GUI Architecture
+# Bilup GUI Architecture
 
-This document provides an in-depth look at MistWarp's GUI architecture, design patterns, and core systems.
+This document provides an in-depth look at Bilup's GUI architecture, design patterns, and core systems.
 
 ## System Architecture
 
 ### High-Level Overview
 
-MistWarp follows a layered architecture pattern with clear separation of concerns:
+Bilup follows a layered architecture pattern with clear separation of concerns:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -190,7 +190,7 @@ const withErrorBoundary = (WrappedComponent) => {
             alertsList: []
         },
         
-        // MistWarp-specific state
+        // Bilup-specific state
         tw: {
             theme: 'dark',
             customStageSize: { width: 480, height: 360 },
@@ -349,7 +349,7 @@ Addons can integrate at multiple levels:
 
 ### CSS Variable System
 
-MistWarp uses CSS custom properties for theming:
+Bilup uses CSS custom properties for theming:
 
 ```css
 :root {
@@ -566,7 +566,7 @@ class AddonSandbox {
 }
 ```
 
-This architecture provides the foundation for MistWarp's powerful, extensible, and performant GUI system. Each layer has clear responsibilities and interfaces, enabling maintainable and scalable development.
+This architecture provides the foundation for Bilup's powerful, extensible, and performant GUI system. Each layer has clear responsibilities and interfaces, enabling maintainable and scalable development.
 
 ---
 

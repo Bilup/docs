@@ -5,20 +5,20 @@ sidebar_position: 10
 
 # URL Parameters
 
-MistWarp supports URL parameters that let you load projects and adjust runtime and compiler behavior. These are useful for embedding, automation, and sharing reproducible setups.
+Bilup supports URL parameters that let you load projects and adjust runtime and compiler behavior. These are useful for embedding, automation, and sharing reproducible setups.
 
 ## Basic Usage
 
 ### URL Parameter Syntax
 Add parameters using standard query string format:
 ```
-https://warp.mistium.com/?parameter1&parameter2=value&parameter3=value
+https://editor.bilup.org/?parameter1&parameter2=value&parameter3=value
 ```
 
 ### Multiple Parameters
 Combine multiple parameters with `&`:
 ```
-https://warp.mistium.com/?turbo&fps=60&username=alice&autoplay
+https://editor.bilup.org/?turbo&fps=60&username=alice&autoplay
 ```
 
 ## Project Loading
@@ -26,25 +26,25 @@ https://warp.mistium.com/?turbo&fps=60&username=alice&autoplay
 ### Load by ID
 Load a Scratch project by its ID:
 ```
-https://warp.mistium.com/123456789
+https://editor.bilup.org/123456789
 ```
 
 ### Load from URL
 Load a project from a direct URL:
 ```
-https://warp.mistium.com/?project_url=https://example.com/project.sb3
+https://editor.bilup.org/?project_url=https://example.com/project.sb3
 ```
 
 ### Auto-start (embed only)
 Automatically start the project in embeds:
 ```
-https://warp.mistium.com/123456789?autoplay
+https://editor.bilup.org/123456789?autoplay
 ```
 
 ### Username
 Set the username used by cloud variables and blocks:
 ```
-https://warp.mistium.com/123456789?username=alice
+https://editor.bilup.org/123456789?username=alice
 ```
 
 ## Performance
@@ -52,33 +52,33 @@ https://warp.mistium.com/123456789?username=alice
 ### Turbo Mode
 Enable high-speed execution:
 ```
-https://warp.mistium.com/?turbo
+https://editor.bilup.org/?turbo
 ```
 
 ### Frame Rate
 Set custom frame rate:
 ```
-https://warp.mistium.com/?fps=60     # 60 FPS
-https://warp.mistium.com/?fps=120    # 120 FPS
-https://warp.mistium.com/?fps=30     # 30 FPS (default)
+https://editor.bilup.org/?fps=60     # 60 FPS
+https://editor.bilup.org/?fps=120    # 120 FPS
+https://editor.bilup.org/?fps=30     # 30 FPS (default)
 ```
 
 ### High Quality Pen
 Enable anti-aliased pen rendering:
 ```
-https://warp.mistium.com/?hqpen
+https://editor.bilup.org/?hqpen
 ```
 
 ### Interpolation
 Enable frame interpolation for smoother motion:
 ```
-https://warp.mistium.com/?interpolate
+https://editor.bilup.org/?interpolate
 ```
 
 ### Remove Misc Limits
 Disable certain runtime limits:
 ```
-https://warp.mistium.com/?limitless
+https://editor.bilup.org/?limitless
 ```
 
 ## Display
@@ -86,26 +86,26 @@ https://warp.mistium.com/?limitless
 ### Custom Stage Size
 Set custom stage dimensions:
 ```
-https://warp.mistium.com/?size=800x600
-https://warp.mistium.com/?size=1920x1080
+https://editor.bilup.org/?size=800x600
+https://editor.bilup.org/?size=1920x1080
 ```
 
 ### Fullscreen Background (player-only)
 Control fullscreen background color:
 ```
-https://warp.mistium.com/?fullscreen-background=%23abc123
+https://editor.bilup.org/?fullscreen-background=%23abc123
 ```
 
 ### Offscreen Fencing
 Disable offscreen fencing:
 ```
-https://warp.mistium.com/?offscreen
+https://editor.bilup.org/?offscreen
 ```
 
 ### Clone Limit
 Set maximum clones:
 ```
-https://warp.mistium.com/?clones=300
+https://editor.bilup.org/?clones=300
 ```
 
 ## Extensions
@@ -113,14 +113,14 @@ https://warp.mistium.com/?clones=300
 ### Load Extensions
 Load custom extensions by URL (unsandboxed recommended):
 ```
-https://warp.mistium.com/?extension=https://example.com/ext.js
-https://warp.mistium.com/?extension=https://example.com/other.js
+https://editor.bilup.org/?extension=https://example.com/ext.js
+https://editor.bilup.org/?extension=https://example.com/other.js
 ```
 
 ### Addons (embed only)
 Enable specific addons in embeds:
 ```
-https://warp.mistium.com/123456789/embed?addons=pause,gamepad
+https://editor.bilup.org/123456789/embed?addons=pause,gamepad
 ```
 
 ## Embedding
@@ -128,8 +128,8 @@ https://warp.mistium.com/123456789/embed?addons=pause,gamepad
 ### Autoplay and Addons
 Embed-specific options:
 ```
-https://warp.mistium.com/123456789/embed?autoplay
-https://warp.mistium.com/123456789/embed?addons=pause,gamepad
+https://editor.bilup.org/123456789/embed?autoplay
+https://editor.bilup.org/123456789/embed?addons=pause,gamepad
 ```
 
 ## Development
@@ -137,19 +137,19 @@ https://warp.mistium.com/123456789/embed?addons=pause,gamepad
 ### Disable Compiler
 Turn off the compiler (for debugging):
 ```
-https://warp.mistium.com/?nocompile
+https://editor.bilup.org/?nocompile
 ```
 
 ### Project URL
 Load project data from a direct URL:
 ```
-https://warp.mistium.com/?project_url=https://example.com/project.sb3
+https://editor.bilup.org/?project_url=https://example.com/project.sb3
 ```
 
 ### Cloud Host (embed/player)
 Override cloud server:
 ```
-https://warp.mistium.com/?cloud_host=wss://clouddata.turbowarp.org
+https://editor.bilup.org/?cloud_host=wss://clouddata.turbowarp.org
 ```
 
 ## Reference
@@ -195,25 +195,25 @@ https://warp.mistium.com/?cloud_host=wss://clouddata.turbowarp.org
 ### Gaming Setup
 Optimized for games:
 ```
-https://warp.mistium.com/123456789?turbo&fps=60&interpolate
+https://editor.bilup.org/123456789?turbo&fps=60&interpolate
 ```
 
 ### Educational Embedding
 Clean embed for education:
 ```
-https://warp.mistium.com/123456789/embed?autoplay&size=800x600
+https://editor.bilup.org/123456789/embed?autoplay&size=800x600
 ```
 
 ### Development Testing
 Development environment:
 ```
-https://warp.mistium.com/?turbo&fps=120&hqpen
+https://editor.bilup.org/?turbo&fps=120&hqpen
 ```
 
 ### High Performance
 Maximum performance:
 ```
-https://warp.mistium.com/?turbo&fps=120&hqpen
+https://editor.bilup.org/?turbo&fps=120&hqpen
 ```
 
 ### Accessible Mode
@@ -232,7 +232,7 @@ Space: %20
 
 ### Example with Encoding
 ```
-https://warp.mistium.com/?fps=60&hqpen
+https://editor.bilup.org/?fps=60&hqpen
 ```
 
 ## JavaScript URL Manipulation
@@ -254,8 +254,8 @@ window.history.pushState({}, '', url);
 
 ### Building URLs Programmatically
 ```javascript
-function buildMistWarpURL(projectId, options = {}) {
-  const url = new URL(`https://warp.mistium.com/${projectId}`);
+function buildBilupURL(projectId, options = {}) {
+  const url = new URL(`https://editor.bilup.org/${projectId}`);
   
   Object.entries(options).forEach(([key, value]) => {
     if (value === true) {
@@ -269,7 +269,7 @@ function buildMistWarpURL(projectId, options = {}) {
 }
 
 // Usage
-const gameURL = buildMistWarpURL('123456789', {
+const gameURL = buildBilupURL('123456789', {
   turbo: true,
   fps: 60,
   interpolate: true
@@ -293,4 +293,4 @@ const gameURL = buildMistWarpURL('123456789', {
 - Test performance impact of parameter combinations
 - Monitor for conflicts between parameters
 
-URL parameters provide powerful customization capabilities for MistWarp. Use them to create tailored experiences for different users and use cases!
+URL parameters provide powerful customization capabilities for Bilup. Use them to create tailored experiences for different users and use cases!

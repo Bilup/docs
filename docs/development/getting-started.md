@@ -6,7 +6,7 @@ hide_table_of_contents: true
 
 # Development Introduction
 
-These are the instructions for setting up a development environment for MistWarp itself. This is useful if you want to submit pull requests to us or make your own mod.
+These are the instructions for setting up a development environment for Bilup itself. This is useful if you want to submit pull requests to us or make your own mod.
 
 If you just want to develop custom extensions, see [the custom extension documentation](../extensions/introduction.md) instead.
 
@@ -16,7 +16,7 @@ All of our packages need [Git](https://git-scm.com/download) and [Node.js **v20*
 
 Some packages may want some additional things installed, so check the README in each package you want to develop.
 
-MistWarp is a large app that can require multiple gigabytes of disk space and memory to build.
+Bilup is a large app that can require multiple gigabytes of disk space and memory to build.
 
 ## A note on how Scratch is organized {#organization}
 
@@ -40,7 +40,7 @@ If you want to mod Scratch, you'll need to be able to build the GUI. This is a c
 
 ```bash
 # clone it
-git clone https://github.com/MistWarp/scratch-gui
+git clone https://github.com/Bilup/scratch-gui
 cd scratch-gui
 
 # install dependencies (preferred over `npm install` as it is faster and won't modify package-lock.json)
@@ -62,7 +62,7 @@ npm run build
 
 The output will be in the `build` folder.
 
-When deploying MistWarp to a live website, you should enable production mode. This will result in faster execution and a greatly reduced file size:
+When deploying Bilup to a live website, you should enable production mode. This will result in faster execution and a greatly reduced file size:
 
 ```bash
 # mac, linux
@@ -77,7 +77,7 @@ $env:NODE_ENV="production"
 npm run build
 ```
 
-By default MistWarp generates links like `https://warp.mistium.com/editor.html#123`. However, by setting the variables `ROOT=/` and `ROUTING_STYLE=wildcard` (in the same way that you set `NODE_ENV=production`), you can get routes like `https://warp.mistium.com/123/editor` instead. Note that this requires a server that will setup the proper aliases. The webpack development server in scratch-gui is setup for this. For production you'd want something more like https://github.com/MistWarp/warp.mistium.com.
+By default Bilup generates links like `https://editor.bilup.org/editor.html#123`. However, by setting the variables `ROOT=/` and `ROUTING_STYLE=wildcard` (in the same way that you set `NODE_ENV=production`), you can get routes like `https://editor.bilup.org/123/editor` instead. Note that this requires a server that will setup the proper aliases. The webpack development server in scratch-gui is setup for this. For production you'd want something more like https://github.com/Bilup/editor.bilup.org.
 
 ## Linking other packages {#linking}
 
@@ -87,7 +87,7 @@ To develop packages other than scratch-gui, you need to tell npm to use local co
 # clone the package you want to develop in the same folder as scratch-gui
 # (folder doesn't really matter but it makes things easier to keep track of)
 cd scratch-gui/..
-git clone https://github.com/MistWarp/scratch-vm
+git clone https://github.com/Bilup/scratch-vm
 
 # install dependencies in the child package
 cd scratch-vm

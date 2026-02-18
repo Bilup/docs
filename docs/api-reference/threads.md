@@ -5,11 +5,11 @@ sidebar_position: 7
 
 # Thread Management API
 
-MistWarp provides extensive thread management capabilities for advanced script control and execution. This API allows you to monitor, control, and manipulate the execution of scripts at runtime.
+Bilup provides extensive thread management capabilities for advanced script control and execution. This API allows you to monitor, control, and manipulate the execution of scripts at runtime.
 
 ## Overview
 
-Threads in MistWarp represent executing scripts. Each script that runs (from green flag, block click, broadcast, etc.) creates a thread that manages its execution state, stack frames, and local variables.
+Threads in Bilup represent executing scripts. Each script that runs (from green flag, block click, broadcast, etc.) creates a thread that manages its execution state, stack frames, and local variables.
 
 ## Thread Basics
 

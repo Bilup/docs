@@ -5,7 +5,7 @@ sidebar_position: 2
 
 # GUI API Reference
 
-The MistWarp GUI provides programmatic access to interface components, themes, project management, and VM integration. This API is primarily used by extensions, addons, and advanced integrations.
+The Bilup GUI provides programmatic access to interface components, themes, project management, and VM integration. This API is primarily used by extensions, addons, and advanced integrations.
 
 ## Core GUI Instance
 
@@ -747,7 +747,7 @@ Detect if running in packaged environment:
 const isPackaged = !window.ReduxStore?.getState && !!window.scaffolding?.vm;
 ```
 
-This API provides comprehensive access to MistWarp's GUI functionality while maintaining compatibility with the underlying Scratch architecture.
+This API provides comprehensive access to Bilup's GUI functionality while maintaining compatibility with the underlying Scratch architecture.
 
 ## Block Manipulation
 

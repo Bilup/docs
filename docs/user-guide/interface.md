@@ -3,9 +3,9 @@ title: Interface Guide
 sidebar_position: 2
 ---
 
-# MistWarp Interface Guide
+# Bilup Interface Guide
 
-MistWarp's interface is designed to be both familiar to Scratch users and enhanced with powerful new features. This guide will help you navigate and customize the interface effectively.
+Bilup's interface is designed to be both familiar to Scratch users and enhanced with powerful new features. This guide will help you navigate and customize the interface effectively.
 
 ## Main Interface Layout
 
@@ -284,7 +284,7 @@ Advanced users can inject custom styles:
 - **Community Discord**: Get real-time help
 - **Documentation Search**: Find specific solutions
 
-The MistWarp interface is designed to be powerful yet approachable. Take time to explore the features and customize the layout to match your workflow preferences.
+The Bilup interface is designed to be powerful yet approachable. Take time to explore the features and customize the layout to match your workflow preferences.
 
 ---
 

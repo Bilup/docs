@@ -6,7 +6,7 @@ hide_table_of_contents: true
 # Dynamic stage resize
 
 :::info
-This page is about the [MistWarp Packager](https://packager.warp.mistium.com/).
+This page is about the [Bilup Packager](https://packager.bilup.org/).
 :::
 
 Dynamic stage resize will change the size of the stage to match whatever aspect ratio and resolution it's being displayed at.

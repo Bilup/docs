@@ -5,7 +5,7 @@ sidebar_position: 9
 
 # TurboWarp Blocks
 
-MistWarp includes all the enhanced blocks from TurboWarp, providing additional functionality beyond standard Scratch blocks. These blocks enable more powerful programming capabilities and better performance.
+Bilup includes all the enhanced blocks from TurboWarp, providing additional functionality beyond standard Scratch blocks. These blocks enable more powerful programming capabilities and better performance.
 
 ## Sensing Blocks
 
@@ -345,7 +345,7 @@ return (result)
 ## Migration from Scratch
 
 ### Converting Projects
-When loading Scratch projects in MistWarp:
+When loading Scratch projects in Bilup:
 1. All standard blocks work unchanged
 2. Additional TurboWarp blocks become available
 3. Performance may improve automatically
@@ -357,4 +357,4 @@ When loading Scratch projects in MistWarp:
 - Test thoroughly when using advanced features
 - Document TurboWarp-specific functionality
 
-TurboWarp blocks in MistWarp provide significant enhancements over standard Scratch, enabling more sophisticated programming and better performance. Use these blocks to create more powerful and efficient projects!
+TurboWarp blocks in Bilup provide significant enhancements over standard Scratch, enabling more sophisticated programming and better performance. Use these blocks to create more powerful and efficient projects!

@@ -3,16 +3,16 @@ title: Contributing
 sidebar_position: 6
 ---
 
-# Contributing to MistWarp
+# Contributing to Bilup
 
-MistWarp is an open-source project that welcomes contributions from developers of all skill levels. Whether you're fixing bugs, adding features, improving documentation, or helping with translations, your contributions help make MistWarp better for everyone.
+Bilup is an open-source project that welcomes contributions from developers of all skill levels. Whether you're fixing bugs, adding features, improving documentation, or helping with translations, your contributions help make Bilup better for everyone.
 
 ## Getting Started
 
 ### Prerequisites
 Before contributing, ensure you have:
 - **Git**: For version control
-- **Node.js 16+**: For building and running MistWarp
+- **Node.js 16+**: For building and running Bilup
 - **GitHub Account**: For submitting contributions
 - **Code Editor**: VS Code recommended with extensions
 
@@ -24,7 +24,7 @@ git clone https://github.com/YOUR_USERNAME/scratch-gui.git
 cd scratch-gui
 
 # Add upstream remote
-git remote add upstream https://github.com/MistWarp/scratch-gui.git
+git remote add upstream https://github.com/Bilup/scratch-gui.git
 
 # Install dependencies
 npm install
@@ -36,7 +36,7 @@ npm start
 ## Types of Contributions
 
 ### Bug Reports
-Help improve MistWarp by reporting bugs:
+Help improve Bilup by reporting bugs:
 
 #### Before Reporting
 1. **Search existing issues** to avoid duplicates
@@ -64,7 +64,7 @@ What actually happened.
 **Environment**
 - Browser: [e.g. Chrome 91, Firefox 89]
 - OS: [e.g. Windows 10, macOS 11]
-- MistWarp Version: [e.g. 1.5.0]
+- Bilup Version: [e.g. 1.5.0]
 
 **Additional Context**
 - Console errors
@@ -407,7 +407,7 @@ Brief description of changes and motivation.
 All contributors must follow our Code of Conduct:
 
 #### Our Pledge
-We pledge to make participation in MistWarp a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
+We pledge to make participation in Bilup a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
 
 #### Expected Behavior
 - Use welcoming and inclusive language
@@ -472,4 +472,4 @@ New contributors can request mentorship:
 - **Pair programming**: Real-time collaboration
 - **Career guidance**: Advice on open source contribution
 
-Contributing to MistWarp is a rewarding way to improve the platform while learning and growing as a developer. We welcome contributors of all backgrounds and skill levels!
+Contributing to Bilup is a rewarding way to improve the platform while learning and growing as a developer. We welcome contributors of all backgrounds and skill levels!

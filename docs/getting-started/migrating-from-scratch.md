@@ -5,7 +5,7 @@ sidebar_position: 4
 
 # Migrating from Scratch
 
-MistWarp can run most Scratch projects with enhanced performance and additional features.
+Bilup can run most Scratch projects with enhanced performance and additional features.
 
 ## Project Compatibility
 
@@ -24,14 +24,14 @@ MistWarp can run most Scratch projects with enhanced performance and additional 
 ## Loading Scratch Projects
 
 1. Download `.sb3` file from Scratch website
-2. Open MistWarp at [warp.mistium.com](https://warp.mistium.com/)
+2. Open Bilup at [editor.bilup.org](https://editor.bilup.org/)
 3. File → Load from your computer
 4. Select the `.sb3` file
 
 ## Notable Differences
 
 ### Technical Changes
-- Default sprite is "Misty" not Scratch Cat
+- Delete default sprite and variable.
 - No cloud variables (local execution only)
 - Enhanced JavaScript extension capabilities
 - Modified virtual machine for better performance
@@ -56,5 +56,5 @@ MistWarp can run most Scratch projects with enhanced performance and additional 
 
 ## Next Steps
 
-- [GUI Internals](../gui-internals/home.md) - Understand MistWarp's architecture
-- [Development Guide](../development/home.md) - Contributing to MistWarp
+- [GUI Internals](../gui-internals/home.md) - Understand Bilup's architecture
+- [Development Guide](../development/home.md) - Contributing to Bilup

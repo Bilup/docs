@@ -1,6 +1,6 @@
 # Modal Components
 
-MistWarp uses various modal dialogs for user interactions and confirmations.
+Bilup uses various modal dialogs for user interactions and confirmations.
 
 ## Overview
 
@@ -173,7 +173,7 @@ const SettingsModal = ({ isOpen, onClose }) => {
 };
 ```
 
-## Specialized MistWarp Modals
+## Specialized Bilup Modals
 
 ### New Project Modal
 
@@ -183,8 +183,8 @@ const NewProjectModal = ({ isOpen, onClose, onCreateProject }) => {
   const [template, setTemplate] = useState('blank');
 
   const templates = [
-    { id: 'blank', name: 'Blank Project', description: 'Start with empty stage and Misty sprite' },
-    { id: 'tutorial', name: 'Tutorial', description: 'Guided introduction to MistWarp' },
+    { id: 'blank', name: 'Blank Project', description: 'Start with empty stage and zero sprite' },
+    { id: 'tutorial', name: 'Tutorial', description: 'Guided introduction to Bilup' },
     { id: 'game', name: 'Game Template', description: 'Pre-built game framework' }
   ];
 

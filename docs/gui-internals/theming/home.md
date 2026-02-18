@@ -3,9 +3,9 @@ title: Theming Overview
 sidebar_position: 1
 ---
 
-# MistWarp Theming System
+# Bilup Theming System
 
-MistWarp's theming system consists of three independent components that can be mixed and matched:
+Bilup's theming system consists of three independent components that can be mixed and matched:
 
 - **[Accent Colors](./accent-colors)** - Primary color scheme (red, blue, purple, etc.)
 - **[GUI Themes](./gui-themes)** - Interface appearance (light, dark, midnight)
@@ -48,7 +48,7 @@ src/lib/themes/
 
 ## Preset Combinations
 
-MistWarp includes these preset theme combinations:
+Bilup includes these preset theme combinations:
 
 ```javascript
 Theme.light = new Theme('red', 'light', 'three');
@@ -184,7 +184,7 @@ Components reference these variables:
 
 ## Preset Themes
 
-MistWarp includes preset combinations:
+Bilup includes preset combinations:
 
 ```javascript
 Theme.light = new Theme('red', 'light', 'three');

@@ -9,7 +9,7 @@ GUI themes control the overall interface appearance - backgrounds, text colors, 
 
 ## Available Themes
 
-MistWarp includes three built-in GUI themes:
+Bilup includes three built-in GUI themes:
 
 - **light**: Default bright interface
 - **dark**: Dark interface with light text  

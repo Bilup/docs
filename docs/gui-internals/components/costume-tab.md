@@ -1,6 +1,6 @@
 # Costume Management Components
 
-The costume management system in MistWarp consists of containers and components that handle visual assets for sprites and the stage.
+The costume management system in Bilup consists of containers and components that handle visual assets for sprites and the stage.
 
 ## Overview
 
@@ -36,7 +36,7 @@ CostumeTab (Container)
 - Set costume center points
 
 ### Paint Editor Integration
-The Costume Tab integrates with MistWarp's paint editor:
+The Costume Tab integrates with Bilup's paint editor:
 
 ```javascript
 openPaintEditor = (costumeId) => {
@@ -105,7 +105,7 @@ Each costume has configurable properties:
 
 ## Paint Editor Integration
 
-MistWarp includes a sophisticated paint editor:
+Bilup includes a sophisticated paint editor:
 
 ### Vector Tools
 - Pen tool for freehand drawing
@@ -148,11 +148,11 @@ generateThumbnail = (costume) => {
 - Thumbnail caching
 - Progressive image loading
 
-## MistWarp Enhancements
+## Bilup Enhancements
 
 ### Default Costumes
-MistWarp ships with unique default costumes:
-- "Misty" sprite with multiple poses
+Bilup ships with unique default costumes: Nothing
+- No more default sprite or variable
 - Enhanced costume library
 - Custom vector graphics
 

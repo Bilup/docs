@@ -5,7 +5,7 @@ hide_table_of_contents: true
 
 # Donate
 
-MistWarp accepts donations on Ko-Fi! https://ko-fi.com/mistium
+Bilup don't accept donations for now.
 
 Please support TurboWarp and GarboMuffin too: https://github.com/sponsors/GarboMuffin or https://muffin.ink/donate
 

@@ -4,7 +4,7 @@ title: Compiler Patching
 
 # Compiler Patching
 
-MistWarp allows unsandboxed extensions to patch the compiler to support advanced features like inline block execution or custom control flow.
+Bilup allows unsandboxed extensions to patch the compiler to support advanced features like inline block execution or custom control flow.
 
 > **⚠️ Advanced Topic:** This requires deep knowledge of the Scratch VM and compiler architecture. Breaking changes to internal APIs may occur.
 

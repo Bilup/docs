@@ -5,11 +5,11 @@ sidebar_position: 1
 
 # Redux Store Overview
 
-The Redux store is MistWarp's central state management system. It maintains all application state and coordinates updates across components.
+The Redux store is Bilup's central state management system. It maintains all application state and coordinates updates across components.
 
 ## Architecture
 
-MistWarp uses a single Redux store with multiple reducers managing different parts of the application state:
+Bilup uses a single Redux store with multiple reducers managing different parts of the application state:
 
 ```javascript
 const store = {

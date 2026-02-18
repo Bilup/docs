@@ -5,7 +5,7 @@ sidebar_position: 6
 
 # Available Utilities
 
-This page documents utilities and helper functions that are actually available in the MistWarp codebase.
+This page documents utilities and helper functions that are actually available in the Bilup codebase.
 
 ## Project Operations
 
@@ -257,7 +257,7 @@ function debounce(func, wait) {
 
 ## Available Globals
 
-The following globals are available in MistWarp:
+The following globals are available in Bilup:
 
 ```javascript
 // VM instance

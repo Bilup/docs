@@ -3,25 +3,25 @@ title: User Guide Overview
 sidebar_position: 1
 ---
 
-# MistWarp User Guide
+# Bilup User Guide
 
-Welcome to the comprehensive MistWarp User Guide! This section covers everything you need to know to effectively use MistWarp, from basic interface navigation to advanced features and customization options.
+Welcome to the comprehensive Bilup User Guide! This section covers everything you need to know to effectively use Bilup, from basic interface navigation to advanced features and customization options.
 
 ## What You'll Learn
 
-This guide is structured to take you from beginner to advanced MistWarp user:
+This guide is structured to take you from beginner to advanced Bilup user:
 
 ### 🎯 [Interface](./interface.md)
-Master the MistWarp interface, learn about all the panels, tools, and controls available to you.
+Master the Bilup interface, learn about all the panels, tools, and controls available to you.
 
 ### 📁 [Projects](./projects.md) 
-Learn how to create, save, load, and manage your MistWarp projects effectively.
+Learn how to create, save, load, and manage your Bilup projects effectively.
 
 ### ⚙️ [Advanced Settings](./advanced-settings.md)
-Discover MistWarp's powerful performance and customization settings.
+Discover Bilup's powerful performance and customization settings.
 
 ### 🧩 [Addons](./addons.md)
-Explore the extensive addon system that extends MistWarp's functionality.
+Explore the extensive addon system that extends Bilup's functionality.
 
 ### 🌐 [Embedding](./embedding.md)
 Learn how to embed your projects in websites and other applications.
@@ -33,14 +33,14 @@ Understand how to use cloud variables for persistent data and multiplayer featur
 Discover how to integrate JavaScript into your projects for advanced functionality.
 
 ### 🔗 [URL Parameters](./url-parameters.md)
-Learn about URL parameters for customizing the MistWarp experience.
+Learn about URL parameters for customizing the Bilup experience.
 
 ### 🛠️ [Troubleshooting](./troubleshooting.md)
 Find solutions to common issues and learn debugging techniques.
 
 ## Key Differences from Scratch
 
-If you're coming from Scratch, here are the major enhancements you'll find in MistWarp:
+If you're coming from Scratch, here are the major enhancements you'll find in Bilup:
 
 ### Performance Improvements
 - **🚀 Turbo Mode**: Projects run 2-10x faster
@@ -69,7 +69,7 @@ If you're coming from Scratch, here are the major enhancements you'll find in Mi
 ## Getting Started Quickly
 
 ### 1. First Steps
-1. **Open MistWarp** at [https://warp.mistium.com/](https://warp.mistium.com/)
+1. **Open Bilup** at [https://editor.bilup.org/](https://editor.bilup.org/)
 2. **Try the interface** - everything works just like Scratch!
 3. **Enable Turbo Mode** (⚡) to see the performance boost
 4. **Switch to Dark Mode** in settings for a modern look
@@ -159,31 +159,29 @@ Advanced Settings:
 ## Learning Resources
 
 ### Tutorial Projects
-MistWarp includes example projects to help you learn:
+Bilup includes example projects to help you learn:
 
 - **Performance Demo** - See speed improvements
 - **Addon Showcase** - Explore addon capabilities
 - **Advanced Graphics** - High-quality rendering examples
 - **Custom Blocks** - Advanced scripting techniques
 
-### Video Tutorials
-- **Getting Started with MistWarp** (5 min)
+<!-- ### Video Tutorials
+- **Getting Started with Bilup** (5 min)
 - **Addon System Deep Dive** (15 min)
 - **Performance Optimization** (10 min)
-- **Custom Theme Creation** (12 min)
+- **Custom Theme Creation** (12 min) -->
 
 ### Community Resources
-- **[GitHub Discussions](https://github.com/MistWarp/scratch-gui/discussions)** - Ask questions and share projects
-- **[Discord Server](https://discord.gg/mistwarp)** - Real-time community chat
-- **[Project Gallery](https://warp.mistium.com/gallery)** - Browse featured projects
-- **[Tutorial Collection](https://tutorials.mistium.com)** - Step-by-step guides
+- **[GitHub Discussions](https://github.com/orgs/Bilup/discussions)** - Ask questions and share projects
+- **[Project Gallery](https://editor.bilup.org/gallery)** - Browse featured projects
 
 ## Next Steps
 
 Ready to dive deeper? Here's what to explore next:
 
 ### For New Users
-1. **[Interface Guide](./interface.md)** - Master the MistWarp interface
+1. **[Interface Guide](./interface.md)** - Master the Bilup interface
 2. **[Projects Guide](./projects.md)** - Learn project management
 3. **[Quick Start](/getting-started/quick-start.md)** - Create your first project
 
@@ -207,9 +205,8 @@ Need assistance? Here are your options:
 - **Check [Troubleshooting](./troubleshooting.md)** for common issues
 
 ### Community Support
-- **[GitHub Issues](https://github.com/MistWarp/scratch-gui/issues)** - Report bugs
-- **[Discussions](https://github.com/MistWarp/scratch-gui/discussions)** - Get help from the community
-- **[Discord](https://discord.gg/mistwarp)** - Real-time chat support
+- **[GitHub Issues](https://github.com/Bilup/scratch-gui/issues)** - Report bugs
+- **[Discussions](https://github.com/orgs/Bilup/discussions)** - Get help from the community
 
 ### Professional Support
 For schools, organizations, or commercial users:
@@ -217,8 +214,8 @@ For schools, organizations, or commercial users:
 - **Technical Support** - Priority support plans
 - **Custom Development** - Tailored solutions
 
-Contact us at [support@mistium.com](mailto:support@mistium.com) for enterprise support options.
+Contact us at [me@ryanincn11.me](mailto:me@ryanincn11.me) for enterprise support options.
 
 ---
 
-*Ready to start exploring? Begin with our [Interface Guide](./interface.md) to learn the MistWarp interface!*
+*Ready to start exploring? Begin with our [Interface Guide](./interface.md) to learn the Bilup interface!*

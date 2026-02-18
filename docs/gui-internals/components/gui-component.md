@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # GUI Component
 
-The `GUI` component is the heart of MistWarp's interface, orchestrating all major UI elements and managing the overall application layout. This component serves as the main container that brings together the blocks editor, stage, sprite management, and various modals.
+The `GUI` component is the heart of Bilup's interface, orchestrating all major UI elements and managing the overall application layout. This component serves as the main container that brings together the blocks editor, stage, sprite management, and various modals.
 
 ## Component Overview
 
@@ -310,7 +310,7 @@ const mapStateToProps = state => ({
     // Theme
     theme: state.scratchGui.theme.theme,
     
-    // MistWarp specific
+    // Bilup specific
     customStageSize: state.scratchGui.customStageSize
 });
 ```
@@ -570,7 +570,7 @@ const CustomGUI = (props) => (
 }
 ```
 
-The GUI component is the cornerstone of MistWarp's interface, providing a flexible and extensible foundation for the entire application. Its modular design and integration points make it easy to customize and extend while maintaining performance and usability.
+The GUI component is the cornerstone of Bilup's interface, providing a flexible and extensible foundation for the entire application. Its modular design and integration points make it easy to customize and extend while maintaining performance and usability.
 
 ---
 

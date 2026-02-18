@@ -1,6 +1,6 @@
 # Sound Management Components
 
-The sound management system in MistWarp consists of containers and components that handle audio assets for sprites and the stage.
+The sound management system in Bilup consists of containers and components that handle audio assets for sprites and the stage.
 
 ## Overview
 
@@ -36,7 +36,7 @@ SoundTab (Container)
 - Trim sound length
 
 ### Audio Format Support
-MistWarp supports multiple audio formats:
+Bilup supports multiple audio formats:
 - **WAV**: Uncompressed audio (highest quality)
 - **MP3**: Compressed audio (smaller file size)
 - **OGG**: Open source compressed format
@@ -90,7 +90,7 @@ Multiple methods to add sounds:
 
 ### Recording Interface
 
-MistWarp includes a built-in sound recorder:
+Bilup includes a built-in sound recorder:
 
 ```javascript
 const SoundRecorder = () => {
@@ -123,7 +123,7 @@ const SoundRecorder = () => {
 ## Audio Engine Integration
 
 ### Web Audio API
-MistWarp uses the Web Audio API for audio processing:
+Bilup uses the Web Audio API for audio processing:
 
 ```javascript
 class AudioEngine {
@@ -277,7 +277,7 @@ describe('SoundTab', () => {
 });
 ```
 
-## MistWarp Enhancements
+## Bilup Enhancements
 
 ### Enhanced Sound Library
 - Expanded collection of built-in sounds

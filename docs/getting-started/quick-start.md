@@ -5,11 +5,11 @@ sidebar_position: 3
 
 # Quick Start Guide
 
-Get started with MistWarp in minutes! This guide will help you create your first project and understand the key differences from Scratch.
+Get started with Bilup in minutes! This guide will help you create your first project and understand the key differences from Scratch.
 
 ## Creating Your First Project
 
-1. **Open MistWarp** - Navigate to [warp.mistium.com](https://warp.mistium.com/)
+1. **Open Bilup** - Navigate to [editor.bilup.org](https://editor.bilup.org/)
 2. **Familiarize yourself** - The interface is similar to Scratch with some enhancements
 3. **Start Creating** - Begin adding sprites and blocks just like in Scratch
 
@@ -31,12 +31,12 @@ Get started with MistWarp in minutes! This guide will help you create your first
 - **Performance Profiling** - Monitor and optimize project performance
 
 ### 💻 Default Sprite
-- MistWarp uses **Misty** as the default sprite instead of Scratch Cat
+- Bilup delete default sprite and variable.
 - All Scratch sprites are still available in the sprite library
 
-## Your First MistWarp Project
+## Your First Bilup Project
 
-Let's create a simple project to get familiar with MistWarp:
+Let's create a simple project to get familiar with Bilup:
 
 ### Step 1: Add a Sprite
 1. Click the **Choose a Sprite** button in the bottom right
@@ -56,7 +56,7 @@ Let's create a simple project to get familiar with MistWarp:
 ## Exploring Advanced Features
 
 ### Using the Compiler
-MistWarp automatically compiles your blocks into JavaScript for faster execution. You can:
+Bilup automatically compiles your blocks into JavaScript for faster execution. You can:
 - View compiled code in the browser console
 - Profile performance to find bottlenecks
 - Optimize your project based on insights
@@ -83,7 +83,7 @@ Create custom blocks with JavaScript:
 
 ### Importing Scratch Projects
 1. Download your `.sb3` file from Scratch
-2. In MistWarp: File → Load from your computer
+2. In Bilup: File → Load from your computer
 3. Select the `.sb3` file
 4. Your project loads with all sprites and code intact
 
@@ -111,19 +111,19 @@ Create custom blocks with JavaScript:
 If you encounter issues or have questions:
 
 - **Documentation** - Browse the [full documentation](/)
-- **Community Forums** - Visit [community.mistium.com](https://community.mistium.com/)
-- **GitHub Issues** - Report bugs at [github.com/MistWarp/scratch-gui/issues](https://github.com/MistWarp/scratch-gui/issues)
+<!-- - **Community Forums** - Visit []() -->
+- **GitHub Issues** - Report bugs at [github.com/Bilup/scratch-gui/issues](https://github.com/Bilup/scratch-gui/issues)
 - **Troubleshooting** - Check the [Troubleshooting Guide](../user-guide/troubleshooting.md)
 
 ## Next Steps
 
 Now that you've created your first project, explore more:
 
-1. **[User Interface Guide](../user-guide/interface.md)** - Master the MistWarp interface
+1. **[User Interface Guide](../user-guide/interface.md)** - Master the Bilup interface
 2. **[Advanced Features](../user-guide/advanced-settings.md)** - Unlock powerful capabilities
 3. **[Extension Development](../extensions/introduction.md)** - Create custom blocks
 4. **[Project Management](../user-guide/projects.md)** - Save, load, and share projects
 
 ---
 
-*Ready to create amazing projects? Start exploring MistWarp's features and unleash your creativity!*
+*Ready to create amazing projects? Start exploring Bilup's features and unleash your creativity!*

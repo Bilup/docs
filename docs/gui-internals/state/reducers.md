@@ -5,7 +5,7 @@ sidebar_position: 2
 
 # Redux Reducers
 
-Reducers in MistWarp handle state transitions in response to dispatched actions. Each reducer manages a specific slice of the application state and follows Redux principles of immutability and predictability.
+Reducers in Bilup handle state transitions in response to dispatched actions. Each reducer manages a specific slice of the application state and follows Redux principles of immutability and predictability.
 - VM state (runtime, performance)
 - Addon state (enabled addons, settings)
 ## Store Structure
@@ -408,4 +408,4 @@ case 'SET_PROJECT_ERROR':
   };
 ```
 
-Reducers form the backbone of MistWarp's state management, ensuring predictable and maintainable state transitions throughout the application.
+Reducers form the backbone of Bilup's state management, ensuring predictable and maintainable state transitions throughout the application.

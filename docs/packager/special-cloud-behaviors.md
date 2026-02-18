@@ -6,7 +6,7 @@ hide_table_of_contents: true
 # Special cloud behaviors
 
 :::info
-This page is about the [MistWarp Packager](https://packager.warp.mistium.com/).
+This page is about the [Bilup Packager](https://packager.bilup.org/).
 :::
 
 The disabled-by-default "Special cloud behaviors" option changes the behavior of specifically named cloud variables to unlock new compatibilities for your project. This is based on a [similar feature in HTMLifier](https://github.com/SheepTester/htmlifier/wiki/Special-cloud-behaviours). This feature can be enabled in the "Cloud variables" section.
