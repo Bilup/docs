@@ -57,9 +57,10 @@ module.exports = {
     },
     algolia: {
       // This is all supposed to be public
+      container: '#docsearch',
       appId: 'I0GSY4KZL0',
-      apiKey: '125afb092032b2e4944f1f2090a3c58a',
-      indexName: 'bilup'
+      indexName: 'Bilup Docs',
+    apiKey: '125afb092032b2e4944f1f2090a3c58a'
     },
     colorMode: {
       respectPrefersColorScheme: true,
