@@ -5,7 +5,7 @@ sidebar_position: 2
 
 # Extension Structure
 
-A compiled extension follows a specific structure that integrates with MistWarp's compiler architecture. Understanding this structure is essential for creating effective compiled extensions.
+A compiled extension follows a specific structure that integrates with Bilup's compiler architecture. Understanding this structure is essential for creating effective compiled extensions.
 
 ## Basic Extension Template
 
@@ -23,7 +23,7 @@ The extension begins by checking for the unsandboxed environment, which is requi
 ```
 
 ### Accessing Compiler Internals
-Next, the extension obtains references to MistWarp's compiler components:
+Next, the extension obtains references to Bilup's compiler components:
 
 ```javascript
 const { vm, BlockType, ArgumentType } = Scratch;
@@ -37,7 +37,7 @@ const { JSGenerator, IRGenerator, ScriptTreeGenerator } = iwnafhwtb;
 The `i_will_not_ask_for_help_when_these_break()` function provides access to internal APIs that may change between versions. The name serves as a warning that these APIs are not stable.
 
 ### Compiler Type System
-Compiled extensions work with MistWarp's type system for optimization:
+Compiled extensions work with Bilup's type system for optimization:
 
 ```javascript
 const {
@@ -261,4 +261,4 @@ this.source += `vm.runtime.visualReport("${b.id}",
 - Test with different input types and edge cases
 - Handle undefined or invalid inputs gracefully
 
-This structure provides the foundation for creating powerful compiled extensions that integrate seamlessly with MistWarp's compilation system while maintaining compatibility and performance.
+This structure provides the foundation for creating powerful compiled extensions that integrate seamlessly with Bilup's compilation system while maintaining compatibility and performance.

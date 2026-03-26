@@ -4,11 +4,11 @@ title: Editor Integration
 
 # Editor Integration
 
-The MistWarp editor can send the current project to the Packager via `postMessage`. This enables a one-click flow from editing to packaging.
+The Bilup editor can send the current project to the Packager via `postMessage`. This enables a one-click flow from editing to packaging.
 
 ## Flow Overview
 
-1. Editor opens the Packager: `https://packager.warp.mistium.com/?import_from=ORIGIN`
+1. Editor opens the Packager: `https://packager.bilup.org/?import_from=ORIGIN`
 2. Packager signals readiness: `{ p4: { type: 'ready-for-import' } }`
 3. Editor replies: `{ p4: { type: 'start-import' } }`
 4. Editor sends project data and name: `{ p4: { type: 'finish-import', data, name } }`
@@ -39,7 +39,7 @@ source.postMessage({
 Sent if the editor fails to export the project.
 
 ## Notes
-- The editor only responds to messages from `https://packager.warp.mistium.com/`
+- The editor only responds to messages from `https://packager.bilup.org/`
 - The editor exports SB3 via `vm.saveProjectSb3('arraybuffer')`
 - The file name is derived from the current project title
 

@@ -1,6 +1,6 @@
 # Menu Bar Component
 
-The Menu Bar provides the main navigation and top-level actions for MistWarp. Many features can be enhanced or added by default-enabled addons.
+The Menu Bar provides the main navigation and top-level actions for Bilup. Many features can be enhanced or added by default-enabled addons.
 
 ## Overview
 
@@ -38,7 +38,7 @@ Appears when compilation errors occur:
 ### File Dropdown
 Project file operations:
 - **New Project**: Creates a blank project with default sprite
-- **New Window**: Opens MistWarp in a new window (desktop app)
+- **New Window**: Opens Bilup in a new window (desktop app)
 - **Load from Computer**: Upload .sb3 or .sb2 files
 - **Save to Computer**: Download project as .sb3
 - **Save as Copy**: Create a copy of the project
@@ -117,23 +117,23 @@ const mapDispatchToProps = dispatch => ({
 });
 ```
 
-## MistWarp Branding
+## Bilup Branding
 
-The Menu Bar prominently displays MistWarp branding:
+The Menu Bar prominently displays Bilup branding:
 
 ```javascript
-const MistWarpBranding = () => (
-  <div className="mistwarp-branding">
-    <img src="/static/mistwarp-logo.svg" alt="MistWarp" />
-    <span className="brand-text">MistWarp</span>
-    <span className="version-info">v{MISTWARP_VERSION}</span>
+const BilupBranding = () => (
+  <div className="bilup-branding">
+    <img src="/static/bilup-logo.svg" alt="Bilup" />
+    <span className="brand-text">Bilup</span>
+    <span className="version-info">v{BILUP_VERSION}</span>
   </div>
 );
 ```
 
 ## Language Support
 
-MistWarp supports multiple languages:
+Bilup supports multiple languages:
 
 ```javascript
 const LanguageSelector = ({ currentLanguage, onLanguageChange }) => {

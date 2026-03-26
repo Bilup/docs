@@ -5,7 +5,7 @@ sidebar_position: 4
 
 # Advanced Settings
 
-MistWarp provides extensive configuration options that allow you to customize performance, behavior, and appearance. This guide covers all advanced settings available in MistWarp.
+Bilup provides extensive configuration options that allow you to customize performance, behavior, and appearance. This guide covers all advanced settings available in Bilup.
 
 ## Accessing Advanced Settings
 
@@ -18,7 +18,7 @@ MistWarp provides extensive configuration options that allow you to customize pe
 ### Via URL Parameters
 Many settings can be controlled via URL parameters:
 ```
-https://warp.mistium.com/?turbo&hqpen&fps=60
+https://editor.bilup.org/?turbo&hqpen&fps=60
 ```
 
 ## Performance Settings
@@ -241,4 +241,4 @@ Load settings from configuration files or URLs.
 4. **Custom stage sizes** for specific use cases
 5. **Monitor memory usage** for large projects
 
-MistWarp's advanced settings give you unprecedented control over your Scratch experience. Experiment with different configurations to find what works best for your projects!
+Bilup's advanced settings give you unprecedented control over your Scratch experience. Experiment with different configurations to find what works best for your projects!

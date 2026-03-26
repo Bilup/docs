@@ -5,7 +5,7 @@ sidebar_position: 3
 
 # Redux Selectors
 
-Selectors provide a clean way to access and compute derived state from the Redux store. MistWarp uses the `reselect` library for memoized selectors that optimize performance by preventing unnecessary re-computations.
+Selectors provide a clean way to access and compute derived state from the Redux store. Bilup uses the `reselect` library for memoized selectors that optimize performance by preventing unnecessary re-computations.
 
 ## Creating Selectors
 

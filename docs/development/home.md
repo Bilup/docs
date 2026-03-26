@@ -4,32 +4,32 @@ title: Development Overview
 sidebar_position: 1
 ---
 
-# MistWarp Development Guide
+# Bilup Development Guide
 
-Welcome to the MistWarp development documentation! This comprehensive guide covers everything you need to know about developing with, for, and on MistWarp.
+Welcome to the Bilup development documentation! This comprehensive guide covers everything you need to know about developing with, for, and on Bilup.
 
 ## Development Paths
 
 ### 🚀 [Getting Started](./getting-started.md)
-Set up your development environment and understand the MistWarp project structure.
+Set up your development environment and understand the Bilup project structure.
 
 ### 🏗️ [Project Structure](./project-structure.md)
 Learn about the codebase organization and how different components work together.
 
 ### ⚙️ [Building & Running](./building-running.md)
-Detailed instructions for building MistWarp from source and running development servers.
+Detailed instructions for building Bilup from source and running development servers.
 
 ### 🧩 [Extension Development](../extensions/introduction.md)
 Create custom blocks and extensions that integrate with Scratch's programming environment.
 
 ### 🌐 [Global Objects](./globals.md)
-Understand the global objects and APIs available in the MistWarp environment.
+Understand the global objects and APIs available in the Bilup environment.
 
 ### 🔧 [Testing](./testing.md)
-Learn about testing strategies, tools, and best practices for MistWarp development.
+Learn about testing strategies, tools, and best practices for Bilup development.
 
 ### 🤝 [Contributing](./contributing.md)
-Guidelines for contributing to MistWarp, including code standards and pull request processes.
+Guidelines for contributing to Bilup, including code standards and pull request processes.
 
 ## Quick Start for Developers
 
@@ -46,7 +46,7 @@ Before you begin, ensure you have:
 
 ```bash
 # Clone the main repository
-git clone https://github.com/MistWarp/scratch-gui.git
+git clone https://github.com/Bilup/scratch-gui.git
 cd scratch-gui
 
 # Install dependencies
@@ -66,14 +66,14 @@ Your development environment will be available at `http://localhost:8601/`.
 4. **Test thoroughly** using automated and manual testing
 5. **Submit a pull request** following our guidelines
 
-## MistWarp Architecture for Developers
+## Bilup Architecture for Developers
 
 ### Repository Structure
 
-MistWarp consists of several interconnected repositories:
+Bilup consists of several interconnected repositories:
 
 ```
-MistWarp Ecosystem
+Bilup Ecosystem
 ├── scratch-gui/          # Main GUI application
 ├── scratch-vm/           # Virtual machine and runtime
 ├── scratch-render/       # Graphics rendering engine
@@ -122,7 +122,7 @@ MistWarp Ecosystem
 ## Development Types
 
 ### 1. Core Development
-Contributing to MistWarp's core functionality:
+Contributing to Bilup's core functionality:
 
 - **Bug fixes** in existing features
 - **Performance improvements** and optimizations  
@@ -138,7 +138,7 @@ Creating custom blocks and functionality:
 - **Educational extensions** for learning environments
 
 ### 3. Addon Development
-Enhancing the MistWarp interface:
+Enhancing the Bilup interface:
 
 - **Editor enhancements** (new tools, improved workflows)
 - **Visual modifications** (themes, layouts, styling)
@@ -203,7 +203,7 @@ git config user.email "your.email@example.com"
 
 ### Browser DevTools Integration
 
-MistWarp provides enhanced debugging capabilities:
+Bilup provides enhanced debugging capabilities:
 
 ```javascript
 // Available in browser console
@@ -268,7 +268,7 @@ npm run test:e2e
 
 ### ESLint Configuration
 
-MistWarp follows strict linting rules:
+Bilup follows strict linting rules:
 
 ```json
 {
@@ -404,7 +404,7 @@ Button.propTypes = {
 
 ### Open Source Contribution
 
-MistWarp is open source and welcomes contributions:
+Bilup is open source and welcomes contributions:
 
 1. **Issues** - Report bugs and request features
 2. **Pull Requests** - Submit code improvements
@@ -429,7 +429,7 @@ MistWarp is open source and welcomes contributions:
 
 Ready to start developing? Choose your path:
 
-- **New to MistWarp?** Start with [Getting Started](./getting-started.md)
+- **New to Bilup?** Start with [Getting Started](./getting-started.md)
 - **Want to create extensions?** Check out [Extension Development](../extensions/introduction.md)
 - **Ready to contribute?** Read our [Contributing Guide](./contributing.md)
 

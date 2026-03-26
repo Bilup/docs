@@ -3,18 +3,18 @@ title: Embedding
 sidebar_position: 6
 ---
 
-# Embedding MistWarp Projects
+# Embedding Bilup Projects
 
-MistWarp provides powerful embedding capabilities that allow you to integrate projects into websites, applications, and other platforms with enhanced features and customization options.
+Bilup provides powerful embedding capabilities that allow you to integrate projects into websites, applications, and other platforms with enhanced features and customization options.
 
 ## Basic Embedding
 
 ### Simple iframe Embedding
-The easiest way to embed a MistWarp project:
+The easiest way to embed a Bilup project:
 
 ```html
 <iframe
-  src="https://warp.mistium.com/123456789/embed"
+  src="https://editor.bilup.org/123456789/embed"
   width="480"
   height="360"
   frameborder="0"
@@ -28,7 +28,7 @@ Supported embed parameters include `autoplay`, `addons`, and standard runtime op
 
 ```html
 <iframe
-  src="https://warp.mistium.com/123456789/embed?autoplay&turbo&fps=60"
+  src="https://editor.bilup.org/123456789/embed?autoplay&turbo&fps=60"
   width="800"
   height="600"
   frameborder="0"
@@ -72,7 +72,7 @@ Create responsive embeds that adapt to container size:
 ```html
 <div style="position: relative; padding-bottom: 75%; height: 0;">
   <iframe
-    src="https://warp.mistium.com/123456789/embed"
+    src="https://editor.bilup.org/123456789/embed"
     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
     frameborder="0"
     allowfullscreen>
@@ -90,7 +90,7 @@ Embeds accept `LOAD_SB3` messages for loading projects. See detailed guide: [/us
 
 ```javascript
 // Send SB3 to the embed (URL or binary)
-const iframe = document.getElementById('mistwarp-embed');
+const iframe = document.getElementById('bilup-embed');
 iframe.contentWindow.postMessage({
   type: 'LOAD_SB3',
   data: 'https://example.com/project.sb3',
@@ -111,9 +111,9 @@ Embeds do not emit general project events via `postMessage`. Use the VM API with
 ## Packager Integration
 
 ### Standalone Embeds
-Use the MistWarp Packager for standalone embeds:
+Use the Bilup Packager for standalone embeds:
 
-1. Visit [packager.warp.mistium.com](https://packager.warp.mistium.com)
+1. Visit [packager.bilup.org](https://packager.bilup.org)
 2. Enter your project URL or upload project file
 3. Configure embedding options
 4. Download generated HTML file
@@ -158,8 +158,8 @@ document.querySelectorAll('iframe[data-src]').forEach(iframe => {
 Preload critical resources:
 
 ```html
-<link rel="preload" href="https://warp.mistium.com/assets/scratch-vm.js" as="script">
-<link rel="preload" href="https://warp.mistium.com/assets/scratch-gui.js" as="script">
+<link rel="preload" href="https://editor.bilup.org/assets/scratch-vm.js" as="script">
+<link rel="preload" href="https://editor.bilup.org/assets/scratch-gui.js" as="script">
 ```
 
 ### Accessibility
@@ -169,7 +169,7 @@ Provide alternative content for screen readers:
 
 ```html
 <iframe
-  src="https://warp.mistium.com/123456789/embed"
+  src="https://editor.bilup.org/123456789/embed"
   title="Interactive Math Game - Practice Addition and Subtraction"
   aria-label="Scratch game for practicing math skills">
   <p>This is an interactive math game that helps practice addition and subtraction.
@@ -187,7 +187,7 @@ Ensure embedded projects support keyboard navigation by focusing the iframe or p
 Configure CSP headers for embedded content:
 
 ```http
-Content-Security-Policy: frame-src https://warp.mistium.com;
+Content-Security-Policy: frame-src https://editor.bilup.org;
 ```
 
 ### Sandbox Attributes
@@ -195,7 +195,7 @@ Use sandbox attributes for additional security:
 
 ```html
 <iframe
-  src="https://warp.mistium.com/123456789/embed"
+  src="https://editor.bilup.org/123456789/embed"
   sandbox="allow-scripts allow-same-origin allow-fullscreen">
 </iframe>
 ```
@@ -206,8 +206,8 @@ Use sandbox attributes for additional security:
 Use WordPress shortcodes or embed blocks:
 
 ```php
-// Custom shortcode for MistWarp embeds
-function mistwarp_embed_shortcode($atts) {
+// Custom shortcode for Bilup embeds
+function bilup_embed_shortcode($atts) {
   $atts = shortcode_atts([
     'id' => '',
     'width' => 480,
@@ -216,13 +216,13 @@ function mistwarp_embed_shortcode($atts) {
     'turbo' => false
   ], $atts);
   
-  $src = "https://warp.mistium.com/{$atts['id']}/embed";
+  $src = "https://editor.bilup.org/{$atts['id']}/embed";
   if ($atts['autoplay']) $src .= "?autoplay";
   if ($atts['turbo']) $src .= $atts['autoplay'] ? "&turbo" : "?turbo";
   
   return "<iframe src='{$src}' width='{$atts['width']}' height='{$atts['height']}' frameborder='0'></iframe>";
 }
-add_shortcode('mistwarp', 'mistwarp_embed_shortcode');
+add_shortcode('bilup', 'bilup_embed_shortcode');
 ```
 
 ### React/Vue.js
@@ -232,7 +232,7 @@ Create reusable components:
 // React component
 import React from 'react';
 
-const MistWarpEmbed = ({ 
+const BilupEmbed = ({ 
   projectId, 
   width = 480, 
   height = 360, 
@@ -243,7 +243,7 @@ const MistWarpEmbed = ({
   if (autoplay) params.append('autoplay', '');
   if (turbo) params.append('turbo', '');
   
-  const src = `https://warp.mistium.com/${projectId}/embed?${params}`;
+  const src = `https://editor.bilup.org/${projectId}/embed?${params}`;
   
   return (
     <iframe
@@ -256,7 +256,7 @@ const MistWarpEmbed = ({
   );
 };
 
-export default MistWarpEmbed;
+export default BilupEmbed;
 ```
 
 ## Troubleshooting Embedding
@@ -284,4 +284,4 @@ export default MistWarpEmbed;
 ### Debugging
 Use the browser devtools console and network inspector. There is no `debug` URL parameter.
 
-MistWarp's embedding capabilities make it easy to integrate interactive content into any website or application. Use these features to create engaging, interactive experiences for your users!
+Bilup's embedding capabilities make it easy to integrate interactive content into any website or application. Use these features to create engaging, interactive experiences for your users!

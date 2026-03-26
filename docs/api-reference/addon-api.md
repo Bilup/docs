@@ -5,12 +5,12 @@ sidebar_position: 4
 
 # Addon API
 
-The Addon API provides tools for modifying and extending the MistWarp interface and behavior through the addon system.
+The Addon API provides tools for modifying and extending the Bilup interface and behavior through the addon system.
 
 ## Overview
 
 The Addon API allows developers to:
-- Modify the MistWarp user interface
+- Modify the Bilup user interface
 - Add new functionality to the editor
 - Customize the appearance and behavior
 - Integrate with external services and tools

@@ -8,7 +8,7 @@ hide_table_of_contents: true
 
 :::note
 ## Only "advanced" URL parameters are listed here {#only-hidden-url-parameters-are-listed-here}
-MistWarp automatically stores common settings such as turbo mode, FPS, high quality pen, etc. in the URL. This page documents advanced options.
+Bilup automatically stores common settings such as turbo mode, FPS, high quality pen, etc. in the URL. This page documents advanced options.
 :::
 
 
@@ -16,17 +16,17 @@ MistWarp automatically stores common settings such as turbo mode, FPS, high qual
 
 The `username` option controls the value of the username block.
 
-https://warp.mistium.com/443603478?username=ExampleUsername
+https://editor.bilup.org/443603478?username=ExampleUsername
 
 ## Cloud host {#cloud_host}
 
-The `cloud_host` option lets you change the cloud variable server that MistWarp will connect to, for example:
+The `cloud_host` option lets you change the cloud variable server that Bilup will connect to, for example:
 
-https://warp.mistium.com/12785898?cloud_host=wss://clouddata.turbowarp.org
+https://editor.bilup.org/12785898?cloud_host=wss://clouddata.turbowarp.org
 
-Inclusion of `ws://` or `wss://` is optional but recommended. `wss://clouddata.turbowarp.org` is the default cloud data server used by MistWarp. Insecure ws:// servers may not work because MistWarp uses HTTPS.
+Inclusion of `ws://` or `wss://` is optional but recommended. `wss://clouddata.turbowarp.org` is the default cloud data server used by Bilup. Insecure ws:// servers may not work because Bilup uses HTTPS.
 
-It is not possible to use this to connect to Scratch's cloud variable server as it requires account credentials which MistWarp can't support.
+It is not possible to use this to connect to Scratch's cloud variable server as it requires account credentials which Bilup can't support.
 
 ## Custom extensions {#extension}
 
@@ -45,12 +45,12 @@ https://turbowarp.org/fullscreen?scale=2
 
 The `nocompile` option turns off the compiler. You probably shouldn't enable this.
 
-https://warp.mistium.com/?nocompile
+https://editor.bilup.org/?nocompile
 
 ## Project URL {#project_url}
 
-The `project_url` option tells MistWarp to download project data from an arbitrary URL. Do not use together with a regular project ID.
+The `project_url` option tells Bilup to download project data from an arbitrary URL. Do not use together with a regular project ID.
 
-https://warp.mistium.com/?project_url=https://example.com/example.sb3
+https://editor.bilup.org/?project_url=https://example.com/example.sb3
 
 https:// is implied if you don't include a protocol. http:// URLs generally will not work for security reasons. Note that the URL needs to be a direct download and must support CORS (`Access-Control-Allow-Origin: *`). [GitHub Pages](https://pages.github.com/) will do this automatically and is known to work well.

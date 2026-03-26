@@ -15,7 +15,7 @@ The GitHub repository of extensions.turbowarp.org is [TurboWarp/extensions](http
 This will require Git and Node.js to be installed locally. Run these commands to download the server and install its dependencies:
 
 ```bash
-git clone https://github.com/MistWarp/extensions.git
+git clone https://github.com/Bilup/extensions.git
 cd extensions
 npm ci
 ```

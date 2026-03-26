@@ -4,9 +4,9 @@ title: API Reference Overview
 sidebar_position: 1
 ---
 
-# MistWarp API Reference
+# Bilup API Reference
 
-This section provides comprehensive documentation for all APIs available in MistWarp, including the Virtual Machine API, GUI API, Extension API, and Addon API.
+This section provides comprehensive documentation for all APIs available in Bilup, including the Virtual Machine API, GUI API, Extension API, and Addon API.
 
 ## API Categories
 
@@ -20,22 +20,22 @@ The GUI API allows interaction with the user interface, including components, mo
 The Extension API enables creation of custom blocks and extensions that integrate with the Scratch programming environment.
 
 ### 🔌 [Addon API](./addon-api.md)
-The Addon API provides tools for modifying and extending the MistWarp interface and behavior.
+The Addon API provides tools for modifying and extending the Bilup interface and behavior.
 
 ### 📡 [Events](./events.md)
-Comprehensive event system documentation for listening to and dispatching events throughout MistWarp.
+Comprehensive event system documentation for listening to and dispatching events throughout Bilup.
 
 ### 🧵 [Threads API](./threads.md)
 Advanced thread management for controlling script execution, monitoring threads, and managing execution flow.
 
 ### 🛠️ [Utilities](./utilities.md)
-Collection of utility functions and helpers available throughout the MistWarp codebase.
+Collection of utility functions and helpers available throughout the Bilup codebase.
 
 ## Quick Start
 
 ### Accessing APIs
 
-MistWarp exposes several global objects for API access:
+Bilup exposes several global objects for API access:
 
 ```javascript
 // Virtual Machine instance
@@ -128,7 +128,7 @@ export default async function ({ addon, msg }) {
 ## API Design Principles
 
 ### Consistency
-All MistWarp APIs follow consistent patterns:
+All Bilup APIs follow consistent patterns:
 
 - **Naming**: camelCase for methods, kebab-case for events
 - **Parameters**: Objects for complex parameters, primitives for simple ones
@@ -136,7 +136,7 @@ All MistWarp APIs follow consistent patterns:
 - **Error Handling**: Consistent error types and messages
 
 ### Backwards Compatibility
-MistWarp maintains backwards compatibility:
+Bilup maintains backwards compatibility:
 
 - **Deprecation Warnings**: Old APIs show warnings before removal
 - **Transition Periods**: Adequate time provided for migration
@@ -183,7 +183,7 @@ class PowerfulExtension {
 ```
 
 ### Addon Security
-Addons have controlled access to MistWarp internals:
+Addons have controlled access to Bilup internals:
 
 ```javascript
 // Addon manifest security settings
@@ -342,11 +342,11 @@ window.guiDebug = {
 
 ## API Versioning
 
-MistWarp uses semantic versioning for API changes:
+Bilup uses semantic versioning for API changes:
 
 ```javascript
 // Check API version
-const apiVersion = window.MistWarp.API_VERSION; // "2.1.0"
+const apiVersion = window.Bilup.API_VERSION; // "2.1.0"
 
 // Version compatibility check
 if (semver.gte(apiVersion, '2.0.0')) {

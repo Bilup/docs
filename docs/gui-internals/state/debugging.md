@@ -5,7 +5,7 @@ sidebar_position: 5
 
 # Redux Debugging & Testing
 
-Debugging and testing Redux state in MistWarp requires understanding the store structure, using development tools effectively, and implementing comprehensive test coverage.
+Debugging and testing Redux state in Bilup requires understanding the store structure, using development tools effectively, and implementing comprehensive test coverage.
 
 ## Development Tools
 
@@ -523,4 +523,4 @@ const useDebugSelector = (selector, equalityFn) => {
 };
 ```
 
-Redux debugging in MistWarp requires systematic approaches to testing, monitoring, and error handling to ensure reliable state management across the application.
+Redux debugging in Bilup requires systematic approaches to testing, monitoring, and error handling to ensure reliable state management across the application.

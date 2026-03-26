@@ -5,7 +5,7 @@ sidebar_position: 4
 
 # Redux Middleware
 
-Middleware in MistWarp extends Redux functionality by intercepting actions before they reach reducers. This enables features like VM synchronization, persistence, logging, and async operations.
+Middleware in Bilup extends Redux functionality by intercepting actions before they reach reducers. This enables features like VM synchronization, persistence, logging, and async operations.
 
 ## Store Configuration
 
@@ -120,7 +120,7 @@ const persistenceMiddleware = (store) => (next) => (action) => {
   
   if (persistActions.includes(action.type)) {
     const state = store.getState();
-    localStorage.setItem('mistwarp-settings', JSON.stringify({
+    localStorage.setItem('bilup-settings', JSON.stringify({
       theme: state.gui.theme,
       stageSize: state.gui.stage.stageSize,
       addons: state.addons

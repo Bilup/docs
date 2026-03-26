@@ -1,10 +1,10 @@
 # Addons
 
-MistWarp includes a powerful addon system that allows you to extend functionality with custom features and enhancements.
+Bilup includes a powerful addon system that allows you to extend functionality with custom features and enhancements.
 
 ## What are Addons?
 
-Addons are JavaScript modules that can modify or extend MistWarp's behavior. They can:
+Addons are JavaScript modules that can modify or extend Bilup's behavior. They can:
 
 - Add new UI elements
 - Modify existing interfaces
@@ -14,7 +14,7 @@ Addons are JavaScript modules that can modify or extend MistWarp's behavior. The
 
 ## Built-in Addons
 
-MistWarp comes with several built-in addons:
+Bilup comes with several built-in addons:
 
 ### Editor Enhancements
 - **Block Count**: Shows the number of blocks in your project
@@ -57,7 +57,7 @@ For information on creating your own addons, see:
 
 ## Popular Community Addons
 
-The MistWarp community has created many useful addons:
+The Bilup community has created many useful addons:
 
 - **Project Notes**: Add notes and documentation to your projects
 - **Backup System**: Automatic project backups
@@ -69,7 +69,7 @@ The MistWarp community has created many useful addons:
 If you're having issues with addons:
 
 1. Try disabling the problematic addon
-2. Check if the addon is compatible with your MistWarp version
+2. Check if the addon is compatible with your Bilup version
 3. Clear your browser cache and reload
 4. Report issues to the addon developer
 

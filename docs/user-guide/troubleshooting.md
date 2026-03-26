@@ -5,7 +5,7 @@ sidebar_position: 11
 
 # Troubleshooting
 
-This comprehensive troubleshooting guide helps you resolve common issues when using MistWarp. From project loading problems to performance issues, find solutions to get back to creating quickly.
+This comprehensive troubleshooting guide helps you resolve common issues when using Bilup. From project loading problems to performance issues, find solutions to get back to creating quickly.
 
 ## Project Loading Issues
 
@@ -27,7 +27,7 @@ This comprehensive troubleshooting guide helps you resolve common issues when us
 **Network Connectivity**
 ```bash
 # Test connectivity
-ping warp.mistium.com
+ping editor.bilup.org
 
 # Check browser console for network errors
 # F12 → Console tab → Look for red errors
@@ -55,7 +55,7 @@ Minimum versions: Chrome 80+, Firefox 74+, Safari 13+
 
 **Enable Turbo Mode**
 ```
-https://warp.mistium.com/123456789?turbo
+https://editor.bilup.org/123456789?turbo
 ```
 
 **Reduce Project Size**
@@ -75,7 +75,7 @@ https://warp.mistium.com/123456789?turbo
 ### Low Frame Rate
 
 #### Diagnosis
-Check current FPS in MistWarp:
+Check current FPS in Bilup:
 ```scratch
 when green flag clicked
 forever
@@ -87,7 +87,7 @@ end
 
 **Enable Performance Features**
 ```
-https://warp.mistium.com/?turbo&fps=60
+https://editor.bilup.org/?turbo&fps=60
 ```
 
 **Optimize Project Code**
@@ -293,7 +293,7 @@ end
 
 #### Enable JavaScript
 ```
-https://warp.mistium.com/?unsafe
+https://editor.bilup.org/?unsafe
 ```
 
 #### Security Warnings
@@ -394,12 +394,12 @@ Solutions:
 
 ### Firewall Issues
 ```
-❌ Problem: Corporate firewall blocks MistWarp
+❌ Problem: Corporate firewall blocks Bilup
 ✅ Solutions:
 1. Contact IT department
 2. Use alternative network
 3. Try a different browser
-4. Request whitelist for warp.mistium.com
+4. Request whitelist for editor.bilup.org
 ```
 
 ## Getting Help
@@ -416,7 +416,7 @@ When reporting issues, include:
 
 ### Console Debugging
 ```javascript
-// Get MistWarp version
+// Get Bilup version
 console.log(vm.runtime.platform);
 
 // Check for errors

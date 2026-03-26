@@ -1,6 +1,6 @@
 # VM API Reference
 
-The MistWarp Virtual Machine (VM) is the core execution engine that powers Scratch projects. It provides comprehensive programmatic access to the runtime environment, allowing external code to control project execution, manipulate sprites and assets, listen for events, and configure runtime behavior.
+The Bilup Virtual Machine (VM) is the core execution engine that powers Scratch projects. It provides comprehensive programmatic access to the runtime environment, allowing external code to control project execution, manipulate sprites and assets, listen for events, and configure runtime behavior.
 
 ## Overview
 
@@ -134,7 +134,7 @@ if (target) {
 Set the editing target.
 
 ```javascript
-const sprite = vm.runtime.targets.find(t => t.getName() === 'Misty');
+const sprite = vm.runtime.targets.find(t => t.getName() === 'Sprite1');
 if (sprite) {
   vm.setEditingTarget(sprite.id);
 }

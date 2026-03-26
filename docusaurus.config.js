@@ -1,20 +1,20 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'MistWarp Documentation',
-  tagline: 'A comprehensive guide to MistWarp - the advanced Scratch modification platform',
-  url: 'https://docs.warp.mistium.com',
+  title: 'Bilup Documentation',
+  tagline: 'A comprehensive guide to Bilup - the advanced Scratch modification platform',
+  url: 'https://docs.bilup.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'favicon.ico',
-  organizationName: 'MistWarp',
+  organizationName: 'Bilup',
   projectName: 'docs',
   trailingSlash: false,
   themeConfig: {
     navbar: {
-      title: 'MistWarp Documentation',
+      title: 'Bilup Documentation',
       logo: {
-        alt: 'MistWarp Logo',
+        alt: 'Bilup Logo',
         src: 'favicon.ico',
       },
       items: [
@@ -44,12 +44,12 @@ module.exports = {
           position: 'left'
         },
         {
-          href: 'https://warp.mistium.com/',
-          label: 'MistWarp',
+          href: 'https://editor.bilup.org/',
+          label: 'Bilup',
           position: 'right'
         },
         {
-          href: 'https://github.com/MistWarp',
+          href: 'https://github.com/Bilup',
           label: 'GitHub',
           position: 'right',
         },
@@ -57,9 +57,10 @@ module.exports = {
     },
     algolia: {
       // This is all supposed to be public
-      appId: 'HORQ9E5CCA',
-      apiKey: 'c3873ce4208edb896a31bb3e7c2cbdad',
-      indexName: 'mistwarp',
+      container: '#docsearch',
+      appId: 'I0GSY4KZL0',
+      indexName: 'Bilup Docs',
+    apiKey: '125afb092032b2e4944f1f2090a3c58a'
     },
     colorMode: {
       respectPrefersColorScheme: true,
@@ -76,7 +77,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
-          editUrl: 'https://github.com/MistWarp/docs/edit/master/',
+          editUrl: 'https://github.com/Bilup/docs/edit/main/',
           breadcrumbs: true,
         },
         theme: {

@@ -1,6 +1,6 @@
 # Sprite Selector Component
 
-The Sprite Selector allows users to choose and manage sprites in their MistWarp projects.
+The Sprite Selector allows users to choose and manage sprites in their Bilup projects.
 
 ## Overview
 
@@ -39,21 +39,11 @@ SpriteSelectorContainer
 - Sprite names and rename functionality
 - Visibility toggles
 
-### MistWarp Defaults
+### Bilup Defaults
 
-MistWarp includes "Misty" as the default sprite instead of Scratch Cat:
+Bilup delete default sprite and variable.
 
-```javascript
-// Default sprite when creating new projects
-const DEFAULT_SPRITE = {
-  name: 'Misty',
-  costume: 'misty-a',
-  x: 0,
-  y: 0,
-  direction: 90,
-  visible: true
-};
-```
+Default stage is empty.
 
 ## Props Interface
 

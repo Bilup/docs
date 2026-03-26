@@ -5,7 +5,7 @@ sidebar_position: 7
 
 # Cloud Variables
 
-Cloud variables in MistWarp provide shared data storage and enable real-time collaboration between users. MistWarp uses a cloud server compatible with Scratch’s protocol.
+Cloud variables in Bilup provide shared data storage and enable real-time collaboration between users. Bilup uses a cloud server compatible with Scratch’s protocol.
 
 ## Understanding Cloud Variables
 
@@ -22,7 +22,7 @@ Cloud variables are special variables that:
 
 ## Creating Cloud Variables
 
-### In MistWarp Editor
+### In Bilup Editor
 
 #### Basic Creation
 1. Go to **Variables** category in blocks palette
@@ -176,10 +176,10 @@ end
 ### Custom Cloud Host
 Override the cloud server with a URL parameter:
 ```
-https://warp.mistium.com/?cloud_host=wss://clouddata.turbowarp.org
+https://editor.bilup.org/?cloud_host=wss://clouddata.turbowarp.org
 ```
 
-MistWarp uses `wss://` by default. Insecure `ws://` hosts may not work in HTTPS environments.
+Bilup uses `wss://` by default. Insecure `ws://` hosts may not work in HTTPS environments.
 
 ## Best Practices
 
@@ -293,4 +293,4 @@ else
 end
 ```
 
-Cloud variables unlock powerful collaborative and persistent features in MistWarp. Use them to create multiplayer games, shared experiences, and data-driven projects that persist across sessions!
+Cloud variables unlock powerful collaborative and persistent features in Bilup. Use them to create multiplayer games, shared experiences, and data-driven projects that persist across sessions!

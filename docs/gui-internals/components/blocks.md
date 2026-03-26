@@ -5,7 +5,7 @@ sidebar_position: 2
 
 # Blocks Component
 
-The Blocks component is the central workspace where users create and edit their Scratch scripts. In MistWarp, this component has been enhanced with improved performance, additional features, and better developer tools.
+The Blocks component is the central workspace where users create and edit their Scratch scripts. In Bilup, this component has been enhanced with improved performance, additional features, and better developer tools.
 
 ## Component Overview
 
@@ -17,7 +17,7 @@ The Blocks component provides:
 - **Error Detection**: Real-time script validation
 - **Performance Optimization**: Efficient rendering and updates
 
-### MistWarp Enhancements
+### Bilup Enhancements
 - **Turbo Mode Integration**: Visual indicators for high-performance blocks
 - **Advanced Block Types**: Custom JavaScript and extension blocks
 - **Improved Search**: Enhanced block palette search functionality
@@ -109,7 +109,7 @@ const looksBlocks = {
 };
 ```
 
-### MistWarp Extensions
+### Bilup Extensions
 
 #### TurboWarp Blocks
 Enhanced blocks for improved functionality:
@@ -428,4 +428,4 @@ describe('Blocks VM Integration', () => {
 });
 ```
 
-The Blocks component is the heart of the MistWarp editing experience, providing a powerful and intuitive interface for visual programming. Its integration with the VM, theming system, and performance optimizations make it both user-friendly and efficient for creating complex projects.
+The Blocks component is the heart of the Bilup editing experience, providing a powerful and intuitive interface for visual programming. Its integration with the VM, theming system, and performance optimizations make it both user-friendly and efficient for creating complex projects.

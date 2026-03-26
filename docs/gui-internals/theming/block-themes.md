@@ -9,7 +9,7 @@ Block themes control the colors and appearance of coding blocks in the workspace
 
 ## Available Themes
 
-MistWarp includes several built-in block themes:
+Bilup includes several built-in block themes:
 
 - **three**: Default Scratch 3.0 colors
 - **dark**: Dark-optimized block colors

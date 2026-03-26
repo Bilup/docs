@@ -7,7 +7,7 @@ sidebar_label: Embedding
 # Embedding the packager
 
 :::info
-This page is about the [MistWarp Packager](https://packager.warp.mistium.com/). If you just want an easy way to embed a Scratch project into a website, see [the other embedding page](/embedding).
+This page is about the [Bilup Packager](https://packager.bilup.org/). If you just want an easy way to embed a Scratch project into a website, see [the other embedding page](/embedding).
 :::
 
 You can embed the output of the TurboWarp Packager into another website:

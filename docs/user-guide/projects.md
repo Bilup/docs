@@ -3,9 +3,9 @@ title: Projects
 sidebar_position: 3
 ---
 
-# Managing Projects in MistWarp
+# Managing Projects in Bilup
 
-MistWarp provides powerful project management capabilities that extend beyond standard Scratch functionality. Learn how to create, save, load, and organize your projects effectively.
+Bilup provides powerful project management capabilities that extend beyond standard Scratch functionality. Learn how to create, save, load, and organize your projects effectively.
 
 ## Creating Projects
 
@@ -26,7 +26,7 @@ New projects include:
 
 ### Project Templates
 
-MistWarp offers several starting templates:
+Bilup offers several starting templates:
 
 #### Basic Templates
 - **Empty Project**: Completely blank slate
@@ -47,7 +47,7 @@ MistWarp offers several starting templates:
 #### Supported Formats
 - **Scratch 3.0 (.sb3)**: Full compatibility
 - **Scratch 2.0 (.sb2)**: Automatic conversion
-- **MistWarp Projects**: Enhanced format with addon data
+- **Bilup Projects**: Enhanced format with addon data
 
 #### Loading Process
 1. Click **File** → **Load from your computer**
@@ -135,7 +135,7 @@ My Projects/
 ### Project Metadata
 
 #### Automatic Metadata
-MistWarp tracks:
+Bilup tracks:
 - **Creation Date**: When project was started
 - **Last Modified**: Most recent edit time
 - **Edit Count**: Number of modifications
@@ -171,7 +171,7 @@ Add your own information:
 - Preserves all project data
 
 #### Web Embedding
-- Use MistWarp Packager for web deployment
+- Use Bilup Packager for web deployment
 - Create standalone HTML files
 - Embed in websites and blogs
 
@@ -189,12 +189,12 @@ Add your own information:
 
 ## Project Migration
 
-### From Scratch to MistWarp
+### From Scratch to Bilup
 
 #### Automatic Migration
 - Load any Scratch project directly
 - All blocks and sprites transfer perfectly
-- Enhanced with MistWarp features immediately
+- Enhanced with Bilup features immediately
 
 #### Performance Optimization
 After loading Scratch projects:
@@ -203,15 +203,15 @@ After loading Scratch projects:
 3. Try **High Quality Pen** for better graphics
 4. Explore **Custom Stage Sizes**
 
-### Between MistWarp Instances
+### Between Bilup Instances
 
 #### Project Portability
-- `.sb3` files work across all MistWarp versions
+- `.sb3` files work across all Bilup versions
 - Addon data preserves when available
 - Settings transfer with project metadata
 
 #### Version Compatibility
-- Newer MistWarp features gracefully degrade
+- Newer Bilup features gracefully degrade
 - Older projects work in newer versions
 - Clear warnings for incompatible features
 
@@ -245,7 +245,7 @@ For advanced users:
 ### Recovery Procedures
 
 #### Browser Crash Recovery
-1. Restart browser and return to MistWarp
+1. Restart browser and return to Bilup
 2. Look for auto-recovery prompt
 3. Choose most recent backup
 4. Verify project integrity
@@ -317,8 +317,8 @@ For advanced users:
 - **Enterprise features**: Business solutions
 - **Custom development**: Specialized needs
 
-Projects are the heart of your MistWarp experience. With proper organization and management, you can create amazing interactive content while maintaining efficiency and collaboration capabilities.
+Projects are the heart of your Bilup experience. With proper organization and management, you can create amazing interactive content while maintaining efficiency and collaboration capabilities.
 
 ---
 
-*Next: Explore [Advanced Settings](./advanced-settings.md) to unlock MistWarp's full potential.*
+*Next: Explore [Advanced Settings](./advanced-settings.md) to unlock Bilup's full potential.*

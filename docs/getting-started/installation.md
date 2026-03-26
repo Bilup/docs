@@ -5,19 +5,19 @@ sidebar_position: 2
 
 # Getting Started
 
-MistWarp is a web-based application that runs directly in your browser. No installation is required!
+Bilup is a web-based application that runs directly in your browser. No installation is required!
 
-## Accessing MistWarp
+## Accessing Bilup
 
-MistWarp is exclusively available as a web application and can be accessed at:
+Bilup is exclusively available as a web application and can be accessed at:
 
-**🌐 [https://warp.mistium.com/](https://warp.mistium.com/)**
+**🌐 [https://editor.bilup.org/](https://editor.bilup.org/)**
 
 Simply open the link in any modern web browser and you're ready to start creating!
 
 ## System Requirements
 
-MistWarp works in any modern web browser that supports JavaScript and WebGL:
+Bilup works in any modern web browser that supports JavaScript and WebGL:
 
 ### Supported Browsers
 - **Chrome 80+** (recommended for best performance)
@@ -54,10 +54,10 @@ MistWarp works in any modern web browser that supports JavaScript and WebGL:
 
 ## First Time Setup
 
-When you first visit MistWarp:
+When you first visit Bilup:
 
-1. **Open your browser** and navigate to [warp.mistium.com](https://warp.mistium.com/)
-2. **Allow JavaScript** if prompted (required for MistWarp to function)
+1. **Open your browser** and navigate to [editor.bilup.org](https://editor.bilup.org/)
+2. **Allow JavaScript** if prompted (required for Bilup to function)
 3. **Accept camera/microphone permissions** if you plan to use sensing blocks
 4. **Create an account** (optional) to save projects to the cloud
 
@@ -65,7 +65,7 @@ When you first visit MistWarp:
 
 ### Enable Required Features
 
-For the best MistWarp experience, ensure these browser features are enabled:
+For the best Bilup experience, ensure these browser features are enabled:
 
 - **JavaScript**: Required for all functionality
 - **WebGL**: Needed for stage rendering and effects
@@ -76,12 +76,12 @@ For the best MistWarp experience, ensure these browser features are enabled:
 
 - **Close unnecessary tabs** to free up RAM
 - **Use hardware acceleration** if available in browser settings
-- **Clear browser cache** occasionally if MistWarp becomes slow
+- **Clear browser cache** occasionally if Bilup becomes slow
 - **Disable browser extensions** that might interfere with performance
 
 ## Development Setup
 
-For developers who want to modify or contribute to MistWarp:
+For developers who want to modify or contribute to Bilup:
 
 ### Prerequisites
 - Node.js 18+ 
@@ -92,7 +92,7 @@ For developers who want to modify or contribute to MistWarp:
 
 ```bash
 # Clone the repository
-git clone https://github.com/MistWarp/scratch-gui.git
+git clone https://github.com/Bilup/scratch-gui.git
 cd scratch-gui
 
 # Install dependencies
@@ -106,13 +106,13 @@ The development server will be available at `http://localhost:8601/`.
 
 ### Building Other Components
 
-To work on the full MistWarp stack:
+To work on the full Bilup stack:
 
 ```bash
 # Clone all repositories
-git clone https://github.com/MistWarp/scratch-vm.git
-git clone https://github.com/MistWarp/scratch-gui.git  
-git clone https://github.com/MistWarp/scratch-render.git
+git clone https://github.com/Bilup/scratch-vm.git
+git clone https://github.com/Bilup/scratch-gui.git  
+git clone https://github.com/Bilup/scratch-render.git
 
 # Link local packages (from each directory)
 cd scratch-vm && npm link
@@ -127,7 +127,7 @@ cd scratch-gui && npm start
 
 ### Common Issues
 
-**MistWarp won't load:**
+**Bilup won't load:**
 1. Check your internet connection
 2. Disable browser extensions temporarily
 3. Clear browser cache and cookies
@@ -159,12 +159,12 @@ cd scratch-gui && npm start
 
 If you encounter issues:
 - Check the [Troubleshooting Guide](../user-guide/troubleshooting.md)
-- Visit our [Community Forums](https://community.mistium.com/)
-- Report bugs on [GitHub Issues](https://github.com/MistWarp/scratch-gui/issues)
+<!-- - Visit our [Community Forums]() -->
+- Report bugs on [GitHub Issues](https://github.com/Bilup/scratch-gui/issues)
 
 ## What's Next?
 
-Now that you can access MistWarp:
+Now that you can access Bilup:
 
 1. **[Quick Start Guide](./quick-start.md)** - Create your first project
 2. **[User Interface](../user-guide/interface.md)** - Learn the interface

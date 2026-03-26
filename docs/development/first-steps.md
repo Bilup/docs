@@ -3,9 +3,9 @@ title: First Steps
 sidebar_position: 3
 ---
 
-# Brand Configuration for MistWarp
+# Brand Configuration for Bilup
 
-This guide outlines how to configure the branding for your MistWarp mod, including renaming your application and customizing icons and links.
+This guide outlines how to configure the branding for your Bilup mod, including renaming your application and customizing icons and links.
 
 ## Renaming Your Mod
 
@@ -15,7 +15,7 @@ To rename your mod, update the `APP_NAME` property in `src/lib/constants/brand.j
 module.exports = {
     APP_NAME: 'YourModName',
     FEEDBACK_URL: 'https://scratch.mit.edu/users/m1stium#comments',
-    GITHUB_URL: 'https://github.com/MistWarp'
+    GITHUB_URL: 'https://github.com/Bilup'
 };
 ```
 

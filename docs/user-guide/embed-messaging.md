@@ -49,7 +49,7 @@ window.addEventListener('message', (event) => {
 ## Example: Load from URL
 
 ```js
-const iframe = document.getElementById('mistwarp-embed');
+const iframe = document.getElementById('bilup-embed');
 iframe.contentWindow.postMessage({
   type: 'LOAD_SB3',
   data: 'https://example.com/project.sb3',
