@@ -41,7 +41,7 @@ Bilup is a powerful, feature-rich modification of Scratch that enhances the orig
 | **Performance** | Slow | Fast | Highly optimized compiler |
 | **Themes** | Light only | Dark mode | Custom themes |
 | **Addons** | None | 80+ built-in addons | ~90 built-in addons |
-| **Frame Rate** | 30 FPS | 60 FPS | 10,000+ FPS |
+| **Frame Rate** | 30 FPS | 60 FPS | Custom FPS |
 | **Customization** | Limited | Limited | Extensive customization |
 
 ## Architecture Overview
