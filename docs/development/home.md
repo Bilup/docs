@@ -182,7 +182,7 @@ REACT_APP_ENABLE_HOT_RELOAD=true
 REACT_APP_ADDON_DEV_MODE=true
 
 # Optional: Custom API endpoints
-REACT_APP_CLOUD_HOST=wss://clouddata.turbowarp.org
+REACT_APP_CLOUD_HOST=wss://clouddata.bilup.org
 REACT_APP_ASSET_HOST=https://assets.scratch.mit.edu
 ```
 
@@ -350,7 +350,7 @@ const csp = {
     "script-src": ["'self'", "'unsafe-eval'"], // Required for VM
     "style-src": ["'self'", "'unsafe-inline'"], // Required for themes
     "img-src": ["'self'", "data:", "blob:"],
-    "connect-src": ["'self'", "wss://clouddata.turbowarp.org"]
+    "connect-src": ["'self'", "wss://clouddata.bilup.org"]
 };
 ```
 

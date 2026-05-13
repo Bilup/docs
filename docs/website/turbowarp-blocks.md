@@ -5,6 +5,15 @@ hide_table_of_contents: true
 
 # TurboWarp Blocks
 
+:::note
+"TurboWarp Blocks" is named as "Bilup blocks" in Bilup.
+
+"is TurboWarp?" block has been modified to "is Bilup?".
+
+The original block "is TurboWarp?" won't return true due to it's Bilup, not TurboWarp.
+
+:::
+
 TurboWarp has a section of blocks that allows you to use certain features previously not accessible to Scratch projects.
 
 NEW: TurboWarp now supports unsandboxed extensions which add new blocks! https://extensions.turbowarp.org/

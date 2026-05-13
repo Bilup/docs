@@ -19,9 +19,9 @@ export const ExtensionCode = ({title, children}) => {
               rel="noopener noreferrer"
               href={
                 title.startsWith('unsandboxed/') ? (
-                  `https://turbowarp.org/editor?extension=https://extensions.turbowarp.org/docs-examples/${title}.js`
+                  `https://bilup.org/editor?extension=https://extensions.bilup.org/docs-examples/${title}.js`
                 ) : (
-                  `https://turbowarp.org/editor?extension=${origin}/example-extensions/${title}.js`
+                  `https://bilup.org/editor?extension=${origin}/example-extensions/${title}.js`
                 )
               }
             >

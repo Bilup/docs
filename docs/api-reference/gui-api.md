@@ -743,7 +743,7 @@ const currentTheme = guiState.theme?.theme;
 Detect if running in packaged environment:
 
 ```javascript
-// Check if running in TurboWarp Packager
+// Check if running in Bilup Packager
 const isPackaged = !window.ReduxStore?.getState && !!window.scaffolding?.vm;
 ```
 

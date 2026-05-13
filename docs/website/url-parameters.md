@@ -22,9 +22,9 @@ https://editor.bilup.org/443603478?username=ExampleUsername
 
 The `cloud_host` option lets you change the cloud variable server that Bilup will connect to, for example:
 
-https://editor.bilup.org/12785898?cloud_host=wss://clouddata.turbowarp.org
+https://editor.bilup.org/12785898?cloud_host=wss://clouddata.bilup.org
 
-Inclusion of `ws://` or `wss://` is optional but recommended. `wss://clouddata.turbowarp.org` is the default cloud data server used by Bilup. Insecure ws:// servers may not work because Bilup uses HTTPS.
+Inclusion of `ws://` or `wss://` is optional but recommended. `wss://clouddata.bilup.org` is the default cloud data server used by Bilup. Insecure ws:// servers may not work because Bilup uses HTTPS.
 
 It is not possible to use this to connect to Scratch's cloud variable server as it requires account credentials which Bilup can't support.
 
@@ -38,7 +38,7 @@ The `extension` option loads a custom extension from a URL. See [Custom Extensio
 
 Controls the maximum relative scale of the player when in fullscreen mode.
 
-https://turbowarp.org/fullscreen?scale=2
+https://editor.bilup.org/fullscreen?scale=2
 -->
 
 ## Disable compiler {#nocompile}

@@ -176,7 +176,7 @@ end
 ### Custom Cloud Host
 Override the cloud server with a URL parameter:
 ```
-https://editor.bilup.org/?cloud_host=wss://clouddata.turbowarp.org
+https://editor.bilup.org/?cloud_host=wss://clouddata.bilup.org
 ```
 
 Bilup uses `wss://` by default. Insecure `ws://` hosts may not work in HTTPS environments.

@@ -25,7 +25,6 @@ module.exports = {
         'development/building-running',
         'development/testing',
         'development/contributing',
-        'development/deploying',
         'development/globals',
         'development/scratchx',
         {
@@ -215,7 +214,6 @@ module.exports = {
         'website/unshared-projects',
         'website/scratch-accounts',
         'website/cors',
-        'website/translate',
         'website/4.4',
         'website/donate',
         'website/return',

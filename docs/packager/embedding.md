@@ -10,7 +10,7 @@ sidebar_label: Embedding
 This page is about the [Bilup Packager](https://packager.bilup.org/). If you just want an easy way to embed a Scratch project into a website, see [the other embedding page](/embedding).
 :::
 
-You can embed the output of the TurboWarp Packager into another website:
+You can embed the output of the Bilup Packager into another website:
 
 ```html
 <iframe src="path_to_project.html" width="480" height="360" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>

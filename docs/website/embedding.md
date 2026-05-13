@@ -29,7 +29,7 @@ There are also some special parameters only available in embeds:
 
 Embeds support the `autoplay` parameter, which will automatically hit the green flag when the project loads. For example: https://editor.bilup.org/15832807/embed?autoplay
 
-Note that sound blocks may not work until the user interacts with the project (for example, by clicking). This is a restriction imposed by browsers. There is nothing TurboWarp can do to work around this.
+Note that sound blocks may not work until the user interacts with the project (for example, by clicking). This is a restriction imposed by browsers. There is nothing Bilup can do to work around this.
 
 ### Settings button {#settings-button}
 
@@ -75,4 +75,4 @@ If you use a Bilup embed in a commercial website, consider [donating](/donate) t
 
 ## License {#license}
 
-TurboWarp is licensed under the [GPLv3.0](https://github.com/TurboWarp/scratch-gui/blob/develop/LICENSE). We believe that an `<iframe>` of a GPLv3.0 work doesn't create a derivative work under the GPLv3.0, rather it creates an "aggregate work" which is not subject to the same requirements as derivative works. However, we are not lawyers and this is not legal advice. Talk to a lawyer if this matters to you.
+Bilup is licensed under the [GPLv3.0](https://github.com/Bilup/scratch-gui/blob/develop/LICENSE). We believe that an `<iframe>` of a GPLv3.0 work doesn't create a derivative work under the GPLv3.0, rather it creates an "aggregate work" which is not subject to the same requirements as derivative works. However, we are not lawyers and this is not legal advice. Talk to a lawyer if this matters to you.

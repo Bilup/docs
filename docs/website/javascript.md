@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 # How to download the JavaScript
 
+:::note
+Due to Bilup is **based** on TurboWarp, it supports the same features below.
+
+:::
+
 ## Short Answer {#short}
 
  * If you want to package/HTMLify a project, use https://packager.bilup.org/

@@ -1,0 +1,38 @@
+{
+  "title": {
+    "message": "Bilup 文档",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Bilup Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Getting Started": {
+    "message": "快速开始",
+    "description": "Navbar item with label Getting Started"
+  },
+  "item.label.Development": {
+    "message": "开发指南",
+    "description": "Navbar item with label Development"
+  },
+  "item.label.GUI Internals": {
+    "message": "GUI 内部",
+    "description": "Navbar item with label GUI Internals"
+  },
+  "item.label.Packager": {
+    "message": "打包器",
+    "description": "Navbar item with label Packager"
+  },
+  "item.label.API Reference": {
+    "message": "API 参考",
+    "description": "Navbar item with label API Reference"
+  },
+  "item.label.Bilup": {
+    "message": "Bilup",
+    "description": "Navbar item with label Bilup"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}

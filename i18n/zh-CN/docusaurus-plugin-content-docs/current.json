@@ -1,0 +1,78 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Getting Started": {
+    "message": "快速开始",
+    "description": "The label for category 'Getting Started' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Development": {
+    "message": "开发指南",
+    "description": "The label for category 'Development' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Components": {
+    "message": "组件",
+    "description": "The label for category 'Components' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Extensions Library": {
+    "message": "扩展库",
+    "description": "The label for category 'Extensions Library' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Extensions": {
+    "message": "扩展",
+    "description": "The label for category 'Extensions' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.APIs": {
+    "message": "API",
+    "description": "The label for category 'APIs' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Renderer": {
+    "message": "渲染器",
+    "description": "The label for category 'Renderer' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Compiled Extensions": {
+    "message": "编译扩展",
+    "description": "The label for category 'Compiled Extensions' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.GUI Internals": {
+    "message": "GUI 内部",
+    "description": "The label for category 'GUI Internals' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Addons": {
+    "message": "插件",
+    "description": "The label for category 'Addons' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Core Components": {
+    "message": "核心组件",
+    "description": "The label for category 'Core Components' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Containers": {
+    "message": "容器",
+    "description": "The label for category 'Containers' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.State Management": {
+    "message": "状态管理",
+    "description": "The label for category 'State Management' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Theming & Styling": {
+    "message": "主题与样式",
+    "description": "The label for category 'Theming & Styling' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Packager": {
+    "message": "打包器",
+    "description": "The label for category 'Packager' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Website Features": {
+    "message": "网站功能",
+    "description": "The label for category 'Website Features' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Settings": {
+    "message": "设置",
+    "description": "The label for category 'Settings' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.API Reference": {
+    "message": "API 参考",
+    "description": "The label for category 'API Reference' in sidebar 'tutorialSidebar'"
+  }
+}

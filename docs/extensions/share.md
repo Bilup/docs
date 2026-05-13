@@ -16,11 +16,11 @@ A common choice is [GitHub Pages](https://pages.github.com/). Note that GitHub's
 
 ## Unsandboxed extensions
 
-The best way to share your unsandboxed extension is to submit it to extensions.turbowarp.org: https://github.com/TurboWarp/extensions/blob/master/CONTRIBUTING.md
+The best way to share your unsandboxed extension is to submit it to extensions.bilup.org: https://github.com/Bilup/extensions/blob/master/CONTRIBUTING.md
 
 ## Exercises
 
-1. Explore the TurboWarp Extension Gallery issue tracker for inspiration: https://github.com/TurboWarp/extensions/issues
+1. Explore the Bilup Extension Gallery issue tracker for inspiration: https://github.com/Bilup/extensions/issues
 
 ## Next steps
 

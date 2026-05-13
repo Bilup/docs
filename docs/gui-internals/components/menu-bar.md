@@ -42,7 +42,7 @@ Project file operations:
 - **Load from Computer**: Upload .sb3 or .sb2 files
 - **Save to Computer**: Download project as .sb3
 - **Save as Copy**: Create a copy of the project
-- **Package Project**: Open in TurboWarp Packager
+- **Package Project**: Open in Bilup Packager
 - **Restore Points**: Manage project restore points
 - **Autosave Controls**: Pause/resume automatic saving
 

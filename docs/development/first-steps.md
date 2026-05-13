@@ -14,8 +14,8 @@ To rename your mod, update the `APP_NAME` property in `src/lib/constants/brand.j
 ```js
 module.exports = {
     APP_NAME: 'YourModName',
-    FEEDBACK_URL: 'https://scratch.mit.edu/users/m1stium#comments',
-    GITHUB_URL: 'https://github.com/Bilup'
+    FEEDBACK_URL: 'https://scratch.mit.edu/users/username#comments',
+    GITHUB_URL: 'https://github.com/YourModName'
 };
 ```
 

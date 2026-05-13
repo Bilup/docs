@@ -13,9 +13,11 @@ Unsandboxed extensions run as plain `<script>` tags in the main window rather th
 To protect users from malicious extensions, extensions loaded from URLs will only run unsandboxed if their URL begins with one of these *exactly*:
 
  - `https://extensions.turbowarp.org/`
+ - `https://extensions.bilup.org/`
+ - `https://extensions.mistium.com/`
  - `http://localhost:8000/`
 
-As you don't have control over extensions.turbowarp.org, you will have to use the latter option. For this, configure your local HTTP server to run on port 8000 instead of what you've been using so far.
+As you don't have control over others, you will have to use localhost. For this, configure your local HTTP server to run on port 8000 instead of what you've been using so far.
 
 When manually loading an extension from a file or JavaScript source code, there is an option to load the extension without the sandbox. This option to force an extension to run unsandboxed does not exist when using URLs due to security concerns.
 

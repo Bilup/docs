@@ -149,7 +149,7 @@ https://editor.bilup.org/?project_url=https://example.com/project.sb3
 ### Cloud Host (embed/player)
 Override cloud server:
 ```
-https://editor.bilup.org/?cloud_host=wss://clouddata.turbowarp.org
+https://editor.bilup.org/?cloud_host=wss://clouddata.bilup.org
 ```
 
 ## Reference

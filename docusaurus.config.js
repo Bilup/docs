@@ -5,11 +5,27 @@ module.exports = {
   url: 'https://docs.bilup.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
   favicon: 'favicon.ico',
   organizationName: 'Bilup',
   projectName: 'docs',
   trailingSlash: false,
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'zh-CN'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+      },
+      'zh-CN': {
+        label: '中文',
+      },
+    },
+  },
   themeConfig: {
     navbar: {
       title: 'Bilup Documentation',
@@ -53,14 +69,17 @@ module.exports = {
           label: 'GitHub',
           position: 'right',
         },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
       ],
     },
     algolia: {
-      // This is all supposed to be public
       container: '#docsearch',
       appId: 'I0GSY4KZL0',
       indexName: 'Bilup Docs',
-    apiKey: '125afb092032b2e4944f1f2090a3c58a'
+      apiKey: '125afb092032b2e4944f1f2090a3c58a'
     },
     colorMode: {
       respectPrefersColorScheme: true,
