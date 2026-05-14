@@ -77,9 +77,9 @@ module.exports = {
     },
     algolia: {
       container: '#docsearch',
-      appId: 'I0GSY4KZL0',
-      indexName: 'Bilup Docs',
-      apiKey: '125afb092032b2e4944f1f2090a3c58a'
+      appId: '90B9X0B5K5',
+      indexName: 'Bilup Documentation Crawler',
+      apiKey: '2e6593daef4974ad3d144ebd2fdf488f'
     },
     colorMode: {
       respectPrefersColorScheme: true,

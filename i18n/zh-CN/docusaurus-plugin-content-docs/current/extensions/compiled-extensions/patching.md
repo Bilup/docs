@@ -89,7 +89,7 @@ cst_patch(ScriptTreeGenerator.prototype, {
   
   descendInput(fn, block, ...args) {
     switch (block.opcode) {
-      // 报告器积木（返回值）
+      // 返回值积木
       case 'myextension_reporter':
         return {
           block,
@@ -97,7 +97,7 @@ cst_patch(ScriptTreeGenerator.prototype, {
           VALUE: this.descendInputOfBlock(block, 'VALUE'),
         };
         
-      // 布尔报告器
+      // 布尔返回值
       case 'myextension_predicate':
         return {
           block,
@@ -152,9 +152,9 @@ cst_patch(JSGenerator.prototype, {
 });
 ```
 
-### 报告器积木实现
+### 返回值积木实现
 
-报告器积木返回值并必须指定其类型：
+返回值积木的返回值并必须指定其类型：
 
 ```javascript
 cst_patch(JSGenerator.prototype, {

@@ -138,7 +138,7 @@ cst_patch(ScriptTreeGenerator.prototype, {
   },
   
   descendInput(fn, block, ...args) {
-    // 报告器积木的类似结构
+    // 返回值积木的类似结构
     switch (block.opcode) {
       case 'myextension_myblock':
         return {

@@ -46,11 +46,11 @@ cd scratch-gui
 # 安装依赖（比 `npm install` 更快且不会修改 package-lock.json）
 npm ci
 
-# 启动开发游乐场
+# 启动开发服务器
 npm start
 ```
 
-这会启动大多数包的实时开发服务器（如果有的话）。例如，对于 scratch-gui，可以在 [http://localhost:8601/](http://localhost:8601/) 访问游乐场。有关其他包的信息，请查看 README 或 `npm start` 的输出。
+这会启动大多数包的实时开发服务器（如果有的话）。例如，对于 scratch-gui，可以在 [http://localhost:8601/](http://localhost:8601/) 访问开发服务器。有关其他包的信息，请查看 README 或 `npm start` 的输出。
 
 ## 构建 {#build}
 

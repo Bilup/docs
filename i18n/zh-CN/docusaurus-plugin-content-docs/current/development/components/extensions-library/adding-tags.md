@@ -35,7 +35,7 @@ title: 添加标签
 ```js
 import {APP_NAME} from '../brand';
 
-// 因为这些都是品牌名称，不需要可翻译。
+// 因为这些都是品牌名称，不需要翻译。
 export default [
      {tag: 'scratch', intlLabel: 'Scratch'},
      {tag: 'tw', intlLabel: APP_NAME},

@@ -178,13 +178,13 @@ const BlockType = Scratch.BlockType;
 
 // 基本积木类型
 BlockType.COMMAND     // 'command' - 堆叠积木（圆角）
-BlockType.REPORTER    // 'reporter' - 圆形报告器积木
+BlockType.REPORTER    // 'reporter' - 圆角返回值积木
 BlockType.BOOLEAN     // 'Boolean' - 六边形布尔积木
 
 // 控制流积木
 BlockType.HAT         // 'hat' - 帽子积木（启动脚本）
 BlockType.CONDITIONAL // 'conditional' - If/else 样式积木
-BlockType.LOOP        // 'loop' - 重复/永远循环样式积木
+BlockType.LOOP        // 'loop' - 重复执行样式积木
 
 // 特殊类型
 BlockType.EVENT       // 'event' - 事件帽子（无实现）

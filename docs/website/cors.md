@@ -32,7 +32,7 @@ It depends on what the URL is for.
 
 ## Desktop app {#desktop}
 
-In [Bilup Desktop](https://desktop.bilup.org/), there is an option to bypass CORS to allow access to any website. For security reasons it's disabled by default to match normal web browsers. Open up Desktop Settings under the Settings button in the top left (in older versions Desktop Settings is under the ? button in the top right instead):
+In [Bilup Desktop](https://desktop.bilup.org/), there is an option to bypass CORS to allow access to any website. For security reasons it's disabled by default to match normal web browsers. Open up Desktop Settings in the position shown in the image below (Also can be found in ? button in the top right corner):
 
 import settingsMenu from './assets/desktop-settings.png';
 

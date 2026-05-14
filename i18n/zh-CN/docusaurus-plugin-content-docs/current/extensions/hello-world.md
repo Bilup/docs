@@ -6,7 +6,7 @@ hide_table_of_contents: true
 
 import {ExtensionCode} from './utils.js';
 
-让我们从创建一个非常简单的扩展开始。这个扩展只添加一个报告 "Hello, world!" 的积木：
+让我们从创建一个非常简单的扩展开始。这个扩展只添加一个返回 "Hello, world!" 的积木：
 
 <ExtensionCode title="hello-world">{require('!raw-loader!@site/static/example-extensions/hello-world.js')}</ExtensionCode>
 
@@ -79,9 +79,9 @@ Scratch.extensions.register(new HelloWorld());
 
 | | 描述 | 示例 |
 |:-:|:-:|:-:|
-|Scratch.BlockType.COMMAND|不报告值的积木|move 10 steps|
-|Scratch.BlockType.REPORTER|报告字符串或数字的圆形积木|x position, costume name|
-|Scratch.BlockType.BOOLEAN|带尖边的积木，报告布尔值（true 或 false）|mouse down|
+|Scratch.BlockType.COMMAND|不返回值的积木|move 10 steps|
+|Scratch.BlockType.REPORTER|返回字符串或数字的圆形积木|x position, costume name|
+|Scratch.BlockType.BOOLEAN|带尖边的积木，返回布尔值（true 或 false）|mouse down|
 |Scratch.BlockType.HAT|响应特定条件开始的积木。稍后讨论。|when loudness > 10|
 |Scratch.BlockType.EVENT|仅响应事件开始的积木。稍后讨论。|when this sprite clicked|
 

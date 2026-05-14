@@ -20,19 +20,20 @@ Custom reporters technically don't let you do anything you couldn't do before --
 
 <!-- sorry for the bitmaps, scratchblocks was broken when I made these https://github.com/scratchblocks/scratchblocks/issues/486 -->
 
-<img src={require('./assets/repeat-old.png').default} style={{height: '429px'}} />
+![](./assets/repeat-old.svg)
 
 This works, but it's pretty ugly, and will only get worse as you use the block more. Using the return block to create a custom reporter, this becomes much simpler:
 
-<img src={require('./assets/repeat-return.png').default} style={{height: '410px'}} />
+![](./assets/repeat-return.svg)
 
 ## How to use {#usage}
 
-Open the extension library by clicking the button in the bottom left of the editor (same place where you find things like "pen"), then enable "Custom Reporters":
+<!-- Open the extension library by clicking the button in the bottom left of the editor (same place where you find things like "pen"), then enable "Custom Reporters":
 
-![](./assets/return-library.png)
+![](./assets/return-library.png) -->
+This feature is automatically enabled in Bilup and no normal way to disable it.
 
-Then, create a custom block as you normally would. To make a custom reporter, just drag a "return" block into the script -- it'll be located at the bottom of the custom block list. You don't have to check any boxes or toggle anything.
+Create a custom block as you normally would. To make a custom reporter, just drag a "return" block into the script -- it'll be located at the bottom of the custom block list. You don't have to check any boxes or toggle anything.
 
 Once a return block is hit, it functions similarly to "stop this script".
 
@@ -46,7 +47,7 @@ Recursion is also supported. This can be especially hard to grasp, but basically
 
 Using recursion, you can rewrite the repeat block to use no variables at all:
 
-<img src={require('./assets/repeat-recursion.png').default} style={{height: '291px'}} />
+![](./assets/repeat-recursion.svg)
 
 Just like custom reporters themselves, recursion doesn't let you do anything that wasn't technically possible already, but it can make it much easier to understand. (Anything written with loops can be rewritten with recursion. Anything written with recursion can be rewritten with loops. Sometimes one solution is easier than the other.)
 
@@ -64,6 +65,6 @@ It is recommended to ensure that custom reporters only run some algorithm and ou
 
 To improve performance, the compiler has a feature known as [short circuiting](https://en.wikipedia.org/wiki/Short-circuit_evaluation). Imagine a Scratch block like "&lt; (1 = 2) and (3 = 3) &gt;". When the compiler sees this block, it first evaluates "1 = 2", which is clearly false. In this case, the compiler doesn't even need to check the other side of the "and" block as it won't matter: the final result will always be false. Typically this is just free performance, but if your blocks have side effects such as moving sprites, different behaviors will occur as the interpreter always evaluates all blocks. Try this script to see:
 
-<img src={require('./assets/short-circuit.png').default} style={{height: '375px'}} />
+![](./assets/short-circuit.svg)
 
 If you have several custom reporters nested deeply inside other blocks, the order they run in can differ between the compiler and interpreter.

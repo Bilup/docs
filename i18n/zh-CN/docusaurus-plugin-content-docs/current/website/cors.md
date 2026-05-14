@@ -32,7 +32,7 @@ CORS 是网站声明是否希望其他网站能够访问它们的方式。默认
 
 ## 桌面应用 {#desktop}
 
-在 [Bilup 桌面版](https://desktop.bilup.org/) 中，有一个绕过 CORS 以允许访问任何网站的选项。出于安全原因，它默认是禁用的，以匹配普通网页浏览器。打开左上角设置按钮下的桌面设置（在旧版本中，桌面设置在右上角的 ? 按钮下）：
+在 [Bilup 桌面版](https://desktop.bilup.org/) 中，有一个绕过 CORS 以允许访问任何网站的选项。出于安全原因，它默认是禁用的，以匹配普通网页浏览器。打开如下图位置的桌面设置（也可以在右上角的 ? 按钮下找到）：
 
 import settingsMenu from './assets/desktop-settings.png';
 

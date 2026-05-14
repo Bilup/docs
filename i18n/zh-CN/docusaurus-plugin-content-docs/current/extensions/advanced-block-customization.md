@@ -83,9 +83,9 @@ g.innerHTML = `<svg width="640" height="400" viewBox="0,0,640,400">
 }
 ```
 
-## 报告器值自定义
+## 返回值（显示）自定义
 
-你也可以使用运行时补丁来自定义报告器值的显示方式：
+你也可以使用运行时补丁来自定义返回值的显示方式：
 
 ```javascript
 // Patch the visual report system

@@ -61,7 +61,7 @@ Scratch.extensions.register(new MyExtension());
 }
 ```
 
-### 报告积木
+### 返回值积木
 返回可在其他积木中使用的值：
 
 ```javascript
