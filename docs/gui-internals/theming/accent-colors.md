@@ -11,9 +11,8 @@ Accent colors define the primary color scheme used throughout Bilup's interface.
 
 Bilup includes many built-in accent colors:
 
-- **Basic Colors**: Red, Orange, Yellow, Green, Blue, Purple, Pink
-- **Pride Themes**: Rainbow, Trans, Gay, Rotur  
-- **Gradient Themes**: Sunset, Ocean, Aurora, Cosmic, Fire, Nebula, Lavender, Mint, Cherry, Sky, Forest, Coral
+- **Basic Colors**: Red, Orange, Yellow, Green, Green Tea, Pale Blue, Blue, Purple, Eggplant
+- **Gradient Colors**: Rainbow 
 
 ## Structure
 
@@ -131,7 +130,6 @@ theme.getGuiColors()['looks-secondary']
 Some accents use gradients instead of solid colors:
 
 ```javascript
-// src/lib/themes/accent/sunset.js
 const guiColors = {
     'looks-secondary': 'linear-gradient(135deg, #ff6b6b, #feca57)',
     'looks-transparent': 'linear-gradient(135deg, rgba(255,107,107,0.35), rgba(254,202,87,0.35))',
@@ -139,12 +137,11 @@ const guiColors = {
 };
 ```
 
-### Pride Flag Accents
+### Multi-Color Accents
 
-Pride-themed accents often use multiple colors or patterns:
+Some accents use multiple colors or patterns:
 
 ```javascript
-// src/lib/themes/accent/rainbow.js  
 const guiColors = {
     'looks-secondary': 'linear-gradient(90deg, #e40303, #ff8c00, #ffed00, #008018, #004cff, #732982)',
     // ...
