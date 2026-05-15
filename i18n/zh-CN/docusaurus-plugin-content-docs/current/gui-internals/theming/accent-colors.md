@@ -1,23 +1,22 @@
 ---
-title: 强调色
+title: 主题色
 sidebar_position: 2
 ---
 
-# 强调色
+# 主题色
 
-强调色定义了 Bilup 界面中使用的主色调方案。它们位于 `src/lib/themes/accent/`，可以与任何 GUI 或积木主题混合使用。
+主题色定义了 Bilup 界面中使用的主色调方案。它们位于 `src/lib/themes/accent/`，可以与任何 GUI 或积木主题混合使用。
 
-## 可用强调色
+## 可用的主题色
 
-Bilup 包含许多内置强调色：
+Bilup 包含许多内置主题色：
 
-- **基础颜色**: Red, Orange, Yellow, Green, Blue, Purple, Pink
-- **骄傲主题**: Rainbow, Trans, Gay, Rotur
-- **渐变主题**: Sunset, Ocean, Aurora, Cosmic, Fire, Nebula, Lavender, Mint, Cherry, Sky, Forest, Coral
+- **基础颜色**：Red、Orange、Yellow、Green、Green Tea、Pale Blue、Blue、Purple、Eggplant
+- **渐变颜色**：Rainbow
 
 ## 结构
 
-每个强调文件导出 `guiColors` 和 `blockColors`：
+每个主题色文件导出 `guiColors` 和 `blockColors`：
 
 ```javascript
 // src/lib/themes/accent/blue.js
@@ -33,9 +32,9 @@ const blockColors = {};
 export { guiColors, blockColors };
 ```
 
-## 添加新强调色
+## 添加新主题色
 
-### 1. 创建强调色文件
+### 1. 创建主题色文件
 
 创建 `src/lib/themes/accent/purple.js`：
 
@@ -67,7 +66,7 @@ export { guiColors, blockColors };
 import * as accentPurple from './accent/purple';
 
 const ACCENTS = [
-    // ...现有强调色...
+    // ...现有主题色...
     {
         name: 'Purple',
         accent: accentPurple,
@@ -81,16 +80,16 @@ const ACCENTS = [
 
 ### GUI 颜色
 
-强调色主要影响这些 GUI 属性：
+主题色主要影响以下 GUI 属性：
 
-- `looks-secondary`: UI 元素的主强调色
-- `looks-transparent`: 半透明版本（35% 不透明度）
-- `looks-light-transparent`: 浅色透明版本（15% 不透明度）
-- `looks-secondary-dark`: 用于对比的深色变体
+- `looks-secondary`：UI 元素的主主题色
+- `looks-transparent`：半透明版本（35% 不透明度）
+- `looks-light-transparent`：浅色透明版本（15% 不透明度）
+- `looks-secondary-dark`：用于对比的深色变体
 
 ### 积木颜色
 
-强调色可以覆盖特定积木类别的颜色：
+主题色可以覆盖特定积木类别的颜色：
 
 ```javascript
 const blockColors = {
@@ -110,28 +109,27 @@ const blockColors = {
 
 ## 颜色解析
 
-强调色按此优先级应用：
+主题色按以下优先级应用：
 
-1. **强调色**（最高优先级）
+1. **主题色**（最高优先级）
 2. GUI 主题颜色
 3. 基础主题颜色（后备）
 
-示例解析：
+解析示例：
 ```javascript
-// 如果强调色定义了 'looks-secondary'，则使用它
+// 如果主题色定义了 'looks-secondary'，则使用它
 // 否则，使用 GUI 主题的 'looks-secondary'
 // 否则，使用基础浅色主题的 'looks-secondary'
 theme.getGuiColors()['looks-secondary']
 ```
 
-## 特殊强调色类型
+## 特殊主题色类型
 
-### 渐变强调色
+### 渐变主题色
 
-某些强调色使用渐变而不是纯色：
+某些主题色使用渐变而非纯色：
 
 ```javascript
-// src/lib/themes/accent/sunset.js
 const guiColors = {
     'looks-secondary': 'linear-gradient(135deg, #ff6b6b, #feca57)',
     'looks-transparent': 'linear-gradient(135deg, rgba(255,107,107,0.35), rgba(254,202,87,0.35))',
@@ -139,12 +137,11 @@ const guiColors = {
 };
 ```
 
-### 骄傲旗帜强调色
+### 多色主题色
 
-骄傲主题的强调色通常使用多种颜色或图案：
+某些主题色使用多种颜色或图案：
 
 ```javascript
-// src/lib/themes/accent/rainbow.js
 const guiColors = {
     'looks-secondary': 'linear-gradient(90deg, #e40303, #ff8c00, #ffed00, #008018, #004cff, #732982)',
     // ...
@@ -153,7 +150,7 @@ const guiColors = {
 
 ## 在组件中的使用
 
-强调色通过 CSS 变量自动应用于组件：
+主题色通过 CSS 变量自动应用于组件：
 
 ```css
 .accent-button {
@@ -168,7 +165,7 @@ const guiColors = {
 
 ## 测试
 
-通过创建主题实例测试您的强调色：
+通过创建主题实例来测试您的主题色：
 
 ```javascript
 import { Theme } from './index';
