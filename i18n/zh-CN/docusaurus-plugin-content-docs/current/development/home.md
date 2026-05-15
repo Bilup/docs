@@ -198,3 +198,241 @@ npm run prepare
 git config user.name "你的名字"
 git config user.email "your.email@example.com"
 ```
+
+## 调试和开发工具
+
+### 浏览器 DevTools 集成
+
+Bilup 提供了增强的调试功能：
+
+```javascript
+// 在浏览器控制台中可用
+window.vm          // Scratch VM 实例
+window.reduxStore  // Redux store
+window.ScratchBlocks // Blockly 实例
+window.addons      // 插件系统
+
+// 调试辅助函数
+window.debug = {
+    vm: window.vm,
+    store: window.reduxStore,
+    enableVerboseLogging: () => { /* ... */ },
+    dumpState: () => console.log(window.reduxStore.getState())
+};
+```
+
+### 开发标志
+
+通过 URL 参数启用开发功能：
+
+```
+http://localhost:8601/?debug=true&logging=verbose&addon_dev=true
+```
+
+可用标志：
+- `debug=true` - 启用调试模式
+- `logging=verbose` - 详细控制台日志
+- `addon_dev=true` - 启用插件开发工具
+- `profiling=true` - 启用性能分析
+
+## 测试策略
+
+### 测试类型
+
+1. **单元测试** - 单个组件和函数测试
+2. **集成测试** - 组件交互测试
+3. **端到端测试** - 完整用户工作流程测试
+4. **视觉回归测试** - UI 一致性测试
+5. **性能测试** - 加载和执行时间测试
+
+### 运行测试
+
+```bash
+# 运行所有测试
+npm test
+
+# 在监听模式下运行测试
+npm run test:watch
+
+# 运行特定测试文件
+npm test -- Button.test.js
+
+# 运行测试并生成覆盖率报告
+npm run test:coverage
+
+# 运行端到端测试
+npm run test:e2e
+```
+
+## 代码质量标准
+
+### ESLint 配置
+
+Bilup 遵循严格的 lint 规则：
+
+```json
+{
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended"
+    ],
+    "rules": {
+        "indent": ["error", 4],
+        "quotes": ["error", "single"],
+        "semi": ["error", "always"],
+        "no-unused-vars": "error",
+        "react/prop-types": "error"
+    }
+}
+```
+
+### 代码格式化
+
+Prettier 配置以保持一致的格式：
+
+```json
+{
+    "printWidth": 100,
+    "tabWidth": 4,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "quoteProps": "as-needed",
+    "trailingComma": "none"
+}
+```
+
+## 性能指南
+
+### 包大小管理
+
+- **代码分割** - 用于大型组件
+- **Tree shaking** - 消除死代码
+- **动态导入** - 用于可选功能
+- **资源优化** - 用于图像和字体
+
+### 运行时性能
+
+- **React.memo** - 用于昂贵组件
+- **useMemo/useCallback** - 用于昂贵计算
+- **虚拟滚动** - 用于大型列表
+- **防抖** - 用于高频事件
+
+### 内存管理
+
+- **事件监听器清理** - 在 useEffect 清理中
+- **订阅管理** - 用于 Redux 连接
+- **图像加载优化** - 懒加载
+- **垃圾回收意识** - 在长时间运行操作中
+
+## 安全注意事项
+
+### 输入验证
+
+```javascript
+// 始终验证用户输入
+const validateProjectData = (data) => {
+    if (!data || typeof data !== 'object') {
+        throw new Error('无效的项目数据');
+    }
+    // 额外验证...
+};
+```
+
+### 内容安全策略
+
+开发环境 CSP：
+
+```javascript
+const csp = {
+    "default-src": ["'self'"],
+    "script-src": ["'self'", "'unsafe-eval'"], // VM 需要
+    "style-src": ["'self'", "'unsafe-inline'"], // 主题需要
+    "img-src": ["'self'", "data:", "blob:"],
+    "connect-src": ["'self'", "wss://clouddata.bilup.org"]
+};
+```
+
+## 文档标准
+
+### 代码文档
+
+```javascript
+/**
+ * 将项目加载到 VM
+ * @param {Object} projectData - 要加载的项目数据
+ * @param {boolean} [showProgress=true] - 是否显示加载进度
+ * @returns {Promise<void>} 项目加载完成时解析的 Promise
+ * @throws {Error} 当项目数据无效时
+ */
+async function loadProject(projectData, showProgress = true) {
+    // 实现...
+}
+```
+
+### 组件文档
+
+```jsx
+/**
+ * 具有一致样式的按钮组件
+ * 
+ * @component
+ * @example
+ * <Button onClick={handleClick} variant="primary">
+ *   点击我
+ * </Button>
+ */
+const Button = ({ 
+    children, 
+    onClick, 
+    variant = 'default',
+    disabled = false 
+}) => {
+    // 实现...
+};
+
+Button.propTypes = {
+    children: PropTypes.node.isRequired,
+    onClick: PropTypes.func.isRequired,
+    variant: PropTypes.oneOf(['default', 'primary', 'secondary']),
+    disabled: PropTypes.bool
+};
+```
+
+## 社区开发
+
+### 开源贡献
+
+Bilup 是开源的，欢迎贡献：
+
+1. **Issues** - 报告错误和请求功能
+2. **Pull Requests** - 提交代码改进
+3. **Discussions** - 分享想法并获得帮助
+4. **Documentation** - 改进指南和示例
+
+### 代码审核流程
+
+1. **自动化检查**必须通过（测试、linting、构建）
+2. **维护者手动审核**
+3. **在多个浏览器和设备上测试**
+4. **必要时更新文档**
+5. **批准后合并**
+
+### 发布流程
+
+1. **发布前功能冻结**
+2. **综合测试阶段**
+3. **发布候选版本创建**
+4. **社区反馈收集**
+5. **最终发布和分发**
+
+准备好开始开发了吗？选择你的路径：
+
+- **Bilup 新手？** 从 [入门指南](./getting-started.md) 开始
+- **想创建扩展？** 查看 [扩展开发](../extensions/introduction.md)
+- **准备贡献？** 阅读我们的 [贡献指南](./contributing.md)
+
+---
+
+*有关具体的实现细节和高级主题，请探索本开发指南中的各个部分。*

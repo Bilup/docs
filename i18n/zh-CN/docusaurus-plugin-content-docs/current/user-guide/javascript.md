@@ -198,4 +198,248 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer();
 
 // 添加到页面
+document.body.appendChild(renderer.domElement);
 ```
+
+#### Socket.io 用于实时通信
+```javascript
+// 连接到 WebSocket 服务器
+const socket = io('https://your-server.com');
+
+socket.on('connect', () => {
+  console.log('已连接到服务器');
+});
+
+socket.on('gameUpdate', (data) => {
+  // 处理实时游戏更新
+  updateGameState(data);
+});
+```
+
+## 高级模式
+
+### 自定义扩展
+创建项目特定扩展：
+
+```javascript
+class MyCustomExtension {
+  getInfo() {
+    return {
+      id: 'myextension',
+      name: '我的自定义扩展',
+      blocks: [
+        {
+          opcode: 'customBlock',
+          blockType: 'reporter',
+          text: '自定义计算 [NUM]',
+          arguments: {
+            NUM: { type: 'number', defaultValue: 10 }
+          }
+        }
+      ]
+    };
+  }
+
+  customBlock(args) {
+    return Math.pow(args.NUM, 2) + 1;
+  }
+}
+
+// 注册扩展（非沙盒化）
+Scratch.extensions.register(new MyCustomExtension());
+```
+
+### 事件系统
+创建自定义事件系统：
+
+```javascript
+class EventManager {
+  constructor() {
+    this.listeners = {};
+  }
+
+  on(event, callback) {
+    if (!this.listeners[event]) {
+      this.listeners[event] = [];
+    }
+    this.listeners[event].push(callback);
+  }
+
+  emit(event, data) {
+    if (this.listeners[event]) {
+      this.listeners[event].forEach(callback => callback(data));
+    }
+  }
+}
+
+const events = new EventManager();
+
+// 在 Scratch 中使用
+events.on('scoreUpdate', (score) => {
+  vm.runtime.getTargetForStage().lookupVariableByNameAndType('score', '').value = score;
+});
+```
+
+### 性能监控
+监控项目性能：
+
+```javascript
+class PerformanceMonitor {
+  constructor() {
+    this.startTime = performance.now();
+    this.frameCount = 0;
+  }
+
+  measureFrame() {
+    this.frameCount++;
+    const currentTime = performance.now();
+    const elapsed = currentTime - this.startTime;
+    
+    if (elapsed >= 1000) {
+      const fps = this.frameCount / (elapsed / 1000);
+      console.log(`FPS: ${fps.toFixed(1)}`);
+      
+      this.frameCount = 0;
+      this.startTime = currentTime;
+    }
+  }
+}
+
+const monitor = new PerformanceMonitor();
+vm.runtime.on('PROJECT_RUN_START', () => {
+  monitor.measureFrame();
+});
+```
+
+## 集成模式
+
+### 积木-JavaScript 桥接
+创建积木和 JavaScript 之间的无缝集成：
+
+```javascript
+// 创建桥接对象
+window.ScratchBridge = {
+  // 从积木调用：（调用 js 函数 [bridge.calculate] 参数 [10]）
+  calculate: (input) => {
+    return Math.complex.calculation(input);
+  },
+  
+  // 从积木调用：（调用 js 函数 [bridge.saveData] 参数 [data]）
+  saveData: (data) => {
+    localStorage.setItem('projectData', JSON.stringify(data));
+    return '已保存';
+  },
+  
+  // 从积木调用：（调用 js 函数 [bridge.loadData]）
+  loadData: () => {
+    return JSON.parse(localStorage.getItem('projectData') || '{}');
+  }
+};
+```
+
+### 状态同步
+保持 JavaScript 和 Scratch 状态同步：
+
+```javascript
+class StateSynchronizer {
+  constructor(vm) {
+    this.vm = vm;
+    this.jsState = {};
+    this.setupWatchers();
+  }
+
+  setupWatchers() {
+    // 监视 Scratch 变量
+    this.vm.runtime.on('VARIABLE_CHANGED', (variable) => {
+      this.jsState[variable.name] = variable.value;
+      this.onStateChange(variable.name, variable.value);
+    });
+  }
+
+  updateScratchVariable(name, value) {
+    const variable = this.vm.runtime.getTargetForStage()
+      .lookupVariableByNameAndType(name, '');
+    if (variable) {
+      variable.value = value;
+    }
+  }
+
+  onStateChange(name, value) {
+    // 状态改变时的自定义逻辑
+    console.log(`${name} 改变为 ${value}`);
+  }
+}
+```
+
+## 安全最佳实践
+
+### 输入验证
+始终验证来自外部来源的数据：
+
+```javascript
+function validateInput(input) {
+  // 检查类型
+  if (typeof input !== 'string') return false;
+  
+  // 检查长度
+  if (input.length > 1000) return false;
+  
+  // 检查危险模式
+  if (/<script|javascript:|data:/i.test(input)) return false;
+  
+  return true;
+}
+```
+
+### 清理
+在使用数据之前进行清理：
+
+```javascript
+function sanitizeHTML(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+```
+
+### 错误处理
+实施健壮的错误处理：
+
+```javascript
+try {
+  const result = riskyOperation();
+  return result;
+} catch (error) {
+  console.error('操作失败:', error);
+  return '发生错误';
+}
+```
+
+## 调试 JavaScript
+
+### 控制台日志
+使用控制台方法进行调试：
+
+```javascript
+console.log('调试信息:', data);
+console.warn('警告信息');
+console.error('发生错误');
+console.table(arrayData);
+```
+
+### 浏览器开发者工具
+- **F12**：打开开发者工具
+- **Console 选项卡**：查看日志和执行代码
+- **Sources 选项卡**：设置断点和调试
+- **Network 选项卡**：监控 API 调用
+
+### 性能分析
+分析 JavaScript 性能：
+
+```javascript
+console.time('operation');
+// 你的代码在这里
+console.timeEnd('operation');
+```
+
+Bilup 中的 JavaScript 集成为创建复杂的交互式项目开辟了无限可能。在使用这些功能时要负责任，并始终考虑自定义代码的安全性问题！

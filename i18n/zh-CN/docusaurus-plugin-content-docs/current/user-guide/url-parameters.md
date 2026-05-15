@@ -197,3 +197,100 @@ https://editor.bilup.org/?cloud_host=wss://clouddata.bilup.org
 ```
 https://editor.bilup.org/123456789?turbo&fps=60&interpolate
 ```
+
+### 教育嵌入
+简洁的教育嵌入：
+```
+https://editor.bilup.org/123456789/embed?autoplay&size=800x600
+```
+
+### 开发测试
+开发环境：
+```
+https://editor.bilup.org/?turbo&fps=120&hqpen
+```
+
+### 高性能
+最大性能：
+```
+https://editor.bilup.org/?turbo&fps=120&hqpen
+```
+
+### 无障碍模式
+使用操作系统/浏览器的无障碍功能。主题在 UI 中控制，而不是通过 URL。
+
+## URL 编码
+
+### 特殊字符
+在 URL 中编码特殊字符：
+```
+空格: %20
+#: %23
+&: %26
+=: %3D
+```
+
+### 带编码的示例
+```
+https://editor.bilup.org/?fps=60&hqpen
+```
+
+## JavaScript URL 操作
+
+### 读取参数
+```javascript
+const urlParams = new URLSearchParams(window.location.search);
+const turboMode = urlParams.has('turbo');
+const fps = urlParams.get('fps') || '30';
+```
+
+### 设置参数
+```javascript
+const url = new URL(window.location);
+url.searchParams.set('fps', '60');
+url.searchParams.set('turbo', '');
+window.history.pushState({}, '', url);
+```
+
+### 编程构建 URL
+```javascript
+function buildBilupURL(projectId, options = {}) {
+  const url = new URL(`https://editor.bilup.org/${projectId}`);
+  
+  Object.entries(options).forEach(([key, value]) => {
+    if (value === true) {
+      url.searchParams.set(key, '');
+    } else if (value !== false && value !== null) {
+      url.searchParams.set(key, value);
+    }
+  });
+  
+  return url.toString();
+}
+
+// 用法
+const gameURL = buildBilupURL('123456789', {
+  turbo: true,
+  fps: 60,
+  interpolate: true
+});
+```
+
+## 最佳实践
+
+### URL 长度
+- 保持 URL 合理长度（少于 2000 个字符）
+- 仅使用必要的参数
+- 考虑使用简短的参数名称
+
+### 用户体验
+- 提供合理的默认值
+- 谨慎使用自动播放
+- 彻底测试 URL
+
+### 性能
+- 组合兼容的性能参数
+- 测试参数组合的性能影响
+- 监控参数之间的冲突
+
+URL 参数为 Bilup 提供了强大的自定义功能。使用它们为不同用户和用例创建定制体验！

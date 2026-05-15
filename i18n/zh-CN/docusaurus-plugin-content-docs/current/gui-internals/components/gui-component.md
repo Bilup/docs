@@ -9,12 +9,12 @@ sidebar_position: 1
 
 ## 组件概述
 
-GUI 组件位于 `src/components/gui/gui.jsx`，是一个复杂的 React 组件，它：
+GUI 组件位于 `src/components/gui/gui.jsx`，是一个复杂的 React 组件，它具有以下功能：
 
 - 管理整体应用布局
 - 协调不同的编辑模式（积木、造型、声音）
 - 处理全屏和嵌入模式
-- 管理模态框可见性和状态
+- 管理模态框的可见性和状态
 - 与主题系统集成
 
 ## 文件结构
@@ -31,7 +31,7 @@ src/components/gui/
 
 ## 组件架构
 
-### 主布局结构
+### 主要布局结构
 
 ```jsx
 const GUIComponent = props => {
@@ -41,12 +41,12 @@ const GUIComponent = props => {
                 <Box className={styles.pageWrapper}>
                     {/* 菜单栏 */}
                     <MenuBar {...menuBarProps} />
-                    
-                    {/* 主内容区域 */}
+
+                    {/* 主要内容区域 */}
                     <Box className={styles.bodyWrapper}>
                         <Box className={styles.flexWrapper}>
-                            
-                            {/* 左面板 - 积木编辑器 */}
+
+                            {/* 左侧面板 - 积木编辑器 */}
                             <Box className={styles.editorWrapper}>
                                 <Tabs selectedIndex={activeTabIndex}>
                                     <TabList className={styles.tabList}>
@@ -66,8 +66,8 @@ const GUIComponent = props => {
                                     </TabPanel>
                                 </Tabs>
                             </Box>
-                            
-                            {/* 右面板 - 舞台和目标 */}
+
+                            {/* 右侧面板 - 舞台和目标 */}
                             <Box className={styles.stageAndTargetWrapper}>
                                 <StageWrapper vm={vm} />
                                 <TargetPane vm={vm} />
@@ -91,7 +91,7 @@ const GUIComponent = props => {
 
 ### 响应式布局
 
-GUI 使用 `react-responsive` 适应不同屏幕尺寸：
+GUI 使用 `react-responsive` 适应不同的屏幕尺寸：
 
 ```jsx
 <MediaQuery minWidth={1024}>
@@ -388,7 +388,7 @@ useEffect(() => {
 
 ```jsx
 const GUI = React.memo(({ vm, activeTabIndex, ...props }) => {
-    // 记忆化昂贵计算
+    // 记忆化耗时计算
     const stageSize = useMemo(() => 
         resolveStageSize(props.stageSizeMode, props.isFullScreen),
         [props.stageSizeMode, props.isFullScreen]

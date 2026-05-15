@@ -1,17 +1,17 @@
 ---
-title: 架构深入解析
+title: 架构深度解析
 sidebar_position: 2
 ---
 
 # Bilup GUI 架构
 
-本文深入介绍 Bilup 的 GUI 架构、设计模式和核心系统。
+本文档将深入介绍 Bilup 的 GUI 架构、设计模式和核心系统。
 
 ## 系统架构
 
-### 高层概述
+### 高级概述
 
-Bilup 遵循分层架构模式，关注点清晰分离：
+Bilup 遵循分层架构模式，具有清晰的关注点分离：
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -105,7 +105,7 @@ const Button = ({ children, onClick, disabled, className }) => (
 连接到 Redux store 获取数据：
 
 ```jsx
-// 示例：连接的角色选择器
+// 示例：已连接的角色选择器
 const SpriteSelectorContainer = connect(
     state => ({
         sprites: state.targets.sprites,
@@ -184,7 +184,7 @@ const withErrorBoundary = (WrappedComponent) => {
             settings: false
         },
 
-        // 警告和通知
+        // 提示和通知
         alerts: {
             visible: true,
             alertsList: []
@@ -353,7 +353,7 @@ Bilup 使用 CSS 自定义属性进行主题化：
 
 ```css
 :root {
-    /* 颜色调色板 */
+    /* 调色板 */
     --ui-primary: #4c97ff;
     --ui-secondary: #855cd6;
     --ui-white: #ffffff;
@@ -423,7 +423,7 @@ class ComponentManager {
     }
 
     componentWillUnmount() {
-        // 清理监听器防止内存泄漏
+        // 清理监听器以防止内存泄漏
         this.vm.off('PROJECT_LOADED', this.handleProjectLoaded);
 
         // 取消待处理请求
@@ -566,8 +566,8 @@ class AddonSandbox {
 }
 ```
 
-此架构为 Bilup 强大、可扩展且高性能的 GUI 系统提供了基础。每一层都有清晰的职责和接口，实现了可维护和可扩展的开发。
+这个架构为 Bilup 强大的、可扩展的、高性能的 GUI 系统提供了基础。每一层都有清晰的职责和接口，实现了可维护和可扩展的开发。
 
 ---
 
-*具体实现细节请参阅各个组件和系统文档部分。*
+*有关具体的实现细节，请参阅各个组件和系统文档部分。*

@@ -197,3 +197,89 @@ Content-Security-Policy: frame-src https://editor.bilup.org;
   sandbox="allow-scripts allow-same-origin allow-fullscreen">
 </iframe>
 ```
+
+## 平台特定嵌入
+
+### WordPress
+使用 WordPress 短代码或嵌入块：
+
+```php
+// Bilup 嵌入的自定义短代码
+function bilup_embed_shortcode($atts) {
+  $atts = shortcode_atts([
+    'id' => '',
+    'width' => 480,
+    'height' => 360,
+    'autoplay' => false,
+    'turbo' => false
+  ], $atts);
+  
+  $src = "https://editor.bilup.org/{$atts['id']}/embed";
+  if ($atts['autoplay']) $src .= "?autoplay";
+  if ($atts['turbo']) $src .= $atts['autoplay'] ? "&turbo" : "?turbo";
+  
+  return "<iframe src='{$src}' width='{$atts['width']}' height='{$atts['height']}' frameborder='0'></iframe>";
+}
+add_shortcode('bilup', 'bilup_embed_shortcode');
+```
+
+### React/Vue.js
+创建可复用组件：
+
+```jsx
+// React 组件
+import React from 'react';
+
+const BilupEmbed = ({ 
+  projectId, 
+  width = 480, 
+  height = 360, 
+  autoplay = false,
+  turbo = false 
+}) => {
+  const params = new URLSearchParams();
+  if (autoplay) params.append('autoplay', '');
+  if (turbo) params.append('turbo', '');
+  
+  const src = `https://editor.bilup.org/${projectId}/embed?${params}`;
+  
+  return (
+    <iframe
+      src={src}
+      width={width}
+      height={height}
+      frameBorder="0"
+      allowFullScreen
+    />
+  );
+};
+
+export default BilupEmbed;
+```
+
+## 嵌入故障排除
+
+### 常见问题
+
+#### 项目无法加载
+- 检查项目 ID 是否正确
+- 确认项目已公开分享
+- 检查网络连接
+- 尝试不同的嵌入参数
+
+#### 性能问题
+- 启用 turbo 模式：`?turbo`
+- 如有需要降低帧率：`?fps=30`
+- 检查浏览器兼容性
+- 监控内存使用
+
+#### 显示问题
+- 验证 iframe 尺寸
+- 检查 CSS 冲突
+- 测试响应式行为
+- 验证 HTML 结构
+
+### 调试
+使用浏览器开发工具控制台和网络检查器。没有 `debug` URL 参数。
+
+Bilup 的嵌入功能使将互动内容集成到任何网站或应用程序变得容易。使用这些功能为用户创建引人入胜的互动体验！

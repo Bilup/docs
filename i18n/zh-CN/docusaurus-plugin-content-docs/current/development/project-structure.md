@@ -188,7 +188,7 @@ src/lib/
 
 ### 动作类型
 
-动作遵循模式 `CATEGORY/ACTION_NAME`：
+Action 遵循模式 `CATEGORY/ACTION_NAME` ：
 
 ```javascript
 // GUI 动作
@@ -198,3 +198,278 @@ src/lib/
 
 // 项目动作
 'project/LOAD_PROJECT_START'
+'project/LOAD_PROJECT_SUCCESS'
+'project/LOAD_PROJECT_ERROR'
+
+// Modal actions
+'modals/OPEN_EXTENSION_LIBRARY'
+'modals/CLOSE_COSTUME_LIBRARY'
+
+// Theme actions
+'theme/SET_THEME'
+'theme/LOAD_CUSTOM_THEME'
+```
+
+## 插件系统结构
+
+### 插件组织
+
+```
+src/addons/
+├── api.js                        # 插件 API 实现
+├── hooks.js                      # 插件集成钩子
+├── generated/                    # 自动生成的文件
+│   ├── addon-entries.js          # 插件入口点
+│   └── addon-manifests.js        # 插件元数据
+└── addons/                       # 单个插件实现
+    ├── editor-devtools/           # 示例插件
+    │   ├── addon.json             # 插件清单
+    │   ├── _runtime_entry.js      # 运行时入口点
+    │   ├── userscript.js          # 主插件代码
+    │   └── style.css              # 插件样式
+    └── ...                        # 其他插件
+```
+
+### 插件清单结构
+
+```json
+{
+    "name": "编辑器开发工具",
+    "description": "块编辑器的开发者工具",
+    "tags": ["development", "debugging"],
+    "enabledByDefault": false,
+    "userscripts": [
+        {
+            "url": "userscript.js",
+            "matches": ["projects"]
+        }
+    ],
+    "userstyles": [
+        {
+            "url": "style.css",
+            "matches": ["projects"]
+        }
+    ],
+    "settings": [
+        {
+            "id": "showConsole",
+            "name": "显示控制台",
+            "type": "boolean",
+            "default": true
+        }
+    ]
+}
+```
+
+## 构建系统结构
+
+### Webpack 配置
+
+构建系统使用具有多个专业配置的 Webpack：
+
+```javascript
+// webpack.config.js 结构
+module.exports = {
+    entry: {
+        app: './src/index.js',
+        // 动态插件条目自动添加
+    },
+
+    resolve: {
+        alias: {
+            // 开发包别名
+            'scratch-vm': path.resolve(__dirname, '../scratch-vm/src'),
+            'scratch-render': path.resolve(__dirname, '../scratch-render/src')
+        }
+    },
+
+    module: {
+        rules: [
+            // JavaScript/JSX 处理
+            {
+                test: /\.jsx?$/,
+                use: ['babel-loader']
+            },
+
+            // CSS 模块处理
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            localIdentName: '[name]_[local]_[hash:base64:5]'
+                        }
+                    },
+                    'postcss-loader'
+                ]
+            },
+
+            // 资源处理
+            {
+                test: /\.(png|jpg|gif|svg)$/,
+                use: ['file-loader']
+            }
+        ]
+    },
+
+    plugins: [
+        // 插件处理插件
+        new AddonManifestPlugin(),
+
+        // 开发工具
+        new webpack.HotModuleReplacementPlugin(),
+
+        // 生产优化
+        new webpack.optimize.ModuleConcatenationPlugin()
+    ]
+};
+```
+
+### 构建脚本
+
+Package.json 定义了多个构建命令：
+
+```json
+{
+    "scripts": {
+        "start": "webpack-dev-server --mode development",
+        "build": "webpack --mode production",
+        "test": "jest",
+        "lint": "eslint src/",
+        "format": "prettier --write src/",
+        "pull": "node scripts/pull-addons.js"
+    }
+}
+```
+
+## 开发环境
+
+### 本地开发设置
+
+对于使用链接包进行本地开发：
+
+```bash
+# 克隆代码库
+git clone https://github.com/Bilup/scratch-gui.git
+git clone https://github.com/Bilup/scratch-vm.git
+git clone https://github.com/Bilup/scratch-render.git
+
+# 链接 VM 和 Render 到 GUI
+cd scratch-vm && npm link
+cd ../scratch-render && npm link
+cd ../scratch-gui && npm link scratch-vm scratch-render
+
+# 安装依赖并启动
+npm ci
+npm start
+```
+
+### 环境变量
+
+开发环境可以自定义：
+
+```bash
+# .env.local
+NODE_ENV=development
+REACT_APP_DEBUG=true
+REACT_APP_ADDON_DEV_MODE=true
+
+# 可选的包覆盖
+REACT_APP_VM_ORIGIN=http://localhost:8073
+REACT_APP_RENDER_ORIGIN=http://localhost:8074
+```
+
+### 开发工具集成
+
+```javascript
+// 开发模式工具
+if (process.env.NODE_ENV === 'development') {
+    // 暴露调试工具
+    window.vm = vm;
+    window.reduxStore = store;
+    window.ScratchBlocks = ScratchBlocks;
+
+    // 启用 React DevTools
+    window.__REACT_DEVTOOLS_GLOBAL_HOOK__ = window.__REACT_DEVTOOLS_GLOBAL_HOOK__ || {};
+
+    // 启用 Redux DevTools
+    const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+}
+```
+
+## 测试结构
+
+### 测试组织
+
+```
+test/
+├── unit/                         # 单元测试
+│   ├── components/               # 组件测试
+│   ├── reducers/                 # Reducer 测试
+│   └── lib/                      # 工具测试
+├── integration/                  # 集成测试
+│   ├── gui-integration.test.js   # 完整 GUI 测试
+│   ├── vm-integration.test.js    # VM 集成测试
+│   └── addon-integration.test.js # 插件系统测试
+├── e2e/                          # 端到端测试
+│   ├── basic-functionality.test.js
+│   ├── project-loading.test.js
+│   └── addon-functionality.test.js
+├── fixtures/                     # 测试数据
+│   ├── projects/                 # 示例项目
+│   ├── assets/                   # 测试资源
+│   └── mocks/                    # 模拟数据
+└── setup/                        # 测试配置
+    ├── jest.config.js
+    ├── test-utils.js
+    └── enzyme-adapter.js
+```
+
+### 测试工具
+
+```javascript
+// test/setup/test-utils.js
+import { render } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import rootReducer from '../../src/reducers';
+
+export const renderWithRedux = (
+    ui,
+    { initialState, store = createStore(rootReducer, initialState) } = {}
+) => {
+    return {
+        ...render(<Provider store={store}>{ui}</Provider>),
+        store,
+    };
+};
+```
+
+## 文档结构
+
+本文档站点使用 Docusaurus 构建，组织如下：
+
+```
+docs/
+├── docs/                         # 文档内容
+│   ├── getting-started/          # 入门指南
+│   ├── user-guide/               # 用户文档
+│   ├── development/              # 开发指南
+│   ├── gui-internals/            # 技术内部文档
+│   ├── api-reference/            # API 文档
+│   └── legacy/                   # 保留的旧内容
+├── src/                          # 自定义组件和页面
+├── static/                       # 静态资源
+├── docusaurus.config.js          # 站点配置
+├── sidebars.js                   # 导航结构
+└── package.json                  # 依赖和脚本
+```
+
+了解此结构将帮助你有效地导航代码库并为 Bilup 开发做出贡献。每个部分都有特定的目的和与其他组件的清晰接口。
+
+---
+
+*有关特定开发工作流程，请参阅 [构建和运行](./building-running.md) 指南。*
