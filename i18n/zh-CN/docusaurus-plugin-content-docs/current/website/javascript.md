@@ -19,7 +19,7 @@ hide_table_of_contents: true
 
 TurboWarp 生成的代码不是为人类阅读或编辑而设计的。这样做会损害学习者的学习效果，因为我们为提高兼容性或性能做了许多不寻常的事情。
 
-例如，在常规 JavaScript 中访问列表项就像 `myList[myIndex]` 一样简单，但 TurboWarp 会根据它可以做出的假设，做 `(b1.value[(b0.value | 0) - 1] ?? "")` 或 `listGet(b0, b1.value)` 这样的操作。`b0` 和 `b1` 是 TurboWarp 将使用的真实变量名，`listGet` 是 TurboWarp 运行时的一部分的魔法函数。该代码也缺乏任何格式化。[另一页面](how) 中提供了一些更多的代码示例。
+例如，在常规 JavaScript 中访问列表项就像 `myList[myIndex]` 一样简单，但 TurboWarp 会根据它可以做出的假设，做 `(b1.value[(b0.value | 0) - 1] ?? "")` 或 `listGet(b0, b1.value)` 这样的操作。`b0` 和 `b1` 是 TurboWarp 将使用的真实变量名，`listGet` 是 TurboWarp 运行时的一部分的魔法函数。该代码也缺乏任何格式化。[另一页面](how-it-works) 中提供了一些更多的代码示例。
 
 如果你想将 Scratch 项目转换为可读且可编辑的 JavaScript，请使用 https://leopardjs.com/
 

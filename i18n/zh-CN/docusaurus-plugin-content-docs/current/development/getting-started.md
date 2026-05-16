@@ -77,7 +77,7 @@ $env:NODE_ENV="production"
 npm run build
 ```
 
-默认情况下，Bilup 生成类似 `https://editor.bilup.org/editor.html#123` 的链接。但是，通过设置变量 `ROOT=/` 和 `ROUTING_STYLE=wildcard`（与设置 `NODE_ENV=production` 的方式相同），你可以获得类似 `https://editor.bilup.org/123/editor` 的路由。请注意，这需要服务器设置适当的别名。scratch-gui 中的 webpack 开发服务器已经为此设置好了。在生产环境中，你可能需要像 https://github.com/Bilup/editor.bilup.org 这样的东西。
+默认情况下，Bilup 生成类似 `https://editor.bilup.org/editor.html#123` 的链接。但是，通过设置变量 `ROOT=/` 和 `ROUTING_STYLE=wildcard`（与设置 `NODE_ENV=production` 的方式相同），你可以获得类似 `https://editor.bilup.org/123/editor` 的链接。请注意，这需要服务器设置适当的别名。scratch-gui 中的 webpack 开发服务器已经为此设置好了。在生产环境中，你可能需要像 https://github.com/Bilup/editor.bilup.org 这样的东西。
 
 ## 链接其他包 {#linking}
 

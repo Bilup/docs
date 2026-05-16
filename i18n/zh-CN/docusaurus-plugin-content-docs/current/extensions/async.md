@@ -6,7 +6,7 @@ hide_table_of_contents: true
 
 import {ExtensionCode} from './utils.js';
 
-有时你会希望你的扩展等待"异步"操作完成后再继续执行（而不是提前继续执行并可能导致问题）。一个常见的例子是发出请求：无论你的互联网速度有多快，任何网络请求都不会是即时的。
+有时你会希望你的扩展等待"异步"操作完成后再继续执行（而不是立即继续执行并可能导致问题）。一个常见的例子是发出请求：无论你的互联网速度有多快，任何网络请求都不会是即时的。
 
 现代 JavaScript 有一个处理这些问题的很酷的工具：[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)。这是你的积木如何通知 Scratch 你的积木正在等待异步操作完成，以及最终的值。
 

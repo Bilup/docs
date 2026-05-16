@@ -10,7 +10,7 @@ import {ExtensionCode} from './utils.js';
 
 <ExtensionCode title="hello-world">{require('!raw-loader!@site/static/example-extensions/hello-world.js')}</ExtensionCode>
 
-上面是我们用于显示扩展代码的标准组件。请注意标题旁边的"尝试此扩展"按钮——该链接让你无需在本地做任何事情就能看到此扩展的功能。请注意，这些扩展主要用于演示 API 功能；它们不打算在项目中实际使用。[extensions.turbowarp.org](https://extensions.turbowarp.org/) 上几乎总会有另一个扩展做同样的事情，但更好。
+上面是我们用于显示扩展代码的标准组件。请注意标题旁边的"试用此扩展"按钮——通过该链接，你无需在本地进行任何设置即可查看此扩展的功能。请注意，这些扩展主要用于演示 API 功能；它们不打算在项目中实际使用。[extensions.turbowarp.org](https://extensions.turbowarp.org/) 上几乎总会有另一个扩展做同样的事情，但更好。
 
 如果你只是使用简单文件开发扩展，将此代码保存到名为 "hello-world.js" 的文件中。如果你使用本地 HTTP 服务器，将代码保存在服务器允许你访问的名为 "hello-world.js" 的文件中。
 
