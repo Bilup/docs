@@ -245,7 +245,7 @@ this.source += `vm.runtime.visualReport("${b.id}",
 
 ## 最佳实践
 
-### 命名约定
+### 命名规范
 - 对积木操作码使用一致的命名（`extension_blockname`）
 - 使用描述性的种类名称（`extension.blockname`）
 - 在修补 ID 中包含扩展名称以避免冲突

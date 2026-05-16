@@ -382,7 +382,7 @@ Switch/case 积木演示了完整的实现：
 
 ## 最佳实践
 
-- 遵循现有命名约定（`category_blockname`）
+- 遵循现有命名规范（`category_blockname`）
 - 为积木的用途使用适当的积木形状
 - 实现适当的错误处理
 - 添加有意义的文档注释

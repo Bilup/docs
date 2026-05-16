@@ -18,7 +18,7 @@ Bilup 的主题系统由三个独立的组件组成，可以混合搭配：
 ```javascript
 class Theme {
     constructor(accent, gui, blocks, menuBarAlign, wallpaper, fonts) {
-        this.accent = accent;     // 颜色强调（红色、蓝色等）
+        this.accent = accent;     // 颜色主题（红色、蓝色等）
         this.gui = gui;           // 界面主题（浅色、深色、午夜）
         this.blocks = blocks;     // 积木外观（three、dark、high-contrast）
         this.menuBarAlign = menuBarAlign;
@@ -41,7 +41,7 @@ class Theme {
 src/lib/themes/
 ├── index.js              # 主主题系统
 ├── guiHelpers.js         # 主题应用逻辑
-├── accent/               # 强调色定义
+├── accent/               # 主题色定义
 ├── gui/                  # 界面主题
 └── blocks/               # 积木主题
 ```
@@ -67,7 +67,7 @@ Theme.highContrast = new Theme('red', 'light', 'high-contrast');
 import * as accentPurple from './accent/purple';
 
 const ACCENTS = [
-    // ...现有强调色...
+    // ...现有主题色...
     {
         name: 'Purple',
         accent: accentPurple,
@@ -200,7 +200,7 @@ Theme.highContrast = new Theme('red', 'light', 'high-contrast');
 src/lib/themes/
 ├── index.js              # 主主题系统
 ├── guiHelpers.js         # 主题应用逻辑
-├── accent/               # 强调色定义
+├── accent/               # 主题色定义
 │   ├── red.js
 │   ├── blue.js
 │   └── ...
@@ -214,4 +214,4 @@ src/lib/themes/
     └── high-contrast.js
 ```
 
-这个模块化系统允许用户独立地将任何强调色与任何 GUI 主题和积木主题混合使用。
+这个模块化系统允许用户独立地将任何主题色与任何 GUI 主题和积木主题混合使用。
