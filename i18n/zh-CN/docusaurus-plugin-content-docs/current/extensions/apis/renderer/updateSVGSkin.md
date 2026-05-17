@@ -4,7 +4,7 @@ title: renderer.updateSVGSkin()
 
 # renderer.updateSVGSkin()
 
-用新的 SVG 标记更新现有的 SVG 皮肤。如果皮肤不是 SVG 皮肤，它将被转换为 SVG 皮肤。
+用新的 SVG 标记更新现有的 SVG 造型。如果造型不是 SVG 造型，它将被转换为 SVG 造型。
 
 ## 语法
 
@@ -17,7 +17,7 @@ renderer.updateSVGSkin(skinId, svgData, rotationCenter)
 ### skinId
 **类型:** `number`
 
-要更新的皮肤的 ID。
+要更新的造型的 ID。
 
 ### svgData
 **类型:** `string`

@@ -4,7 +4,7 @@ title: renderer.getCurrentSkinSize()
 
 # renderer.getCurrentSkinSize()
 
-获取当前分配给可绘制对象的皮肤的尺寸。
+获取当前分配给可绘制对象的造型的尺寸。
 
 ## 语法
 
@@ -23,7 +23,7 @@ renderer.getCurrentSkinSize(drawableID)
 
 **类型:** `Array<number>`
 
-表示皮肤尺寸的数组 `[width, height]`。
+表示造型尺寸的数组 `[width, height]`。
 
 ## 示例
 

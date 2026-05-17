@@ -4,7 +4,7 @@ title: renderer.getSkinRotationCenter()
 
 # renderer.getSkinRotationCenter()
 
-获取皮肤的旋转中心。
+获取造型的旋转中心。
 
 ## 语法
 
@@ -17,13 +17,13 @@ renderer.getSkinRotationCenter(skinID)
 ### skinID
 **类型:** `number`
 
-皮肤的 ID。
+造型的 ID。
 
 ## 返回值
 
 **类型:** `Array<number>`
 
-表示相对于皮肤左上角的旋转中心的数组 `[x, y]`。
+表示相对于造型左上角的旋转中心的数组 `[x, y]`。
 
 ## 示例
 

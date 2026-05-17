@@ -4,7 +4,7 @@ title: renderer.getSkinSize()
 
 # renderer.getSkinSize()
 
-获取皮肤的尺寸。
+获取造型的尺寸。
 
 ## 语法
 
@@ -17,13 +17,13 @@ renderer.getSkinSize(skinID)
 ### skinID
 **类型:** `number`
 
-皮肤的 ID。
+造型的 ID。
 
 ## 返回值
 
 **类型:** `Array<number>`
 
-表示皮肤尺寸的数组 `[width, height]`。
+表示造型尺寸的数组 `[width, height]`。
 
 ## 示例
 

@@ -88,7 +88,7 @@ Create custom blocks with JavaScript:
 4. Your project loads with all sprites and code intact
 
 ### Changing Themes
-1. Click the **Settings** icon in the menu bar
+1. Click the **View** icon in the menu bar
 2. Select **Theme** from the dropdown
 3. Choose from available themes or create your own
 
@@ -103,7 +103,7 @@ Create custom blocks with JavaScript:
 - **Ctrl/Cmd + S** - Save project
 - **Ctrl/Cmd + Shift + S** - Save as new file
 - **Ctrl/Cmd + O** - Open project
-- **Space** - Start/stop project (alternative to green flag/stop button)
+- **Ctrl/Cmd + Enter** - Start/stop project (alternative to green flag/stop button)
 - **Ctrl/Cmd + Shift + E** - Export project
 
 ## Getting Help

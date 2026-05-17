@@ -4,7 +4,7 @@ title: renderer.createSVGSkin()
 
 # renderer.createSVGSkin()
 
-从 SVG 标记创建新的 SVG 皮肤。
+从 SVG 标记创建新的 SVG 造型。
 
 ## 语法
 
@@ -28,7 +28,7 @@ SVG 标记作为字符串。
 
 **类型:** `number`
 
-新创建皮肤的 ID。
+新创建造型的 ID。
 
 ## 示例
 
@@ -53,13 +53,13 @@ class SVGExtension {
 
 ## 注意事项
 
-- SVG 皮肤异步加载 - 请参阅 [SVG 加载](../../concepts/svg-loading.md)
+- SVG 造型异步加载 - 请参阅 [SVG 加载](../../concepts/svg-loading.md)
 - SVG 内容应包含正确的 xmlns 属性
 - 旋转中心坐标相对于 SVG viewBox
 
 ## 另请参阅
 
-- [updateSVGSkin()](./updateSVGSkin.md) - 更新现有的 SVG 皮肤
-- [createBitmapSkin()](./createBitmapSkin.md) - 创建位图皮肤
-- [destroySkin()](./destroySkin.md) - 销毁皮肤
+- [updateSVGSkin()](./updateSVGSkin.md) - 更新现有的 SVG 造型
+- [createBitmapSkin()](./createBitmapSkin.md) - 创建位图造型
+- [destroySkin()](./destroySkin.md) - 销毁造型
 - [SVG 加载模式](../../concepts/svg-loading.md) - 处理异步 SVG 加载

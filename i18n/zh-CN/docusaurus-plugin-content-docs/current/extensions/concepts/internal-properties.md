@@ -10,7 +10,7 @@ title: 渲染器内部属性
 
 ## renderer._allSkins
 
-渲染器管理的所有皮肤对象的数组。
+渲染器管理的所有造型对象的数组。
 
 ### 访问模式
 
@@ -24,17 +24,17 @@ if (!skin) {
 }
 ```
 
-### 常见皮肤属性
+### 常见造型属性
 
-**所有皮肤：**
-- `size` - 包含皮肤尺寸的 `[width, height]` 数组
-- `_id` - 皮肤的唯一 ID
+**所有造型：**
+- `size` - 包含造型尺寸的 `[width, height]` 数组
+- `_id` - 造型的唯一 ID
 
-**仅 SVG 皮肤：**
+**仅 SVG 造型：**
 - `_svgImageLoaded` - 指示 SVG 是否已完成加载的布尔值
 - `_svgImage` - 底层 SVG 图像元素
 
-### 示例：查询皮肤尺寸
+### 示例：查询造型尺寸
 
 ```javascript
 getSkinWidth(skinId) {
@@ -65,17 +65,17 @@ if (!drawable) {
 
 ### 可绘制对象属性
 
-- `skin` - 当前皮肤对象的引用
+- `skin` - 当前造型对象的引用
 - `_visible` - 布尔可见性状态
 - 其他内部属性（位置、缩放、效果等）
 
-### 示例：直接皮肤操作
+### 示例：直接造型操作
 
 ```javascript
 setSkin(drawableId, skinId) {
   const renderer = this.runtime.renderer;
   
-  // 直接操作可绘制对象的皮肤
+  // 直接操作可绘制对象的造型
   // 警告：绕过正常的 Scratch 造型系统
   renderer._allDrawables[drawableId].skin = renderer._allSkins[skinId];
 }
@@ -112,8 +112,8 @@ const size = skin.size || [100, 100]; // 不可用时使用默认值
 ## 为什么使用内部 API？
 
 有时内部 API 对于以下情况是必要的：
-- **皮肤尺寸** - 没有公共 API 来查询皮肤尺寸
-- **直接操作** - 绕过正常的造型系统以使用自定义皮肤
+- **造型尺寸** - 没有公共 API 来查询造型尺寸
+- **直接操作** - 绕过正常的造型系统以使用自定义造型
 - **高级功能** - 访问未公开的属性
 
 ## 风险
@@ -124,5 +124,5 @@ const size = skin.size || [100, 100]; // 不可用时使用默认值
 
 ## 相关内容
 
-- [SVG 加载](./svg-loading.md) - 使用内部 SVG 皮肤属性
+- [SVG 加载](./svg-loading.md) - 使用内部 SVG 造型属性
 - [资源管理](resource-management.md) - 正确的清理模式

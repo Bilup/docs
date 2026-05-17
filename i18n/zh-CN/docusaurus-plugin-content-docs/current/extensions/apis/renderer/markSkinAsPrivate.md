@@ -4,7 +4,7 @@ title: renderer.markSkinAsPrivate()
 
 # renderer.markSkinAsPrivate()
 
-将皮肤标记为包含私人信息（如摄像头馈送）。根据配置，私人皮肤可能会从快照或 `isTouchingColor` 检查中隐藏。
+将造型标记为包含私人信息（如摄像头画面）。根据配置，私人造型可能会从快照或 `isTouchingColor` 检查中隐藏。
 
 ## 语法
 
@@ -17,7 +17,7 @@ renderer.markSkinAsPrivate(skinID)
 ### skinID
 **类型:** `number`
 
-要标记为私人的皮肤的 ID。
+要标记为私人的造型的 ID。
 
 ## 返回值
 

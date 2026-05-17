@@ -8,7 +8,7 @@ title: 资源管理
 
 ## 问题
 
-创建皮肤和可绘制对象而不清理会导致：
+创建造型和可绘制对象而不清理会导致：
 - 内存泄漏
 - 性能下降
 - 资源耗尽
@@ -45,7 +45,7 @@ class MyExtension {
     }
     this.customDrawables.clear();
     
-    // 然后销毁所有皮肤
+    // 然后销毁所有造型
     for (const [name, skinId] of this.customSkins) {
       renderer.destroySkin(skinId);
     }
@@ -70,8 +70,8 @@ constructor(runtime) {
 ### 2. 按顺序清理
 
 始终按此顺序销毁：
-1. 先销毁可绘制对象（它们引用皮肤）
-2. 然后销毁皮肤（在没有可绘制对象使用它们之后）
+1. 先销毁可绘制对象（它们引用造型）
+2. 然后销毁造型（在没有可绘制对象使用它们之后）
 
 ```javascript
 cleanup() {
@@ -80,7 +80,7 @@ cleanup() {
     renderer.destroyDrawable(drawableId, 'foreground');
   }
   
-  // 2. 销毁皮肤
+  // 2. 销毁造型
   for (const skinId of this.skins.values()) {
     renderer.destroySkin(skinId);
   }
@@ -89,14 +89,14 @@ cleanup() {
 
 ### 3. 销毁前恢复
 
-如果可绘制对象使用自定义皮肤，请在销毁自定义皮肤之前将其恢复为原始皮肤：
+如果可绘制对象使用自定义造型，请在销毁自定义造型之前将其恢复为原始造型：
 
 ```javascript
 deleteSkin(skinName) {
   const skinId = this.skins.get(skinName);
   if (!skinId) return;
   
-  // 恢复使用此皮肤的所有目标
+  // 恢复使用此造型的所有目标
   this._restoreTargetsFromSkin(skinId);
   
   // 现在可以安全销毁
@@ -167,9 +167,9 @@ class OptimizedExtension {
 }
 ```
 
-### 模式：皮肤缓存
+### 模式：造型缓存
 
-缓存经常使用的皮肤：
+缓存经常使用的造型：
 
 ```javascript
 getCachedSkin(cacheKey, createFunc) {
@@ -185,12 +185,12 @@ getCachedSkin(cacheKey, createFunc) {
 
 ## 内存泄漏检查清单
 
-- [ ] 跟踪所有创建的皮肤和可绘制对象
+- [ ] 跟踪所有创建的造型和可绘制对象
 - [ ] 监听 PROJECT_STOP_ALL
-- [ ] 在皮肤之前销毁可绘制对象
+- [ ] 在造型之前销毁可绘制对象
 - [ ] 清理后清除所有 Map/Array
 - [ ] 在 dispose() 中移除事件监听器
-- [ ] 销毁自定义皮肤之前恢复目标皮肤
+- [ ] 销毁自定义造型之前恢复目标造型
 
 ## 相关内容
 

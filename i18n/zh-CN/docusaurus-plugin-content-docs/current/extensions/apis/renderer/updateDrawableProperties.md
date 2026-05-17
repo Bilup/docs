@@ -31,7 +31,7 @@ renderer.updateDrawableProperties(drawableID, properties)
 | `scale` | `[xScale, yScale]` | 缩放百分比 (100 = 正常) |
 | `visible` | `boolean` | 可见性状态 |
 | `effects` | `object` | 视觉效果（见下文） |
-| `skinId` | `number` | 要应用的皮肤 ID |
+| `skinId` | `number` | 要应用的造型 ID |
 
 ### 效果对象
 

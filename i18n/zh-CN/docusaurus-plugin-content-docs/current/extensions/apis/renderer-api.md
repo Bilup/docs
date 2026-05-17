@@ -13,41 +13,41 @@ class MyExtension {
   myBlock(args, util) {
     const renderer = util.runtime.renderer;
     
-    // 创建皮肤
+    // 创建造型
     const skinId = renderer.createBitmapSkin(imageData, 1);
     
     // 创建可绘制对象
     const drawableId = renderer.createDrawable('foreground');
     
-    // 将皮肤应用于可绘制对象
+    // 将造型应用于可绘制对象
     renderer.updateDrawableProperties(drawableId, { skinId });
   }
 }
 ```
 
-## 皮肤管理
+## 造型管理
 
-皮肤为可绘制对象提供纹理和视觉外观。
+造型为可绘制对象提供纹理和视觉外观。
 
-### 创建皮肤
+### 创建造型
 
-- **[createBitmapSkin()](./renderer/createBitmapSkin.md)** - 从图像数据创建皮肤
-- **[createSVGSkin()](./renderer/createSVGSkin.md)** - 从 SVG 标记创建皮肤
-- **[createPenSkin()](./renderer/createPenSkin.md)** - 创建画笔图层皮肤
-- **[createTextSkin()](./renderer/createTextSkin.md)** - 创建文本气泡皮肤
+- **[createBitmapSkin()](./renderer/createBitmapSkin.md)** - 从图像数据创建造型
+- **[createSVGSkin()](./renderer/createSVGSkin.md)** - 从 SVG 标记创建造型
+- **[createPenSkin()](./renderer/createPenSkin.md)** - 创建画笔图层造型
+- **[createTextSkin()](./renderer/createTextSkin.md)** - 创建文本气泡造型
 
-### 更新皮肤
+### 更新造型
 
-- **[updateBitmapSkin()](./renderer/updateBitmapSkin.md)** - 更新现有位图皮肤
-- **[updateSVGSkin()](./renderer/updateSVGSkin.md)** - 更新现有 SVG 皮肤
-- **[updateTextSkin()](./renderer/updateTextSkin.md)** - 更新文本气泡皮肤
+- **[updateBitmapSkin()](./renderer/updateBitmapSkin.md)** - 更新现有位图造型
+- **[updateSVGSkin()](./renderer/updateSVGSkin.md)** - 更新现有 SVG 造型
+- **[updateTextSkin()](./renderer/updateTextSkin.md)** - 更新文本气泡造型
 
-### 管理皮肤
+### 管理造型
 
-- **[destroySkin()](./renderer/destroySkin.md)** - 销毁皮肤并释放资源
-- **[getSkinSize()](./renderer/getSkinSize.md)** - 获取皮肤尺寸
+- **[destroySkin()](./renderer/destroySkin.md)** - 销毁造型并释放资源
+- **[getSkinSize()](./renderer/getSkinSize.md)** - 获取造型尺寸
 - **[getSkinRotationCenter()](./renderer/getSkinRotationCenter.md)** - 获取旋转中心
-- **[markSkinAsPrivate()](./renderer/markSkinAsPrivate.md)** - 将皮肤标记为私有
+- **[markSkinAsPrivate()](./renderer/markSkinAsPrivate.md)** - 将造型标记为私有
 
 ## 可绘制对象管理
 
@@ -66,7 +66,7 @@ class MyExtension {
 
 ### 视觉属性
 
-- **[getCurrentSkinSize()](./renderer/getCurrentSkinSize.md)** - 获取可绘制对象当前皮肤的尺寸
+- **[getCurrentSkinSize()](./renderer/getCurrentSkinSize.md)** - 获取可绘制对象当前造型的尺寸
 - **[getBounds()](./renderer/getBounds.md)** - 获取紧密边界框
 - **[getBoundsForBubble()](./renderer/getBoundsForBubble.md)** - 获取文本气泡的边界
 
@@ -90,7 +90,7 @@ class MyExtension {
 
 > **⚠️ 警告：** 内部 API 可能会在没有通知的情况下更改
 
-- **[renderer._allSkins](../concepts/internal-properties.md#renderer_allskins)** - 所有皮肤对象的数组
+- **[renderer._allSkins](../concepts/internal-properties.md#renderer_allskins)** - 所有造型对象的数组
 - **[renderer._allDrawables](../concepts/internal-properties.md#renderer_alldrawables)** - 所有可绘制对象的数组
 
 ## 关键概念

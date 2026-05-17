@@ -5,7 +5,7 @@ sidebar_position: 4
 
 # 从 Scratch 迁移
 
-Bilup 可以运行大多数 Scratch 项目，并提供增强的性能和附加功能。
+Bilup 可以以增强的性能和附加功能运行大多数 Scratch 项目。
 
 ## 项目兼容性
 

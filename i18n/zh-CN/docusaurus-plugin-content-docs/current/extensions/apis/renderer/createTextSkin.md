@@ -4,7 +4,7 @@ title: renderer.createTextSkin()
 
 # renderer.createTextSkin()
 
-使用文本气泡创建器创建新的 SVG 皮肤（如"说"或"思考"气泡）。
+使用文本气泡创建器创建新的 SVG 造型（如"说"或"思考"气泡）。
 
 ## 语法
 
@@ -33,7 +33,7 @@ renderer.createTextSkin(type, text, pointsLeft)
 
 **类型:** `number`
 
-新皮肤的 ID。
+新造型的 ID。
 
 ## 示例
 

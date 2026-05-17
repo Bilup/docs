@@ -4,7 +4,7 @@ title: renderer.updateTextSkin()
 
 # renderer.updateTextSkin()
 
-用新文本或样式更新现有的文本气泡皮肤。
+用新文本或样式更新现有的文本气泡造型。
 
 ## 语法
 
@@ -17,7 +17,7 @@ renderer.updateTextSkin(skinId, type, text, pointsLeft)
 ### skinId
 **类型:** `number`
 
-要更新的皮肤的 ID。
+要更新的造型的 ID。
 
 ### type
 **类型:** `string`

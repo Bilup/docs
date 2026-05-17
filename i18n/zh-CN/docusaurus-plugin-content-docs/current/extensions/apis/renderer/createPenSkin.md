@@ -20,13 +20,13 @@ renderer.createPenSkin()
 
 **类型:** `number`
 
-新画笔皮肤的 ID。
+新画笔造型的 ID。
 
 ## 示例
 
 ```javascript
 const penSkinId = renderer.createPenSkin();
-// 画笔皮肤由渲染器自动管理用于画笔操作
+// 画笔造型由渲染器自动管理用于画笔操作
 ```
 
 ## 另请参阅
