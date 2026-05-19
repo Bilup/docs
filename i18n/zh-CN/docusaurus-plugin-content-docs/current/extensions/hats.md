@@ -41,19 +41,19 @@ import {ExtensionCode, Spoiler} from './utils.js';
 
 在此示例中，我们使用了 keydown 事件，但你可以使用任何你想要的事件。尝试改用 click 事件，或 setTimeout/setInterval、fetch() 等其他 API。只要你能获得回调，这就会起作用。
 
-## 按菜单过滤
+## 按菜单筛选
 
 你可能会注意到 Scratch 的内置“当按键被按下”积木有一个菜单。使用我们当前的扩展，我们需要为每个键添加一个新积木。这不理想。相反，我们也可以使用菜单。
 
 <ExtensionCode title="unsandboxed/when-key-pressed">{require("!raw-loader!@site/static/example-extensions/unsandboxed/when-key-pressed.js")}</ExtensionCode>
 
-积木的定义与其他积木类似。请注意，事件积木**仅支持字段菜单**。你不能有文本输入或放置积木的地方。要按参数过滤，它**必须是一个 acceptReporters: false 的菜单**。（稍后讨论的积木类型对此更宽松。）
+积木的定义与其他积木类似。请注意，事件积木**仅支持字段菜单**。你不能有文本输入或放置积木的地方。要按参数筛选，它**必须是一个 acceptReporters: false 的菜单**。（稍后讨论的积木类型对此更宽松。）
 
-startHats 的第一个参数再次是完整的 opcode。startHats 的第二个参数是一个对象，用于过滤要激活的事件。此对象中的键名是积木的参数名称（在此示例中为 `KEY`），值对应于菜单的值（不是文本！）。如果你想按多个键过滤，所有键都必须匹配。
+startHats 的第一个参数再次是完整的 opcode。startHats 的第二个参数是一个对象，用于筛选要激活的事件。此对象中的键名是积木的参数名称（在此示例中为 `KEY`），值对应于菜单的值（不是文本！）。如果你想按多个键筛选，所有键都必须匹配。
 
 Scratch 中真正的“当按键被按下”积木比这个复杂一点。这只是一个例子。
 
-## 按角色过滤
+## 按角色筛选
 
 Scratch 的“当此角色被点击”积木只在一个角色上运行，而不是每个角色上。要自己做到这一点，你可以使用 startHats 的第三个（也是最后一个）参数。第三个参数可以设置为目标对象——每个角色或克隆都是一个“目标”。如果设置，只有该目标中的事件积木会运行。
 
@@ -67,7 +67,7 @@ Scratch 的“当此角色被点击”积木只在一个角色上运行，而不
 
 <ExtensionCode title="unsandboxed/when-key-pressed-stage">{require("!raw-loader!@site/static/example-extensions/unsandboxed/when-key-pressed-stage.js")}</ExtensionCode>
 
-要仅按角色过滤而不是按字段过滤，可以将第二个参数设置为 null 或空对象 (`{}`)。
+要仅按角色筛选而不是按字段筛选，可以将第二个参数设置为 null 或空对象 (`{}`)。
 
 ## 重新启动现有线程
 
@@ -109,7 +109,7 @@ Scratch 的“当此角色被点击”积木只在一个角色上运行，而不
 
 请注意，这并不完全相同。如果没有视觉变化或项目处于加速模式，永远积木每帧会运行很多次，而帽子积木每帧恰好运行一次。
 
-`isEdgeActivated: false` 再次是必需的样板代码。积木的定义与其他积木相同。startHats 的工作方式与事件积木完全相同：第一个参数是*完整的* opcode，然后是可选的字段过滤器，然后是可选的目标过滤器。
+`isEdgeActivated: false` 再次是必需的样板代码。积木的定义与其他积木相同。startHats 的工作方式与事件积木完全相同：第一个参数是*完整的* opcode，然后是可选的字段筛选，然后是可选的目标筛选。
 
 重要的区别是 `when` 实际上有代码。在你执行 startHats 之后，积木的输入和参数将被评估并传递给积木。积木可以返回 `true` 让脚本运行，或者返回 `false` 阻止它运行。如果需要，积木也可以返回一个解析为 `true` 或 `false` 的 Promise。
 

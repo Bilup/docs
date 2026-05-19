@@ -120,7 +120,7 @@ connection = cloudlibrary.connect(project_id, username, user_agent, on_set)
 
 只要实现是事件驱动的并且在内部使用一个连接（那么 `get_var` 只是返回最近接收的值），就可以提供类似 `get_var` 的 API。这只是需要一点工作而已。
 
-### 更新会被缓冲 {#buffering}
+### 更新会被缓存 {#buffering}
 
 为了提高性能，服务器会缓冲多个云变量更新，作为一组发送。不保证按接收顺序发送更新，有些更新可能会被完全跳过。由于这种缓冲，每秒发送超过 10 次更新变量是完全多余的。
 

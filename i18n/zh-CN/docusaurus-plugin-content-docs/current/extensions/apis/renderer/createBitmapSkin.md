@@ -22,7 +22,7 @@ renderer.createBitmapSkin(bitmapData, costumeResolution, rotationCenter)
 ### costumeResolution  
 **类型:** `number` (可选, 默认: `1`)
 
-位图的分辨率乘数。更高的值表示更高分辨率的造型。
+位图的分辨率。更高的值表示更高分辨率的造型。
 
 ### rotationCenter
 **类型:** `Array<number>` (可选)

@@ -28,7 +28,7 @@ addon.tab.redux.addEventListener('statechanged', (event) => {
   console.log('动作:', action.type);
 });
 
-// 过滤特定动作
+// 筛选特定动作
 addon.tab.redux.addEventListener('statechanged', (event) => {
   const { action } = event.detail;
   
@@ -265,8 +265,8 @@ export default async function ({ addon }) {
 }
 ```
 
-### 事件过滤
-过滤事件以避免性能问题：
+### 事件筛选
+筛选事件以避免性能问题：
 
 ```javascript
 let lastUpdate = 0;
