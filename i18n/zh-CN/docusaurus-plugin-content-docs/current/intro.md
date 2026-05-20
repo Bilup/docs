@@ -35,7 +35,7 @@ Bilup 是一个基于 TurboWarp 构建的 Scratch 修改版，专为开发者和
 ## 相关项目
 
 - **[Bilup 网页版](https://editor.bilup.org/)** - 主网页应用
-- **[Bilup 打包器](https://packager.bilup.org/)** - 将项目打包为网页部署
+- **[Bilup Packager](https://packager.bilup.org/)** - 将项目打包为网页部署
 - **[TurboWarp](https://turbowarp.org/)** - Bilup 的基础项目
 
 ## 开发

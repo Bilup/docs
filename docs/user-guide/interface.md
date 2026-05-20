@@ -213,8 +213,8 @@ Advanced users can inject custom styles:
 | Undo | Ctrl+Z | Cmd+Z |
 | Redo | Ctrl+Shift+Z | Cmd+Shift+Z |
 | Full Screen | F11 | F11 |
-| Start Project | Space | Space |
-| Stop Project | Escape | Escape |
+| Start Project | Ctrl+Enter | Cmd+Enter |
+| Stop Project | Ctrl+Shift+Enter | Cmd+Shift+Enter |
 
 ### Editor Shortcuts
 | Action | Windows/Linux | Mac |
@@ -223,8 +223,8 @@ Advanced users can inject custom styles:
 | Switch to Costumes | Ctrl+2 | Cmd+2 |
 | Switch to Sounds | Ctrl+3 | Cmd+3 |
 | Find Blocks | Ctrl+F | Cmd+F |
-| Zoom In | Ctrl++ | Cmd++ |
-| Zoom Out | Ctrl+- | Cmd+- |
+| Zoom In | Ctrl + '+' | Cmd + '+' |
+| Zoom Out | Ctrl + '-' | Cmd + '-' |
 | Reset Zoom | Ctrl+0 | Cmd+0 |
 
 ## Accessibility Features

@@ -106,12 +106,12 @@ Advanced Settings:
 | Load Project | Ctrl+O (Cmd+O) |
 | Undo | Ctrl+Z (Cmd+Z) |
 | Redo | Ctrl+Shift+Z (Cmd+Shift+Z) |
-| Run Project | Space |
-| Stop Project | Escape |
+| Run Project | Ctrl+Enter (Cmd+Enter) |
+| Stop Project | Ctrl+Shift+Enter (Cmd+Shift+Enter) |
 | Full Screen | F11 |
-| Switch to Code Tab | Ctrl+1 |
-| Switch to Costumes Tab | Ctrl+2 |
-| Switch to Sounds Tab | Ctrl+3 |
+| Switch to Code Tab | Ctrl+1 (Cmd+1) |
+| Switch to Costumes Tab | Ctrl+2 (Cmd+2) |
+| Switch to Sounds Tab | Ctrl+3 (Cmd+3) |
 
 ### Essential Buttons
 

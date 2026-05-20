@@ -306,7 +306,7 @@ function cleanup() {
     // 移除事件监听器
     element.removeEventListener('click', handler);
     
-    // 清除定时器/间隔器
+    // 清除定时/间隔
     clearTimeout(timeoutId);
     clearInterval(intervalId);
     

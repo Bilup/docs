@@ -50,7 +50,7 @@ sidebar_position: 1
 
 ### 增强的界面
 - **🌙 深色模式**：多种深色主题可用
-- **🎨 自定义主题**：创建和分享视觉主题
+- **🎨 自定义主题**：创建和分享主题
 - **📱 响应式设计**：适用于平板电脑和移动设备
 - **🔧 可自定义布局**：根据你的偏好调整界面
 
@@ -106,12 +106,12 @@ sidebar_position: 1
 | 加载项目 | Ctrl+O（Cmd+O） |
 | 撤销 | Ctrl+Z（Cmd+Z） |
 | 重做 | Ctrl+Shift+Z（Cmd+Shift+Z） |
-| 运行项目 | 空格 |
-| 停止项目 | Escape |
+| 运行项目 | Ctrl+Enter（Cmd+Enter） |
+| 停止项目 | Ctrl+Shift+Enter（Cmd+Shift+Enter） |
 | 全屏 | F11 |
-| 切换到代码标签 | Ctrl+1 |
-| 切换到造型标签 | Ctrl+2 |
-| 切换到声音标签 | Ctrl+3 |
+| 切换到代码标签 | Ctrl+1（Cmd+1） |
+| 切换到造型标签 | Ctrl+2（Cmd+2） |
+| 切换到声音标签 | Ctrl+3（Cmd+3） |
 
 ### 基本按钮
 
@@ -198,3 +198,24 @@ Bilup 包含帮助你学习的示例项目：
 ## 获取帮助
 
 需要帮助？以下是你的选项：
+
+### 文档
+- **搜索本指南** 使用上方的搜索栏
+- **按主题浏览** 使用侧边栏导航
+- **查看 [故障排除](./troubleshooting.md)** 了解常见问题
+
+### 社区支持
+- **[GitHub Issues](https://github.com/Bilup/scratch-gui/issues)** - 报告漏洞
+- **[讨论区](https://github.com/orgs/Bilup/discussions)** - 获取社区帮助
+
+### 专业支持
+面向学校、组织或商业用户：
+- **培训计划** - 为团队提供定制培训
+- **技术支持** - 优先支持计划
+- **定制开发** - 量身定制的解决方案
+
+联系我们 [me@ryanincn11.me](mailto:me@ryanincn11.me) 了解企业支持选项。
+
+---
+
+*准备好开始探索了吗？从我们的 [界面指南](./interface.md) 开始学习 Bilup 界面！*
