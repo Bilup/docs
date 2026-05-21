@@ -63,7 +63,7 @@ const sprites = vm.runtime.targets.filter(target => !target.isStage);
 
 // 监听项目事件
 vm.on('PROJECT_START', () => {
-    console.log('项目已启动！');
+    console.log('项目已启动!');
 });
 ```
 
@@ -100,7 +100,7 @@ class MyExtension {
     }
     
     myBlock() {
-        console.log('自定义积木已执行！');
+        console.log('自定义积木已执行!');
     }
 }
 ```
@@ -113,7 +113,7 @@ export default async function ({ addon, msg }) {
     
     // 添加点击监听器
     button.addEventListener('click', () => {
-        console.log('绿旗被点击！');
+        console.log('绿旗被点击!');
     });
     
     // 添加 CSS

@@ -198,7 +198,7 @@ useEffect(() => {
     const state = store.getState();
     if (state.project.hasUnsavedChanges) {
       event.preventDefault();
-      event.returnValue = '你还有未保存的更改。确定要离开吗？';
+      event.returnValue = '你还有未保存的更改。确定要离开吗?';
     }
   };
   

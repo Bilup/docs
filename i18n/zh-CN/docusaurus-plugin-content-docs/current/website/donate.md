@@ -11,4 +11,4 @@ Bilup 目前不接受捐赠。
 
 你也应该向 Scratch 捐款：https://scratch.mit.edu/donate
 
-谢谢你！❤️
+谢谢你!❤️

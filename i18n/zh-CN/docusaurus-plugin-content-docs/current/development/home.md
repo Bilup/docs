@@ -6,7 +6,7 @@ sidebar_position: 1
 
 # Bilup 开发指南
 
-欢迎阅读 Bilup 开发文档！这份全面的指南涵盖了使用 Bilup、为 Bilup 开发以及在 Bilup 上开发所需了解的一切。
+欢迎阅读 Bilup 开发文档! 这份全面的指南涵盖了使用 Bilup、为 Bilup 开发以及在 Bilup 上开发所需了解的一切。
 
 ## 开发路径
 
@@ -427,11 +427,11 @@ Bilup 是开源的，欢迎贡献：
 4. **社区反馈收集**
 5. **最终发布和分发**
 
-准备好开始开发了吗？选择你的路径：
+准备好开始开发了吗?选择你的路径：
 
-- **Bilup 新手？** 从 [入门指南](./getting-started.md) 开始
-- **想创建扩展？** 查看 [扩展开发](../extensions/introduction.md)
-- **准备贡献？** 阅读我们的 [贡献指南](./contributing.md)
+- **Bilup 新手?** 从 [入门指南](./getting-started.md) 开始
+- **想创建扩展?** 查看 [扩展开发](../extensions/introduction.md)
+- **准备贡献?** 阅读我们的 [贡献指南](./contributing.md)
 
 ---
 

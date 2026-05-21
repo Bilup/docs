@@ -500,7 +500,7 @@ class MyExtension {
   }
   
   myBlock() {
-    console.log('我的积木已执行！');
+    console.log('我的积木已执行!');
   }
 }
 

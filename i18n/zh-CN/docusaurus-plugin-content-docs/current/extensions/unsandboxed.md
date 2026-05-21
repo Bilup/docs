@@ -78,7 +78,7 @@ class MyExtension {
 
 <ExtensionCode title="unsandboxed/hello-world-unsandboxed" sandbox={false}>{require("!raw-loader!@site/static/example-extensions/unsandboxed/hello-world-unsandboxed.js")}</ExtensionCode>
 
-如果你使用本地 HTTP 服务器，请保存此文件，以便你可以通过服务器访问它，然后在 Bilup 中加载确切的 URL [http://localhost:8000/hello-world-unsandboxed.js](http://localhost:8000/hello-world-unsandboxed.js)。如果没有任何东西出现，请查看开发者控制台。如果你看到错误提示扩展必须在非沙盒环境中运行，很可能你使用的是旧版本的 Bilup，或者你没有从恰好以 `http://localhost:8000/` 开头的 URL 加载它。127.0.0.1 和 0.0.0.0 将不起作用！必须是 localhost，端口恰好是 8000。
+如果你使用本地 HTTP 服务器，请保存此文件，以便你可以通过服务器访问它，然后在 Bilup 中加载确切的 URL [http://localhost:8000/hello-world-unsandboxed.js](http://localhost:8000/hello-world-unsandboxed.js)。如果没有任何东西出现，请查看开发者控制台。如果你看到错误提示扩展必须在非沙盒环境中运行，很可能你使用的是旧版本的 Bilup，或者你没有从恰好以 `http://localhost:8000/` 开头的 URL 加载它。127.0.0.1 和 0.0.0.0 将不起作用! 必须是 localhost，端口恰好是 8000。
 
 如果你只是使用文件，请确保每次加载扩展时都选中"在沙盒外运行扩展"框。
 

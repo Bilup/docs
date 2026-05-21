@@ -8,7 +8,7 @@ hide_table_of_contents: true
 
 [Bilup](https://editor.bilup.org/) 的技术文档 - 一个面向开发者的改良版 Scratch 环境。
 
-## Bilup 是什么？
+## Bilup 是什么?
 
 Bilup 是一个基于 TurboWarp 构建的 Scratch 修改版，专为开发者和高级用户设计：
 
@@ -50,6 +50,6 @@ Bilup 是一个基于 TurboWarp 构建的 Scratch 修改版，专为开发者和
 
 这些页面是 [开源的](https://github.com/Bilup/docs)。~~欢迎贡献。~~ 原因请参阅 [GitHub](https://github.com/Bilup/docs)。
 
-## 为什么我在这里看到 TurboWarp 的页面？
+## 为什么我在这里看到 TurboWarp 的页面?
 
 由于兼容性的原因，以及有些页面确实有助于您了解我们的项目，我们决定保留它们。

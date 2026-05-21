@@ -5,7 +5,7 @@ sidebar_position: 2
 
 # 开始使用
 
-Bilup 是一个基于网页的应用，可以直接在浏览器中运行。无需安装！
+Bilup 是一个基于网页的应用，可以直接在浏览器中运行。无需安装!
 
 ## 访问 Bilup
 
@@ -13,7 +13,7 @@ Bilup 仅作为网页应用提供，可以访问：
 
 **🌐 [https://editor.bilup.org/](https://editor.bilup.org/)**
 
-只需在任何现代网页浏览器中打开链接，就可以开始创作了！
+只需在任何现代网页浏览器中打开链接，就可以开始创作了!
 
 ## 系统要求
 
@@ -162,7 +162,7 @@ cd scratch-gui && npm start
 <!-- - 访问我们的 [社区论坛]() -->
 - 在 [GitHub Issues](https://github.com/Bilup/scratch-gui/issues) 上报告漏洞
 
-## 下一步是什么？
+## 下一步是什么?
 
 现在你可以访问 Bilup 了：
 

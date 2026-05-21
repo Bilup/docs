@@ -27,4 +27,4 @@ https://github.com/Bilup/scratch-gui/blob/develop/src/components/menu-bar/tw-the
 
 最后在上面的文件中将主题添加到 "options" 变量中
 
-完成！您的主题已完成
+很好!您的主题已完成

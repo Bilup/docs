@@ -53,7 +53,7 @@ const connection = new CloudConnection({
     username: '...',
     projectId: '...',
     // highlight-start
-    // 更新这个！
+    // 更新这个!
     contactInformation: 'contact@example.com'
     // highlight-end
 });
@@ -64,7 +64,7 @@ connection.on('set', (name, value) => { /* ... */ });
 
 你的库将看到 `contactInformation` 选项，并将其与库的名称和版本连接起来，最终得到类似这样的 User-Agent：`CloudConnectionLib/0.3.3 contact@example.com`。
 
-如果有人没有指定 `contactInformation`，你不应该让他们继续。缺少信息的 User-Agent 将被阻止，你会收到诸如「云变量无法连接」之类的无意义错误报告，而没有进一步细节。祝你好运来诊断这个问题！相反，给他们一个友好的错误消息，让他们能够自己解决，而不会打扰你。
+如果有人没有指定 `contactInformation`，你不应该让他们继续。缺少信息的 User-Agent 将被阻止，你会收到诸如「云变量无法连接」之类的无意义错误报告，而没有进一步细节。祝你好运来诊断这个问题!相反，给他们一个友好的错误消息，让他们能够自己解决，而不会打扰你。
 
 要实际设置 User-Agent，请查阅你使用的 WebSocket 库的文档。他们可能不会专门提到 User-Agent，但他们应该提到如何设置头信息。例如，使用 Node.js [ws](https://www.npmjs.com/package/ws) 客户端，你会这样做：
 
@@ -132,5 +132,5 @@ connection = cloudlibrary.connect(project_id, username, user_agent, on_set)
 
 为了让我们、你以及使用你的库的任何人更轻松，请将这些内容记录在某处(如错误消息中)，而不是默默忽略它们：
 
- - WebSocket 关闭代码。所有 4XXX 代码都 [列在此表中](https://github.com/Bilup/cloud-server/blob/master/doc/protocol.md#server---client)。你更愿意看到 `连接关闭` 还是 `连接关闭，代码 4002`？在表中查找后者的代码，可以清楚地看出问题是用户名。
- - 从服务器收到的无效 JSON。如果服务器有要告诉你的内容超出了关闭代码表所说的内容，它可能会向你发送一个纯英文句子而不是 JSON 对象。当你的 JSON 解析器抛出错误时，你应该记录从服务器收到的实际原始文本，这样你就会得到诸如 `从服务器收到无效 JSON：你使用的云数据库没有理由发送你的登录令牌给你的 Scratch 账户带来了风险` 而不是 `JSON.parse：JSON 数据第 1 行第 1 列出现意外字符` 这样的错误消息。你更愿意看到哪一个？
+ - WebSocket 关闭代码。所有 4XXX 代码都 [列在此表中](https://github.com/Bilup/cloud-server/blob/master/doc/protocol.md#server---client)。你更愿意看到 `连接关闭` 还是 `连接关闭，代码 4002`?在表中查找后者的代码，可以清楚地看出问题是用户名。
+ - 从服务器收到的无效 JSON。如果服务器有要告诉你的内容超出了关闭代码表所说的内容，它可能会向你发送一个纯英文句子而不是 JSON 对象。当你的 JSON 解析器抛出错误时，你应该记录从服务器收到的实际原始文本，这样你就会得到诸如 `从服务器收到无效 JSON：你使用的云数据库没有理由发送你的登录令牌给你的 Scratch 账户带来了风险` 而不是 `JSON.parse：JSON 数据第 1 行第 1 列出现意外字符` 这样的错误消息。你更愿意看到哪一个?

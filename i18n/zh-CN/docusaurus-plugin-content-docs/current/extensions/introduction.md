@@ -11,7 +11,7 @@ hide_table_of_contents: true
 :::info
 **我们刚刚从头重写了整个教程。**
 
-它使用了完全不同的结构和风格。我们希望它更容易理解。本教程很可能存在一些错误和遗漏。[告诉我你的想法](https://scratch.mit.edu/users/M1stium/#comments)。谢谢！
+它使用了完全不同的结构和风格。我们希望它更容易理解。本教程很可能存在一些错误和遗漏。[告诉我你的想法](https://scratch.mit.edu/users/M1stium/#comments)。谢谢!
 :::
 
 当人们提到"扩展"时，他们可能指的是几种不同的东西：

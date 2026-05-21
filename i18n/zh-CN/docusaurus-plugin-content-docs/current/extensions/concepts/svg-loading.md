@@ -12,7 +12,7 @@ title: SVG 加载模式
 const skinId = renderer.createSVGSkin(svgData);
 const skin = renderer._allSkins[skinId];
 
-// 如果 SVG 尚未加载，这可能是 [0, 0]！
+// 如果 SVG 尚未加载，这可能是 [0, 0]! 
 console.log(skin.size);
 ```
 

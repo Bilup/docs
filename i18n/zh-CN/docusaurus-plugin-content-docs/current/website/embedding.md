@@ -65,7 +65,7 @@ Bilup 可以使用标准 iframe 嵌入：
 
 如果你使用用户提供的内容来生成嵌入链接，你应该清理任何参数，以确保用户不能提供任意的 URL 参数，因为其中一些可能导致意外行为。
 
-## 需要更多控制？{#packager}
+## 需要更多控制?{#packager}
 
 使用 [Bilup 打包器](https://packager.bilup.org/) 可以更好地控制加载屏幕和 UI。你也可以轻松地 [嵌入打包器的输出](/packager/embedding)。
 
