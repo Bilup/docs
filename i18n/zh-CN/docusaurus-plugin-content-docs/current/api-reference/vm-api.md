@@ -37,8 +37,8 @@ VM 由几个关键组件组成：
 
 - **Runtime** (`vm.runtime`)：核心执行引擎和状态管理
 - **Targets** (`vm.runtime.targets`)：角色和舞台对象
-- **Sequencer** (`vm.runtime.sequencer`)：线程调度器和执行控制器
-- **IO Devices** (`vm.runtime.ioDevices`)：输入/输出处理器(键盘、鼠标等)
+- **Sequencer** (`vm.runtime.sequencer`)：线程调度和执行控制
+- **IO Devices** (`vm.runtime.ioDevices`)：输入/输出处理(键盘、鼠标等)
 - **Extension Manager** (`vm.extensionManager`)：扩展加载和管理
 
 ## 项目控制

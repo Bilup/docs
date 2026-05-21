@@ -7,8 +7,8 @@ hide_table_of_contents: true
 We hope that you found this tutorial helpful. Please give feedback and ask questions:
 
  - Feedback about the tutorial: https://scratch.mit.edu/users/M1stium/#comments
- - Bug tracker and suggestion tracker: https://github.com/TurboWarp/extensions/issues
- - General discussion: https://github.com/TurboWarp/extensions/discussions
+ - Bug tracker and suggestion tracker: https://github.com/Bilup/extensions/issues
+ - General discussion: https://github.com/Bilup/extensions/discussions
 
 Thank you for reading this far.
 
@@ -16,4 +16,4 @@ Thank you for reading this far.
 
  - Dynamic menus
  - Block utility stack frames, yield, yieldTick, etc.
- - C-shape blocks such as "if", "if else", "repeat"
+ - C-shape blocks such as "if", "if else", "repeat", etc.
