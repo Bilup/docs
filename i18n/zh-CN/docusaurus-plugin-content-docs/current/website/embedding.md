@@ -11,7 +11,7 @@ Bilup 可以使用标准 iframe 嵌入：
 <iframe src="https://editor.bilup.org/414716080/embed" width="482" height="412" frameborder="0" scrolling="no" allowfullscreen></iframe>
 ```
 
-将 `414716080` 替换为你的项目 ID。你可以更改 iframe 的宽度和高度，玩家将自动调整大小以适应（482x412 将导致舞台以未失真的 480x360 渲染）。
+将 `414716080` 替换为你的项目 ID。你可以更改 iframe 的宽度和高度，玩家将自动调整大小以适应(482x412 将导致舞台以未失真的 480x360 渲染)。
 
 嵌入的背景是透明的，在浏览器允许时会显示全屏按钮。
 
@@ -29,7 +29,7 @@ Bilup 可以使用标准 iframe 嵌入：
 
 嵌入支持 `autoplay` 参数，这会在项目加载时自动点击绿旗。例如：https://editor.bilup.org/15832807/embed?autoplay
 
-请注意，在用户与项目交互（例如点击）之前，声音积木可能无法工作。这是浏览器施加的限制。Bilup 无法解决此问题。
+请注意，在用户与项目交互(例如点击)之前，声音积木可能无法工作。这是浏览器施加的限制。Bilup 无法解决此问题。
 
 ### 设置按钮 {#settings-button}
 

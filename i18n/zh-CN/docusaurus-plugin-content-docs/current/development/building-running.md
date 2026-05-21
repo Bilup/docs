@@ -13,7 +13,7 @@ sidebar_position: 4
 
 #### Node.js 和 npm
 - **Node.js**: 版本 16.x 或更高
-- **npm**: 版本 7.x 或更高（随 Node.js 一起安装）
+- **npm**: 版本 7.x 或更高(随 Node.js 一起安装)
 - **检查版本**:
 ```bash
 node --version  # 应为 v16.x.x 或更高
@@ -70,7 +70,7 @@ bilup-dev/
 
 ## 构建组件
 
-### 构建 scratch-vm（虚拟机）
+### 构建 scratch-vm(虚拟机)
 
 ```bash
 cd scratch-vm
@@ -84,11 +84,11 @@ npm run build
 # 为生产构建
 npm run build:prod
 
-# 监听模式（更改时重建）
+# 监听模式(更改时重建)
 npm run watch
 ```
 
-### 构建 scratch-blocks（积木定义）
+### 构建 scratch-blocks(积木定义)
 
 ```bash
 cd scratch-blocks
@@ -109,7 +109,7 @@ npm run build
 npm run watch
 ```
 
-### 构建 scratch-gui（主界面）
+### 构建 scratch-gui(主界面)
 
 ```bash
 cd scratch-gui
@@ -117,7 +117,7 @@ cd scratch-gui
 # 安装依赖
 npm install
 
-# 链接本地依赖（如果使用本地 scratch-vm/scratch-blocks）
+# 链接本地依赖(如果使用本地 scratch-vm/scratch-blocks)
 npm link ../scratch-vm
 npm link ../scratch-blocks
 
@@ -191,7 +191,7 @@ npm link
 npm link scratch-vm
 ```
 
-#### 使用相对路径（package.json）
+#### 使用相对路径(package.json)
 ```json
 {
   "dependencies": {
@@ -225,7 +225,7 @@ npm run build:prod
 # 启用 source maps
 BUILD_MODE=production GENERATE_SOURCEMAP=true npm run build
 
-# 禁用 source maps（文件更小）
+# 禁用 source maps(文件更小)
 GENERATE_SOURCEMAP=false npm run build
 
 # 分析包大小
@@ -297,7 +297,7 @@ npm run cypress:open
 
 ### 测试配置
 
-#### Jest 配置（jest.config.js）
+#### Jest 配置(jest.config.js)
 ```javascript
 module.exports = {
   testEnvironment: 'jsdom',

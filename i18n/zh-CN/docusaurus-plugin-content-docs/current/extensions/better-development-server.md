@@ -38,9 +38,9 @@ npm run dev
 
 ## 练习
 
-1. 你能弄清楚如何向开发服务器添加新的 HTML 文件吗？（提示：<Spoiler>查看 "website" 文件夹</Spoiler>）
-1. 你能弄清楚如何将你的扩展添加到主页列表吗？（提示：<Spoiler>查看 "extensions/extensions.json"</Spoiler>）
-1. 你能弄清楚如何为你的扩展在主页上添加图像吗？（提示：<Spoiler>在 "images" 中创建一个与 "extensions" 中的文件具有相同文件夹和基本名称的图像</Spoiler>）
+1. 你能弄清楚如何向开发服务器添加新的 HTML 文件吗？(提示：<Spoiler>查看 "website" 文件夹</Spoiler>)
+1. 你能弄清楚如何将你的扩展添加到主页列表吗？(提示：<Spoiler>查看 "extensions/extensions.json"</Spoiler>)
+1. 你能弄清楚如何为你的扩展在主页上添加图像吗？(提示：<Spoiler>在 "images" 中创建一个与 "extensions" 中的文件具有相同文件夹和基本名称的图像</Spoiler>)
 
 ## 下一步
 

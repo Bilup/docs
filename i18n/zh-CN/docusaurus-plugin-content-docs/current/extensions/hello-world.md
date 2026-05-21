@@ -14,7 +14,7 @@ import {ExtensionCode} from './utils.js';
 
 如果你只是使用简单文件开发扩展，将此代码保存到名为 "hello-world.js" 的文件中。如果你使用本地 HTTP 服务器，将代码保存在服务器允许你访问的名为 "hello-world.js" 的文件中。
 
-现在，转到 Bilup 编辑器，单击添加扩展按钮（积木旁边的 +），滚动到 Scratch 部分的底部，然后选择"自定义扩展"选项。输入本地 HTTP 服务器的完整 URL，或使用其他选项卡选择文件或粘贴代码。目前，**不要**选中"在沙盒外运行扩展"框。
+现在，转到 Bilup 编辑器，单击添加扩展按钮(积木旁边的 +)，滚动到 Scratch 部分的底部，然后选择"自定义扩展"选项。输入本地 HTTP 服务器的完整 URL，或使用其他选项卡选择文件或粘贴代码。目前，**不要**选中"在沙盒外运行扩展"框。
 
 一秒钟后，一个名为 "It works!" 的扩展应该会出现在侧边栏中。如果没有出现，请打开开发者工具并在控制台中查找任何警告。一些最常见的错误是：
 
@@ -81,7 +81,7 @@ Scratch.extensions.register(new HelloWorld());
 |:-:|:-:|:-:|
 |Scratch.BlockType.COMMAND|不返回值的积木|move 10 steps|
 |Scratch.BlockType.REPORTER|返回字符串或数字的圆形积木|x position, costume name|
-|Scratch.BlockType.BOOLEAN|带尖边的积木，返回布尔值（true 或 false）|mouse down|
+|Scratch.BlockType.BOOLEAN|带尖边的积木，返回布尔值(true 或 false)|mouse down|
 |Scratch.BlockType.HAT|响应特定条件开始的积木。稍后讨论。|when loudness > 10|
 |Scratch.BlockType.EVENT|仅响应事件开始的积木。稍后讨论。|when this sprite clicked|
 
@@ -105,7 +105,7 @@ Scratch.extensions.register(new HelloWorld());
 
 1. 将 "Hello!" 积木更改为返回你最喜欢的数字。记得相应地重命名积木。
 1. 更改积木的 opcode。
-1. 添加另一个积木。让这个积木使用 `type` 为 `Scratch.BlockType.BOOLEAN`，并随机返回布尔值（true 或 false）。
+1. 添加另一个积木。让这个积木使用 `type` 为 `Scratch.BlockType.BOOLEAN`，并随机返回布尔值(true 或 false)。
 
 ## 下一步
 

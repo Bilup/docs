@@ -13,13 +13,13 @@ sidebar_position: 6
 以下项目操作可通过 VM 和 GUI API 使用：
 
 ```javascript
-// 加载项目（通过 VM API 可用）
+// 加载项目(通过 VM API 可用)
 await vm.loadProject(projectData);
 
 // 保存项目状态
 const projectData = vm.toJSON();
 
-// 下载项目为 SB3（通过 GUI 组件）
+// 下载项目为 SB3(通过 GUI 组件)
 // 这通常由 GUI 组件如 SB3Downloader 处理
 ```
 
@@ -47,10 +47,10 @@ element.addEventListener('click', handleClick);
 
 ```javascript
 export default async function ({ addon, msg }) {
-    // 等待元素（插件专用工具）
+    // 等待元素(插件专用工具)
     const button = await addon.tab.waitForElement('.green-flag');
     
-    // 添加 CSS（插件专用工具）
+    // 添加 CSS(插件专用工具)
     addon.tab.addCSS(`
         .green-flag {
             background-color: red !important;
@@ -92,7 +92,7 @@ sessionStorage.setItem('key', 'value');
 Redux store 全局可用：
 
 ```javascript
-// 访问 store（注意：ReduxStore 中的 R 大写）
+// 访问 store(注意：ReduxStore 中的 R 大写)
 const store = window.ReduxStore;
 
 // 获取当前状态
@@ -124,7 +124,7 @@ const targets = state.scratchGui.targets;
 // 获取所有目标
 const targets = vm.runtime.targets;
 
-// 获取角色（非舞台目标）
+// 获取角色(非舞台目标)
 const sprites = vm.runtime.targets.filter(target => !target.isStage);
 
 // 获取舞台
@@ -241,7 +241,7 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-// 对频繁事件使用防抖（手动实现）
+// 对频繁事件使用防抖(手动实现)
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -263,10 +263,10 @@ Bilup 中可用的全局变量如下：
 // VM 实例
 window.vm
 
-// Redux store（注意：R 大写）
+// Redux store(注意：R 大写)
 window.ReduxStore  
 
-// Scratch Blocks（积木加载时可用）
+// Scratch Blocks(积木加载时可用)
 window.ScratchBlocks
 
 // 调试标志

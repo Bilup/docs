@@ -83,8 +83,8 @@ const ACCENTS = [
 主题色主要影响以下 GUI 属性：
 
 - `looks-secondary`：UI 元素的主主题色
-- `looks-transparent`：半透明版本（35% 不透明度）
-- `looks-light-transparent`：浅色透明版本（15% 不透明度）
+- `looks-transparent`：半透明版本(35% 不透明度)
+- `looks-light-transparent`：浅色透明版本(15% 不透明度)
 - `looks-secondary-dark`：用于对比的深色变体
 
 ### 积木颜色
@@ -111,9 +111,9 @@ const blockColors = {
 
 主题色按以下优先级应用：
 
-1. **主题色**（最高优先级）
+1. **主题色**(最高优先级)
 2. GUI 主题颜色
-3. 基础主题颜色（后备）
+3. 基础主题颜色(后备)
 
 解析示例：
 ```javascript

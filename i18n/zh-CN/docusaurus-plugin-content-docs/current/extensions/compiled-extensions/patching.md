@@ -64,7 +64,7 @@ const cst_patch = (obj, functions) => {
 cst_patch(ScriptTreeGenerator.prototype, {
   descendStackedBlock(fn, block, ...args) {
     switch (block.opcode) {
-      // 命令积木（帽子/堆叠积木）
+      // 命令积木(帽子/堆叠积木)
       case 'myextension_command':
         return {
           block,
@@ -274,7 +274,7 @@ case 'myextension.repeat':
 ### 常见问题和解决方案
 
 **无限递归**
-- 始终为未处理的情况调用原始函数（`fn`）
+- 始终为未处理的情况调用原始函数(`fn`)
 - 仔细检查修补条件以避免循环调用
 
 **类型不匹配**

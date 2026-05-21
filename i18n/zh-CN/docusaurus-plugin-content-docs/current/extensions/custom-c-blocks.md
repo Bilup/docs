@@ -4,13 +4,13 @@ title: 自定义 C 积木
 
 # 自定义 C 积木
 
-Bilup 允许非沙盒化扩展创建类似于 Scratch 内置的 `if`、`repeat` 和 `forever` 积木的自定义 C 积木（循环和条件）。
+Bilup 允许非沙盒化扩展创建类似于 Scratch 内置的 `if`、`repeat` 和 `forever` 积木的自定义 C 积木(循环和条件)。
 
 > **⚠️ 要求：** 自定义 C 积木仅在**非沙盒化**扩展中工作。
 
 ## 定义 C 积木
 
-要定义 C 积木，指定适当的 `blockType` 和（对于条件积木）`branchCount`。使用 `isTerminal` 表示底部不应有连接的积木（如 `forever`）。
+要定义 C 积木，指定适当的 `blockType` 和(对于条件积木)`branchCount`。使用 `isTerminal` 表示底部不应有连接的积木(如 `forever`)。
 
 ### 积木定义
 
@@ -149,7 +149,7 @@ class LoopExtension {
       // 如果为 false，运行分支 1 并再次循环
       util.startBranch(1, true);
     }
-    // 如果为 true，不执行任何操作（循环结束）
+    // 如果为 true，不执行任何操作(循环结束)
   }
 }
 Scratch.extensions.register(new LoopExtension());
@@ -192,5 +192,5 @@ Scratch.extensions.register(new RepeatReturnStyle());
 
 1. **分支索引是基于 1 的**：第一个分支是 `1`。
 2. **参数重新评估**：在循环中，参数每次积木运行时都会重新评估。
-3. **产生**：`util.startBranch` 将执行权交给分支。分支完成后（如果是循环），积木函数将再次被调用。
-4. **终端积木**：对于结束堆栈的积木（如 `forever` 或 `stop all`），设置 `isTerminal: true`。
+3. **产生**：`util.startBranch` 将执行权交给分支。分支完成后(如果是循环)，积木函数将再次被调用。
+4. **终端积木**：对于结束堆栈的积木(如 `forever` 或 `stop all`)，设置 `isTerminal: true`。

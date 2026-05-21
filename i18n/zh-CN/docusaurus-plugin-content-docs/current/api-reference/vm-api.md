@@ -5,7 +5,7 @@ sidebar_position: 2
 
 # VM API 参考
 
-Bilup 虚拟机（VM）是驱动 Scratch 项目的核心执行引擎。它提供对运行时环境的全面程序化访问，允许外部代码控制项目执行、操作角色和资源、监听事件并配置运行时行为。
+Bilup 虚拟机(VM)是驱动 Scratch 项目的核心执行引擎。它提供对运行时环境的全面程序化访问，允许外部代码控制项目执行、操作角色和资源、监听事件并配置运行时行为。
 
 ## 概述
 
@@ -23,7 +23,7 @@ VM API 通过 `window.vm` 访问，提供以下功能：
 VM 实例全局可用，可以通过多种方式访问：
 
 ```javascript
-// 全局 VM 实例（最常见）
+// 全局 VM 实例(最常见)
 const vm = window.vm;
 
 // 从 React Redux store
@@ -38,7 +38,7 @@ VM 由几个关键组件组成：
 - **Runtime** (`vm.runtime`)：核心执行引擎和状态管理
 - **Targets** (`vm.runtime.targets`)：角色和舞台对象
 - **Sequencer** (`vm.runtime.sequencer`)：线程调度器和执行控制器
-- **IO Devices** (`vm.runtime.ioDevices`)：输入/输出处理器（键盘、鼠标等）
+- **IO Devices** (`vm.runtime.ioDevices`)：输入/输出处理器(键盘、鼠标等)
 - **Extension Manager** (`vm.extensionManager`)：扩展加载和管理
 
 ## 项目控制
@@ -112,7 +112,7 @@ a.click();
 ### 目标管理
 
 #### `vm.runtime.targets`
-所有目标（角色和舞台）的数组。
+所有目标(角色和舞台)的数组。
 
 ```javascript
 const targets = vm.runtime.targets;
@@ -215,7 +215,7 @@ if (sprite && !sprite.isStage) {
 **参数：**
 - `name` (string): 角色名称
 
-**返回：** 目标对象或 null（如果未找到）
+**返回：** 目标对象或 null(如果未找到)
 
 #### `vm.runtime.getTargetForStage()`
 获取舞台目标。
@@ -228,7 +228,7 @@ console.log('舞台目标:', stage.getName());
 **返回：** 舞台目标对象
 
 #### `vm.runtime._monitorState`
-访问监视器（变量显示）状态。
+访问监视器(变量显示)状态。
 
 ```javascript
 const monitorState = vm.runtime._monitorState;
@@ -261,7 +261,7 @@ console.log(target.id);        // 唯一标识符
 console.log(target.getName()); // 显示名称
 console.log(target.isStage);   // 舞台为 true，角色为 false
 
-// 位置和外观（仅限角色）
+// 位置和外观(仅限角色)
 if (!target.isStage) {
   console.log(target.x);         // X 坐标
   console.log(target.y);         // Y 坐标
@@ -348,7 +348,7 @@ vm.on('PROJECT_CHANGED', () => {
 ```
 
 #### `TARGETS_UPDATE`
-目标（角色）被修改时触发。
+目标(角色)被修改时触发。
 
 ```javascript
 vm.on('TARGETS_UPDATE', (targets) => {
@@ -471,7 +471,7 @@ vm.runtime._pushThread(blockId, target);
 // 访问运行中的线程
 console.log('活动线程:', vm.runtime.threads);
 
-// 逐步执行线程（通常自动完成）
+// 逐步执行线程(通常自动完成)
 const doneThreads = vm.runtime.sequencer.stepThreads();
 ```
 
@@ -656,7 +656,7 @@ const loadProjectWithRetry = async (data, maxRetries = 3) => {
 const canvas = vm.renderer.canvas;
 console.log('画布尺寸:', canvas.width, 'x', canvas.height);
 
-// Canvas 上下文（如果需要自定义渲染）
+// Canvas 上下文(如果需要自定义渲染)
 const ctx = canvas.getContext('2d');
 ```
 
@@ -688,7 +688,7 @@ const pixels = colorData.data; // 像素数据的 Uint8Array
 **参数：**
 - `x` (number): 画布上的 X 坐标
 - `y` (number): 画布上的 Y 坐标  
-- `radius` (number): 采样半径（最小 1）
+- `radius` (number): 采样半径(最小 1)
 
 **返回：** 包含 `color` 和 `data` 属性的对象
 
@@ -702,7 +702,7 @@ const pixels = colorData.data; // 像素数据的 Uint8Array
 const defaultLayers = ['background', 'video', 'pen', 'sprite'];
 vm.renderer.setLayerGroupOrdering(defaultLayers);
 
-// 自定义图层顺序（画笔在顶部）
+// 自定义图层顺序(画笔在顶部)
 const customLayers = ['background', 'video', 'sprite', 'pen'];
 vm.renderer.setLayerGroupOrdering(customLayers);
 ```

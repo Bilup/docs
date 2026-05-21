@@ -32,7 +32,7 @@ https://editor.bilup.org/?turbo&hqpen&fps=60
 - **切换**：点击 turbo 按钮或使用 `?turbo` URL 参数
 
 #### 帧率控制
-- **默认**：30 FPS（与 Scratch 相同）
+- **默认**：30 FPS(与 Scratch 相同)
 - **URL 参数**：`?fps=60`
 - **影响**：更高的 FPS = 更流畅的动画，更高的 CPU 使用率
 
@@ -90,7 +90,7 @@ setStageSize(800, 600);
 
 #### 采样率
 - **选项**：22050、44100、48000 Hz
-- **默认**：22050 Hz（与 Scratch 兼容）
+- **默认**：22050 Hz(与 Scratch 兼容)
 - **质量**：更高 = 更好的质量，更多的 CPU 使用
 
 ### 音频增强
@@ -197,3 +197,48 @@ setStageSize(800, 600);
 - **WASM 编译**：编译为 WebAssembly
 - **GPU 加速**：使用 GPU 进行计算
 - **多线程**：并行脚本执行
+
+### 前沿 API
+- **WebXR**：虚拟现实和增强现实
+- **WebRTC**：实时通信
+- **机器学习**：TensorFlow.js 集成
+
+## 配置文件
+
+### 导出设置
+将你的配置保存为文件：
+```json
+{
+  "turbo": true,
+  "fps": 60,
+  "hqpen": true,
+  "stageSize": [800, 600],
+  "removeSpriteFencing": true
+}
+```
+
+### 导入设置
+从配置文件或 URL 加载设置。
+
+## URL 参数参考
+
+| 参数 | 值 | 描述 |
+|-----------|--------|-------------|
+| `turbo` | boolean | 启用 turbo 模式 |
+| `fps` | number | 设置帧率 |
+| `hqpen` | boolean | 高质量画笔 |
+| `size` | WIDTHxHEIGHT | 自定义舞台尺寸 |
+| `interpolate` | boolean | 启用运动插值 |
+| `offscreen` | boolean | 禁用舞台围栏 |
+| `limitless` | boolean | 禁用其他限制 |
+| `clones` | number | 设置最大克隆数 |
+
+## 性能提示
+
+1. **启用 Turbo 模式** 用于计算密集型项目
+2. **使用 60 FPS** 用于流畅动画
+3. **在需要时启用插值** 以获得更平滑的运动
+4. **自定义舞台尺寸** 用于特定用例
+5. **监控大型项目的内存使用情况**
+
+Bilup 的高级设置让你对 Scratch 体验拥有前所未有的控制。尝试不同的配置，找到最适合你项目的设置！

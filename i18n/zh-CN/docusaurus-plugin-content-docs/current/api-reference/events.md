@@ -46,7 +46,7 @@ addon.tab.redux.addEventListener('statechanged', (event) => {
 ### 常见 Redux 动作
 
 ```javascript
-// 目标（角色/舞台）选择
+// 目标(角色/舞台)选择
 'scratch-gui/targets/SET_TARGET'
 'scratch-gui/targets/UPDATE_TARGET_LIST'
 

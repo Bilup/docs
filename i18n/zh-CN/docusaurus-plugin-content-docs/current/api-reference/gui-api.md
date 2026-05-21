@@ -14,7 +14,7 @@ Bilup GUI 提供对界面组件、主题、项目管理和 VM 集成的程序化
 GUI 状态通过 Redux 管理，可通过全局 store 访问：
 
 ```javascript
-// 访问 Redux store（注意：ReduxStore 中的 R 大写）
+// 访问 Redux store(注意：ReduxStore 中的 R 大写)
 const store = window.ReduxStore;
 
 // 获取当前状态
@@ -30,10 +30,10 @@ const projectChanged = state.scratchGui.projectChanged;
 
 ### window.ScratchBlocks
 
-访问 ScratchBlocks/Blockly 工作区（可用时）：
+访问 ScratchBlocks/Blockly 工作区(可用时)：
 
 ```javascript
-// 访问 ScratchBlocks（可用时）
+// 访问 ScratchBlocks(可用时)
 const ScratchBlocks = window.ScratchBlocks;
 
 if (ScratchBlocks) {
@@ -151,7 +151,7 @@ const hasUnsavedChanges = store.getState().scratchGui.projectChanged;
 // 项目动作通过 Redux reducers 处理
 // 大多数项目操作需要用户交互
 
-// 示例：请求新项目（内部使用）
+// 示例：请求新项目(内部使用)
 store.dispatch({
     type: 'scratch-gui/project-state/START_FETCHING_NEW'
 });
@@ -187,7 +187,7 @@ await vm.loadProject(projectData);
 管理角色和舞台：
 
 ```javascript
-// 获取目标（角色 + 舞台）
+// 获取目标(角色 + 舞台)
 const targets = vm.runtime.targets;
 const stage = vm.runtime.getTargetForStage();
 const sprites = vm.runtime.getSpriteTargets();
@@ -663,7 +663,7 @@ vm.runtime.sequencer.stepThread(thread);
 // 控制线程步进
 thread.dontStepJustThisOneTime = true; // 跳过下一步
 
-// 强制线程编译（如果启用编译器）
+// 强制线程编译(如果启用编译器)
 if (thread.tryCompile) {
     thread.tryCompile();
 }
@@ -706,7 +706,7 @@ vm.runtime.glowBlock(blockId, true);
 // 停止积木发光
 vm.runtime.glowBlock(blockId, false);
 
-// 静默发光（内部使用）
+// 静默发光(内部使用)
 vm.runtime.quietGlow(blockId);
 ```
 
@@ -772,7 +772,7 @@ target.blocks.createBlock(blockData);
 // 删除积木
 delete target.blocks._blocks[blockId];
 
-// 获取积木的分支（子堆栈）
+// 获取积木的分支(子堆栈)
 const branchBlockId = target.blocks.getBranch(blockId, index);
 
 // 获取序列中的下一个积木

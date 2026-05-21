@@ -13,7 +13,7 @@ name: Scratch
 - 积木和参数类型常量
 - 数据类型转换和操作的实用函数
 - 扩展注册功能
-- 安全和权限 API（用于非沙盒化扩展）
+- 安全和权限 API(用于非沙盒化扩展)
 
 ## 基本结构
 
@@ -109,7 +109,7 @@ console.log(canvas.width, canvas.height);
 // 注册扩展
 Scratch.extensions.register(new MyExtension());
 
-// 检查是否为非沙盒化（仅非沙盒化扩展）
+// 检查是否为非沙盒化(仅非沙盒化扩展)
 if (Scratch.extensions.unsandboxed) {
   // 使用非沙盒化 API
 }
@@ -129,7 +129,7 @@ vm.extensionManager.refreshBlocks(extensionId);
 
 ### UI 自定义
 
-对于涉及积木编辑器本身（Blockly）的高级 UI 自定义，你可以访问全局 `ScratchBlocks` 对象。有关详细信息，请参阅 [GUI API](/api-reference/gui-api#scratchblocks-集成)。
+对于涉及积木编辑器本身(Blockly)的高级 UI 自定义，你可以访问全局 `ScratchBlocks` 对象。有关详细信息，请参阅 [GUI API](/api-reference/gui-api#scratchblocks-集成)。
 
 ## 类型常量
 
@@ -143,9 +143,9 @@ const ArgumentType = Scratch.ArgumentType;
 // 基本类型
 ArgumentType.STRING    // 'string' - 文本输入
 ArgumentType.NUMBER    // 'number' - 数字输入
-ArgumentType.BOOLEAN   // 'Boolean' - 布尔输入（六边形）
+ArgumentType.BOOLEAN   // 'Boolean' - 布尔输入(六边形)
 ArgumentType.COLOR     // 'color' - 颜色选择器
-ArgumentType.ANGLE     // 'angle' - 角度选择器（圆形）
+ArgumentType.ANGLE     // 'angle' - 角度选择器(圆形)
 
 // 特殊类型
 ArgumentType.MATRIX    // 'matrix' - 矩阵/网格输入
@@ -177,19 +177,19 @@ ArgumentType.IMAGE     // 'image' - 内联图像显示
 const BlockType = Scratch.BlockType;
 
 // 基本积木类型
-BlockType.COMMAND     // 'command' - 堆叠积木（圆角）
+BlockType.COMMAND     // 'command' - 堆叠积木(圆角)
 BlockType.REPORTER    // 'reporter' - 圆角返回值积木
 BlockType.BOOLEAN     // 'Boolean' - 六边形布尔积木
 
 // 控制流积木
-BlockType.HAT         // 'hat' - 帽子积木（启动脚本）
+BlockType.HAT         // 'hat' - 帽子积木(启动脚本)
 BlockType.CONDITIONAL // 'conditional' - If/else 样式积木
 BlockType.LOOP        // 'loop' - 重复执行样式积木
 
 // 特殊类型
-BlockType.EVENT       // 'event' - 事件帽子（无实现）
-BlockType.BUTTON      // 'button' - UI 按钮（不是积木）
-BlockType.LABEL       // 'label' - 文本标签（不是积木）
+BlockType.EVENT       // 'event' - 事件帽子(无实现)
+BlockType.BUTTON      // 'button' - UI 按钮(不是积木)
+BlockType.LABEL       // 'label' - 文本标签(不是积木)
 BlockType.XML         // 'xml' - 自定义 Blockly XML
 ```
 
@@ -257,7 +257,7 @@ Cast.toBoolean('')           // false
 Cast.toRgbColorList('#ff0000')  // [255, 0, 0]
 Cast.toRgbColorObject('#00ff00')  // {r: 0, g: 255, b: 0}
 
-// 比较（Scratch 风格）
+// 比较(Scratch 风格)
 Cast.compare('10', '9')      // 1 (数字比较)
 Cast.compare('apple', 'banana')  // -1 (字符串比较)
 Cast.isInt(3.14)             // false
@@ -278,7 +278,7 @@ myTextBlock(args) {
 }
 ```
 
-## 积木实用工具对象（仅非沙盒化）
+## 积木实用工具对象(仅非沙盒化)
 
 当积木在非沙盒化扩展中运行时，它们会接收第二个 `util` 参数，提供对执行上下文的访问。
 
@@ -350,16 +350,16 @@ if (util.stackTimerNeedsInit()) {
 }
 ```
 
-### 分支控制（用于 C 积木）
+### 分支控制(用于 C 积木)
 
 ```js
 // 用于条件/循环积木
 util.startBranch(1, false);  // 启动第一个分支，非循环
-util.startBranch(2, false);  // 启动第二个分支（else）
+util.startBranch(2, false);  // 启动第二个分支(else)
 util.startBranch(1, true);   // 启动分支作为循环
 ```
 
-## 运行时事件（仅非沙盒化）
+## 运行时事件(仅非沙盒化)
 
 监听 VM 事件以实现响应式扩展：
 
@@ -394,7 +394,7 @@ runtime.on('MONITORS_UPDATE', (monitors) => {
 });
 ```
 
-## 安全 API（仅非沙盒化）
+## 安全 API(仅非沙盒化)
 
 非沙盒化扩展可以访问各种安全受限的 API：
 

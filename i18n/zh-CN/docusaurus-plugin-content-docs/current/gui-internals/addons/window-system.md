@@ -34,7 +34,7 @@ win.show();
 ```
 
 ## 选项
-- `id` (string) 唯一标识符（如果省略则自动生成）
+- `id` (string) 唯一标识符(如果省略则自动生成)
 - `title` (string) 标题
 - `width`, `height` (number) 宽高
 - `minWidth`, `minHeight` (number) 最小宽高

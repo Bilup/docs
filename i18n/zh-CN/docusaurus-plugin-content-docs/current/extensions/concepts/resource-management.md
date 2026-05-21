@@ -30,7 +30,7 @@ class MyExtension {
       this.cleanup();
     });
     
-    // 项目开始时清理（可选）
+    // 项目开始时清理(可选)
     runtime.on('PROJECT_START', () => {
       this.cleanup();
     });
@@ -70,8 +70,8 @@ constructor(runtime) {
 ### 2. 按顺序清理
 
 始终按此顺序销毁：
-1. 先销毁可绘制对象（它们引用造型）
-2. 然后销毁造型（在没有可绘制对象使用它们之后）
+1. 先销毁可绘制对象(它们引用造型)
+2. 然后销毁造型(在没有可绘制对象使用它们之后)
 
 ```javascript
 cleanup() {

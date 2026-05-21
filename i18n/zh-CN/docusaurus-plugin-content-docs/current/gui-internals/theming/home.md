@@ -7,9 +7,9 @@ sidebar_position: 1
 
 Bilup 的主题系统由三个独立的组件组成，可以混合搭配：
 
-- **[Accent Colors](./accent-colors)** - 主色调方案（红色、蓝色、紫色等）
-- **[GUI Themes](./gui-themes)** - 界面外观（浅色、深色、午夜）
-- **[Block Themes](./block-themes)** - 积木颜色和外观（three、dark、high-contrast）
+- **[Accent Colors](./accent-colors)** - 主色调方案(红色、蓝色、紫色等)
+- **[GUI Themes](./gui-themes)** - 界面外观(浅色、深色、午夜)
+- **[Block Themes](./block-themes)** - 积木颜色和外观(three、dark、high-contrast)
 
 ## 架构
 
@@ -18,9 +18,9 @@ Bilup 的主题系统由三个独立的组件组成，可以混合搭配：
 ```javascript
 class Theme {
     constructor(accent, gui, blocks, menuBarAlign, wallpaper, fonts) {
-        this.accent = accent;     // 颜色主题（红色、蓝色等）
-        this.gui = gui;           // 界面主题（浅色、深色、午夜）
-        this.blocks = blocks;     // 积木外观（three、dark、high-contrast）
+        this.accent = accent;     // 颜色主题(红色、蓝色等)
+        this.gui = gui;           // 界面主题(浅色、深色、午夜)
+        this.blocks = blocks;     // 积木外观(three、dark、high-contrast)
         this.menuBarAlign = menuBarAlign;
         this.wallpaper = wallpaper;
         this.fonts = fonts;
@@ -30,7 +30,7 @@ class Theme {
 
 ## 工作原理
 
-1. **模块化设计**：每个组件（accent、GUI、blocks）都是独立的
+1. **模块化设计**：每个组件(accent、GUI、blocks)都是独立的
 2. **颜色合并**：颜色按优先级解析：Accent → GUI → Base
 3. **CSS 变量**：主题在文档根目录上设置 CSS 自定义属性
 4. **动态应用**：主题可以在运行时更改
@@ -155,7 +155,7 @@ applyGuiColors(theme);
 颜色按优先级解析：
 1. Accent 颜色
 2. GUI 主题颜色
-3. 基础浅色主题颜色（后备）
+3. 基础浅色主题颜色(后备)
 
 ```javascript
 theme.getGuiColors() // 合并 accent + gui + base 颜色

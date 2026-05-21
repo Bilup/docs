@@ -13,7 +13,7 @@ hide_table_of_contents: true
 
 ## 什么是 CORS？{#cors}
 
-它是跨域资源共享（Cross-Origin Resource Sharing）的缩写，但我们不打算深入探讨其 [内部细节](https://developer.mozilla.org/en-US/docs/Glossary/CORS)——其他地方已经这样做了。CORS 解决的核心问题很容易理解：
+它是跨域资源共享(Cross-Origin Resource Sharing)的缩写，但我们不打算深入探讨其 [内部细节](https://developer.mozilla.org/en-US/docs/Glossary/CORS)——其他地方已经这样做了。CORS 解决的核心问题很容易理解：
 
  - 一些网站想要**阻止**来自其他网站的访问
  - 其他网站想要**允许**来自其他网站的访问
@@ -27,12 +27,12 @@ CORS 是网站声明是否希望其他网站能够访问它们的方式。默认
 这取决于 URL 是什么。
 
  - **切换到不同的 URL：** 如果 URL 只是用于托管静态文件，请找到另一个支持直接下载和 CORS 的主机。如果一个 API 不支持 CORS，请检查竞争对手的 API 是否支持。
- - **使用 CORS 代理：** 你可以请另一台服务器（称为 CORS 代理）代表你访问该网站，然后发回响应，但允许 CORS，而不是让你的浏览器直接访问网站。有很多你可以找到的公共 CORS 代理，但它们寿命通常很短，因为运营成本昂贵且容易被滥用。Bilup 目前不运行自己的 CORS 代理。
+ - **使用 CORS 代理：** 你可以请另一台服务器(称为 CORS 代理)代表你访问该网站，然后发回响应，但允许 CORS，而不是让你的浏览器直接访问网站。有很多你可以找到的公共 CORS 代理，但它们寿命通常很短，因为运营成本昂贵且容易被滥用。Bilup 目前不运行自己的 CORS 代理。
  - **切换到 Bilup 桌面版：** 桌面应用有绕过 CORS 的选项。请参阅下文。
 
 ## 桌面应用 {#desktop}
 
-在 [Bilup 桌面版](https://desktop.bilup.org/) 中，有一个绕过 CORS 以允许访问任何网站的选项。出于安全原因，它默认是禁用的，以匹配普通网页浏览器。打开如下图位置的桌面设置（也可以在右上角的 ? 按钮下找到）：
+在 [Bilup 桌面版](https://desktop.bilup.org/) 中，有一个绕过 CORS 以允许访问任何网站的选项。出于安全原因，它默认是禁用的，以匹配普通网页浏览器。打开如下图位置的桌面设置(也可以在右上角的 ? 按钮下找到)：
 
 import settingsMenu from './assets/desktop-settings.png';
 

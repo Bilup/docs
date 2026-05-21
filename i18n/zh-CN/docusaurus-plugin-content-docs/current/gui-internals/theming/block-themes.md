@@ -78,7 +78,7 @@ export { blockColors };
 - **motion**: 运动和定位积木
 - **looks**: 外观和视觉效果积木
 - **sounds**: 音频和音乐积木
-- **control**: 流程控制（循环、条件）
+- **control**: 流程控制(循环、条件)
 - **event**: 事件处理积木
 - **sensing**: 输入和检测积木
 - **operators**: 数学和逻辑运算
@@ -264,7 +264,7 @@ const BLOCKS_MAP = {
     },
     [BLOCKS_DARK]: {
         // ...
-        useForStage: false   // 不在舞台上使用（改用浅色主题）
+        useForStage: false   // 不在舞台上使用(改用浅色主题)
     }
 };
 ```

@@ -8,7 +8,7 @@ hide_table_of_contents: true
 
 :::note
 ## 只有那些"高级" URL 参数会在此处列出 {#only-hidden-url-parameters-are-listed-here}
-Bilup 会自动将常见设置（如 Turbo 模式、FPS、高清画笔等）存储在 URL 中。此页面记录的是高级选项。
+Bilup 会自动将常见设置(如 Turbo 模式、FPS、高清画笔等)存储在 URL 中。此页面记录的是高级选项。
 :::
 
 
@@ -53,4 +53,4 @@ https://editor.bilup.org/?nocompile
 
 https://editor.bilup.org/?project_url=https://example.com/example.sb3
 
-如果你不包含协议头，则会默认使用 https://。出于安全原因，http:// URL 通常无法工作。请注意，URL 需要是直接下载链接，并且必须支持 CORS（`Access-Control-Allow-Origin: *`）。[GitHub Pages](https://pages.github.com/) 会自动支持此功能且效果良好。
+如果你不包含协议头，则会默认使用 https://。出于安全原因，http:// URL 通常无法工作。请注意，URL 需要是直接下载链接，并且必须支持 CORS(`Access-Control-Allow-Origin: *`)。[GitHub Pages](https://pages.github.com/) 会自动支持此功能且效果良好。

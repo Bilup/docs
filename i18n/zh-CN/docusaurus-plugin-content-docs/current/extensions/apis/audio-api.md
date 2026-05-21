@@ -83,7 +83,7 @@ const audioEngine = new AudioEngine(audioContext);
 ```
 
 **参数：**
-- `audioContext`（可选）- 自定义 AudioContext。如果未提供，将创建一个新的。
+- `audioContext`(可选)- 自定义 AudioContext。如果未提供，将创建一个新的。
 
 #### 关键属性
 
@@ -104,7 +104,7 @@ audioEngine.audioContext // AudioContext
 
 通过扩展积木中的 `util.runtime.audioEngine` 访问的主音频引擎。
 
-#### 关键属性（只读）
+#### 关键属性(只读)
 
 ```javascript
 const audioEngine = util.runtime.audioEngine;
@@ -157,7 +157,7 @@ applyEffectsToSound(args, util) {
 ```
 
 ##### getLoudness()
-获取当前麦克风音量（0-100）。
+获取当前麦克风音量(0-100)。
 
 ```javascript
 getMicrophoneLevel(args, util) {
@@ -229,7 +229,7 @@ soundPlayer.connect(effectChain);
 effectChain.connect(audioEngine);
 ```
 
-### SoundBank（角色集成）
+### SoundBank(角色集成)
 
 每个角色都有一个声音库，可通过 `util.target.sprite.soundBank` 访问。
 
@@ -284,13 +284,13 @@ effectChain.connect(audioEngine);
 
 ```javascript
 // 音调：每 10 个增量 = 1 个半音
-// 典型范围 -1200 到 +1200（共 10 个八度）
+// 典型范围 -1200 到 +1200(共 10 个八度)
 effectChain.set('pitch', 120); // +1 个八度
 
-// 平移：-100（完全左）到 +100（完全右）
+// 平移：-100(完全左)到 +100(完全右)
 effectChain.set('pan', 0); // 居中
 
-// 音量：0（静音）到 100+（正常 = 100）
+// 音量：0(静音)到 100+(正常 = 100)
 effectChain.set('volume', 100); // 正常音量
 ```
 
@@ -450,16 +450,16 @@ class EffectExtension {
 
 ```javascript
 // 音调：每 10 个增量 = 1 个半音
-// 范围：-1200 到 +1200（共 10 个八度）
+// 范围：-1200 到 +1200(共 10 个八度)
 effectChain.set('pitch', 120); // +1 个八度
 effectChain.set('pitch', -120); // -1 个八度
 
-// 平移：-100（完全左）到 +100（完全右）
+// 平移：-100(完全左)到 +100(完全右)
 effectChain.set('pan', 0);    // 居中
 effectChain.set('pan', -100); // 完全左移
 effectChain.set('pan', 100);  // 完全右移
 
-// 音量：0（静音）到 100+（正常 = 100）
+// 音量：0(静音)到 100+(正常 = 100)
 effectChain.set('volume', 100); // 正常音量
 effectChain.set('volume', 200); // 双倍音量
 effectChain.set('volume', 0);   // 静音
@@ -758,7 +758,7 @@ test('microphone loudness detection', () => {
 ### 在真实环境中测试
 
 ```javascript
-// 使用实际运行时测试扩展（用于集成测试）
+// 使用实际运行时测试扩展(用于集成测试)
 test('extension audio integration', async () => {
   // 创建最小测试环境
   const vm = new VirtualMachine();
@@ -794,7 +794,7 @@ test('extension audio integration', async () => {
 
 ## 扩展的浏览器兼容性
 
-- **现代浏览器**：完整的 Web Audio API 支持（Chrome 66+、Firefox 60+、Safari 14.1+）
+- **现代浏览器**：完整的 Web Audio API 支持(Chrome 66+、Firefox 60+、Safari 14.1+)
 - **Mobile Safari**：需要用户交互才能启动音频上下文
 - **旧版浏览器**：可能需要对不支持的功能进行优雅降级
 - **扩展上下文**：音频权限遵循与主应用相同的规则

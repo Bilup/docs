@@ -22,7 +22,7 @@ renderer.destroyDrawable(drawableID, group)
 ### group
 **类型:** `string`
 
-可绘制对象所属的图层组（`'background'`、`'video'`、`'pen'` 或 `'sprite'`）。
+可绘制对象所属的图层组(`'background'`、`'video'`、`'pen'` 或 `'sprite'`)。
 
 ## 返回值
 

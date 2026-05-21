@@ -15,7 +15,7 @@ hide_table_of_contents: true
 
 如果你使用了其他人创建的服装、声音、脚本或扩展，请确保你有这些人的许可来销售他们的作品。你在 Scratch 网站上找到的大多数内容都应该遵循 [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) 许可证，从技术上讲，这并不会阻止你转售作品，但它要求署名，而且相同方式分享条款可能产生重大影响。如果创作者选择，他们可以授予你 CC BY-SA 2.0 之外的额外权限。
 
-请注意，Scratch 商标（如 Scratch 标志、Scratch 猫、Gobo、Pico 等）是 CC BY-SA 2.0 许可证的例外，你可能没有使用它们的许可。
+请注意，Scratch 商标(如 Scratch 标志、Scratch 猫、Gobo、Pico 等)是 CC BY-SA 2.0 许可证的例外，你可能没有使用它们的许可。
 
 有关更多信息，请参阅「我可以使用/混用我在网站上找到的 Scratch 支持材料、角色、图片、声音或示例项目吗？」和「我可以销售我的 Scratch 项目吗？」https://scratch.mit.edu/faq
 

@@ -26,7 +26,7 @@ hide_table_of_contents: true
 - 访问大多数公共 API，只要 [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) 允许
 - 访问一些 JavaScript Web API，例如 [Gamepad API](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
 
-值得注意的是，在其他 Scratch 修改版中，扩展沙盒可能是 `Worker` 而不是 `<iframe>`。我们使用 `<iframe>` 是因为它更安全（跨域 vs 同源）并允许访问更多 Web API。
+值得注意的是，在其他 Scratch 修改版中，扩展沙盒可能是 `Worker` 而不是 `<iframe>`。我们使用 `<iframe>` 是因为它更安全(跨域 vs 同源)并允许访问更多 Web API。
 
 也许最大的限制是，每次运行积木时，脚本将暂停至少 1 帧，无论脚本有多简单。无论是否启用"不刷新屏幕运行"或加速模式，它都会等待。
 
@@ -46,7 +46,7 @@ hide_table_of_contents: true
 
 ## 练习
 
-1. 创建一个沙盒化扩展（与我们到目前为止构建的相同），其中包含一个什么都不做的 COMMAND 积木。创建一个新的空项目，并创建一个重复（10）循环，运行此积木 4 次。观察到，即使积木什么都不做，循环也需要超过一秒才能完成。
+1. 创建一个沙盒化扩展(与我们到目前为止构建的相同)，其中包含一个什么都不做的 COMMAND 积木。创建一个新的空项目，并创建一个重复(10)循环，运行此积木 4 次。观察到，即使积木什么都不做，循环也需要超过一秒才能完成。
 1. 在重复执行中，将扩展中的积木替换为"设置我的变量为 0"积木。观察到循环立即完成。这是非沙盒化扩展的积木的行为方式。
 1. 在自定义扩展中，使用 console.log 输出 `window.origin` 的值。将此与在 turbowarp.org 上的浏览器开发者控制台中运行 `window.origin` 进行比较。
 

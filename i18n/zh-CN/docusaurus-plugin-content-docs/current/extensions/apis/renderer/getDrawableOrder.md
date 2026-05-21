@@ -23,7 +23,7 @@ renderer.getDrawableOrder(drawableID)
 
 **类型:** `number`
 
-绘制列表中的位置（绝对位置，不相对于图层组）。
+绘制列表中的位置(绝对位置，不相对于图层组)。
 
 ## 示例
 

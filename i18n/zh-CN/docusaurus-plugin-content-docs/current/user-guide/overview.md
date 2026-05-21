@@ -71,7 +71,7 @@ sidebar_position: 1
 ### 1. 第一步
 1. **打开 Bilup** 访问 [https://editor.bilup.org/](https://editor.bilup.org/)
 2. **尝试界面** - 一切都像 Scratch 一样工作！
-3. **启用 Turbo 模式**（⚡）以查看性能提升
+3. **启用 Turbo 模式**(⚡)以查看性能提升
 4. **在设置中切换到深色模式**以获得现代外观
 
 ### 2. 启用基本插件
@@ -102,16 +102,16 @@ sidebar_position: 1
 
 | 操作 | 快捷键 |
 |--------|----------|
-| 保存项目 | Ctrl+S（Cmd+S） |
-| 加载项目 | Ctrl+O（Cmd+O） |
-| 撤销 | Ctrl+Z（Cmd+Z） |
-| 重做 | Ctrl+Shift+Z（Cmd+Shift+Z） |
-| 运行项目 | Ctrl+Enter（Cmd+Enter） |
-| 停止项目 | Ctrl+Shift+Enter（Cmd+Shift+Enter） |
+| 保存项目 | Ctrl+S(Cmd+S) |
+| 加载项目 | Ctrl+O(Cmd+O) |
+| 撤销 | Ctrl+Z(Cmd+Z) |
+| 重做 | Ctrl+Shift+Z(Cmd+Shift+Z) |
+| 运行项目 | Ctrl+Enter(Cmd+Enter) |
+| 停止项目 | Ctrl+Shift+Enter(Cmd+Shift+Enter) |
 | 全屏 | F11 |
-| 切换到代码标签 | Ctrl+1（Cmd+1） |
-| 切换到造型标签 | Ctrl+2（Cmd+2） |
-| 切换到声音标签 | Ctrl+3（Cmd+3） |
+| 切换到代码标签 | Ctrl+1(Cmd+1) |
+| 切换到造型标签 | Ctrl+2(Cmd+2) |
+| 切换到声音标签 | Ctrl+3(Cmd+3) |
 
 ### 基本按钮
 
@@ -167,10 +167,10 @@ Bilup 包含帮助你学习的示例项目：
 - **自定义积木** - 高级脚本技术
 
 <!-- ### 视频教程
-- **Bilup 入门**（5 分钟）
-- **插件系统深入探讨**（15 分钟）
-- **性能优化**（10 分钟）
-- **自定义主题创建**（12 分钟） -->
+- **Bilup 入门**(5 分钟)
+- **插件系统深入探讨**(15 分钟)
+- **性能优化**(10 分钟)
+- **自定义主题创建**(12 分钟) -->
 
 ### 社区资源
 - **[GitHub 讨论](https://github.com/orgs/Bilup/discussions)** - 提问和分享项目

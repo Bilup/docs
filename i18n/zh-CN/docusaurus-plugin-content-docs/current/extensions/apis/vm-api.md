@@ -4,7 +4,7 @@ name: VM
 
 # 虚拟机 API
 
-VM（虚拟机）是运行 Scratch 项目的核心引擎。对于扩展开发者，VM 提供对项目执行、角色管理、积木解释和运行时事件的访问。此 API 主要通过 `Scratch.vm` 供非沙盒化扩展使用。
+VM(虚拟机)是运行 Scratch 项目的核心引擎。对于扩展开发者，VM 提供对项目执行、角色管理、积木解释和运行时事件的访问。此 API 主要通过 `Scratch.vm` 供非沙盒化扩展使用。
 
 ## 概述
 
@@ -33,13 +33,13 @@ const runtime = vm.runtime;
 ### 基本执行
 
 ```js
-// 启动项目（绿旗）
+// 启动项目(绿旗)
 vm.greenFlag();
 
 // 停止所有脚本
 vm.stopAll();
 
-// 手动执行单步（用于调试）
+// 手动执行单步(用于调试)
 vm.runtime._step();
 
 // 检查项目是否正在运行
@@ -66,7 +66,7 @@ vm.on('TURBO_MODE_OFF', () => {
 ### 性能选项
 
 ```js
-// 设置帧率（30 或 60 FPS）
+// 设置帧率(30 或 60 FPS)
 vm.setFramerate(60);
 
 // 启用/禁用插值
@@ -155,13 +155,13 @@ await vm.addBackdrop('backdrop.png', backdropObject);
 ```js
 const runtime = vm.runtime;
 
-// 获取所有角色（角色 + 舞台）
+// 获取所有角色(角色 + 舞台)
 const allTargets = runtime.targets;
 
 // 获取舞台
 const stage = runtime.getTargetForStage();
 
-// 获取所有角色（不包括舞台）
+// 获取所有角色(不包括舞台)
 const sprites = runtime.getSpriteTargets();
 
 // 通过 ID 获取角色
@@ -315,7 +315,7 @@ const thread = runtime._pushThread(blockId, target);
 // 手动启动线程
 // _pushThread(blockId, target, opts)
 const thread = runtime._pushThread(startBlockId, target, {
-  stackClick: true // 作为栈点击处理（如果正在运行则重新启动）
+  stackClick: true // 作为栈点击处理(如果正在运行则重新启动)
 });
 
 // 线程状态常量
@@ -399,7 +399,7 @@ runtime.on('TARGETS_UPDATE', (emitProjectChanged) => {
 ### 积木事件
 
 ```js
-// 积木发光（视觉反馈）
+// 积木发光(视觉反馈)
 runtime.on('SCRIPT_GLOW_ON', (glowData) => {
   console.log('脚本发光中:', glowData.id);
 });
@@ -441,7 +441,7 @@ const isLoaded = extensionManager.isExtensionLoaded('pen');
 // 获取已加载的扩展
 const loadedExtensions = extensionManager.getLoadedExtensions();
 
-// 加载扩展（非沙盒化）
+// 加载扩展(非沙盒化)
 if (extensionManager.loadExtensionURL) {
   await extensionManager.loadExtensionURL('https://example.com/extension.js');
 }
@@ -536,7 +536,7 @@ if (vm.exports) {
 **高级**
 
 为了深度集成，你可以钩入运行时进程。有关详细信息，请参阅 [GUI API](/api-reference/gui-api#运行时钩子)：
-- `runtime._convertBlockForScratchBlocks`（自定义积木序列化）
+- `runtime._convertBlockForScratchBlocks`(自定义积木序列化)
 - `ScratchBlocks` 集成
 ```
 

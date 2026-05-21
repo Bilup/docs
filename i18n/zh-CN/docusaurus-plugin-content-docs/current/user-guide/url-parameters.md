@@ -35,7 +35,7 @@ https://editor.bilup.org/123456789
 https://editor.bilup.org/?project_url=https://example.com/project.sb3
 ```
 
-### 自动启动（仅嵌入）
+### 自动启动(仅嵌入)
 在嵌入中自动启动项目：
 ```
 https://editor.bilup.org/123456789?autoplay
@@ -60,7 +60,7 @@ https://editor.bilup.org/?turbo
 ```
 https://editor.bilup.org/?fps=60     # 60 FPS
 https://editor.bilup.org/?fps=120    # 120 FPS
-https://editor.bilup.org/?fps=30     # 30 FPS（默认）
+https://editor.bilup.org/?fps=30     # 30 FPS(默认)
 ```
 
 ### 高质量画笔
@@ -90,7 +90,7 @@ https://editor.bilup.org/?size=800x600
 https://editor.bilup.org/?size=1920x1080
 ```
 
-### 全屏背景（仅播放器）
+### 全屏背景(仅播放器)
 控制全屏背景颜色：
 ```
 https://editor.bilup.org/?fullscreen-background=%23abc123
@@ -111,13 +111,13 @@ https://editor.bilup.org/?clones=300
 ## 扩展
 
 ### 加载扩展
-按 URL 加载自定义扩展（推荐使用非沙盒化）：
+按 URL 加载自定义扩展(推荐使用非沙盒化)：
 ```
 https://editor.bilup.org/?extension=https://example.com/ext.js
 https://editor.bilup.org/?extension=https://example.com/other.js
 ```
 
-### 插件（仅嵌入）
+### 插件(仅嵌入)
 在嵌入中启用特定插件：
 ```
 https://editor.bilup.org/123456789/embed?addons=pause,gamepad
@@ -135,7 +135,7 @@ https://editor.bilup.org/123456789/embed?addons=pause,gamepad
 ## 开发
 
 ### 禁用编译器
-关闭编译器（用于调试）：
+关闭编译器(用于调试)：
 ```
 https://editor.bilup.org/?nocompile
 ```
@@ -146,7 +146,7 @@ https://editor.bilup.org/?nocompile
 https://editor.bilup.org/?project_url=https://example.com/project.sb3
 ```
 
-### 云主机（嵌入/播放器）
+### 云主机(嵌入/播放器)
 覆盖云服务器：
 ```
 https://editor.bilup.org/?cloud_host=wss://clouddata.bilup.org
@@ -164,7 +164,7 @@ https://editor.bilup.org/?cloud_host=wss://clouddata.bilup.org
 | `hqpen` | boolean | 高质量画笔 |
 | `interpolate` | boolean | 启用插值 |
 | `limitless` | boolean | 禁用杂项限制 |
-| `stuck` | boolean | 启用 warp 计时器（仅播放器） |
+| `stuck` | boolean | 启用 warp 计时器(仅播放器) |
 
 ### 显示
 | 参数 | 值 | 描述 |
@@ -279,7 +279,7 @@ const gameURL = buildBilupURL('123456789', {
 ## 最佳实践
 
 ### URL 长度
-- 保持 URL 合理长度（少于 2000 个字符）
+- 保持 URL 合理长度(少于 2000 个字符)
 - 仅使用必要的参数
 - 考虑使用简短的参数名称
 

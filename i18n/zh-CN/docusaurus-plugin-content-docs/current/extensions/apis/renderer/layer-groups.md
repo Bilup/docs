@@ -10,7 +10,7 @@ title: Renderer Layer Groups
 - `background` — 在所有内容后面
 - `video` — 相机/视频层
 - `pen` — 画笔层
-- `sprite` — 角色层（前面）
+- `sprite` — 角色层(前面)
 
 ## 顺序
 从后到前：`background` → `video` → `pen` → `sprite`。

@@ -28,7 +28,7 @@ import {ExtensionCode, Spoiler} from './utils.js';
 如果你的沙盒化扩展有类似这样的代码：
 
 ```js
-// 旧的沙盒化扩展（worker 或 <iframe> 沙盒）：
+// 旧的沙盒化扩展(worker 或 <iframe> 沙盒)：
 class MyExtension {
   getInfo () {
     return { /* ... */ };
@@ -37,7 +37,7 @@ class MyExtension {
 Scratch.extensions.register(new MyExtension());
 ```
 
-或者如果你的扩展使用旧的"插件"机制，例如这个：（如果你不认识这段代码，不用担心）
+或者如果你的扩展使用旧的"插件"机制，例如这个：(如果你不认识这段代码，不用担心)
 
 ```js
 class MyExtension {
@@ -82,7 +82,7 @@ class MyExtension {
 
 如果你只是使用文件，请确保每次加载扩展时都选中"在沙盒外运行扩展"框。
 
-创建一个新的空项目，使用重复（30）循环将"hello"积木添加到列表中。请注意，它现在立即运行，而沙盒化版本至少需要一秒钟。
+创建一个新的空项目，使用重复(30)循环将"hello"积木添加到列表中。请注意，它现在立即运行，而沙盒化版本至少需要一秒钟。
 
 观察到大部分代码仍然相同：你仍然创建一个类，然后调用 Scratch.extensions.register()，然后 Scratch 调用 getInfo()，它返回相同类型的对象。只是周围的模板不同。
 
@@ -91,7 +91,7 @@ class MyExtension {
 在我们讨论新 API 之前，我们想指出非沙盒化扩展的一些额外要求：
 
 - 积木不能抛出错误。虽然沙盒化扩展可以，但这样做的非沙盒化扩展可能会破坏脚本。
-- 输入和布尔积木必须返回有效值。虽然沙盒化扩展可以忽略这一点，但不返回正确值（字符串、数字或布尔值）的非沙盒化扩展可能会以未知方式破坏脚本。
+- 输入和布尔积木必须返回有效值。虽然沙盒化扩展可以忽略这一点，但不返回正确值(字符串、数字或布尔值)的非沙盒化扩展可能会以未知方式破坏脚本。
 - 积木不能陷入无限循环。虽然沙盒化扩展通常无法在陷入循环时冻结整个窗口，但非沙盒化扩展会。这可能导致**数据丢失**。
 
 ## 访问 Scratch 内部
@@ -120,7 +120,7 @@ const vm = Scratch.vm;
 }(Scratch));
 ```
 
-花点时间找找你要找的东西。你的开发者工具将非常有用，因为你可以在扩展加载后从那里访问 `Scratch`，或者使用其他可用的[调试全局变量](../development/globals)（但请不要在扩展中使用这些）。你可能会发现 [scratch-vm 源代码](https://github.com/TurboWarp/scratch-vm/) 或 [@turbowarp/types](https://github.com/turboWarp/types) 是有用的资源。
+花点时间找找你要找的东西。你的开发者工具将非常有用，因为你可以在扩展加载后从那里访问 `Scratch`，或者使用其他可用的[调试全局变量](../development/globals)(但请不要在扩展中使用这些)。你可能会发现 [scratch-vm 源代码](https://github.com/TurboWarp/scratch-vm/) 或 [@turbowarp/types](https://github.com/turboWarp/types) 是有用的资源。
 
 这是一个使用 Scratch.vm 切换加速模式的扩展示例，类似于 [extensions.turbowarp.org](https://extensions.turbowarp.org/) 上的"运行时选项"扩展：
 
@@ -130,7 +130,7 @@ const vm = Scratch.vm;
 
 当沙盒化自定义扩展运行时，它只接收脚本提供的参数。它甚至不知道哪个角色正在执行它。我们现在介绍传递给积木函数的第二个参数：BlockUtility。
 
-BlockUtility 对象（通常称为 `util`）允许非沙盒化扩展中的积木使用 `util.target` 直接访问运行它们的角色。与 VM 类似，这是内部使用的实际对象。你可以完全访问它。
+BlockUtility 对象(通常称为 `util`)允许非沙盒化扩展中的积木使用 `util.target` 直接访问运行它们的角色。与 VM 类似，这是内部使用的实际对象。你可以完全访问它。
 
 这是一个演示使用 `util.target` 获取当前角色名称或访问变量的扩展示例。
 
@@ -179,7 +179,7 @@ BlockUtility 对象（通常称为 `util`）允许非沙盒化扩展中的积木
 
 沙盒化扩展可以随意使用 `fetch()` 等 API，而非沙盒化扩展应在向任何远程服务发出请求之前请求权限。这让用户可以控制自己的隐私。虽然在运行时没有技术措施强制执行此操作，但这是 [extensions.turbowarp.org](https://extensions.turbowarp.org) 上所有扩展的要求。
 
-对某些流行服务的请求（如 [GitHub Pages](https://pages.github.com/) 或 [GitLab Pages](https://about.gitlab.com/stages-devops-lifecycle/pages/)）可能会自动批准，而对其他随机网站的请求可能会向用户显示提示。你不应该对此做任何假设，你的代码需要确保能够优雅地处理用户拒绝提示（扩展的行为应与没有互联网连接时相同）。
+对某些流行服务的请求(如 [GitHub Pages](https://pages.github.com/) 或 [GitLab Pages](https://about.gitlab.com/stages-devops-lifecycle/pages/))可能会自动批准，而对其他随机网站的请求可能会向用户显示提示。你不应该对此做任何假设，你的代码需要确保能够优雅地处理用户拒绝提示(扩展的行为应与没有互联网连接时相同)。
 
 这些权限 API 还会尝试通过阻止项目运行任意 JavaScript 来自动防止，例如重定向到 `javascript:` URL。
 
@@ -248,9 +248,9 @@ await Scratch.redirect(url);
 
 我们鼓励你尝试在没有提示的情况下找出这些答案。这会让你更熟悉 VM 内部的工作原理。
 
-1. 创建一个点击绿旗的积木。（提示：<Spoiler>vm.greenFlag</Spoiler>）
-1. 创建一个返回角色 x 位置的积木，类似于 "x 坐标" 积木。（提示：<Spoiler>target.x</Spoiler>）
-1. 创建一个将角色移动到屏幕中心的积木，类似于 "移到 x: 0 y: 0"。（提示：<Spoiler>target.setXY(x, y)</Spoiler>）
+1. 创建一个点击绿旗的积木。(提示：<Spoiler>vm.greenFlag</Spoiler>)
+1. 创建一个返回角色 x 位置的积木，类似于 "x 坐标" 积木。(提示：<Spoiler>target.x</Spoiler>)
+1. 创建一个将角色移动到屏幕中心的积木，类似于 "移到 x: 0 y: 0"。(提示：<Spoiler>target.setXY(x, y)</Spoiler>)
 
 ## 下一步
 

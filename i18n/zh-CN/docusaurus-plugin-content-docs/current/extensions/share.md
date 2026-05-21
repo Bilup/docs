@@ -12,7 +12,7 @@ hide_table_of_contents: true
 
 沙盒化扩展可以托管在任何提供静态文件托管和 HTTPS 的地方。
 
-一个常见的选择是 [GitHub Pages](https://pages.github.com/)。请注意，GitHub 的"raw"链接（raw.githubusercontent.com）不起作用；你必须改用 GitHub Pages。
+一个常见的选择是 [GitHub Pages](https://pages.github.com/)。请注意，GitHub 的"raw"链接(raw.githubusercontent.com)不起作用；你必须改用 GitHub Pages。
 
 ## 非沙盒化扩展
 

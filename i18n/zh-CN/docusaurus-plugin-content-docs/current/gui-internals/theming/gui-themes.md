@@ -44,10 +44,10 @@ export { guiColors, blockColors };
 
 ### 核心界面
 
-- `color-scheme`: 'light' 或 'dark'（影响浏览器行为）
+- `color-scheme`: 'light' 或 'dark'(影响浏览器行为)
 - `ui-primary`: 主背景颜色
-- `ui-secondary`: 次要背景（面板、侧边栏）
-- `ui-tertiary`: 第三级背景（按钮、输入）
+- `ui-secondary`: 次要背景(面板、侧边栏)
+- `ui-tertiary`: 第三级背景(按钮、输入)
 
 ### 文本颜色
 
@@ -63,7 +63,7 @@ export { guiColors, blockColors };
 
 ### 模态窗口
 
-- `ui-modal-overlay`: 背景覆盖（带透明度）
+- `ui-modal-overlay`: 背景覆盖(带透明度)
 - `ui-modal-background`: 模态窗口背景
 - `ui-modal-foreground`: 模态文本颜色
 - `ui-modal-header-background`: 模态标题背景
@@ -105,7 +105,7 @@ const guiColors = {
     // 链接
     'link-color': '#1976D2',
     
-    // 图标滤镜（根据您的配色方案调整）
+    // 图标滤镜(根据您的配色方案调整)
     'filter-icon-black': 'none',
     'filter-icon-gray': 'grayscale(100%) brightness(0.7)',
     'filter-icon-white': 'brightness(0) invert(100%)'

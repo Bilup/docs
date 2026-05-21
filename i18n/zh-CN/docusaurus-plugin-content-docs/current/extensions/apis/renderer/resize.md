@@ -30,7 +30,7 @@ renderer.resize(width, height)
 
 ## 注意事项
 
-这会更改 HTML canvas 元素的大小。它不会更改逻辑舞台大小（坐标系）。
+这会更改 HTML canvas 元素的大小。它不会更改逻辑舞台大小(坐标系)。
 
 ## 另请参阅
 

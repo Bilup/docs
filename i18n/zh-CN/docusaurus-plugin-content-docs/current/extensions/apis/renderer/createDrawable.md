@@ -62,10 +62,10 @@ class CustomGraphicsExtension {
 ## 图层组
 
 图层组决定渲染顺序：
-1. `background` - 首先渲染（在所有内容后面）
+1. `background` - 首先渲染(在所有内容后面)
 2. `video` - 视频/相机图层
 3. `pen` - 画笔图层
-4. `sprite` - 最后渲染（角色）
+4. `sprite` - 最后渲染(角色)
 
 ## 另请参阅
 

@@ -27,10 +27,10 @@ renderer.updateDrawableProperties(drawableID, properties)
 | 属性 | 类型 | 描述 |
 |----------|------|-------------|
 | `position` | `[x, y, z]` | Scratch 坐标中的位置 |
-| `direction` | `number` | 方向（度）(0-360) |
+| `direction` | `number` | 方向(度)(0-360) |
 | `scale` | `[xScale, yScale]` | 缩放百分比 (100 = 正常) |
 | `visible` | `boolean` | 可见性状态 |
-| `effects` | `object` | 视觉效果（见下文） |
+| `effects` | `object` | 视觉效果(见下文) |
 | `skinId` | `number` | 要应用的造型 ID |
 
 ### 效果对象
@@ -89,7 +89,7 @@ renderer.updateDrawableProperties(drawableId,{
 ## 注意事项
 
 - 只更新您指定的属性 - 其他属性保持不变
-- 位置使用 Scratch 坐标系（中心是 0,0）
+- 位置使用 Scratch 坐标系(中心是 0,0)
 - 方向: 0° = 向上, 90° = 向右, 180° = 向下, 270° = 向左
 
 ## 另请参阅

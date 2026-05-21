@@ -26,4 +26,4 @@ hide_table_of_contents: true
   </tbody>
 </table>
 
-项目图片：https://scratch.mit.edu/projects/437594584/ （种子 803258）。
+项目图片：https://scratch.mit.edu/projects/437594584/ (种子 803258)。

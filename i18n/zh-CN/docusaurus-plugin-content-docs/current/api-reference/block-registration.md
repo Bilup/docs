@@ -159,7 +159,7 @@ break(args, util) {
 
 ## 步骤 3：添加编译器支持
 
-为了积木能在编译模式下工作，需要向编译器的中间表示（IR）和 JavaScript 生成器添加支持。
+为了积木能在编译模式下工作，需要向编译器的中间表示(IR)和 JavaScript 生成器添加支持。
 
 ### IR 生成
 文件：`scratch-vm/src/compiler/irgen.js`
@@ -304,7 +304,7 @@ Blockly.Msg["CONTROL_BREAK"] = "break";
 
 ### 输入类型
 - `input_value` - 接受 reporter 积木
-- `input_statement` - 接受命令积木（子栈）
+- `input_statement` - 接受命令积木(子栈)
 - `field_dropdown` - 下拉菜单
 - `field_variable` - 变量选择器
 
@@ -382,7 +382,7 @@ Switch/case 积木演示了完整的实现：
 
 ## 最佳实践
 
-- 遵循现有命名规范（`category_blockname`）
+- 遵循现有命名规范(`category_blockname`)
 - 为积木的用途使用适当的积木形状
 - 实现适当的错误处理
 - 添加有意义的文档注释

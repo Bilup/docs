@@ -78,7 +78,7 @@ move (10) steps in direction (45)
 point towards x: (100) y: (50)
 ```
 
-#### 设置旋转样式（高级）
+#### 设置旋转样式(高级)
 更多旋转样式选项：
 ```scratch
 set rotation style [all around v]

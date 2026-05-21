@@ -14,7 +14,7 @@ import {ExtensionCode} from './utils.js';
 
 <ExtensionCode title="color">{require("!raw-loader!@site/static/example-extensions/color.js")}</ExtensionCode>
 
-不同的积木颜色模式（如 **High Contrast**、**Dark** 和任何 "Addons" 预设）会根据这些值自动生成。
+不同的积木颜色模式(如 **High Contrast**、**Dark** 和任何 "Addons" 预设)会根据这些值自动生成。
 
 ## docsURI
 
@@ -26,7 +26,7 @@ docsURI 在积木列表的开头添加一个按钮，用于打开页面让人们
 
 Scratch 会自动显示一个复选框，用于显示没有输入的 REPORTER 积木的变量监视器。请注意，在 Bilup 中，这也适用于 BOOLEAN 积木。要禁用此功能，请在积木上设置 disableMonitor 为 true。
 
-请注意，即使设置了 disableMonitor，人们仍然可以使用修改版（或旧版）扩展或其他工具手动创建监视器。
+请注意，即使设置了 disableMonitor，人们仍然可以使用修改版(或旧版)扩展或其他工具手动创建监视器。
 
 <ExtensionCode title="unmonitorable">{require("!raw-loader!@site/static/example-extensions/unmonitorable.js")}</ExtensionCode>
 

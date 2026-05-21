@@ -13,14 +13,14 @@ Bilup 由多个相互连接的仓库组成：
 
 ```
 Bilup 生态系统
-├── scratch-gui/          # 主 GUI 应用（基于 React 的编辑器）
+├── scratch-gui/          # 主 GUI 应用(基于 React 的编辑器)
 ├── scratch-vm/           # 虚拟机和运行时引擎
 ├── scratch-render/       # 基于 WebGL 的渲染引擎  
-├── scratch-blocks/       # 可视化积木编辑器（基于 Blockly）
+├── scratch-blocks/       # 可视化积木编辑器(基于 Blockly)
 ├── scratch-paint/        # 造型和背景编辑器
 ├── scratch-audio/        # Web Audio API 实现
 ├── packager/             # 基于 Web 的项目打包器
-└── docs/                 # 文档网站（本网站）
+└── docs/                 # 文档网站(本网站)
 ```
 
 ## scratch-gui 结构
@@ -115,7 +115,7 @@ App
 src/components/component-name/
 ├── component-name.jsx        # 主组件文件
 ├── component-name.css        # 组件样式
-└── index.js                  # 导出文件（可选）
+└── index.js                  # 导出文件(可选)
 
 src/containers/
 ├── component-name.jsx        # Redux 连接的容器
@@ -177,7 +177,7 @@ src/lib/
         messages: {...}
     },
     
-    // 绘画编辑器状态（活动时）
+    // 绘画编辑器状态(活动时)
     scratchPaint: {
         brushes: {...},
         selectedItems: [...],

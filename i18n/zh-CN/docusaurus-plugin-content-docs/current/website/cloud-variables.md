@@ -32,7 +32,7 @@ Bilup 有自己独立于 Scratch 的云变量服务器。
 
 ### 需要 User-Agent {#user-agent}
 
-机器人必须在连接中提供有效的 [User-Agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) 头信息。这包括联系信息（如 Scratch 个人资料链接、电子邮件地址、GitHub 问题页面等）以及所使用的云变量库的名称和版本（如果适用）。确切的语法无关紧要，只需要人类可读。以下是一些好的 User-Agent 示例：
+机器人必须在连接中提供有效的 [User-Agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) 头信息。这包括联系信息(如 Scratch 个人资料链接、电子邮件地址、GitHub 问题页面等)以及所使用的云变量库的名称和版本(如果适用)。确切的语法无关紧要，只需要人类可读。以下是一些好的 User-Agent 示例：
 
  - `multiplayer leaderboard bot by https://scratch.mit.edu/users/TestMuffin`
  - `cloud-variable-library/1.0.1 contact@example.com`
@@ -91,7 +91,7 @@ const ws = new WebSocket("wss://clouddata.bilup.org", {
 
 ### 用户名 {#username}
 
-云变量协议要求你提供用户名。服务器会尝试确保所有用户名在允许连接之前都是安全的。我们建议只将用户名设置为 `player` 后跟 2 到 7 个随机数字，因为连接会启动得更快（我们不会要求 Scratch API 验证它）。如果你的机器人需要特定的用户名，请将其存储在单独的变量中。
+云变量协议要求你提供用户名。服务器会尝试确保所有用户名在允许连接之前都是安全的。我们建议只将用户名设置为 `player` 后跟 2 到 7 个随机数字，因为连接会启动得更快(我们不会要求 Scratch API 验证它)。如果你的机器人需要特定的用户名，请将其存储在单独的变量中。
 
 <details>
 <summary>如果你正在开发云变量库</summary>
@@ -118,7 +118,7 @@ def on_set(name, value):
 connection = cloudlibrary.connect(project_id, username, user_agent, on_set)
 ```
 
-只要实现是事件驱动的并且在内部使用一个连接（那么 `get_var` 只是返回最近接收的值），就可以提供类似 `get_var` 的 API。这只是需要一点工作而已。
+只要实现是事件驱动的并且在内部使用一个连接(那么 `get_var` 只是返回最近接收的值)，就可以提供类似 `get_var` 的 API。这只是需要一点工作而已。
 
 ### 更新会被缓存 {#buffering}
 
@@ -126,11 +126,11 @@ connection = cloudlibrary.connect(project_id, username, user_agent, on_set)
 
 ### 响应 ping {#pings}
 
-服务器会定期发送 [WebSocket ping 帧](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_servers#pings_and_pongs_the_heartbeat_of_websockets)，你必须用 pong 回应，否则连接会断开。请查阅你的 WebSocket 库的文档，了解如何启用 ping/pong 支持（如果默认没有启用的话）。
+服务器会定期发送 [WebSocket ping 帧](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_servers#pings_and_pongs_the_heartbeat_of_websockets)，你必须用 pong 回应，否则连接会断开。请查阅你的 WebSocket 库的文档，了解如何启用 ping/pong 支持(如果默认没有启用的话)。
 
 ### 重要的调试信息 {#debug}
 
-为了让我们、你以及使用你的库的任何人更轻松，请将这些内容记录在某处（如错误消息中），而不是默默忽略它们：
+为了让我们、你以及使用你的库的任何人更轻松，请将这些内容记录在某处(如错误消息中)，而不是默默忽略它们：
 
  - WebSocket 关闭代码。所有 4XXX 代码都 [列在此表中](https://github.com/Bilup/cloud-server/blob/master/doc/protocol.md#server---client)。你更愿意看到 `连接关闭` 还是 `连接关闭，代码 4002`？在表中查找后者的代码，可以清楚地看出问题是用户名。
  - 从服务器收到的无效 JSON。如果服务器有要告诉你的内容超出了关闭代码表所说的内容，它可能会向你发送一个纯英文句子而不是 JSON 对象。当你的 JSON 解析器抛出错误时，你应该记录从服务器收到的实际原始文本，这样你就会得到诸如 `从服务器收到无效 JSON：你使用的云数据库没有理由发送你的登录令牌给你的 Scratch 账户带来了风险` 而不是 `JSON.parse：JSON 数据第 1 行第 1 列出现意外字符` 这样的错误消息。你更愿意看到哪一个？

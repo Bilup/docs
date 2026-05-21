@@ -140,7 +140,7 @@ hide_table_of_contents: true
 
 ### 不要修改 acceptReporters
 
-将输入菜单转换为字段菜单（反之亦然）是行不通的，会损坏项目。请创建一个新菜单和积木。
+将输入菜单转换为字段菜单(反之亦然)是行不通的，会损坏项目。请创建一个新菜单和积木。
 
 ### 不要大幅改变积木行为
 
@@ -157,10 +157,10 @@ hide_table_of_contents: true
 
 你可以随时更改积木和参数的这些部分：
 
-- text，只要它包含相同的参数（更改参数顺序是安全的）
-- disableMonitor（启用 true 只隐藏复选标记，不删除现有监视器）
+- text，只要它包含相同的参数(更改参数顺序是安全的)
+- disableMonitor(启用 true 只隐藏复选标记，不删除现有监视器)
 - hideFromPalette
-- filter（添加 filter 只隐藏在调色板中，不删除现有积木）
+- filter(添加 filter 只隐藏在调色板中，不删除现有积木)
 - defaultValue
 - 图像输入中的 dataURI 和 flipRTL
 

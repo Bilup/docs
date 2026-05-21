@@ -201,7 +201,7 @@ Scratch.extensions.register(new MyExtension());
 编译扩展必须正确处理不同的输入类型：
 
 ### 类型转换方法
-- `asNumber()`: 将输入转换为数字（遵循 Scratch 语义）
+- `asNumber()`: 将输入转换为数字(遵循 Scratch 语义)
 - `asString()`: 将输入转换为字符串
 - `asBoolean()`: 将输入转换为布尔值
 - `asRaw()`: 不进行类型转换使用输入
@@ -246,14 +246,14 @@ this.source += `vm.runtime.visualReport("${b.id}",
 ## 最佳实践
 
 ### 命名规范
-- 对积木操作码使用一致的命名（`extension_blockname`）
-- 使用描述性的种类名称（`extension.blockname`）
+- 对积木操作码使用一致的命名(`extension_blockname`)
+- 使用描述性的种类名称(`extension.blockname`)
 - 在修补 ID 中包含扩展名称以避免冲突
 
 ### 性能考虑
 - 生成最小、高效的 JavaScript 代码
 - 避免不必要的类型转换
-- 使用适当的输入方法（类型无关时使用 `asRaw()`）
+- 使用适当的输入方法(类型无关时使用 `asRaw()`)
 - 尽可能缓存昂贵的计算
 
 ### 兼容性

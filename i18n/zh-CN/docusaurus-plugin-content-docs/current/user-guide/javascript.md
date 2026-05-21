@@ -89,7 +89,7 @@ vm.runtime.startHats('event_whenbroadcastreceived', {
 });
 ```
 
-## Web API 集成（非沙盒化扩展）
+## Web API 集成(非沙盒化扩展)
 
 ### Fetch API
 发出 HTTP 请求：
@@ -154,7 +154,7 @@ video.play();
 const audioStream = await navigator.mediaDevices.getUserMedia({ audio: true });
 ```
 
-## 外部库（打包器或宿主页面）
+## 外部库(打包器或宿主页面)
 
 ### 包含库
 添加外部 JavaScript 库：
@@ -245,7 +245,7 @@ class MyCustomExtension {
   }
 }
 
-// 注册扩展（非沙盒化）
+// 注册扩展(非沙盒化)
 Scratch.extensions.register(new MyCustomExtension());
 ```
 
@@ -319,18 +319,18 @@ vm.runtime.on('PROJECT_RUN_START', () => {
 ```javascript
 // 创建桥接对象
 window.ScratchBridge = {
-  // 从积木调用：（调用 js 函数 [bridge.calculate] 参数 [10]）
+  // 从积木调用：(调用 js 函数 [bridge.calculate] 参数 [10])
   calculate: (input) => {
     return Math.complex.calculation(input);
   },
   
-  // 从积木调用：（调用 js 函数 [bridge.saveData] 参数 [data]）
+  // 从积木调用：(调用 js 函数 [bridge.saveData] 参数 [data])
   saveData: (data) => {
     localStorage.setItem('projectData', JSON.stringify(data));
     return '已保存';
   },
   
-  // 从积木调用：（调用 js 函数 [bridge.loadData]）
+  // 从积木调用：(调用 js 函数 [bridge.loadData])
   loadData: () => {
     return JSON.parse(localStorage.getItem('projectData') || '{}');
   }

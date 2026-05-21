@@ -15,7 +15,7 @@ hide_table_of_contents: true
 
 ## `ScratchBlocks`
 
-指 *真实的* [scratch-blocks](https://github.com/Bilup/scratch-blocks)（`Blockly` 上只有很少的东西）。仅在打开编辑器后可用。
+指 *真实的* [scratch-blocks](https://github.com/Bilup/scratch-blocks)(`Blockly` 上只有很少的东西)。仅在打开编辑器后可用。
 
 ## `paper`
 

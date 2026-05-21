@@ -23,7 +23,7 @@ renderer.getBoundsForBubble(drawableID)
 
 **类型:** `object`
 
-边界框对象（left, right, top, bottom, width, height）。
+边界框对象(left, right, top, bottom, width, height)。
 
 ## 另请参阅
 

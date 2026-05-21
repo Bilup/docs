@@ -41,10 +41,10 @@ Bilup 公开了几个全局对象用于 API 访问：
 // 虚拟机实例
 const vm = window.vm;
 
-// GUI 状态的 Redux store（注意：ReduxStore 中的 R 大写）
+// GUI 状态的 Redux store(注意：ReduxStore 中的 R 大写)
 const store = window.ReduxStore;
 
-// Scratch 积木（可用时）
+// Scratch 积木(可用时)
 const ScratchBlocks = window.ScratchBlocks;
 
 // 注意：window.addons 不作为全局变量可用。
@@ -69,7 +69,7 @@ vm.on('PROJECT_START', () => {
 
 #### GUI API 示例
 ```javascript
-// 访问 Redux store（注意：ReduxStore 中的 R 大写）
+// 访问 Redux store(注意：ReduxStore 中的 R 大写)
 const state = store.getState();
 
 // 获取当前编辑目标
@@ -167,14 +167,14 @@ interface ExtensionInfo {
 扩展在不同的安全上下文中运行：
 
 ```javascript
-// 沙盒化扩展（安全，有限访问）
+// 沙盒化扩展(安全，有限访问)
 class SafeExtension {
     // 有限的 API 访问
     // 无 DOM 访问
-    // 无网络访问（除了已批准的域名）
+    // 无网络访问(除了已批准的域名)
 }
 
-// 非沙盒化扩展（功能强大，需要用户许可）
+// 非沙盒化扩展(功能强大，需要用户许可)
 class PowerfulExtension {
     // 完整的 API 访问
     // 允许 DOM 操作
@@ -309,7 +309,7 @@ vm.off('PROJECT_START', myHandler);
 // 启用调试模式
 window.DEBUG = true;
 
-// VM 检查工具（这些是您可以访问的示例）
+// VM 检查工具(这些是您可以访问的示例)
 window.vmDebug = {
     inspectTarget: (targetId) => vm.runtime.getTargetById(targetId),
     inspectRuntime: () => vm.runtime,

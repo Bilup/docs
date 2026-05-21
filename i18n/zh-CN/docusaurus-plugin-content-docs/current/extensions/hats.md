@@ -30,8 +30,8 @@ import {ExtensionCode, Spoiler} from './utils.js';
 
 要启动事件积木，你需要使用 startHats。有两个版本：
 
-- `Scratch.vm.runtime.startHats` 应该在积木外部使用（例如，点击绿旗）
-- `util.startHats` 应该在积木内部使用（例如，广播积木）
+- `Scratch.vm.runtime.startHats` 应该在积木外部使用(例如，点击绿旗)
+- `util.startHats` 应该在积木内部使用(例如，广播积木)
 
 :::warning
 在积木内部使用 `Scratch.vm.runtime.startHats` 而不是 `util.startHats` 可能会破坏脚本执行。
@@ -47,15 +47,15 @@ import {ExtensionCode, Spoiler} from './utils.js';
 
 <ExtensionCode title="unsandboxed/when-key-pressed">{require("!raw-loader!@site/static/example-extensions/unsandboxed/when-key-pressed.js")}</ExtensionCode>
 
-积木的定义与其他积木类似。请注意，事件积木**仅支持字段菜单**。你不能有文本输入或放置积木的地方。要按参数筛选，它**必须是一个 acceptReporters: false 的菜单**。（稍后讨论的积木类型对此更宽松。）
+积木的定义与其他积木类似。请注意，事件积木**仅支持字段菜单**。你不能有文本输入或放置积木的地方。要按参数筛选，它**必须是一个 acceptReporters: false 的菜单**。(稍后讨论的积木类型对此更宽松。)
 
-startHats 的第一个参数再次是完整的 opcode。startHats 的第二个参数是一个对象，用于筛选要激活的事件。此对象中的键名是积木的参数名称（在此示例中为 `KEY`），值对应于菜单的值（不是文本！）。如果你想按多个键筛选，所有键都必须匹配。
+startHats 的第一个参数再次是完整的 opcode。startHats 的第二个参数是一个对象，用于筛选要激活的事件。此对象中的键名是积木的参数名称(在此示例中为 `KEY`)，值对应于菜单的值(不是文本！)。如果你想按多个键筛选，所有键都必须匹配。
 
 Scratch 中真正的“当按键被按下”积木比这个复杂一点。这只是一个例子。
 
 ## 按角色筛选
 
-Scratch 的“当此角色被点击”积木只在一个角色上运行，而不是每个角色上。要自己做到这一点，你可以使用 startHats 的第三个（也是最后一个）参数。第三个参数可以设置为目标对象——每个角色或克隆都是一个“目标”。如果设置，只有该目标中的事件积木会运行。
+Scratch 的“当此角色被点击”积木只在一个角色上运行，而不是每个角色上。要自己做到这一点，你可以使用 startHats 的第三个(也是最后一个)参数。第三个参数可以设置为目标对象——每个角色或克隆都是一个“目标”。如果设置，只有该目标中的事件积木会运行。
 
 获取目标对象的最常见方法是：
 
@@ -75,13 +75,13 @@ Scratch 的“当此角色被点击”积木只在一个角色上运行，而不
 
 ![](./assets/when-space-pressed-wait-then-say.svg)
 
-你可能会观察到，如果你反复按空格键，脚本不会重新启动（这会重置等待积木计时器）——它只是继续执行。如果这不是你想要的，请在积木上设置 `shouldRestartExistingThreads: true`。
+你可能会观察到，如果你反复按空格键，脚本不会重新启动(这会重置等待积木计时器)——它只是继续执行。如果这不是你想要的，请在积木上设置 `shouldRestartExistingThreads: true`。
 
 <ExtensionCode title="unsandboxed/when-key-pressed-restart">{require("!raw-loader!@site/static/example-extensions/unsandboxed/when-key-pressed-restart.js")}</ExtensionCode>
 
 如果你重新创建相同的脚本，只要你反复按空格键，说积木将永远不会执行，因为脚本每次都会重新启动，这会重置等待积木计时器。
 
-请注意，如果顶部积木具有 `shouldRestartExistingThreads: true` 的脚本运行时调用 startHats 本身（类似于“当我收到 message1：广播 message1”），当前运行的脚本将被标记为重新启动，但会继续运行积木直到它产生。
+请注意，如果顶部积木具有 `shouldRestartExistingThreads: true` 的脚本运行时调用 startHats 本身(类似于“当我收到 message1：广播 message1”)，当前运行的脚本将被标记为重新启动，但会继续运行积木直到它产生。
 
 ## 启动的线程列表
 
@@ -113,7 +113,7 @@ Scratch 的“当此角色被点击”积木只在一个角色上运行，而不
 
 重要的区别是 `when` 实际上有代码。在你执行 startHats 之后，积木的输入和参数将被评估并传递给积木。积木可以返回 `true` 让脚本运行，或者返回 `false` 阻止它运行。如果需要，积木也可以返回一个解析为 `true` 或 `false` 的 Promise。
 
-这里有一个棘手的事情是 Scratch 不会自动启动基于谓词的帽子积木——你需要自己做。在此示例中，我们使用 `BEFORE_EXECUTE` 事件（顾名思义，它在运行任何脚本之前运行，所以你在这里启动的任何东西都将在该帧中运行）。与事件积木一样，你可以从任何获得回调的地方运行基于谓词的帽子积木。
+这里有一个棘手的事情是 Scratch 不会自动启动基于谓词的帽子积木——你需要自己做。在此示例中，我们使用 `BEFORE_EXECUTE` 事件(顾名思义，它在运行任何脚本之前运行，所以你在这里启动的任何东西都将在该帧中运行)。与事件积木一样，你可以从任何获得回调的地方运行基于谓词的帽子积木。
 
 ## 边缘激活的帽子积木
 
@@ -190,7 +190,7 @@ Scratch 的“当此角色被点击”积木只在一个角色上运行，而不
 1. 创建一个每秒钟运行一次的基于事件的积木，另一个每 5 秒运行一次，还有一个每 10 秒运行一次。
 2. 将这些事件积木组合成一个带菜单的积木。
 3. 创建一个带有文本输入的命令积木，用于运行普通的 Scratch 广播。内置的“当我收到”积木的完整 opcode 是 `event_whenbroadcastreceived`，其唯一参数称为 `BROADCAST_OPTION`，即广播的名称。
-4. 修改上一个练习的广播积木，使其成为一个返回值积木，返回一个逗号分隔的列表，包含启动新线程的每个角色的名称。（提示：<Spoiler>每个线程对象包含一个 .target 属性，每个目标对象都有一个 .getName() 方法。</Spoiler>）
+4. 修改上一个练习的广播积木，使其成为一个返回值积木，返回一个逗号分隔的列表，包含启动新线程的每个角色的名称。(提示：<Spoiler>每个线程对象包含一个 .target 属性，每个目标对象都有一个 .getName() 方法。</Spoiler>)
 
 ## 下一步
 

@@ -23,7 +23,7 @@ hide_table_of_contents: true
 
 ## 解决方案 {#workarounds}
 
-**用于测试你自己的项目：** 你可以使用 Scratch 编辑器中的「文件 > 保存到电脑」和「文件 > 从电脑加载」菜单来在 Bilup 中加载你未分享的 Scratch 项目，或将在 Bilup 中制作的项目上传到 Scratch。另外，许多人已经成功地在 Bilup（使用网站或 [桌面应用](https://desktop.bilup.org/)）上主要进行项目工作，然后在完成时将项目上传到 Scratch（请记住在此过程中进行常规备份）。
+**用于测试你自己的项目：** 你可以使用 Scratch 编辑器中的「文件 > 保存到电脑」和「文件 > 从电脑加载」菜单来在 Bilup 中加载你未分享的 Scratch 项目，或将在 Bilup 中制作的项目上传到 Scratch。另外，许多人已经成功地在 Bilup(使用网站或 [桌面应用](https://desktop.bilup.org/))上主要进行项目工作，然后在完成时将项目上传到 Scratch(请记住在此过程中进行常规备份)。
 
 **用于协作：** 与他人分享项目的最佳方式是在 Scratch 网站上分享。Scratch 社区非常友好。这是 Scratch 希望你做的。分享未完成的项目是可以的。Scratch 已经 15 岁了，而 Bilup 才两岁。在没有 Bilup 的 13 年里，协作顺利进行，今后也会继续顺利进行。
 
@@ -33,7 +33,7 @@ hide_table_of_contents: true
 
 保护未分享的项目早就应该做了。
 
-不要假装没有人因为不知道未分享的项目实际上不是私密的（尽管 Scratch 网站说「只有你可以看到它」）而被盗项目。许多未分享的项目包含在未分享的项目实际上是私密的前提下拍摄的孩子、他们的朋友、家人和其他人的照片和视频。
+不要假装没有人因为不知道未分享的项目实际上不是私密的(尽管 Scratch 网站说「只有你可以看到它」)而被盗项目。许多未分享的项目包含在未分享的项目实际上是私密的前提下拍摄的孩子、他们的朋友、家人和其他人的照片和视频。
 
 在大多数其他大型网站上，「未分享」或「私密」的内容实际上是公开的，这被认为是关键的安全漏洞，通常有资格获得大量漏洞赏金。例如，YouTube 向报告漏洞的研究人员支付了 5000 美元，因为他们发现的漏洞允许他们查看任何私密视频的低分辨率图像。
 
@@ -47,7 +47,7 @@ hide_table_of_contents: true
 
 下载项目的新程序是首先从 `https://api.scratch.mit.edu/projects/ID` 获取「project_token」字段，然后使用它生成 URL `https://projects.scratch.mit.edu/ID?token=TOKEN`
 
-如果你使用 JavaScript，以下是一些入门示例代码，可以在网页浏览器中工作。如果你的代码在服务器端运行（例如 Node.js），你应该将 `https://trampoline.turbowarp.org/api/projects/` 替换为 `https://api.scratch.mit.edu/projects/`，因为服务器不受 [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) 影响。我们对 trampoline.turbowarp.org 的运行时间不作任何保证；使用风险自负。你可能也有兴趣了解 [sb-downloader](https://github.com/forkphorus/sb-downloader)（包含简单的 API）作为一个完整的项目下载器。
+如果你使用 JavaScript，以下是一些入门示例代码，可以在网页浏览器中工作。如果你的代码在服务器端运行(例如 Node.js)，你应该将 `https://trampoline.turbowarp.org/api/projects/` 替换为 `https://api.scratch.mit.edu/projects/`，因为服务器不受 [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) 影响。我们对 trampoline.turbowarp.org 的运行时间不作任何保证；使用风险自负。你可能也有兴趣了解 [sb-downloader](https://github.com/forkphorus/sb-downloader)(包含简单的 API)作为一个完整的项目下载器。
 
 ```js
 const getProjectMetadata = async (projectId) => {

@@ -6,8 +6,8 @@ sidebar_position: 2
 # Redux Reducers
 
 Bilup 中的 Reducer 负责处理响应派发动作的状态转换。每个 reducer 管理应用状态的特定切片，并遵循 Redux 的不可变性和可预测性原则。
-- VM 状态（运行时、性能）
-- 插件状态（已启用插件、设置）
+- VM 状态(运行时、性能)
+- 插件状态(已启用插件、设置)
 ## Store 结构
 
 完整的 store 状态结构包括：

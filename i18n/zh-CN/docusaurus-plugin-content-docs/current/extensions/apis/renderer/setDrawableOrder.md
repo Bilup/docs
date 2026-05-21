@@ -4,7 +4,7 @@ title: renderer.setDrawableOrder()
 
 # renderer.setDrawableOrder()
 
-更改可绘制对象在其图层组内的 z 顺序（图层位置）。
+更改可绘制对象在其图层组内的 z 顺序(图层位置)。
 
 ## 语法
 
@@ -22,12 +22,12 @@ renderer.setDrawableOrder(drawableID, order, group, optIsRelative, optMin)
 ### order
 **类型:** `number`
 
-新位置。可以是绝对位置或相对位置（请参见 `optIsRelative`）。
+新位置。可以是绝对位置或相对位置(请参见 `optIsRelative`)。
 
 ### group  
 **类型:** `string`
 
-图层组名称（`'background'`、`'video'`、`'pen'` 或 `'sprite'`）。
+图层组名称(`'background'`、`'video'`、`'pen'` 或 `'sprite'`)。
 
 ### optIsRelative
 **类型:** `boolean` (可选)
