@@ -286,7 +286,7 @@ interface OptionalGUIProps {
 
 ### Redux 连接
 
-GUI 组件连接到多个 Redux 状态切片：
+GUI 组件连接到多个 Redux 状态片段：
 
 ```js
 const mapStateToProps = state => ({

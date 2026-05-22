@@ -28,7 +28,7 @@ const configureStore = (initialState) => {
 ```
 
 DevTools 功能：
-- **时间旅行**: 逐步浏览动作历史
+- **时间回溯**: 逐步浏览动作历史
 - **状态检查**: 查看当前和历史状态
 - **动作重放**: 从任意点重放动作
 - **状态导入/导出**: 保存和加载状态快照
@@ -50,7 +50,7 @@ window.dispatchAction = (action) => {
   console.log('Dispatched:', action);
 };
 
-// 检查特定状态切片
+// 检查特定状态片段
 window.getProjectState = () => store.getState().projectState;
 window.getVMState = () => store.getState().vm;
 window.getGUIState = () => store.getState().gui;
@@ -65,7 +65,7 @@ const createStateInspector = (store) => {
     // 获取当前状态
     getState: () => store.getState(),
     
-    // 获取特定切片
+    // 获取特定状态片段
     getSlice: (path) => {
       const state = store.getState();
       return path.split('.').reduce((obj, key) => obj?.[key], state);

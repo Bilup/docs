@@ -53,7 +53,7 @@ const configureStore = (initialState) => {
 };
 ```
 
-## 关键状态切片
+## 关键状态片段
 
 ### Project State
 管理项目元数据和加载状态：
@@ -78,7 +78,7 @@ const configureStore = (initialState) => {
 ## 状态流程
 
 1. **Actions** 从组件派发
-2. **Reducers** 更新特定状态切片
+2. **Reducers** 更新特定状态片段
 3. **Selectors** 为组件提取数据
 4. **Middleware** 处理副作用和持久化
 

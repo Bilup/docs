@@ -211,7 +211,7 @@ const SpriteListContainer = () => {
 
 ### 选择性状态更新
 ```javascript
-// 只订阅相关的状态切片
+// 只订阅相关的状态片段
 const MyContainer = () => {
   const relevantData = useSelector(state => ({
     sprites: state.targets.sprites,
