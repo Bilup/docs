@@ -23,7 +23,7 @@ GUI API 允许与用户界面交互，包括组件、模态框和编辑器状态
 插件 API 提供用于修改和扩展 Bilup 界面和行为的工具。
 
 ### 📡 [事件](./events.md)
-用于在 Bilup 中监听和派发事件的综合事件系统文档。
+用于在 Bilup 中监听和调用事件的综合事件系统文档。
 
 ### 🧵 [线程 API](./threads.md)
 高级线程管理，用于控制脚本执行、监控线程和管理执行流程。
@@ -75,7 +75,7 @@ const state = store.getState();
 // 获取当前编辑目标
 const editingTarget = state.scratchGui.targets.editingTarget;
 
-// 派发动作
+// 调用动作
 store.dispatch({
     type: 'SET_EDITING_TARGET',
     targetId: 'sprite1'
@@ -389,7 +389,7 @@ class NewExtension {
 ### API 使用指南
 
 1. **在使用高级功能前检查 API 可用性**
-2. **使用适当的错误消息优雅地处理错误**
+2. **使用适当的错误消息完美地处理错误**
 3. **在组件卸载时清理资源**
 4. **对多个相关更改使用批处理操作**
 5. **遵循扩展和插件的安全指南**
@@ -397,7 +397,7 @@ class NewExtension {
 ### 性能提示
 
 1. **限制高频操作**以避免使系统过载
-2. **对昂贵计算使用记忆化**
+2. **对复杂计算使用记忆化**
 3. **对大数据集实现延迟加载**
 4. **监控内存使用**并正确清理
 

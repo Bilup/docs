@@ -25,4 +25,4 @@ hide_table_of_contents: true
 
 指 scratch-gui 使用的内部 redux store。
 
-使用 `ReduxStore.getState()` 获取状态，并使用 `ReduxStore.dispatch({ type: "..." })` 派发事件
+使用 `ReduxStore.getState()` 获取状态，并使用 `ReduxStore.dispatch({ type: "..." })` 调用事件

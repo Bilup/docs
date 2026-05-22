@@ -80,7 +80,7 @@ Scratch 处理类型转换或比较等操作的方式有很多奇特的方式。
 
 ## 分隔符
 
-如果你的扩展有很多积木，你可能想在积木组之间放一些空格。要做到这一点，在 blocks 列表中包含 `"---"`：
+如果你的扩展有很多积木，你可能想在积木组之间放一些空格。要做到这一点，应在 blocks 列表中加入 `"---"`：
 
 <ExtensionCode title="separators">{require("!raw-loader!@site/static/example-extensions/separators.js")}</ExtensionCode>
 

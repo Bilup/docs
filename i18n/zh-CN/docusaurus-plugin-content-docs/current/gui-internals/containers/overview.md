@@ -211,7 +211,7 @@ const SpriteListContainer = () => {
 
 ### 选择性状态更新
 ```javascript
-// 只订阅相关的状态片段
+// 只监听相关的状态片段
 const MyContainer = () => {
   const relevantData = useSelector(state => ({
     sprites: state.targets.sprites,
@@ -275,13 +275,13 @@ describe('SpriteListContainer', () => {
 - 避免将业务逻辑与展示逻辑混合
 
 ### 性能优化
-- 对昂贵的计算使用记忆化
+- 对复杂的计算使用记忆化
 - 实现适当的 shouldComponentUpdate 逻辑
-- 最小化状态订阅数量
+- 最小化状态监听数量
 
 ### 错误处理
 - 在错误边界中包装容器
-- 优雅地处理异步操作失败
+- 完美地处理异步操作失败
 - 为错误状态提供备用 UI
 
 ### 测试策略

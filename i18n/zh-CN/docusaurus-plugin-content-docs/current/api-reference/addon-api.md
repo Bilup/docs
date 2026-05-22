@@ -130,7 +130,7 @@ addon.tab.addEventListener('statechanged', (event) => {
 ### 自定义事件
 
 ```javascript
-// 派发自定义事件
+// 调用自定义事件
 addon.tab.dispatchEvent(new CustomEvent('myAddonEvent', {
   detail: { data: 'example' }
 }));

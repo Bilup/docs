@@ -107,8 +107,8 @@ addon.tab.addEventListener('spriteSelected', (event) => {
 
 ## 自定义事件
 
-### 派发事件
-创建并派发自定义事件：
+### 调用事件
+创建并调用自定义事件：
 
 ```javascript
 // 简单的自定义事件
@@ -222,7 +222,7 @@ vm.runtime.on('SOUND_ADDED', (soundId, targetId) => {
 ## 性能事件
 
 ### 监控性能
-跟踪运行时性能指标：
+跟踪运行时性能数据：
 
 ```javascript
 // 帧率变化
@@ -285,7 +285,7 @@ addon.tab.redux.addEventListener('statechanged', (event) => {
 ```
 
 ### 错误处理
-优雅地处理事件监听器中的错误：
+完美地处理事件监听器中的错误：
 
 ```javascript
 addon.tab.addEventListener('myEvent', (event) => {
@@ -305,7 +305,7 @@ addon.tab.addEventListener('myEvent', (event) => {
 
 ```javascript
 /**
- * 项目分析完成时派发
+ * 项目分析完成时调用
  * @event projectAnalyzed
  * @type {CustomEvent}
  * @property {Object} detail - 事件数据

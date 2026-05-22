@@ -77,7 +77,7 @@ const configureStore = (initialState) => {
 
 ## 状态流程
 
-1. **Actions** 从组件派发
+1. **Actions** 从组件调用
 2. **Reducers** 更新特定状态片段
 3. **Selectors** 为组件提取数据
 4. **Middleware** 处理副作用和持久化

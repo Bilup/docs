@@ -6,11 +6,11 @@ sidebar_position: 1
 
 # 编译扩展
 
-编译扩展是高级的 Scratch 扩展，直接与 Bilup 的 JavaScript 编译器集成以提供优化性能。与通过 VM 解释器运行的常规扩展不同，编译扩展将代码直接注入编译输出中，实现原生 JavaScript 性能。
+编译扩展是高级的 Scratch 扩展，直接与 Bilup 的 JavaScript 编译器集成以提供优化性能。与通过 VM 解释器运行的常规扩展不同，编译扩展将代码直接注入编译输出中，实现原始 JavaScript 性能。
 
 ## 什么是编译扩展?
 
-编译扩展通过修补编译器的代码生成阶段来修改 Bilup 的内部编译过程。当项目使用编译扩展时，扩展的积木被转换为优化的 JavaScript 代码，以原生速度运行而不是通过 Scratch 的虚拟机。
+编译扩展通过修补编译器的代码生成阶段来修改 Bilup 的内部编译过程。当项目使用编译扩展时，扩展的积木被转换为优化的 JavaScript 代码，以原始速度运行而不是通过 Scratch 的虚拟机。
 
 ## 与常规扩展的主要区别
 
@@ -24,7 +24,7 @@ sidebar_position: 1
 ### 编译扩展
 - 在编译期间生成直接 JavaScript 代码
 - 完全绕过 VM 解释
-- 接近原生 JavaScript 性能
+- 接近原始 JavaScript 性能
 - 开发过程更复杂
 - 仅在支持编译的环境中工作(如 Bilup)
 
@@ -62,7 +62,7 @@ sidebar_position: 1
 
 - **性能至关重要**：数学计算、数据处理或实时操作
 - **大量计算**：在紧凑循环中频繁运行的操作
-- **原生 JavaScript 功能**：访问常规扩展 API 不可用的 JavaScript 功能
+- **原始 JavaScript 功能**：访问常规扩展 API 不可用的 JavaScript 功能
 - **优化要求**：当 VM 消耗显著影响用户体验时
 
 避免使用编译扩展时：

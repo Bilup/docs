@@ -287,7 +287,7 @@ case 'myextension.debugBlock':
 
 ### 安全库加载
 
-生成优雅处理缺失库的代码：
+生成完美处理缺失库的代码：
 
 ```javascript
 case 'myextension.useLibrary':
@@ -353,7 +353,7 @@ const testCases = generateTestCases('myextension.square', [
 
 ## 性能监控
 
-### 编译指标
+### 编译数据
 
 跟踪编译性能：
 
@@ -366,7 +366,7 @@ const trackCompilation = (blockKind, startTime) => {
     console.warn(`Slow compilation for ${blockKind}: ${duration}ms`);
   }
   
-  // 存储指标用于分析
+  // 存储数据用于分析
   if (!this.compilationMetrics) {
     this.compilationMetrics = new Map();
   }
@@ -387,7 +387,7 @@ case 'myextension.complexBlock':
   return result;
 ```
 
-这些高级技术使您能够创建性能和功能与原生 JavaScript 代码相媲美的编译扩展，同时保持 Scratch 的可视化编程范式。
+这些高级技术使您能够创建性能和功能与原始 JavaScript 代码相媲美的编译扩展，同时保持 Scratch 的可视化编程范式。
 
 ## 高级编译器 API 集成
 

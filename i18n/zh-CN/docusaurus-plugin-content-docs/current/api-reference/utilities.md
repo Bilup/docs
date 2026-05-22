@@ -98,7 +98,7 @@ const store = window.ReduxStore;
 // 获取当前状态
 const state = store.getState();
 
-// 派发动作
+// 调用动作
 store.dispatch({
     type: 'ACTION_TYPE',
     payload: data

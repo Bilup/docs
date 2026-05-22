@@ -83,13 +83,13 @@ export const getSpriteCount = createSelector(
 
 ### 复杂计算
 
-对于昂贵的计算，使用记忆化选择器：
+对于复杂的计算，使用记忆化选择器：
 
 ```javascript
 export const getTargetSpriteCounts = createSelector(
   [getTargets],
   (targets) => {
-    // 昂贵计算
+    // 复杂计算
     return targets.reduce((counts, target) => {
       if (!target.isStage) {
         const sprite = target.sprite;
@@ -266,7 +266,7 @@ export const getAddonWithSettings = createSelector(
 
 ### 记忆化模式
 
-对昂贵计算使用 reselect：
+对复杂计算使用 reselect：
 
 ```javascript
 // 复杂角色分析的记忆化选择器

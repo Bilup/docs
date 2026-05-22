@@ -488,7 +488,7 @@ const debugReducer = (reducer) => (state, action) => {
 };
 ```
 
-### 动作未派发
+### 动作未调用
 
 ```javascript
 // 包装 dispatch 进行调试

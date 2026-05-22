@@ -205,7 +205,7 @@ export default VMListener;
 // src/middleware/asset-middleware.js
 const assetMiddleware = (assetManager) => (store) => (next) => (action) => {
   if (action.type === 'LOAD_ASSET_REQUEST') {
-    // 派发加载状态
+    // 调用加载状态
     store.dispatch({
       type: 'SET_ASSET_LOADING',
       assetId: action.assetId,
@@ -298,7 +298,7 @@ const errorMiddleware = (store) => (next) => (action) => {
   } catch (error) {
     console.error('Redux action error:', error);
     
-    // 派发错误动作
+    // 调用错误动作
     store.dispatch({
       type: 'GLOBAL_ERROR',
       error: {
@@ -453,7 +453,7 @@ const store = createStore(
 ### 性能考虑
 
 - 保持中间件轻量级
-- 避免在中间件中进行昂贵操作
+- 避免在中间件中进行复杂操作
 - 对频繁动作使用防抖：
 
 ```javascript

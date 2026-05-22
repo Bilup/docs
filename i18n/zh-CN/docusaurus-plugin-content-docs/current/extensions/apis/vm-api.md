@@ -553,8 +553,8 @@ vm.on('FRAMERATE_CHANGED', (framerate) => {
   console.log('帧率已更改:', framerate);
 });
 
-// 监控步进时间
-console.log('当前步进时间:', runtime.currentStepTime);
+// 监控运行时间
+console.log('当前运行时间:', runtime.currentStepTime);
 ```
 
 ## 高级功能
@@ -738,7 +738,7 @@ const spriteCount = safeVMOperation(vm => vm.runtime.targets.length - 1);
 ## 最佳实践
 
 1. **访问 VM API 前检查非沙盒化状态**
-2. **优雅处理缺失的角色** - 角色可能会被删除
+2. **完美处理缺失的角色** - 角色可能会被删除
 3. **尽可能监听事件而不是轮询**
 4. **为异步操作安全存储引用**
 5. **尊重项目状态** - 执行期间不要修改

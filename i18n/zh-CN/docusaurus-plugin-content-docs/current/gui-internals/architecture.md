@@ -409,7 +409,7 @@ class ThemeManager {
 ### 渲染优化
 
 1. **React.memo** - 防止不必要的重渲染
-2. **useMemo/useCallback** - 记忆化昂贵计算
+2. **useMemo/useCallback** - 记忆化复杂计算
 3. **虚拟滚动** - 高效处理大型列表
 4. **代码分割** - 按需加载组件
 

@@ -661,11 +661,11 @@ const ctx = canvas.getContext('2d');
 ```
 
 #### `vm.renderer._nativeSize`
-获取原生渲染大小。
+获取原始渲染大小。
 
 ```javascript
 const [width, height] = vm.renderer._nativeSize;
-console.log('原生尺寸:', width, 'x', height);
+console.log('原始尺寸:', width, 'x', height);
 ```
 
 ### 颜色采样

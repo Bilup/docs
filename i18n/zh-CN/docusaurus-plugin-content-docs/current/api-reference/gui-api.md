@@ -71,7 +71,7 @@ const state = store.getState();
 // 获取当前主题
 const currentTheme = state.scratchGui.theme.theme;
 
-// 派发动作以更改状态
+// 调用动作以更改状态
 store.dispatch({
     type: 'scratch-gui/theme/SET_THEME',
     theme: 'dark'
@@ -104,7 +104,7 @@ const guiState = {
 
 ### 常见动作
 
-派发常见的 GUI 动作：
+调用常见的 GUI 动作：
 
 ```javascript
 // 设置编辑目标
@@ -306,13 +306,13 @@ const handleExtensionSelect = (extensionId) => {
 监听 GUI 状态变化：
 
 ```javascript
-// 订阅 store 变化
+// 监听 store 变化
 const unsubscribe = store.subscribe(() => {
     const state = store.getState();
     // 处理状态变化
 });
 
-// 完成后取消订阅
+// 完成后取消监听
 unsubscribe();
 ```
 
@@ -375,17 +375,17 @@ vm.runtime.audioEngine.playSound(sound);
 
 ## 性能监控
 
-### 指标访问
+### 性能数据访问
 
 访问性能数据：
 
 ```javascript
-// 运行时指标
+// 运行时数据
 const metrics = vm.runtime.stats;
 console.log('FPS:', metrics.fps);
 console.log('Frame count:', metrics.frameCount);
 
-// 工作区指标
+// 工作区数据
 const workspaceMetrics = store.getState().scratchGui.workspaceMetrics;
 ```
 
@@ -514,7 +514,7 @@ const canvas = vm.renderer.canvas;
 const width = canvas.width;
 const height = canvas.height;
 
-// 访问原生尺寸
+// 访问原始尺寸
 const nativeSize = vm.renderer._nativeSize; // [width, height]
 
 // 提取坐标处的像素颜色
@@ -654,13 +654,13 @@ const value = thread.customStorage?.['myKey'];
 
 ### 线程执行控制
 
-控制线程步进和执行：
+控制线程执行：
 
 ```javascript
-// 手动步进线程
+// 手动运行线程
 vm.runtime.sequencer.stepThread(thread);
 
-// 控制线程步进
+// 控制线程运行
 thread.dontStepJustThisOneTime = true; // 跳过下一步
 
 // 强制线程编译(如果启用编译器)
@@ -847,11 +847,11 @@ vm.runtime._convertBlockForScratchBlocks = function(blockInfo, categoryInfo) {
     return originalConvert.call(this, blockInfo, categoryInfo);
 };
 
-// 钩子到线程步进
+// 钩子到线程运行
 const sequencer = vm.runtime.sequencer;
 const originalStep = sequencer.stepThread;
 sequencer.stepThread = function(thread) {
-    // 步进前的自定义逻辑
+    // 运行前的自定义逻辑
     if (thread.skipThisStep) {
         thread.skipThisStep = false;
         return;

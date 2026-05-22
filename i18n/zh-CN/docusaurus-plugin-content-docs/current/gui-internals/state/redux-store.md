@@ -555,11 +555,11 @@ export default VMListener;
 
 ### 记忆化
 ```javascript
-// 使用 reselect 进行昂贵计算
+// 使用 reselect 进行复杂计算
 export const getTargetSpriteCounts = createSelector(
   [getTargets],
   (targets) => {
-    // 昂贵计算
+    // 复杂计算
     return targets.reduce((counts, target) => {
       if (!target.isStage) {
         const sprite = target.sprite;
