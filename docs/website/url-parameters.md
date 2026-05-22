@@ -53,4 +53,4 @@ The `project_url` option tells Bilup to download project data from an arbitrary 
 
 https://editor.bilup.org/?project_url=https://example.com/example.sb3
 
-https:// is implied if you don't include a protocol. http:// URLs generally will not work for security reasons. Note that the URL needs to be a direct download and must support CORS (`Access-Control-Allow-Origin: *`). [GitHub Pages](https://pages.github.com/) will do this automatically and is known to work well.
+https:// is implied if you don't include a protocol. https:// URLs generally will not work for security reasons. Note that the URL needs to be a direct download and must support CORS (`Access-Control-Allow-Origin: *`). [GitHub Pages](https://pages.github.com/) will do this automatically and is known to work well.

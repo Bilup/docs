@@ -25,7 +25,7 @@ hide_table_of_contents: true
 
 **用于测试你自己的项目：** 你可以使用 Scratch 编辑器中的「文件 > 保存到电脑」和「文件 > 从电脑加载」菜单来在 Bilup 中加载你未分享的 Scratch 项目，或将在 Bilup 中制作的项目上传到 Scratch。另外，许多人已经成功地在 Bilup(使用网站或 [桌面应用](https://desktop.bilup.org/))上主要进行项目工作，然后在完成时将项目上传到 Scratch(请记住在此过程中进行常规备份)。
 
-**用于协作：** 与他人分享项目的最佳方式是在 Scratch 网站上分享。Scratch 社区非常友好。这是 Scratch 希望你做的。分享未完成的项目是可以的。Scratch 已经 15 岁了，而 Bilup 才两岁。在没有 Bilup 的 13 年里，协作顺利进行，今后也会继续顺利进行。
+**用于协作：** 与他人分享项目的最佳方式是在 Scratch 网站上分享。Scratch 社区非常友好。这是 Scratch 希望你做的。分享未完成的项目是可以的。Scratch 已经 17 岁了，而 Bilup 连 1 岁都没到。在没有 Bilup 的 17 年里，协作顺利进行，今后也会继续顺利进行。
 
 **用于嵌入其他网站：** 要将未分享的项目嵌入其他网站，可以在 Scratch 上分享项目，或使用 Scratch 编辑器中的「文件 > 保存到电脑」菜单将项目下载到你的电脑，然后使用 [Bilup 打包器](https://packager.bilup.org/) 将该项目转换为可以嵌入的独立文件。
 

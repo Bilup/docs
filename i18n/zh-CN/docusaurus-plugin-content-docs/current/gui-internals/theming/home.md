@@ -137,7 +137,7 @@ export { blockColors };
 - **three**: 默认 Scratch 3.0 颜色
 - **dark**: 深色优化的积木颜色
 - **high-contrast**: 无障碍聚焦颜色
-- **custom**: 插件修改的占位符
+- **custom**: 插件修改的颜色
 
 ## 主题应用
 

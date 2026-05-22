@@ -15,11 +15,10 @@ Bilup provides powerful project management capabilities that extend beyond stand
 1. Click **File** in the menu bar
 2. Select **New** (or press Ctrl/Cmd+N)
 3. Confirm if you want to save current work
-4. Start with a blank project featuring the Scratch cat
+4. Start with a blank project
 
 #### Default Project Setup
 New projects include:
-- **One sprite**: The Scratch cat with default costume
 - **Blank stage**: White background
 - **Empty scripts**: Ready for your code
 - **Standard variables**: No variables pre-defined
@@ -221,7 +220,7 @@ After loading Scratch projects:
 
 #### Browser Storage
 - Multiple save states preserved
-- Automatic backup every 10 minutes
+- Automatic backup every 5 minutes
 - Recoverable after browser crashes
 
 #### Local Backups

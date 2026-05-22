@@ -267,7 +267,7 @@ if (!target.isStage) {
   console.log(target.y);         // Y 坐标
   console.log(target.direction); // 方向 (0-359)
   console.log(target.size);      // 大小百分比
-  console.log(target.visible);   // 可见性
+  console.log(target.visible);   // 显示/隐藏
 }
 
 // 造型和声音
@@ -303,7 +303,7 @@ sprite.setSize(150); // 原始大小的 150%
 ```
 
 #### `target.setVisible(visible)`
-设置角色可见性。
+设置角色显示/隐藏。
 
 ```javascript
 sprite.setVisible(false); // 隐藏角色
@@ -357,7 +357,7 @@ vm.on('TARGETS_UPDATE', (targets) => {
 ```
 
 #### `VISUAL_REPORT`
-每帧用于视觉更新时触发。
+每帧用于造型更新时触发。
 
 ```javascript
 vm.on('VISUAL_REPORT', (data) => {

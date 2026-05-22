@@ -32,7 +32,7 @@ https://editor.bilup.org/12785898?cloud_host=wss://clouddata.bilup.org
 
 `extension` 选项可以从 URL 加载自定义扩展。请参阅 [自定义扩展](/extensions/introduction)。
 
-<!-- 由于可能移除而注释 -->
+<!-- Legacy URL parameters -->
 <!--
 ## `scale` {#scale}
 
@@ -53,4 +53,4 @@ https://editor.bilup.org/?nocompile
 
 https://editor.bilup.org/?project_url=https://example.com/example.sb3
 
-如果你不包含协议头，则会默认使用 https://。出于安全原因，http:// URL 通常无法工作。请注意，URL 需要是直接下载链接，并且必须支持 CORS(`Access-Control-Allow-Origin: *`)。[GitHub Pages](https://pages.github.com/) 会自动支持此功能且效果良好。
+如果你不包含协议头，则会默认使用 https://。出于安全原因，https:// URL 通常无法工作。请注意，URL 需要是直接下载链接，并且必须支持 CORS(`Access-Control-Allow-Origin: *`)。[GitHub Pages](https://pages.github.com/) 会自动支持此功能且效果良好。

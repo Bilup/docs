@@ -14,7 +14,7 @@ Bilup 包含多个内置积木主题：
 - **three**: 默认 Scratch 3.0 颜色
 - **dark**: 深色优化积木颜色
 - **high-contrast**: 可访问性专注的高对比度颜色
-- **custom**: 插件修改的占位符
+- **custom**: 插件修改的颜色
 
 ## 结构
 
@@ -75,9 +75,9 @@ export { blockColors };
 
 ### 核心类别
 
-- **motion**: 运动和定位积木
-- **looks**: 外观和视觉效果积木
-- **sounds**: 音频和音乐积木
+- **motion**: 运动和方向积木
+- **looks**: 外观和造型积木
+- **sounds**: 音乐积木
 - **control**: 流程控制(循环、条件)
 - **event**: 事件处理积木
 - **sensing**: 输入和检测积木
