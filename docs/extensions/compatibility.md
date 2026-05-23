@@ -10,7 +10,7 @@ Once projects exist using your extension, it is critical that you do not change 
 
 ### The extension ID must never change
 
-```js
+```javascript
   getInfo() {
     return {
       // highlight-start
@@ -28,7 +28,7 @@ Instead, create a new block and mark the old one as `hideFromPalette: true`.
 
 It is generally safe to change blockType from REPORTER to BOOLEAN or from HAT to EVENT, but a conversion of HAT to BOOLEAN would be problematic.
 
-```js
+```javascript
   getInfo() {
     return {
       // ...
@@ -50,7 +50,7 @@ It is generally safe to change blockType from REPORTER to BOOLEAN or from HAT to
 
 Instead, create a new block and mark the old one as `hideFromPalette: true`.
 
-```js
+```javascript
   getInfo() {
     return {
       // ...
@@ -70,7 +70,7 @@ Instead, create a new block and mark the old one as `hideFromPalette: true`.
 
 ### Argument IDs and types must never change or be removed
 
-```js
+```javascript
   getInfo() {
     return {
       // ...
@@ -97,7 +97,7 @@ Instead, create a new block and mark the old one as `hideFromPalette: true`.
 
 Instead, create a new block and mark the old one as `hideFromPalette: true`. The new block can be reimplemented in terms of the old one:
 
-```js
+```javascript
   getInfo() {
     return {
       // ...

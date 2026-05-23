@@ -288,7 +288,7 @@ interface OptionalGUIProps {
 
 GUI 组件连接到多个 Redux 状态片段：
 
-```js
+```javascript
 const mapStateToProps = state => ({
     // 选项卡管理
     activeTabIndex: state.scratchGui.editorTab.activeTabIndex,
@@ -317,7 +317,7 @@ const mapStateToProps = state => ({
 
 ### Action 分发器
 
-```js
+```javascript
 const mapDispatchToProps = dispatch => ({
     onActivateTab: tabIndex => dispatch(activateTab(tabIndex)),
     onActivateCostumesTab: () => dispatch(activateTab(COSTUMES_TAB_INDEX)),
@@ -333,7 +333,7 @@ const mapDispatchToProps = dispatch => ({
 
 ### 选项卡切换
 
-```js
+```javascript
 const handleActivateTab = useCallback((tabIndex) => {
     // 某些选项卡的特殊处理
     if (tabIndex === COSTUMES_TAB_INDEX) {
@@ -355,7 +355,7 @@ const handleActivateTab = useCallback((tabIndex) => {
 
 ### 键盘快捷键
 
-```js
+```javascript
 useEffect(() => {
     const handleKeyDown = (e) => {
         // 选项卡切换快捷键
@@ -430,7 +430,7 @@ const GUI = () => (
 
 GUI 提供多个"共享空间"供插件注入内容：
 
-```js
+```javascript
 // 可用的共享空间
 const SHARED_SPACES = {
     stageHeader: '.stage-header',
@@ -451,7 +451,7 @@ addon.tab.appendToSharedSpace({
 
 插件可以包装 GUI 组件：
 
-```js
+```javascript
 // 用于包装 GUI 的 HOC
 const withAddonEnhancements = (WrappedComponent) => {
     return (props) => {
@@ -470,7 +470,7 @@ const withAddonEnhancements = (WrappedComponent) => {
 
 ### 单元测试
 
-```js
+```javascript
 describe('GUI Component', () => {
     let mockVM;
     
@@ -511,7 +511,7 @@ describe('GUI Component', () => {
 
 ### 集成测试
 
-```js
+```javascript
 describe('GUI Integration', () => {
     it('与 VM 正确协调', async () => {
         const { container } = render(

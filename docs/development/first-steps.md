@@ -11,7 +11,7 @@ This guide outlines how to configure the branding for your Bilup mod, including 
 
 To rename your mod, update the `APP_NAME` property in `src/lib/constants/brand.js` within your fork of the Scratch GUI repository:
 
-```js
+```javascript
 module.exports = {
     APP_NAME: 'YourModName',
     FEEDBACK_URL: 'https://scratch.mit.edu/users/username#comments',

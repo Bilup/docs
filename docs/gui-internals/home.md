@@ -162,7 +162,7 @@ const MyContainer = connect(
 
 ### State Management Patterns
 
-```js
+```javascript
 // Action creator
 const updateSetting = (key, value) => ({
     type: 'UPDATE_SETTING',
@@ -186,7 +186,7 @@ const settingsReducer = (state = initialState, action) => {
 
 ### Addon Integration
 
-```js
+```javascript
 // Addon API usage
 export default class MyAddon {
     onEnable() {
@@ -251,7 +251,7 @@ Bilup uses a sophisticated Webpack setup:
 
 ### Development Helpers
 
-```js
+```javascript
 // Debug utilities
 window.vm // Access to VM instance
 window.reduxStore // Access to Redux store  

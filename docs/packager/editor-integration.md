@@ -25,7 +25,7 @@ Tells the Packager to show a loading state and prepare for incoming data.
 ### finish-import (Editor → Packager)
 Includes the SB3 `ArrayBuffer` and filename:
 
-```js
+```javascript
 source.postMessage({
   p4: {
     type: 'finish-import',

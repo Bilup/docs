@@ -157,7 +157,7 @@ To test this use a script like this:
 
 Open up the JavaScript console, press the green flag, then wait a few seconds. You'll see something like this:
 
-```js
+```javascript
 ...
 2.719 false
 2.753 false

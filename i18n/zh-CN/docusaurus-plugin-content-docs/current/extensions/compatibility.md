@@ -10,7 +10,7 @@ hide_table_of_contents: true
 
 ### 扩展 ID 绝不能更改
 
-```js
+```javascript
   getInfo() {
     return {
       // highlight-start
@@ -28,7 +28,7 @@ hide_table_of_contents: true
 
 通常可以安全地将 blockType 从 REPORTER 更改为 BOOLEAN，或者从 HAT 更改为 EVENT，但将 HAT 转换为 BOOLEAN 会有问题。
 
-```js
+```javascript
   getInfo() {
     return {
       // ...
@@ -50,7 +50,7 @@ hide_table_of_contents: true
 
 相反，创建一个新积木并将旧积木标记为 `hideFromPalette: true`。
 
-```js
+```javascript
   getInfo() {
     return {
       // ...
@@ -70,7 +70,7 @@ hide_table_of_contents: true
 
 ### 参数 ID 和类型绝不能更改或移除
 
-```js
+```javascript
   getInfo() {
     return {
       // ...
@@ -97,7 +97,7 @@ hide_table_of_contents: true
 
 相反，创建一个新积木并将旧积木标记为 `hideFromPalette: true`。新积木可以基于旧积木重新实现：
 
-```js
+```javascript
   getInfo() {
     return {
       // ...

@@ -8,7 +8,7 @@ Bilup includes a window system used by addons and some UI features. It provides 
 
 ## Creating a Window
 
-```js
+```javascript
 // Available globally as WindowManager
 const win = WindowManager.createWindow({
   title: 'Addon Settings',

@@ -24,7 +24,7 @@ The primary data conversion utility that implements Scratch's type coercion rule
 
 #### Number Conversion
 
-```js
+```javascript
 const Cast = Scratch.Cast;
 
 // Basic number conversion
@@ -56,7 +56,7 @@ myMathBlock(args) {
 
 #### String Conversion
 
-```js
+```javascript
 // Basic string conversion
 Cast.toString(42)          // '42'
 Cast.toString(3.14)        // '3.14'
@@ -84,7 +84,7 @@ myTextBlock(args) {
 
 #### Boolean Conversion
 
-```js
+```javascript
 // Scratch boolean semantics
 Cast.toBoolean(true)       // true
 Cast.toBoolean(false)      // false
@@ -104,7 +104,7 @@ myConditionBlock(args) {
 
 #### Comparison Operations
 
-```js
+```javascript
 // Scratch-style comparison
 Cast.compare('10', '9')     // 1 (numeric comparison: 10 > 9)
 Cast.compare('10', '2')     // 1 (numeric comparison: 10 > 2)
@@ -125,7 +125,7 @@ isEqual(args) {
 
 #### Type Checking
 
-```js
+```javascript
 // Integer checking
 Cast.isInt(42)             // true
 Cast.isInt(3.14)           // false
@@ -144,7 +144,7 @@ myIntegerBlock(args) {
 
 ### Color Utilities
 
-```js
+```javascript
 // RGB color list conversion (Scratch format)
 Cast.toRgbColorList('#ff0000')    // [255, 0, 0]
 Cast.toRgbColorList('#00ff00')    // [0, 255, 0]

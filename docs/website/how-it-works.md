@@ -103,7 +103,7 @@ The interpreter overhead is added on top of the overhead of JavaScript itself. A
 
 TurboWarp's compiler removes all of that overhead by converting scripts directly to JavaScript functions. For example, the above script becomes:
 
-```js
+```javascript
 const myVariable = stage.variables["`jEk@4|i[#Fk?(8x)AV.-my variable"];
 return function* () {
   while (true) {
@@ -127,7 +127,7 @@ Of course, this is a very simple script where the interpreter overhead is neglig
 
 Here's a more complex example: a naive sorting algorithm (bubble sort).
 
-```js
+```javascript
 const length = stage.variables["O;aH~(njYNn}Bl@}!%pS-length-"];
 const list = stage.variables["O;aH~(njYNn}Bl@}!%pS-list-list"];
 const newLength = stage.variables["O;aH~(njYNn}Bl@}!%pS-new-"];

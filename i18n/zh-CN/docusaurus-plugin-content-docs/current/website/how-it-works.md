@@ -103,7 +103,7 @@ Scratch 的解释器在运行时遍历 [抽象语法树](https://en.wikipedia.or
 
 TurboWarp 的编译器通过将脚本直接转换为 JavaScript 函数来消除所有这些消耗。例如，上述脚本变成：
 
-```js
+```javascript
 const myVariable = stage.variables["`jEk@4|i[#Fk?(8x)AV.-my variable"];
 return function* () {
   while (true) {
@@ -127,7 +127,7 @@ return function* () {
 
 这是一个更复杂的例子：一个简单的排序算法(冒泡排序)。
 
-```js
+```javascript
 const length = stage.variables["O;aH~(njYNn}Bl@}!%pS-length-"];
 const list = stage.variables["O;aH~(njYNn}Bl@}!%pS-list-list"];
 const newLength = stage.variables["O;aH~(njYNn}Bl@}!%pS-new-"];

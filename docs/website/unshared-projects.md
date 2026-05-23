@@ -49,7 +49,7 @@ The new procedure to download projects is to first fetch "project_token" field f
 
 If you're using JavaScript, here's some sample code to get you started that will work in web browsers. If your code is running server-side (eg. Node.js), you should replace `https://trampoline.turbowarp.org/api/projects/` with `https://api.scratch.mit.edu/projects/` as servers are immune to [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing). We make no guarantees about the uptime of trampoline.turbowarp.org; use at your own risk. You may also be interested in [sb-downloader](https://github.com/forkphorus/sb-downloader) (includes easy API) for a complete full project downloader.
 
-```js
+```javascript
 const getProjectMetadata = async (projectId) => {
     // IF IN A WEB BROWSER, you need to use a service like trampoline.turbowarp.org to access the Scratch API.
     // IF IN NODE.JS, you should use https://api.scratch.mit.edu/projects/${projectId} directly instead.

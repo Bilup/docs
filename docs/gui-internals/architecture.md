@@ -147,7 +147,7 @@ const withErrorBoundary = (WrappedComponent) => {
 
 ### Redux Store Structure
 
-```js
+```javascript
 {
     // Project and loading state
     scratchGui: {
@@ -307,7 +307,7 @@ Addon Manifest → Addon Loader → Runtime Entry → API Injection → Componen
 
 ### Addon API Structure
 
-```js
+```javascript
 class AddonAPI {
     constructor(addonId, tab) {
         this.addonId = addonId;
@@ -379,7 +379,7 @@ Bilup uses CSS custom properties for theming:
 
 ### Theme Engine
 
-```js
+```javascript
 class ThemeManager {
     constructor() {
         this.themes = new Map();
@@ -415,7 +415,7 @@ class ThemeManager {
 
 ### Memory Management
 
-```js
+```javascript
 class ComponentManager {
     componentDidMount() {
         // Set up listeners
@@ -474,7 +474,7 @@ class ErrorBoundary extends React.Component {
 
 ### Global Error Handling
 
-```js
+```javascript
 // Global error handler
 window.addEventListener('error', (event) => {
     console.error('Global Error:', event.error);
@@ -500,7 +500,7 @@ window.addEventListener('unhandledrejection', (event) => {
 
 ### Test Structure
 
-```js
+```javascript
 // Component test example
 describe('Button Component', () => {
     it('renders correctly', () => {
@@ -531,7 +531,7 @@ describe('Button Component', () => {
 
 ### Content Security Policy
 
-```js
+```javascript
 // CSP configuration
 const cspDirectives = {
     defaultSrc: ["'self'"],
@@ -544,7 +544,7 @@ const cspDirectives = {
 
 ### Addon Security
 
-```js
+```javascript
 // Addon sandboxing
 class AddonSandbox {
     executeAddon(addonCode, api) {

@@ -27,7 +27,7 @@ The syntax for unsandboxed extensions is very familiar but has some differences.
 
 If your sandboxed extension has code like like this:
 
-```js
+```javascript
 // Old sandboxed extensions (worker or <iframe> sandbox):
 class MyExtension {
   getInfo () {
@@ -39,7 +39,7 @@ Scratch.extensions.register(new MyExtension());
 
 Or if your extension uses an old "plugin" mechanism, such as this one: (if you don't recognize this code then don't worry about it)
 
-```js
+```javascript
 class MyExtension {
   getInfo () {
     return { /* ... */ };
@@ -54,7 +54,7 @@ class MyExtension {
 
 The unsandboxed version would have code like this:
 
-```js
+```javascript
 (function(Scratch) {
   'use strict';
   class MyExtension {
@@ -98,7 +98,7 @@ Before we talk about the new APIs, we want to note some additional requirements 
 
 The big thing that unsandboxed extensions can do is directly access Scratch internals.
 
-```js
+```javascript
   const vm = Scratch.vm;
 ```
 
@@ -106,7 +106,7 @@ That's full access to the actual Scratch VM object. There is a lot you can do wi
 
 Remember -- every variable declaration must happen *inside* the IIFE.
 
-```js
+```javascript
 // GOOD CODE
 (function(Scratch) {
   const vm = Scratch.vm;
@@ -138,7 +138,7 @@ Here is an example extension that demonstrates using `util.target` to get the na
 
 Note that every sprite, script, and block shares the same block utility object. Instead of making a object each time your block runs, it just updates the properties of the shared object for performance. Thus, the only safe time to access `util` is immediately when the block runs. Trying to access `util` in a setTimeout, setInterval, Promise callback, or other non-syncronous callback will not work correctly. If you need to access properties from `util` later, save them in a variable ahead of time.
 
-```js
+```javascript
   // This is NOT reliable and may alert the wrong thing:
   myBlock(args, util) {
     setTimeout(() => {
@@ -161,7 +161,7 @@ Here are some common copy-and-pasteable code snippets that can be used:
 
 If the extension MUST be run unsandboxed, add this around the start:
 
-```js
+```javascript
   if (!Scratch.extensions.unsandboxed) {
     throw new Error('Extension Name must run unsandboxed');
   }
@@ -169,7 +169,7 @@ If the extension MUST be run unsandboxed, add this around the start:
 
 If you're using the `vm`, `runtime` or `Cast` APIs a lot, common practise is to define them around the start to save time:
 
-```js
+```javascript
   const vm = Scratch.vm;
   const runtime = vm.runtime;
   const Cast = Scratch.Cast; // Discussed later.
@@ -187,7 +187,7 @@ These permissioned APIs will also automatically prevent projects from running ar
 
 Use `Scratch.fetch(url)` instead of `fetch(url)`. Check `await Scratch.canFetch(url)` before using other APIs that connect to remote websites.
 
-```js
+```javascript
 // Do not do this:
 const response = await fetch(url);
 // Do this instead:
@@ -221,7 +221,7 @@ if (await Scratch.canFetch(url)) {
 
 Use `Scratch.openWindow(url)` instead of `window.open(url)`. `Scratch.openWindow` always sets the target to `"_blank"` to open a new tab or window. If you can't use `Scratch.openWindow(url)` for some reason, check `await Scratch.canOpenWindow(url)` before calling `window.open(url)`.
 
-```js
+```javascript
 // Do not do this:
 const win = window.open(url);
 // Do this instead:
@@ -237,7 +237,7 @@ const win = await Scratch.openWindow(url, 'width=400,height=400');
 
 Use `Scratch.redirect(url)` instead of `location.href = url`. If you can't use `Scratch.redirect(url)`, check `await Scratch.canRedirect(url)` before running `location.href = url`.
 
-```js
+```javascript
 // Do not do this:
 location.href = url;
 // Do this instead:

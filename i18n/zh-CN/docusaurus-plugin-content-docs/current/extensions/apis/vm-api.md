@@ -18,7 +18,7 @@ VM 管理：
 
 ## 访问 VM
 
-```js
+```javascript
 // 仅非沙盒化扩展
 if (!Scratch.extensions.unsandboxed) {
   throw new Error('VM API 需要非沙盒化扩展');
@@ -32,7 +32,7 @@ const runtime = vm.runtime;
 
 ### 基本执行
 
-```js
+```javascript
 // 启动项目(绿旗)
 vm.greenFlag();
 
@@ -48,7 +48,7 @@ const isRunning = vm.runtime.threads.length > 0;
 
 ### 加速模式
 
-```js
+```javascript
 // 启用/禁用加速模式
 vm.setTurboMode(true);   // 启用加速模式
 vm.setTurboMode(false);  // 禁用加速模式
@@ -65,7 +65,7 @@ vm.on('TURBO_MODE_OFF', () => {
 
 ### 性能选项
 
-```js
+```javascript
 // 设置帧率(30 或 60 FPS)
 vm.setFramerate(60);
 
@@ -90,7 +90,7 @@ vm.setRuntimeOptions({
 
 ### 加载项目
 
-```js
+```javascript
 // 从 JSON 字符串加载项目
 const projectData = '{"targets": [...], "meta": {...}}';
 await vm.loadProject(projectData);
@@ -105,7 +105,7 @@ vm.clear();
 
 ### 项目信息
 
-```js
+```javascript
 // 获取项目为 JSON
 const projectJson = vm.toJSON();
 
@@ -121,7 +121,7 @@ vm.on('PROJECT_CHANGED', () => {
 
 ### 资源管理
 
-```js
+```javascript
 // 获取所有项目资源
 const assets = vm.assets;
 
@@ -152,7 +152,7 @@ await vm.addBackdrop('backdrop.png', backdropObject);
 
 ### 访问角色
 
-```js
+```javascript
 const runtime = vm.runtime;
 
 // 获取所有角色(角色 + 舞台)
@@ -176,7 +176,7 @@ const editingTarget = vm.editingTarget;
 
 ### 角色属性
 
-```js
+```javascript
 // 角色属性
 const target = runtime.getSpriteTargetByName('Sprite1');
 if (target) {
@@ -199,7 +199,7 @@ if (target) {
 
 ### 创建和管理克隆
 
-```js
+```javascript
 // 创建克隆
 const originalSprite = runtime.getSpriteTargetByName('Sprite1');
 if (originalSprite) {
@@ -231,7 +231,7 @@ if (cloneToDelete && !cloneToDelete.isOriginal) {
 
 ### 全局变量
 
-```js
+```javascript
 const stage = runtime.getTargetForStage();
 
 // 访问变量
@@ -253,7 +253,7 @@ stage.createVariable('newVar', 'myVariable', '');
 
 ### 角色变量
 
-```js
+```javascript
 const sprite = runtime.getSpriteTargetByName('Sprite1');
 if (sprite) {
   // 局部变量
@@ -269,7 +269,7 @@ if (sprite) {
 
 ### 列表
 
-```js
+```javascript
 const stage = runtime.getTargetForStage();
 
 // 访问列表
@@ -290,7 +290,7 @@ if (itemsList) {
 
 ### 启动脚本
 
-```js
+```javascript
 // 启动帽子积木
 const startedThreads = runtime.startHats('event_whenflagclicked');
 console.log(`启动了 ${startedThreads.length} 个线程`);
@@ -311,7 +311,7 @@ const thread = runtime._pushThread(blockId, target);
 
 为了更精细的控制，你可以手动推送线程并检查它们的状态。
 
-```js
+```javascript
 // 手动启动线程
 // _pushThread(blockId, target, opts)
 const thread = runtime._pushThread(startBlockId, target, {
@@ -331,7 +331,7 @@ if (thread.status === 4) {
 
 ### 线程管理
 
-```js
+```javascript
 // 获取所有运行中的线程
 const threads = runtime.threads;
 console.log(`${threads.length} 个线程正在运行`);
@@ -358,7 +358,7 @@ threads.forEach(thread => {
 
 ### 项目生命周期
 
-```js
+```javascript
 // 项目执行
 vm.on('PROJECT_RUN_START', () => {
   console.log('项目开始运行');
@@ -380,7 +380,7 @@ vm.on('PROJECT_LOADED', () => {
 
 ### 角色事件
 
-```js
+```javascript
 runtime.on('targetWasCreated', (target, originalTarget) => {
   console.log('新角色已创建:', target.getName());
   if (originalTarget) {
@@ -398,7 +398,7 @@ runtime.on('TARGETS_UPDATE', (emitProjectChanged) => {
 
 ### 积木事件
 
-```js
+```javascript
 // 积木发光(视觉反馈)
 runtime.on('SCRIPT_GLOW_ON', (glowData) => {
   console.log('脚本发光中:', glowData.id);
@@ -419,7 +419,7 @@ runtime.on('BLOCK_GLOW_OFF', (glowData) => {
 
 ### 监视器事件
 
-```js
+```javascript
 runtime.on('MONITORS_UPDATE', (monitors) => {
   console.log('变量监视器已更新:', monitors.length);
   monitors.forEach(monitor => {
@@ -432,7 +432,7 @@ runtime.on('MONITORS_UPDATE', (monitors) => {
 
 ### 扩展管理
 
-```js
+```javascript
 const extensionManager = vm.extensionManager;
 
 // 检查扩展是否已加载
@@ -449,7 +449,7 @@ if (extensionManager.loadExtensionURL) {
 
 ### 扩展存储
 
-```js
+```javascript
 // 访问扩展特定存储
 const extensionId = 'myextension';
 const storage = runtime.extensionStorage[extensionId] || {};
@@ -465,7 +465,7 @@ runtime.extensionStorage[extensionId] = storage;
 
 ### 输入设备
 
-```js
+```javascript
 // 鼠标
 const mouse = runtime.ioDevices.mouse;
 console.log('鼠标位置:', mouse.getClientX(), mouse.getClientY());
@@ -481,7 +481,7 @@ const spacePressed = keyboard.getKeyIsDown('space');
 
 ### 时钟和计时
 
-```js
+```javascript
 const clock = runtime.ioDevices.clock;
 
 // 获取当前时间
@@ -498,7 +498,7 @@ const systemTime = clock.systemTime();
 
 ### 编译器状态
 
-```js
+```javascript
 // 检查编译器是否已启用
 const compilerEnabled = runtime.compilerOptions.enabled;
 
@@ -517,7 +517,7 @@ if (runtime.precompile) {
 
 非沙盒化扩展可以通过 `vm.exports` 访问编译器基础设施。这主要用于[编译器补丁](../advanced-techniques/compiler-patching.md)。
 
-```js
+```javascript
 // 检查编译器导出
 if (vm.exports) {
     // 访问生成器
@@ -542,7 +542,7 @@ if (vm.exports) {
 
 ### 性能监控
 
-```js
+```javascript
 // 启用性能分析
 if (runtime.enableProfiling) {
   runtime.enableProfiling();
@@ -561,7 +561,7 @@ console.log('当前运行时间:', runtime.currentStepTime);
 
 ### 舞台尺寸
 
-```js
+```javascript
 // 设置自定义舞台尺寸
 vm.setStageSize(640, 360);
 
@@ -576,7 +576,7 @@ console.log('舞台尺寸:', runtime.stageWidth, 'x', runtime.stageHeight);
 
 ### 云变量
 
-```js
+```javascript
 // 检查云变量
 vm.on('HAS_CLOUD_DATA_UPDATE', (hasCloudData) => {
   if (hasCloudData) {
@@ -590,7 +590,7 @@ console.log('云变量限制:', runtime.cloudOptions.limit);
 
 ### 调试模式
 
-```js
+```javascript
 // 启用调试模式
 vm.enableDebug();
 
@@ -605,7 +605,7 @@ const debugEnabled = runtime.debug;
 
 ### 自定义报告器扩展
 
-```js
+```javascript
 class SystemInfoExtension {
   getInfo() {
     return {
@@ -654,7 +654,7 @@ class SystemInfoExtension {
 
 ### 事件监听器扩展
 
-```js
+```javascript
 class EventMonitorExtension {
   constructor() {
     this.eventLog = [];
@@ -709,7 +709,7 @@ class EventMonitorExtension {
 
 ## 错误处理
 
-```js
+```javascript
 // 安全的 VM 访问
 function safeVMOperation(operation) {
   try {

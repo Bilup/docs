@@ -10,7 +10,7 @@ Embeds can load projects via `postMessage`. This is useful when the host page wa
 
 Send a message to the embedded player:
 
-```js
+```javascript
 iframe.contentWindow.postMessage({
   type: 'LOAD_SB3',
   data: 'https://example.com/project.sb3', // URL string, ArrayBuffer, or Uint8Array
@@ -33,7 +33,7 @@ Security and origin rules:
 
 The embed sends back a response:
 
-```js
+```javascript
 window.addEventListener('message', (event) => {
   const msg = event.data;
   if (msg && msg.type === 'LOAD_SB3_RESPONSE') {
@@ -48,7 +48,7 @@ window.addEventListener('message', (event) => {
 
 ## Example: Load from URL
 
-```js
+```javascript
 const iframe = document.getElementById('bilup-embed');
 iframe.contentWindow.postMessage({
   type: 'LOAD_SB3',
@@ -59,7 +59,7 @@ iframe.contentWindow.postMessage({
 
 ## Example: Load from ArrayBuffer
 
-```js
+```javascript
 async function loadBinary(iframe, url) {
   const res = await fetch(url);
   const buf = await res.arrayBuffer();

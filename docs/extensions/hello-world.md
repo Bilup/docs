@@ -26,13 +26,13 @@ Now, we will dissect what is going on in this file in the order it runs.
 
 ## Constructing and registering
 
-```js
+```javascript
 class MyExtension {
 ```
 
 This is a standard [JavaScript class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes). It is conventional to define your extension in the form of a class. The name of the class doesn't matter, but we suggest making it somehow based on the extension's name. It doesn't have to be unique at this stage.
 
-```js
+```javascript
 Scratch.extensions.register(new HelloWorld());
 ```
 
@@ -42,7 +42,7 @@ Make sure to always call register() exactly once. If you don't call it, your ext
 
 ## getInfo()
 
-```js
+```javascript
   getInfo() {
     return {
       id: 'helloworld',
@@ -89,7 +89,7 @@ While other BlockTypes do exist, they do not work well and will not be discussed
 
 ## The blocks
 
-```js
+```javascript
   hello() {
     return 'Hello, world!';
   }

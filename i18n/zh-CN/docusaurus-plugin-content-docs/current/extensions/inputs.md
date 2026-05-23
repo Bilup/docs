@@ -49,7 +49,7 @@ import {ExtensionCode} from './utils.js';
 
 当 Scratch 运行你的积木函数时，它会将第一个值作为对象传入。此对象将包含积木具有的每个参数名称的值。按照惯例，我们称之为 `args` 或使用解构语法。例如，如果积木有一个名为 `X` 和 `Y` 的参数，可以通过以下任何方式访问它们：
 
-```js
+```javascript
   // 使用 args.XYZ 格式...
   goto(args) {
     console.log(args.X, args.Y);

@@ -147,7 +147,7 @@ const withErrorBoundary = (WrappedComponent) => {
 
 ### Redux Store 结构
 
-```js
+```javascript
 {
     // 项目和加载状态
     scratchGui: {
@@ -307,7 +307,7 @@ class Blocks extends React.Component {
 
 ### 插件 API 结构
 
-```js
+```javascript
 class AddonAPI {
     constructor(addonId, tab) {
         this.addonId = addonId;
@@ -379,7 +379,7 @@ Bilup 使用 CSS 自定义属性进行主题化：
 
 ### 主题引擎
 
-```js
+```javascript
 class ThemeManager {
     constructor() {
         this.themes = new Map();
@@ -415,7 +415,7 @@ class ThemeManager {
 
 ### 内存管理
 
-```js
+```javascript
 class ComponentManager {
     componentDidMount() {
         // 设置监听器
@@ -474,7 +474,7 @@ class ErrorBoundary extends React.Component {
 
 ### 全局错误处理
 
-```js
+```javascript
 // 全局错误处理器
 window.addEventListener('error', (event) => {
     console.error('Global Error:', event.error);
@@ -500,7 +500,7 @@ window.addEventListener('unhandledrejection', (event) => {
 
 ### 测试结构
 
-```js
+```javascript
 // 组件测试示例
 describe('Button Component', () => {
     it('正确渲染', () => {
@@ -531,7 +531,7 @@ describe('Button Component', () => {
 
 ### 内容安全策略
 
-```js
+```javascript
 // CSP 配置
 const cspDirectives = {
     defaultSrc: ["'self'"],
@@ -544,7 +544,7 @@ const cspDirectives = {
 
 ### 插件安全
 
-```js
+```javascript
 // 插件沙箱
 class AddonSandbox {
     executeAddon(addonCode, api) {

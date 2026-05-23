@@ -28,7 +28,7 @@ If you want to convert Scratch projects to readable and editable JavaScript, use
 
 Run this in the JavaScript console before starting the project:
 
-```js
+```javascript
 vm.enableDebug();
 ```
 
@@ -38,7 +38,7 @@ If you don't know what a "JavaScript console" is or how to access it, then it's 
 
 
 Bilup has an extra feature that allows you to disable this:
-```js
+```javascript
 vm.disableDebug()
 ```
 </details>

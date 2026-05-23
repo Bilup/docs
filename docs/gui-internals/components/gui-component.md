@@ -288,7 +288,7 @@ interface OptionalGUIProps {
 
 The GUI component connects to multiple Redux state slices:
 
-```js
+```javascript
 const mapStateToProps = state => ({
     // Tab management
     activeTabIndex: state.scratchGui.editorTab.activeTabIndex,
@@ -317,7 +317,7 @@ const mapStateToProps = state => ({
 
 ### Action Dispatchers
 
-```js
+```javascript
 const mapDispatchToProps = dispatch => ({
     onActivateTab: tabIndex => dispatch(activateTab(tabIndex)),
     onActivateCostumesTab: () => dispatch(activateTab(COSTUMES_TAB_INDEX)),
@@ -333,7 +333,7 @@ const mapDispatchToProps = dispatch => ({
 
 ### Tab Switching
 
-```js
+```javascript
 const handleActivateTab = useCallback((tabIndex) => {
     // Special handling for certain tabs
     if (tabIndex === COSTUMES_TAB_INDEX) {
@@ -355,7 +355,7 @@ const handleActivateTab = useCallback((tabIndex) => {
 
 ### Keyboard Shortcuts
 
-```js
+```javascript
 useEffect(() => {
     const handleKeyDown = (e) => {
         // Tab switching shortcuts
@@ -430,7 +430,7 @@ const GUI = () => (
 
 The GUI provides several "shared spaces" where addons can inject content:
 
-```js
+```javascript
 // Available shared spaces
 const SHARED_SPACES = {
     stageHeader: '.stage-header',
@@ -451,7 +451,7 @@ addon.tab.appendToSharedSpace({
 
 Addons can wrap GUI components:
 
-```js
+```javascript
 // HOC for wrapping GUI
 const withAddonEnhancements = (WrappedComponent) => {
     return (props) => {
@@ -470,7 +470,7 @@ const withAddonEnhancements = (WrappedComponent) => {
 
 ### Unit Tests
 
-```js
+```javascript
 describe('GUI Component', () => {
     let mockVM;
     
@@ -511,7 +511,7 @@ describe('GUI Component', () => {
 
 ### Integration Tests
 
-```js
+```javascript
 describe('GUI Integration', () => {
     it('coordinates with VM correctly', async () => {
         const { container } = render(

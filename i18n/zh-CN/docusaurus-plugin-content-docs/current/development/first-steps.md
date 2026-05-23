@@ -11,7 +11,7 @@ sidebar_position: 3
 
 要重命名你的修改版，请在你 fork 的 Scratch GUI 仓库中的 `src/lib/constants/brand.js` 中更新 `APP_NAME` 属性：
 
-```js
+```javascript
 module.exports = {
     APP_NAME: 'YourModName',
     FEEDBACK_URL: 'https://scratch.mit.edu/users/username#comments',

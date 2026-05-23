@@ -17,7 +17,7 @@ name: Scratch
 
 ## 基本结构
 
-```js
+```javascript
 (function(Scratch) {
   'use strict';
 
@@ -58,7 +58,7 @@ name: Scratch
 
 直接访问 Scratch 虚拟机实例。
 
-```js
+```javascript
 const vm = Scratch.vm;
 
 // 访问运行时
@@ -90,7 +90,7 @@ vm.runtime.on('PROJECT_RUN_START', () => {
 
 直接访问 WebGL 渲染器实例。
 
-```js
+```javascript
 const renderer = Scratch.renderer;
 
 // 触发布局重绘
@@ -105,7 +105,7 @@ console.log(canvas.width, canvas.height);
 
 扩展注册和元数据。
 
-```js
+```javascript
 // 注册扩展
 Scratch.extensions.register(new MyExtension());
 
@@ -120,7 +120,7 @@ if (Scratch.extensions.unsandboxed) {
 
 管理已加载的扩展。用于动态积木更新。
 
-```js
+```javascript
 // 强制工具箱重新渲染
 // 更改按钮文本时有用
 // 强制工具箱刷新
@@ -137,7 +137,7 @@ vm.extensionManager.refreshBlocks(extensionId);
 
 定义积木可以接受的参数类型。
 
-```js
+```javascript
 const ArgumentType = Scratch.ArgumentType;
 
 // 基本类型
@@ -156,7 +156,7 @@ ArgumentType.IMAGE     // 'image' - 内联图像显示
 ```
 
 **示例用法：**
-```js
+```javascript
 {
   opcode: 'setColor',
   text: 'set pen color to [COLOR]',
@@ -173,7 +173,7 @@ ArgumentType.IMAGE     // 'image' - 内联图像显示
 
 定义积木的形状和行为。
 
-```js
+```javascript
 const BlockType = Scratch.BlockType;
 
 // 基本积木类型
@@ -194,7 +194,7 @@ BlockType.XML         // 'xml' - 自定义 Blockly XML
 ```
 
 **示例用法：**
-```js
+```javascript
 {
   opcode: 'checkCondition',
   blockType: Scratch.BlockType.BOOLEAN,
@@ -212,7 +212,7 @@ BlockType.XML         // 'xml' - 自定义 Blockly XML
 
 指定积木可以运行的角色/舞台。
 
-```js
+```javascript
 const TargetType = Scratch.TargetType;
 
 TargetType.SPRITE  // 'sprite' - 仅限角色
@@ -232,7 +232,7 @@ TargetType.STAGE   // 'stage' - 仅限舞台
 
 Scratch 中使用的数据类型转换工具。
 
-```js
+```javascript
 const Cast = Scratch.Cast;
 
 // 数字转换
@@ -265,7 +265,7 @@ Cast.isInt(42)               // true
 ```
 
 **实际示例：**
-```js
+```javascript
 myMathBlock(args) {
   const a = Scratch.Cast.toNumber(args.A);
   const b = Scratch.Cast.toNumber(args.B);
@@ -284,7 +284,7 @@ myTextBlock(args) {
 
 ### 基本属性
 
-```js
+```javascript
 myBlock(args, util) {
   // 访问当前角色/目标
   const target = util.target;
@@ -304,7 +304,7 @@ myBlock(args, util) {
 
 ### 目标操作
 
-```js
+```javascript
 // 获取角色属性
 const x = util.target.x;
 const y = util.target.y;
@@ -330,7 +330,7 @@ const hasList = !!util.target.lookupVariableByNameAndType('items', 'list');
 
 ### 线程控制
 
-```js
+```javascript
 // 启动其他脚本
 const startedThreads = util.startHats('event_whenbroadcastreceived', {
   BROADCAST_OPTION: 'my message'
@@ -352,7 +352,7 @@ if (util.stackTimerNeedsInit()) {
 
 ### 分支控制(用于 C 积木)
 
-```js
+```javascript
 // 用于条件/循环积木
 util.startBranch(1, false);  // 启动第一个分支，非循环
 util.startBranch(2, false);  // 启动第二个分支(else)
@@ -363,7 +363,7 @@ util.startBranch(1, true);   // 启动分支作为循环
 
 监听 VM 事件以实现响应式扩展：
 
-```js
+```javascript
 const runtime = Scratch.vm.runtime;
 
 // 项目生命周期
@@ -400,7 +400,7 @@ runtime.on('MONITORS_UPDATE', (monitors) => {
 
 ### 网络访问
 
-```js
+```javascript
 // 检查并发出网络请求
 if (await Scratch.canFetch('https://api.example.com')) {
   const response = await Scratch.fetch('https://api.example.com/data');
@@ -410,7 +410,7 @@ if (await Scratch.canFetch('https://api.example.com')) {
 
 ### 窗口管理
 
-```js
+```javascript
 // 打开新窗口
 if (await Scratch.canOpenWindow('https://example.com')) {
   Scratch.openWindow('https://example.com');
@@ -424,7 +424,7 @@ if (await Scratch.canRedirect('https://example.com')) {
 
 ### 设备访问
 
-```js
+```javascript
 // 检查各种权限
 const canRecord = await Scratch.canRecordAudio();
 const canCamera = await Scratch.canRecordVideo();
@@ -437,7 +437,7 @@ const canGeolocate = await Scratch.canGeolocate();
 
 ### 变量管理
 
-```js
+```javascript
 getVariable(args, util) {
   const variable = util.target.lookupVariableByNameAndType(args.NAME, '');
   return variable ? variable.value : 0;
@@ -453,7 +453,7 @@ setVariable(args, util) {
 
 ### 列表操作
 
-```js
+```javascript
 getListItem(args, util) {
   const list = util.target.lookupVariableByNameAndType(args.LIST, 'list');
   if (list && list.value) {
@@ -466,7 +466,7 @@ getListItem(args, util) {
 
 ### 帽子积木实现
 
-```js
+```javascript
 // 在 getInfo() 中
 {
   opcode: 'whenSomething',
@@ -483,7 +483,7 @@ setInterval(() => {
 
 ### 异步操作
 
-```js
+```javascript
 async waitBlock(args, util) {
   const seconds = Scratch.Cast.toNumber(args.SECONDS);
   
@@ -499,7 +499,7 @@ async waitBlock(args, util) {
 
 ## 错误处理
 
-```js
+```javascript
 myBlock(args, util) {
   try {
     // 你的积木逻辑
@@ -521,7 +521,7 @@ myBlock(args, util) {
 5. **尊重沙盒化** - 使用 VM API 前检查 `Scratch.extensions.unsandboxed`
 6. **异步操作时尽早保存上下文**：
 
-```js
+```javascript
 // 良好做法 - 立即保存上下文
 myAsyncBlock(args, util) {
   const target = util.target;
@@ -543,7 +543,7 @@ myAsyncBlock(args, util) {
 
 ## 翻译支持
 
-```js
+```javascript
 // 使用 Scratch.translate 进行国际化
 const message = Scratch.translate({
   id: 'myextension.hello',

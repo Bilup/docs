@@ -16,7 +16,7 @@ The renderer organizes drawables into groups that define rendering order.
 From back to front: `background` → `video` → `pen` → `sprite`.
 
 ## Usage
-```js
+```javascript
 const id = renderer.createDrawable('sprite');
 renderer.setDrawableOrder(id, Infinity, 'sprite');
 renderer.updateDrawableProperties(id, { visible: true });

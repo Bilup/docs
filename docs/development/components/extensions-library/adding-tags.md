@@ -20,11 +20,11 @@ To add a new tag to the extension library, follow these steps:
     Add your new tag object to the exported array in the tags file.
 
 **Example:**
-```js
+```javascript
 { tag: 'newtag', intlLabel: 'New Tag' }
 ```
 or, if using a variable:
-```js
+```javascript
 { tag: 'tw', intlLabel: APP_NAME }
 ```
 
@@ -32,7 +32,7 @@ or, if using a variable:
 > Since tags represent brand names, translation is not required for the `intlLabel` property.
 
 **Sample tags file (`src/lib/libraries/tw-extension-tags.js`):**
-```js
+```javascript
 import {APP_NAME} from '../brand';
 
 // Because these are all brand names, it is unnecessary for them to be translatable.

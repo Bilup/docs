@@ -46,7 +46,7 @@ Bilup 有自己独立于 Scratch 的云变量服务器。
 
 你应该暴露一个设置 User-Agent 的 API，并且应该强制使用此 API。例如，对于某个假设的云变量 API，你可能有这样的选项：
 
-```js
+```javascript
 const CloudConnection = require('...');
 
 const connection = new CloudConnection({
@@ -68,7 +68,7 @@ connection.on('set', (name, value) => { /* ... */ });
 
 要实际设置 User-Agent，请查阅你使用的 WebSocket 库的文档。他们可能不会专门提到 User-Agent，但他们应该提到如何设置头信息。例如，使用 Node.js [ws](https://www.npmjs.com/package/ws) 客户端，你会这样做：
 
-```js
+```javascript
 const ws = new WebSocket("wss://clouddata.bilup.org", {
   headers: {
     "user-agent": userAgentGoesHere

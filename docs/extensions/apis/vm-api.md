@@ -18,7 +18,7 @@ The VM manages:
 
 ## Accessing the VM
 
-```js
+```javascript
 // Unsandboxed extensions only
 if (!Scratch.extensions.unsandboxed) {
   throw new Error('VM API requires unsandboxed extension');
@@ -32,7 +32,7 @@ const runtime = vm.runtime;
 
 ### Basic Execution
 
-```js
+```javascript
 // Start the project (green flag)
 vm.greenFlag();
 
@@ -48,7 +48,7 @@ const isRunning = vm.runtime.threads.length > 0;
 
 ### Turbo Mode
 
-```js
+```javascript
 // Enable/disable turbo mode
 vm.setTurboMode(true);   // Enable turbo mode
 vm.setTurboMode(false);  // Disable turbo mode
@@ -65,7 +65,7 @@ vm.on('TURBO_MODE_OFF', () => {
 
 ### Performance Options
 
-```js
+```javascript
 // Set framerate (30 or 60 FPS)
 vm.setFramerate(60);
 
@@ -90,7 +90,7 @@ vm.setRuntimeOptions({
 
 ### Loading Projects
 
-```js
+```javascript
 // Load project from JSON string
 const projectData = '{"targets": [...], "meta": {...}}';
 await vm.loadProject(projectData);
@@ -105,7 +105,7 @@ vm.clear();
 
 ### Project Information
 
-```js
+```javascript
 // Get project as JSON
 const projectJson = vm.toJSON();
 
@@ -121,7 +121,7 @@ vm.on('PROJECT_CHANGED', () => {
 
 ### Asset Management
 
-```js
+```javascript
 // Get all project assets
 const assets = vm.assets;
 
@@ -152,7 +152,7 @@ await vm.addBackdrop('backdrop.png', backdropObject);
 
 ### Accessing Targets
 
-```js
+```javascript
 const runtime = vm.runtime;
 
 // Get all targets (sprites + stage)
@@ -176,7 +176,7 @@ const editingTarget = vm.editingTarget;
 
 ### Target Properties
 
-```js
+```javascript
 // Sprite properties
 const target = runtime.getSpriteTargetByName('Sprite1');
 if (target) {
@@ -199,7 +199,7 @@ if (target) {
 
 ### Creating and Managing Clones
 
-```js
+```javascript
 // Create a clone
 const originalSprite = runtime.getSpriteTargetByName('Sprite1');
 if (originalSprite) {
@@ -231,7 +231,7 @@ if (cloneToDelete && !cloneToDelete.isOriginal) {
 
 ### Global Variables
 
-```js
+```javascript
 const stage = runtime.getTargetForStage();
 
 // Access variables
@@ -253,7 +253,7 @@ stage.createVariable('newVar', 'myVariable', '');
 
 ### Sprite Variables
 
-```js
+```javascript
 const sprite = runtime.getSpriteTargetByName('Sprite1');
 if (sprite) {
   // Local variables
@@ -269,7 +269,7 @@ if (sprite) {
 
 ### Lists
 
-```js
+```javascript
 const stage = runtime.getTargetForStage();
 
 // Access lists
@@ -290,7 +290,7 @@ if (itemsList) {
 
 ### Starting Scripts
 
-```js
+```javascript
 // Start hat blocks
 const startedThreads = runtime.startHats('event_whenflagclicked');
 console.log(`Started ${startedThreads.length} threads`);
@@ -311,7 +311,7 @@ const thread = runtime._pushThread(blockId, target);
 
 For more granular control, you can manually push threads and inspect their status.
 
-```js
+```javascript
 // Manually start a thread
 // _pushThread(blockId, target, opts)
 const thread = runtime._pushThread(startBlockId, target, {
@@ -331,7 +331,7 @@ if (thread.status === 4) {
 
 ### Thread Management
 
-```js
+```javascript
 // Get all running threads
 const threads = runtime.threads;
 console.log(`${threads.length} threads running`);
@@ -358,7 +358,7 @@ threads.forEach(thread => {
 
 ### Project Lifecycle
 
-```js
+```javascript
 // Project execution
 vm.on('PROJECT_RUN_START', () => {
   console.log('Project started running');
@@ -380,7 +380,7 @@ vm.on('PROJECT_LOADED', () => {
 
 ### Target Events
 
-```js
+```javascript
 runtime.on('targetWasCreated', (target, originalTarget) => {
   console.log('New target created:', target.getName());
   if (originalTarget) {
@@ -398,7 +398,7 @@ runtime.on('TARGETS_UPDATE', (emitProjectChanged) => {
 
 ### Block Events
 
-```js
+```javascript
 // Block glow (visual feedback)
 runtime.on('SCRIPT_GLOW_ON', (glowData) => {
   console.log('Script glowing:', glowData.id);
@@ -419,7 +419,7 @@ runtime.on('BLOCK_GLOW_OFF', (glowData) => {
 
 ### Monitor Events
 
-```js
+```javascript
 runtime.on('MONITORS_UPDATE', (monitors) => {
   console.log('Variable monitors updated:', monitors.length);
   monitors.forEach(monitor => {
@@ -432,7 +432,7 @@ runtime.on('MONITORS_UPDATE', (monitors) => {
 
 ### Extension Management
 
-```js
+```javascript
 const extensionManager = vm.extensionManager;
 
 // Check if extension is loaded
@@ -449,7 +449,7 @@ if (extensionManager.loadExtensionURL) {
 
 ### Extension Storage
 
-```js
+```javascript
 // Access extension-specific storage
 const extensionId = 'myextension';
 const storage = runtime.extensionStorage[extensionId] || {};
@@ -465,7 +465,7 @@ runtime.extensionStorage[extensionId] = storage;
 
 ### Input Devices
 
-```js
+```javascript
 // Mouse
 const mouse = runtime.ioDevices.mouse;
 console.log('Mouse position:', mouse.getClientX(), mouse.getClientY());
@@ -481,7 +481,7 @@ const spacePressed = keyboard.getKeyIsDown('space');
 
 ### Clock and Timing
 
-```js
+```javascript
 const clock = runtime.ioDevices.clock;
 
 // Get current time
@@ -498,7 +498,7 @@ const systemTime = clock.systemTime();
 
 ### Compiler Status
 
-```js
+```javascript
 // Check if compiler is enabled
 const compilerEnabled = runtime.compilerOptions.enabled;
 
@@ -517,7 +517,7 @@ if (runtime.precompile) {
 
 Unsandboxed extensions can access the compiler infrastructure through `vm.exports`. This is primarily used for [Compiler Patching](../advanced-techniques/compiler-patching.md).
 
-```js
+```javascript
 // Check for compiler exports
 if (vm.exports) {
     // Access generators
@@ -542,7 +542,7 @@ For deep integration, you can hook into runtime processes. See [GUI API](/api-re
 
 ### Performance Monitoring
 
-```js
+```javascript
 // Enable profiling
 if (runtime.enableProfiling) {
   runtime.enableProfiling();
@@ -561,7 +561,7 @@ console.log('Current step time:', runtime.currentStepTime);
 
 ### Stage Size
 
-```js
+```javascript
 // Set custom stage size
 vm.setStageSize(640, 360);
 
@@ -576,7 +576,7 @@ console.log('Stage size:', runtime.stageWidth, 'x', runtime.stageHeight);
 
 ### Cloud Variables
 
-```js
+```javascript
 // Check for cloud variables
 vm.on('HAS_CLOUD_DATA_UPDATE', (hasCloudData) => {
   if (hasCloudData) {
@@ -590,7 +590,7 @@ console.log('Cloud variable limit:', runtime.cloudOptions.limit);
 
 ### Debug Mode
 
-```js
+```javascript
 // Enable debug mode
 vm.enableDebug();
 
@@ -605,7 +605,7 @@ const debugEnabled = runtime.debug;
 
 ### Custom Reporter Extension
 
-```js
+```javascript
 class SystemInfoExtension {
   getInfo() {
     return {
@@ -654,7 +654,7 @@ class SystemInfoExtension {
 
 ### Event Listener Extension
 
-```js
+```javascript
 class EventMonitorExtension {
   constructor() {
     this.eventLog = [];
@@ -709,7 +709,7 @@ class EventMonitorExtension {
 
 ## Error Handling
 
-```js
+```javascript
 // Safe VM access
 function safeVMOperation(operation) {
   try {

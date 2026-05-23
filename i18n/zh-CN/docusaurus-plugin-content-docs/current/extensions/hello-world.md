@@ -26,13 +26,13 @@ import {ExtensionCode} from './utils.js';
 
 ## 构造和注册
 
-```js
+```javascript
 class MyExtension {
 ```
 
 这是一个标准的 [JavaScript 类](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)。通常以类的形式定义你的扩展。类的名称无关紧要，但我们建议以某种方式基于扩展的名称来命名。在此阶段它不必是唯一的。
 
-```js
+```javascript
 Scratch.extensions.register(new HelloWorld());
 ```
 
@@ -42,7 +42,7 @@ Scratch.extensions.register(new HelloWorld());
 
 ## getInfo()
 
-```js
+```javascript
   getInfo() {
     return {
       id: 'helloworld',
@@ -89,7 +89,7 @@ Scratch.extensions.register(new HelloWorld());
 
 ## 积木
 
-```js
+```javascript
   hello() {
     return 'Hello, world!';
   }

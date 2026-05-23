@@ -24,7 +24,7 @@ Scratch 提供了各种实用函数和对象，帮助扩展开发者处理常见
 
 #### 数字转换
 
-```js
+```javascript
 const Cast = Scratch.Cast;
 
 // 基本数字转换
@@ -56,7 +56,7 @@ myMathBlock(args) {
 
 #### 字符串转换
 
-```js
+```javascript
 // 基本字符串转换
 Cast.toString(42)          // '42'
 Cast.toString(3.14)        // '3.14'
@@ -84,7 +84,7 @@ myTextBlock(args) {
 
 #### 布尔值转换
 
-```js
+```javascript
 // Scratch 布尔语义
 Cast.toBoolean(true)       // true
 Cast.toBoolean(false)      // false
@@ -104,7 +104,7 @@ myConditionBlock(args) {
 
 #### 比较操作
 
-```js
+```javascript
 // Scratch 风格比较
 Cast.compare('10', '9')     // 1 (数字比较: 10 > 9)
 Cast.compare('10', '2')     // 1 (数字比较: 10 > 2)
@@ -125,7 +125,7 @@ isEqual(args) {
 
 #### 类型检查
 
-```js
+```javascript
 // 整数检查
 Cast.isInt(42)             // true
 Cast.isInt(3.14)           // false
@@ -144,7 +144,7 @@ myIntegerBlock(args) {
 
 ### 颜色实用工具
 
-```js
+```javascript
 // RGB 颜色列表转换 (Scratch 格式)
 Cast.toRgbColorList('#ff0000')    // [255, 0, 0]
 Cast.toRgbColorList('#00ff00')    // [0, 255, 0]

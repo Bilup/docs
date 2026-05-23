@@ -46,7 +46,7 @@ Ask the author of your cloud variable library or refer to your WebSocket library
 
 You should expose an API to set the User-Agent, and you should make using this API mandatory. For example, for some hypothetical cloud variable API, you might have an option like this:
 
-```js
+```javascript
 const CloudConnection = require('...');
 
 const connection = new CloudConnection({
@@ -68,7 +68,7 @@ If someone does not specify `contactInformation`, you should not let them contin
 
 To actually set the User-Agent, look at the documentation for the WebSocket library you use. They probably won't mention User-Agent specifically, but they should mention how to set headers in general. For example, using the Node.js [ws](https://www.npmjs.com/package/ws) client, you would do:
 
-```js
+```javascript
 const ws = new WebSocket("wss://clouddata.bilup.org", {
   headers: {
     "user-agent": userAgentGoesHere

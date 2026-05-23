@@ -165,7 +165,7 @@ const MyComponent = ({ prop1, prop2 }) => {
 
 ### 状态管理模式
 
-```js
+```javascript
 // Action 创建器
 const updateSetting = (key, value) => ({
     type: 'UPDATE_SETTING',
@@ -189,7 +189,7 @@ const settingsReducer = (state = initialState, action) => {
 
 ### 插件集成
 
-```js
+```javascript
 // 插件 API 使用
 export default class MyAddon {
     onEnable() {
@@ -254,7 +254,7 @@ Bilup 使用复杂的 Webpack 设置：
 
 ### 开发辅助函数
 
-```js
+```javascript
 // 调试工具
 window.vm // 访问 VM 实例
 window.reduxStore // 访问 Redux store

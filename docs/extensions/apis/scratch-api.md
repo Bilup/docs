@@ -17,7 +17,7 @@ The `Scratch` object serves as the entry point for extension development, provid
 
 ## Basic Structure
 
-```js
+```javascript
 (function(Scratch) {
   'use strict';
 
@@ -58,7 +58,7 @@ The `Scratch` object serves as the entry point for extension development, provid
 
 Direct access to the Scratch Virtual Machine instance.
 
-```js
+```javascript
 const vm = Scratch.vm;
 
 // Access runtime
@@ -90,7 +90,7 @@ vm.runtime.on('PROJECT_RUN_START', () => {
 
 Direct access to the WebGL renderer instance.
 
-```js
+```javascript
 const renderer = Scratch.renderer;
 
 // Trigger redraw
@@ -105,7 +105,7 @@ console.log(canvas.width, canvas.height);
 
 Extension registration and metadata.
 
-```js
+```javascript
 // Register an extension
 Scratch.extensions.register(new MyExtension());
 
@@ -120,7 +120,7 @@ if (Scratch.extensions.unsandboxed) {
 
 Manages loaded extensions. Useful for dynamic block updates.
 
-```js
+```javascript
 // Force the toolbox to re-render
 // Useful when changing button text
 // Force a toolbox refresh
@@ -137,7 +137,7 @@ For advanced UI customization involving the block editor itself (Blockly), you c
 
 Defines the types of arguments that blocks can accept.
 
-```js
+```javascript
 const ArgumentType = Scratch.ArgumentType;
 
 // Basic types
@@ -156,7 +156,7 @@ ArgumentType.IMAGE     // 'image' - Inline image display
 ```
 
 **Example usage:**
-```js
+```javascript
 {
   opcode: 'setColor',
   text: 'set pen color to [COLOR]',
@@ -173,7 +173,7 @@ ArgumentType.IMAGE     // 'image' - Inline image display
 
 Defines the shapes and behaviors of blocks.
 
-```js
+```javascript
 const BlockType = Scratch.BlockType;
 
 // Basic block types
@@ -194,7 +194,7 @@ BlockType.XML         // 'xml' - Custom Blockly XML
 ```
 
 **Example usage:**
-```js
+```javascript
 {
   opcode: 'checkCondition',
   blockType: Scratch.BlockType.BOOLEAN,
@@ -212,7 +212,7 @@ BlockType.XML         // 'xml' - Custom Blockly XML
 
 Specifies which sprites/stage a block can run on.
 
-```js
+```javascript
 const TargetType = Scratch.TargetType;
 
 TargetType.SPRITE  // 'sprite' - Only sprites
@@ -232,7 +232,7 @@ TargetType.STAGE   // 'stage' - Only the stage
 
 Data type conversion utilities used throughout Scratch.
 
-```js
+```javascript
 const Cast = Scratch.Cast;
 
 // Number conversion
@@ -265,7 +265,7 @@ Cast.isInt(42)               // true
 ```
 
 **Practical example:**
-```js
+```javascript
 myMathBlock(args) {
   const a = Scratch.Cast.toNumber(args.A);
   const b = Scratch.Cast.toNumber(args.B);
@@ -284,7 +284,7 @@ When blocks run in unsandboxed extensions, they receive a second `util` paramete
 
 ### Basic Properties
 
-```js
+```javascript
 myBlock(args, util) {
   // Access the current sprite/target
   const target = util.target;
@@ -304,7 +304,7 @@ myBlock(args, util) {
 
 ### Target Manipulation
 
-```js
+```javascript
 // Get sprite properties
 const x = util.target.x;
 const y = util.target.y;
@@ -330,7 +330,7 @@ const hasList = !!util.target.lookupVariableByNameAndType('items', 'list');
 
 ### Thread Control
 
-```js
+```javascript
 // Start other scripts
 const startedThreads = util.startHats('event_whenbroadcastreceived', {
   BROADCAST_OPTION: 'my message'
@@ -352,7 +352,7 @@ if (util.stackTimerNeedsInit()) {
 
 ### Branch Control (for C-blocks)
 
-```js
+```javascript
 // For conditional/loop blocks
 util.startBranch(1, false);  // Start first branch, not a loop
 util.startBranch(2, false);  // Start second branch (else)
@@ -363,7 +363,7 @@ util.startBranch(1, true);   // Start branch as loop
 
 Listen to VM events for reactive extensions:
 
-```js
+```javascript
 const runtime = Scratch.vm.runtime;
 
 // Project lifecycle
@@ -400,7 +400,7 @@ Unsandboxed extensions have access to various security-gated APIs:
 
 ### Network Access
 
-```js
+```javascript
 // Check and make network requests
 if (await Scratch.canFetch('https://api.example.com')) {
   const response = await Scratch.fetch('https://api.example.com/data');
@@ -410,7 +410,7 @@ if (await Scratch.canFetch('https://api.example.com')) {
 
 ### Window Management
 
-```js
+```javascript
 // Open new windows
 if (await Scratch.canOpenWindow('https://example.com')) {
   Scratch.openWindow('https://example.com');
@@ -424,7 +424,7 @@ if (await Scratch.canRedirect('https://example.com')) {
 
 ### Device Access
 
-```js
+```javascript
 // Check various permissions
 const canRecord = await Scratch.canRecordAudio();
 const canCamera = await Scratch.canRecordVideo();
@@ -437,7 +437,7 @@ const canGeolocate = await Scratch.canGeolocate();
 
 ### Variable Management
 
-```js
+```javascript
 getVariable(args, util) {
   const variable = util.target.lookupVariableByNameAndType(args.NAME, '');
   return variable ? variable.value : 0;
@@ -453,7 +453,7 @@ setVariable(args, util) {
 
 ### List Operations
 
-```js
+```javascript
 getListItem(args, util) {
   const list = util.target.lookupVariableByNameAndType(args.LIST, 'list');
   if (list && list.value) {
@@ -466,7 +466,7 @@ getListItem(args, util) {
 
 ### Hat Block Implementation
 
-```js
+```javascript
 // In getInfo()
 {
   opcode: 'whenSomething',
@@ -483,7 +483,7 @@ setInterval(() => {
 
 ### Async Operations
 
-```js
+```javascript
 async waitBlock(args, util) {
   const seconds = Scratch.Cast.toNumber(args.SECONDS);
   
@@ -499,7 +499,7 @@ async waitBlock(args, util) {
 
 ## Error Handling
 
-```js
+```javascript
 myBlock(args, util) {
   try {
     // Your block logic
@@ -521,7 +521,7 @@ myBlock(args, util) {
 5. **Respect sandboxing** - check `Scratch.extensions.unsandboxed` before using VM APIs
 6. **Save context early** when using async operations:
 
-```js
+```javascript
 // Good - save context immediately
 myAsyncBlock(args, util) {
   const target = util.target;
@@ -543,7 +543,7 @@ myAsyncBlock(args, util) {
 
 ## Translation Support
 
-```js
+```javascript
 // Use Scratch.translate for internationalization
 const message = Scratch.translate({
   id: 'myextension.hello',

@@ -49,7 +49,7 @@ Next, Scratch needs to know where to put each of the arguments in the block. Are
 
 When Scratch runs your block functions, it will pass in an object for the first value. This object will contain a value for each argument name that the block has. Conventionally we call this `args` or use destructuring syntax. As an example, if the block has an argument named `X` and `Y`, these could be accessed in any of these ways:
 
-```js
+```javascript
   // Using args.XYZ format...
   goto(args) {
     console.log(args.X, args.Y);

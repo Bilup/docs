@@ -16,7 +16,7 @@ title: Renderer Layer Groups
 从后到前：`background` → `video` → `pen` → `sprite`。
 
 ## 使用方法
-```js
+```javascript
 const id = renderer.createDrawable('sprite');
 renderer.setDrawableOrder(id, Infinity, 'sprite');
 renderer.updateDrawableProperties(id, { visible: true });

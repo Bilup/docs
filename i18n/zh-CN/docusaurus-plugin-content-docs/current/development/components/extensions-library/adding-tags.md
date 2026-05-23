@@ -20,11 +20,11 @@ title: 添加标签
     将新标签对象添加到标签文件中导出的数组中。
 
 **示例：**
-```js
+```javascript
 { tag: 'newtag', intlLabel: 'New Tag' }
 ```
 或者，如果使用变量：
-```js
+```javascript
 { tag: 'tw', intlLabel: APP_NAME }
 ```
 
@@ -32,7 +32,7 @@ title: 添加标签
 > 由于标签代表品牌名称，`intlLabel` 属性不需要翻译。
 
 **示例标签文件 (`src/lib/libraries/tw-extension-tags.js`)：**
-```js
+```javascript
 import {APP_NAME} from '../brand';
 
 // 因为这些都是品牌名称，不需要翻译。

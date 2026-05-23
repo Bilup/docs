@@ -10,7 +10,7 @@ title: 嵌入消息 API
 
 向嵌入的播放器发送消息：
 
-```js
+```javascript
 iframe.contentWindow.postMessage({
   type: 'LOAD_SB3',
   data: 'https://example.com/project.sb3', // URL 字符串、ArrayBuffer 或 Uint8Array
@@ -33,7 +33,7 @@ iframe.contentWindow.postMessage({
 
 嵌入发回响应：
 
-```js
+```javascript
 window.addEventListener('message', (event) => {
   const msg = event.data;
   if (msg && msg.type === 'LOAD_SB3_RESPONSE') {
@@ -48,7 +48,7 @@ window.addEventListener('message', (event) => {
 
 ## 示例：从 URL 加载
 
-```js
+```javascript
 const iframe = document.getElementById('bilup-embed');
 iframe.contentWindow.postMessage({
   type: 'LOAD_SB3',
@@ -59,7 +59,7 @@ iframe.contentWindow.postMessage({
 
 ## 示例：从 ArrayBuffer 加载
 
-```js
+```javascript
 async function loadBinary(iframe, url) {
   const res = await fetch(url);
   const buf = await res.arrayBuffer();
