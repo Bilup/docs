@@ -214,7 +214,7 @@ export default class MyAddon {
 
 Bilup 使用复杂的 Webpack 设置：
 
-- **开发服务器** - 热重载、source maps
+- **开发服务器** - 热重载、源代码映射
 - **生产构建** - 压缩、优化
 - **插件处理** - 动态插件加载
 - **资源管理** - 图像、字体、CSS
@@ -282,16 +282,16 @@ window.addons // 插件系统访问
 
 ## 内部开发入门
 
-### 插件开发者
+### 给插件开发者
 从 [插件系统概述](/gui-internals/addons/home) 开始，了解如何扩展 Bilup 的功能。
 
-### 贡献者
+### 给贡献者
 从 [架构指南](/gui-internals/architecture) 开始，了解整体系统设计。
 
-### 主题开发者
+### 给主题开发者
 探索 [主题系统](/gui-internals/theming/home) 了解自定义 Bilup 外观的方法。
 
-### 性能工程师
+### 给性能工程师
 学习优化技术和监控工具以提高 Bilup 性能。
 
 ---

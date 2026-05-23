@@ -176,7 +176,7 @@ describe('Project Actions', () => {
     const mockDispatch = jest.fn();
     const mockGetState = jest.fn();
     
-    // Mock fetch
+    // 模拟 fetch 请求
     global.fetch = jest.fn(() =>
       Promise.resolve({
         json: () => Promise.resolve({ id: '123', title: 'Test Project' })

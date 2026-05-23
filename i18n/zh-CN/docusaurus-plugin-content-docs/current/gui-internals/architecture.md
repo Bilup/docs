@@ -299,7 +299,7 @@ class Blocks extends React.Component {
 
 ## 插件系统架构
 
-### 插件加载管道
+### 插件加载流程
 
 ```
 插件清单 → 插件加载器 → 运行时入口 → API 注入 → 组件修改

@@ -586,7 +586,7 @@ try {
   // 回退到空项目
   await vm.loadProject(getEmptyProject());
   
-  // 显示用户友好的错误
+  // 对用户显示友好的错误提示
   showErrorMessage('无法加载项目。已启动空项目。');
 }
 ```
