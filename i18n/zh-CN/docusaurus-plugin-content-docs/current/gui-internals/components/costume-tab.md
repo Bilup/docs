@@ -120,7 +120,7 @@ Bilup 包含一个复杂的绘图编辑器：
 ### 位图工具
 - 可调整大小和透明度的画笔
 - 橡皮擦工具
-- 填充桶
+- 填充工具
 - 选择和变换工具
 
 ### 高级功能
@@ -197,6 +197,6 @@ describe('CostumeTab', () => {
 
 ## 相关组件
 
-- [角色选择器](sprite-selector)
+- [角色选项卡](sprite-selector)
 - [声音选项卡](sound-tab)
 - [容器架构](../containers/overview)

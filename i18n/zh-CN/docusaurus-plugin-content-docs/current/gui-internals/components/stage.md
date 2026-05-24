@@ -115,4 +115,4 @@ it('should render sprites correctly', () => {
 
 - [容器概述](../containers/overview)
 - [GUI 组件](gui-component)
-- [角色选择器](sprite-selector)
+- [角色选项卡](sprite-selector)
