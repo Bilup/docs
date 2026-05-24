@@ -50,7 +50,7 @@ https://editor.bilup.org/123456789?username=alice
 ## 性能
 
 ### Turbo 模式
-启用高速执行：
+启用加速模式：
 ```
 https://editor.bilup.org/?turbo
 ```

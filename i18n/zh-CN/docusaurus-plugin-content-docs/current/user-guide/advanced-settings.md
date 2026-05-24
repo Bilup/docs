@@ -229,7 +229,7 @@ setStageSize(800, 600);
 | `hqpen` | boolean | 高质量画笔 |
 | `size` | WIDTHxHEIGHT | 自定义舞台尺寸 |
 | `interpolate` | boolean | 启用运动插值 |
-| `offscreen` | boolean | 禁用舞台围栏 |
+| `offscreen` | boolean | 禁用屏幕外围栏 |
 | `limitless` | boolean | 禁用其他限制 |
 | `clones` | number | 设置最大克隆数 |
 
