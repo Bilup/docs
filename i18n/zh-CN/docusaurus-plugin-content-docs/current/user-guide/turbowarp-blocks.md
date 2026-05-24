@@ -354,7 +354,7 @@ return (result)
 ### 最佳实践
 - 对性能关键代码使用 TurboWarp 积木
 - 为兼容性保留标准 Scratch 积木
-- 使用高级功能时彻底测试
+- 使用高级功能时详细测试
 - 记录 TurboWarp 特定功能
 
 Bilup 中的 TurboWarp 积木相比标准 Scratch 提供了显著的增强，实现了更复杂的编程和更好的性能。使用这些积木创建更强大和高效的项目!
