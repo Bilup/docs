@@ -286,7 +286,7 @@ function executeInline(blockId, target, parentThread) {
     sequencer.stepThread(inlineThread);
     
     // 如果完成则返回结果
-    if (inlineThread.status === 4) { // DONE
+    if (inlineThread.status === 4) { // 完成
         return inlineThread.inlineReturn || '';
     }
     

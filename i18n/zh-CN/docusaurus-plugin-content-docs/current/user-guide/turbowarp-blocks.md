@@ -144,7 +144,7 @@ set volume to (75) %
 循环直到条件变为真：
 ```scratch
 repeat until <(timer) > (10)>
-  // Code here
+  // 在此编写代码
 end
 ```
 
@@ -162,7 +162,7 @@ end
 更复杂的条件逻辑：
 ```scratch
 if <<(score) > (100)> and <(lives) > (0)>> then
-  // Code here
+  // 在此编写代码
 end
 ```
 

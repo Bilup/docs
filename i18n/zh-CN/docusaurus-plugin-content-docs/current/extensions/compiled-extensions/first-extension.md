@@ -344,7 +344,7 @@ case 'mathutils.power':
     }
   };
 
-  // Script Tree Generation
+  // 脚本树生成
   applyPatch(ScriptTreeGenerator.prototype, {
     descendStackedBlock(fn, block, ...args) {
       switch (block.opcode) {
@@ -373,7 +373,7 @@ case 'mathutils.power':
     }
   });
 
-  // JavaScript Generation
+  // JavaScript 生成
   applyPatch(JSGenerator.prototype, {
     descendStackedBlock(fn, node, ...args) {
       let b = node.block;

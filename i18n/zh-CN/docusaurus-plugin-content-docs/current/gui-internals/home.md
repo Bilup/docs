@@ -166,7 +166,7 @@ const MyComponent = ({ prop1, prop2 }) => {
 ### 状态管理模式
 
 ```javascript
-// Action 创建器
+// Action 创建函数
 const updateSetting = (key, value) => ({
     type: 'UPDATE_SETTING',
     key,

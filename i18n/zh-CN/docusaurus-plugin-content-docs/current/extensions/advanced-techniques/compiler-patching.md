@@ -123,7 +123,7 @@ patch(JSGenerator.prototype, {
   opcode: "inline",
   blockType: Scratch.BlockType.REPORTER,
   text: ["inline"],
-  branchCount: 1, // Substack
+  branchCount: 1, // 子堆栈
   output: "Boolean",
   outputShape: 3
 }

@@ -101,7 +101,7 @@ const ConfirmationModal = ({ isOpen, onClose, onConfirm, title, message }) => (
   </Modal>
 );
 
-// Usage
+// 使用示例
 const handleDeleteSprite = () => {
   setShowConfirm(true);
 };
@@ -293,7 +293,7 @@ const ExtensionManagerModal = ({ isOpen, onClose }) => {
 模态框通过 Redux 管理：
 
 ```javascript
-// Modal state slice
+// 模态框状态切片
 const modalSlice = createSlice({
   name: 'modals',
   initialState: {
@@ -318,7 +318,7 @@ const modalSlice = createSlice({
   }
 });
 
-// Usage in components
+// 在组件中的使用
 const dispatch = useDispatch();
 
 const showConfirmation = (message, onConfirm) => {

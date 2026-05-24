@@ -16,12 +16,12 @@ function injectCustomVisuals(categoryName) {
     .querySelector('g.blocklyWorkspace')
     .querySelectorAll(`g[data-category="${categoryName}"]`)
     .forEach((g) => {
-      // Get the block data to identify which block this is
+      // 获取积木数据以识别这是哪个积木
       let block = vm.runtime.getEditingTarget().blocks.getBlock(g.dataset.id);
       
       if (block && !g.querySelector('svg#customIcon')) {
         if (block.opcode === 'myExtension_imageBlock') {
-          // Replace the block's innerHTML with custom SVG
+          // 用自定义 SVG 替换积木的 innerHTML
           g.innerHTML = `<svg id="customIcon" width="92" height="92" viewBox="0,0,92,92">
             <image href="https://example.com/image.png" height="92" width="92" />
           </svg><!--rotationCenter:46:46-->`;
@@ -36,7 +36,7 @@ function injectCustomVisuals(categoryName) {
 每当积木更新时，需要触发视觉替换：
 
 ```javascript
-// Hook into VM events to update visuals
+// 挂钩到 VM 事件以更新视觉效果
 vm.runtime.on('PROJECT_CHANGED', () => injectCustomVisuals('My Extension'));
 vm.runtime.on('BLOCK_DRAG_UPDATE', () => injectCustomVisuals('My Extension'));
 vm.runtime.on('BLOCK_DRAG_END', () => injectCustomVisuals('My Extension'));
@@ -78,7 +78,7 @@ g.innerHTML = `<svg width="640" height="400" viewBox="0,0,640,400">
 {
   blockType: 'reporter',
   opcode: 'imageBlock',
-  text: '‎', // Zero-width character (U+200E)
+  text: '‎', // 零宽度字符 (U+200E)
   disableReporter: true
 }
 ```
@@ -88,13 +88,13 @@ g.innerHTML = `<svg width="640" height="400" viewBox="0,0,640,400">
 你也可以使用运行时补丁来自定义返回值的显示方式：
 
 ```javascript
-// Patch the visual report system
+// 修补视觉返回系统
 patch(vm.runtime.constructor.prototype, {
   visualReport(original, blockId, value) {
     let block = vm.editingTarget?.blocks.getBlock(blockId) || 
                 vm.runtime.flyoutBlocks.getBlock(blockId);
     
-    // Call original first
+    // 先调用原始方法
     original(blockId, value);
     
     if (block) {
@@ -103,7 +103,7 @@ patch(vm.runtime.constructor.prototype, {
           var reportBox = div.querySelector('div.valueReportBox');
           
           if (reportBox && block.opcode === 'myExtension_customReport') {
-            // Customize the report display
+            // 自定义返回显示
             div.style.transform = 'translate(100px, 50px)';
             div.style.backgroundColor = '#ff0000';
           }
@@ -210,7 +210,7 @@ window.unpatch = (obj) => {
         blocks: [{
           blockType: 'reporter',
           opcode: 'cat',
-          text: '‎', // Zero-width character
+          text: '‎', // 零宽度字符
           disableReporter: true
         }]
       };
@@ -221,7 +221,7 @@ window.unpatch = (obj) => {
     }
   }
   
-  // Set up event listeners
+  // 设置事件监听器
   vm.runtime.on('PROJECT_CHANGED', injectVisuals);
   vm.runtime.on('BLOCK_DRAG_UPDATE', injectVisuals);
   vm.runtime.on('BLOCK_DRAG_END', injectVisuals);
@@ -241,18 +241,18 @@ window.unpatch = (obj) => {
 访问有关已加载扩展的信息：
 
 ```javascript
-// Get all loaded extensions
+// 获取所有已加载的扩展
 function getLoadedExtensions() {
     const extensionKeys = Array.from(vm.extensionManager._loadedExtensions.keys());
     return extensionKeys.filter(key => typeof key === 'string');
 }
 
-// Check if specific extension is loaded
+// 检查特定扩展是否已加载
 function isExtensionLoaded(extensionId) {
     return vm.extensionManager._loadedExtensions.has(extensionId);
 }
 
-// Get extension instance
+// 获取扩展实例
 function getExtensionInstance(extensionId) {
     return vm.runtime[`ext_${extensionId}`];
 }
@@ -264,7 +264,7 @@ function getExtensionInstance(extensionId) {
 
 ```javascript
 class ExtensionExposer {
-    // Parse input arguments safely
+    // 安全解析输入参数
     parseJSON(input) {
         if (Array.isArray(input)) return {};
         if (typeof input === 'object') return input;
@@ -279,12 +279,12 @@ class ExtensionExposer {
         }
     }
     
-    // Dynamic function execution
+    // 动态函数执行
     runFunction({ functionName, extensionId, input }, util, blockJSON) {
         extensionId = Cast.toString(extensionId);
         functionName = Cast.toString(functionName);
         
-        // Try to find function in primitives (compiled blocks)
+        // 尝试在原语(编译积木)中查找函数
         const primitiveKey = `${extensionId}_${functionName}`;
         if (vm.runtime._primitives[primitiveKey]) {
             return vm.runtime._primitives[primitiveKey](
@@ -294,7 +294,7 @@ class ExtensionExposer {
             );
         }
         
-        // Fallback to extension instance method
+        // 回退到扩展实例方法
         const extension = vm.runtime[`ext_${extensionId}`];
         if (extension && typeof extension[functionName] === 'function') {
             return extension[functionName](
@@ -314,7 +314,7 @@ class ExtensionExposer {
 创建扩展注册和发现系统：
 
 ```javascript
-// Extension registry for cross-extension communication
+// 扩展注册中心，用于跨扩展通信
 class ExtensionRegistry {
     constructor() {
         this.extensions = new Map();
@@ -322,28 +322,28 @@ class ExtensionRegistry {
         this.events = new EventTarget();
     }
     
-    // Register extension with public API
+    // 使用公共 API 注册扩展
     register(extensionId, instance, publicAPI = {}) {
         this.extensions.set(extensionId, instance);
         this.apis.set(extensionId, publicAPI);
         
-        // Notify other extensions
+        // 通知其他扩展
         this.events.dispatchEvent(new CustomEvent('extensionRegistered', {
             detail: { extensionId, publicAPI }
         }));
     }
     
-    // Get extension API
+    // 获取扩展 API
     getAPI(extensionId) {
         return this.apis.get(extensionId);
     }
     
-    // Subscribe to extension events
+    // 监听扩展事件
     on(event, callback) {
         this.events.addEventListener(event, callback);
     }
     
-    // Cross-extension method calls
+    // 跨扩展方法调用
     call(extensionId, method, ...args) {
         const api = this.apis.get(extensionId);
         if (api && typeof api[method] === 'function') {
@@ -353,20 +353,20 @@ class ExtensionRegistry {
     }
 }
 
-// Global registry
+// 全局注册中心
 window.extensionRegistry = window.extensionRegistry || new ExtensionRegistry();
 
-// Example usage in extension
+// 扩展中的示例用法
 class MyExtension {
     constructor() {
-        // Register with public API
+        // 使用公共 API 注册
         window.extensionRegistry.register('myExtension', this, {
             getData: this.getData.bind(this),
             processData: this.processData.bind(this),
             onEvent: this.handleEvent.bind(this)
         });
         
-        // Listen for other extensions
+        // 监听其他扩展
         window.extensionRegistry.on('extensionRegistered', (event) => {
             console.log('New extension:', event.detail.extensionId);
         });
@@ -380,7 +380,7 @@ class MyExtension {
         return input * 2;
     }
     
-    // Call another extension
+    // 调用另一个扩展
     useOtherExtension() {
         try {
             const result = window.extensionRegistry.call(
@@ -406,7 +406,7 @@ function inspectPrimitives() {
     const primitives = vm.runtime._primitives;
     const extensionPrimitives = {};
     
-    // Group primitives by extension
+    // 按扩展分组原语
     for (const [key, func] of Object.entries(primitives)) {
         const parts = key.split('_');
         if (parts.length >= 2) {
@@ -428,7 +428,7 @@ function inspectPrimitives() {
     return extensionPrimitives;
 }
 
-// Find all blocks that match a pattern
+// 查找所有匹配模式的积木
 function findBlocksByPattern(pattern) {
     const primitives = vm.runtime._primitives;
     const regex = new RegExp(pattern);
@@ -436,7 +436,7 @@ function findBlocksByPattern(pattern) {
     return Object.keys(primitives).filter(key => regex.test(key));
 }
 
-// Get block metadata
+// 获取积木元数据
 function getBlockMetadata(extensionId, blockName) {
     const extension = vm.runtime[`ext_${extensionId}`];
     if (!extension || !extension.getInfo) return null;
@@ -458,7 +458,7 @@ class ExtensionDataBus {
         this.permissions = new Map();
     }
     
-    // Set data with access control
+    // 使用访问控制设置数据
     setData(extensionId, key, value, permissions = {}) {
         const dataKey = `${extensionId}:${key}`;
         this.data.set(dataKey, value);
@@ -468,11 +468,11 @@ class ExtensionDataBus {
             ...permissions
         });
         
-        // Notify subscribers
+        // 通知监听者
         this.notifySubscribers(dataKey, value);
     }
     
-    // Get data with permission check
+    // 带权限检查获取数据
     getData(requestingExtension, extensionId, key) {
         const dataKey = `${extensionId}:${key}`;
         const permissions = this.permissions.get(dataKey);
@@ -484,7 +484,7 @@ class ExtensionDataBus {
         return this.data.get(dataKey);
     }
     
-    // Subscribe to data changes
+    // 监听数据变化
     subscribe(extensionId, dataKey, callback) {
         if (!this.subscribers.has(dataKey)) {
             this.subscribers.set(dataKey, new Set());
@@ -506,7 +506,7 @@ class ExtensionDataBus {
     }
 }
 
-// Global data bus
+// 全局数据总线
 window.extensionDataBus = window.extensionDataBus || new ExtensionDataBus();
 ```
 
@@ -515,19 +515,19 @@ window.extensionDataBus = window.extensionDataBus || new ExtensionDataBus();
 扩展通信的完整示例：
 
 ```javascript
-// Data provider extension
+// 数据提供扩展
 class DataProvider {
     constructor() {
         this.counter = 0;
         
-        // Register API
+        // 注册 API
         window.extensionRegistry.register('dataProvider', this, {
             getCounter: () => this.counter,
             incrementCounter: () => ++this.counter,
             resetCounter: () => this.counter = 0
         });
         
-        // Share data via data bus
+        // 通过数据总线共享数据
         setInterval(() => {
             window.extensionDataBus.setData(
                 'dataProvider', 
@@ -555,12 +555,12 @@ class DataProvider {
     }
 }
 
-// Data consumer extension
+// 数据消费扩展
 class DataConsumer {
     constructor() {
         this.lastCount = 0;
         
-        // Subscribe to data changes
+        // 监听数据变化
         window.extensionDataBus.subscribe(
             'dataConsumer',
             'dataProvider:counter',
@@ -570,7 +570,7 @@ class DataConsumer {
             }
         );
         
-        // Listen for provider registration
+        // 监听提供者注册
         window.extensionRegistry.on('extensionRegistered', (event) => {
             if (event.detail.extensionId === 'dataProvider') {
                 console.log('Data provider is now available');

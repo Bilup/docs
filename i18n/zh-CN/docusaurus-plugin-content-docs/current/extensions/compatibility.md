@@ -14,7 +14,7 @@ hide_table_of_contents: true
   getInfo() {
     return {
       // highlight-start
-      // THIS MUST NEVER CHANGE
+      // 此内容绝不能更改
       id: 'fetch'
       // highlight-end
       // ...
@@ -35,7 +35,7 @@ hide_table_of_contents: true
       blocks: [
         {
           // highlight-start
-          // THESE MUST NEVER CHANGE
+          // 这些内容绝不能更改
           blockType: Scratch.BlockType.REPORTER,
           opcode: "fetch",
           // highlight-end
@@ -56,7 +56,7 @@ hide_table_of_contents: true
       // ...
       blocks: [
         // highlight-start
-        // THIS MUST NEVER BE DELETED
+        // 此内容绝不能被删除
         {
           opcode: "old",
           hideFromPalette: true
@@ -77,7 +77,7 @@ hide_table_of_contents: true
       blocks: [
         {
           // highlight-start
-          // THE ARGUMENT ID "INPUT" MUST NEVER BE CHANGED OR REMOVED
+          // 参数 ID "INPUT" 绝不能更改或移除
           text: "block [INPUT]",
           arguments: {
             INPUT: {

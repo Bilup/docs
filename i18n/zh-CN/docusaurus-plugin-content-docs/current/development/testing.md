@@ -95,7 +95,7 @@ configure({ adapter: new Adapter() });
 global.fetch = require('jest-fetch-mock');
 global.URL.createObjectURL = jest.fn();
 
-// Mock VM
+// 模拟虚拟机
 global.VirtualMachine = require('scratch-vm');
 ```
 

@@ -201,11 +201,11 @@ Action 遵循模式 `CATEGORY/ACTION_NAME` ：
 'project/LOAD_PROJECT_SUCCESS'
 'project/LOAD_PROJECT_ERROR'
 
-// Modal actions
+// 模态框动作
 'modals/OPEN_EXTENSION_LIBRARY'
 'modals/CLOSE_COSTUME_LIBRARY'
 
-// Theme actions
+// 主题动作
 'theme/SET_THEME'
 'theme/LOAD_CUSTOM_THEME'
 ```
@@ -288,7 +288,18 @@ module.exports = {
             // JavaScript/JSX 处理
             {
                 test: /\.jsx?$/,
-                use: ['babel-loader']
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            ['@babel/preset-env', {
+                                targets: {
+                                    browsers: ['last 2 versions', 'not dead', 'not ie <= 11']
+                                }
+                            }]
+                        ]
+                    }
+                }
             },
 
             // CSS 模块处理

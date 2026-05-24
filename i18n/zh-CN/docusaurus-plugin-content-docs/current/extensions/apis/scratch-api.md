@@ -457,7 +457,7 @@ setVariable(args, util) {
 getListItem(args, util) {
   const list = util.target.lookupVariableByNameAndType(args.LIST, 'list');
   if (list && list.value) {
-    const index = Scratch.Cast.toNumber(args.INDEX) - 1; // Scratch 使用 1-based
+    const index = Scratch.Cast.toNumber(args.INDEX) - 1; // Scratch 使用 1-based 索引
     return list.value[index] || '';
   }
   return '';

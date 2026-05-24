@@ -107,13 +107,13 @@ class MyExtension {
 记住——每个变量声明都必须在 IIFE *内部*发生。
 
 ```javascript
-// GOOD CODE
+// 好代码
 (function(Scratch) {
   const vm = Scratch.vm;
   // ...
 }(Scratch));
 
-// BAD CODE
+// 坏代码
 const vm = Scratch.vm;
 (function(Scratch) {
   // ...

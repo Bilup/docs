@@ -208,7 +208,7 @@ Bilup 提供了增强的调试功能：
 ```javascript
 // 在浏览器控制台中可用
 window.vm          // Scratch VM 实例
-window.reduxStore  // Redux store
+window.reduxStore  // Redux 存储
 window.ScratchBlocks // Blockly 实例
 window.addons      // 插件系统
 
