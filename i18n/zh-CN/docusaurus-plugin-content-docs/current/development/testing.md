@@ -387,7 +387,7 @@ test('不应泄漏内存', async () => {
     vm.clear();
   }
 
-  // 强制垃圾回收
+  // 强制内存回收
   if (global.gc) global.gc();
 
   const finalMemory = getMemoryUsage();

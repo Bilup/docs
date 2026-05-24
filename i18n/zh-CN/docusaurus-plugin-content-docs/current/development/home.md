@@ -39,7 +39,7 @@ sidebar_position: 1
 
 - **Node.js 18+** 和 npm
 - **Git** 版本控制工具
-- **现代浏览器**(Chrome、Firefox、Safari、Edge)
+- **浏览器**(Chrome、Firefox、Safari、Edge)
 - **代码编辑器**(推荐 VS Code)
 
 ### 设置开发环境
@@ -324,7 +324,7 @@ Prettier 配置以保持一致的格式：
 - **事件监听器清理** - 在 useEffect 清理中
 - **监听管理** - 用于 Redux 连接
 - **图像加载优化** - 懒加载
-- **垃圾回收意识** - 在长时间运行操作中注意
+- **资源回收意识** - 在长时间运行操作中注意
 
 ## 安全注意事项
 
