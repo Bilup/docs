@@ -8,7 +8,7 @@ sidebar_label: Offline Packager
 
 There are ways to use the [Bilup Packager](https://packager.bilup.org/) offline which can be useful in various circumstances (for example, perhaps your school blocks editor.bilup.org).
 
-We aim to update the offline packager about once a month.
+~~We aim to update the offline packager about once a month.~~
 
 Large assets such as Electron, NW.js, or WKWebView executables are *not* included in the offline packager and will be downloaded separately as needed. The packager will try to cache these files offline after you download them the first time, so they should only have to be downloaded once. Usually these downloads will still work even if your school blocks editor.bilup.org.
 

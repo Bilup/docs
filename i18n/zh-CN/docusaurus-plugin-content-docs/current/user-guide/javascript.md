@@ -403,7 +403,7 @@ function sanitizeHTML(str) {
 ```
 
 ### 错误处理
-实施健壮的错误处理：
+实施可靠的错误处理：
 
 ```javascript
 try {

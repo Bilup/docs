@@ -17,6 +17,6 @@ hide_table_of_contents: true
 
 请注意，Scratch 商标(如 Scratch 标志、Scratch 猫、Gobo、Pico 等)是 CC BY-SA 2.0 许可证的例外，你可能没有使用它们的许可。
 
-有关更多信息，请参阅「我可以使用/混用我在网站上找到的 Scratch 支持材料、角色、图片、声音或示例项目吗?」和「我可以销售我的 Scratch 项目吗?」https://scratch.mit.edu/faq
+有关更多信息，请参阅「我可以使用/混用我在网站上找到的 Scratch 支持造型、角色、图片、声音或示例项目吗?」和「我可以销售我的 Scratch 项目吗?」https://scratch.mit.edu/faq
 
 如果你通过打包器赚钱，我们鼓励你 [向我们和我们依赖的项目捐款](/donate)。❤️
