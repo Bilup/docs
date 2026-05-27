@@ -105,7 +105,7 @@ Advanced Settings:
 | Save Project | Ctrl+S (Cmd+S) |
 | Load Project | Ctrl+O (Cmd+O) |
 | Undo | Ctrl+Z (Cmd+Z) |
-| Redo | Ctrl+Shift+Z (Cmd+Shift+Z) |
+| Redo | Ctrl+Y (Cmd+Y) |
 | Run Project | Ctrl+Enter (Cmd+Enter) |
 | Stop Project | Ctrl+Shift+Enter (Cmd+Shift+Enter) |
 | Full Screen | F11 |
@@ -136,7 +136,7 @@ Advanced Settings:
 ## Common Workflows
 
 ### Creating a New Project
-1. **Start with a blank project** or choose a template
+1. **Start with a blank project**
 2. **Add sprites** from the sprite library or create new ones
 3. **Create scripts** by dragging blocks from the palette
 4. **Test frequently** using the green flag
@@ -210,7 +210,7 @@ Need assistance? Here are your options:
 
 ### Professional Support
 For schools, organizations, or commercial users:
-- **Training Programs** - Custom training for teams
+<!-- - **Training Programs** - Custom training for teams -->
 - **Technical Support** - Priority support plans
 - **Custom Development** - Tailored solutions
 

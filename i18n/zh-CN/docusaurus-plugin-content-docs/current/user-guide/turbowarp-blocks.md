@@ -280,8 +280,8 @@ run without screen refresh [
 ] // 以最大速度运行
 ```
 
-#### 原子操作
-确保操作不被中断地完成：
+#### 不可中断操作
+确保多个操作一起完成，不被中断：
 ```scratch
 atomic [
   set [x v] to (100)

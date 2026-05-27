@@ -288,7 +288,7 @@ case 'myextension.repeat':
 
 ### 开发测试
 
-为不同场景创建测试用例：
+为不同场景创建测试需求：
 
 ```javascript
 // 测试常量优化

@@ -169,7 +169,7 @@ const keyboardShortcuts = {
   'Ctrl+S': 'saveProject',
   'Ctrl+Z': 'undo',
   'Ctrl+Y': 'redo',
-  'Ctrl+Shift+Z': 'redo',
+  'Ctrl+Y': 'redo',
   'F11': 'toggleFullScreen'
 };
 
