@@ -54,9 +54,9 @@ sidebar_position: 4
   } = JSGenerator.unstable_exports;
 ```
 
-## 设置修补系统
+## 设置补丁系统
 
-实现修补机制：
+实现补丁机制：
 
 ```javascript
   const PATCHES_ID = 'mathutils_patches';
@@ -230,7 +230,7 @@ sidebar_position: 4
 ### 幂运算积木
 
 ```javascript
-// 在 ScriptTreeGenerator 修补中：
+// 在 ScriptTreeGenerator 补丁中：
 case 'mathutils_power':
   return {
     block,
@@ -239,7 +239,7 @@ case 'mathutils_power':
     EXPONENT: this.descendInputOfBlock(block, 'EXPONENT'),
   };
 
-// 在 JSGenerator 修补中：
+// 在 JSGenerator 补丁中：
 case 'mathutils.power':
   const base = this.descendInput(node.BASE).asNumber();
   const exponent = this.descendInput(node.EXPONENT).asNumber();

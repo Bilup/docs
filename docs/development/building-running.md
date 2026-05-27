@@ -33,7 +33,7 @@ git --version  # Any recent version
 - **Visual Studio Code**: Recommended editor
 
 ### System Requirements
-- **RAM**: 4GB minimum, 8GB recommended
+- **RAM**: 4GB minimum, 8GB or higher recommended
 - **Storage**: 2GB free space for all repositories
 - **CPU**: Modern multi-core processor recommended
 - **OS**: Windows 10+, macOS 10.14+, or Linux

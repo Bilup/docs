@@ -33,7 +33,7 @@ git --version  # 任何最新版本
 - **Visual Studio Code**: 推荐编辑器
 
 ### 系统要求
-- **RAM**: 最低 4GB，推荐 8GB
+- **RAM**: 最低 4GB，推荐 8GB 或更高
 - **存储**: 所有仓库需要 2GB 可用空间
 - **CPU**: 推荐现代多核处理器
 - **操作系统**: Windows 10+、macOS 10.14+ 或 Linux

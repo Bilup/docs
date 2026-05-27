@@ -296,7 +296,7 @@ Blockly.Msg["CONTROL_BREAK"] = "break";
 ## 积木类型和属性
 
 ### 积木类型
-- `BlockType.COMMAND` - 执行动作的语句
+- `BlockType.COMMAND` - 执行动作的积木
 - `BlockType.REPORTER` - 返回值的积木  
 - `BlockType.BOOLEAN` - 返回 true/false 的积木
 - `BlockType.HAT` - 启动脚本的事件积木

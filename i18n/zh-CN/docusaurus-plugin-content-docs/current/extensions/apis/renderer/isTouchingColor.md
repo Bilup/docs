@@ -27,7 +27,7 @@ renderer.isTouchingColor(drawableID, color3b, mask3b)
 ### mask3b
 **类型:** `Array<number>` (可选)
 
-容差颜色掩码。
+容差颜色遮罩。
 
 ## 返回值
 

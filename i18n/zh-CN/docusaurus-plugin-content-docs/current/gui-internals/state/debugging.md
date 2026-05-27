@@ -71,7 +71,7 @@ const createStateInspector = (store) => {
       return path.split('.').reduce((obj, key) => obj?.[key], state);
     },
     
-    // 按谓词查找状态
+    // 按函数查找状态
     findInState: (predicate, obj = store.getState(), path = '') => {
       const results = [];
       

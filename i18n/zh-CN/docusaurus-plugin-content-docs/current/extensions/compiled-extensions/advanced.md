@@ -14,7 +14,7 @@ sidebar_position: 5
 创建您自己的类型检查和转换逻辑：
 
 ```javascript
-// 定义自定义类型谓词
+// 定义自定义类型函数
 const isArrayLike = (input) => {
   if (input instanceof ConstantInput) {
     const value = input.constantValue;
@@ -393,7 +393,7 @@ case 'myextension.complexBlock':
 
 ### 访问扩展编译器 API
 
-除了基本修补之外，您还可以访问更深层的编译器功能以进行复杂的代码生成：
+除了基本补丁之外，您还可以访问更深层的编译器功能以进行复杂的代码生成：
 
 ```javascript
 // 检查扩展编译器功能
@@ -415,7 +415,7 @@ function patchAdvancedCompiler(api, types) {
     const jsDescendStackedBlock = JSGenerator.prototype.descendStackedBlock;
     const stDescendStackedBlock = ScriptTreeGenerator.prototype.descendStackedBlock;
     
-    // 带帧管理的增强修补
+    // 带帧管理的增强补丁
     JSGenerator.prototype.descendStackedBlock = function(node) {
         if (node.kind?.startsWith('myExtension.')) {
             return handleAdvancedBlock.call(this, node, types);

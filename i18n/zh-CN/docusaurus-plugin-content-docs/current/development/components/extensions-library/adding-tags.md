@@ -42,7 +42,7 @@ export default [
      {tag: 'mistium', intlLabel: 'Mistium'}
 ];
 ```
-(上面的代码块不准确，仅供参考)
+(上面的代码并不准确，仅供参考)
 
 ## 参考
 

@@ -54,16 +54,16 @@ const {
 } = JSGenerator.unstable_exports;
 ```
 
-## 修补系统
+## 补丁系统
 
-编译扩展使用修补系统来修改编译器行为。修补函数确保多个扩展可以共存：
+编译扩展使用补丁系统来修改编译器行为。补丁函数确保多个扩展可以共存：
 
-### 修补函数
+### 补丁函数
 ```javascript
 const PATCHES_ID = 'extensionname_patches';
 
 const cst_patch = (obj, functions) => {
-  if (obj[PATCHES_ID]) return; // 防止重复修补
+  if (obj[PATCHES_ID]) return; // 防止重复打补丁
   obj[PATCHES_ID] = {};
   
   for (const name in functions) {
@@ -86,10 +86,10 @@ const cst_patch = (obj, functions) => {
 
 此系统允许扩展覆盖编译器方法，同时保留调用原始实现的能力。
 
-## 编译器阶段修补
+## 编译器阶段补丁
 
-### JavaScript 生成修补
-JSGenerator 修补处理将积木转换为最终 JavaScript 代码：
+### JavaScript 生成补丁
+JSGenerator 补丁处理将积木转换为最终 JavaScript 代码：
 
 ```javascript
 cst_patch(JSGenerator.prototype, {
@@ -118,8 +118,8 @@ cst_patch(JSGenerator.prototype, {
 });
 ```
 
-### 脚本树生成修补
-ScriptTreeGenerator 修补识别扩展积木并为编译做准备：
+### 脚本树生成补丁
+ScriptTreeGenerator 补丁识别扩展积木并为编译做准备：
 
 ```javascript
 cst_patch(ScriptTreeGenerator.prototype, {
@@ -156,7 +156,7 @@ cst_patch(ScriptTreeGenerator.prototype, {
 
 ## 扩展类定义
 
-设置修补后，定义扩展类：
+设置补丁后，定义扩展类：
 
 ### 基本类结构
 ```javascript
@@ -248,7 +248,7 @@ this.source += `vm.runtime.visualReport("${b.id}",
 ### 命名规范
 - 对积木操作码使用一致的命名(`extension_blockname`)
 - 使用描述性的种类名称(`extension.blockname`)
-- 在修补 ID 中包含扩展名称以避免冲突
+- 在补丁 ID 中包含扩展名称以避免冲突
 
 ### 性能考虑
 - 生成最小、高效的 JavaScript 代码
