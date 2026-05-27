@@ -354,7 +354,7 @@ vm.addCostume(costumeId, costume, targetId);
 // 删除造型
 vm.deleteCostume(costumeId);
 
-// 设置活动造型
+// 设置当前造型
 vm.setActiveCostume(targetId, costumeId);
 ```
 
