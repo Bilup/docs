@@ -248,7 +248,7 @@ const statusText = msg(isOnline ? 'online-status' : 'offline-status');
 1. **使用 waitForElement()** 而不是轮询
 2. **缓存 DOM 查询**(如果可能)
 3. **插件禁用时移除事件监听器**
-4. **防抖频繁操作**
+4. **对频繁操作进行防抖处理**
 5. **对动画使用 requestAnimationFrame**
 
 ## 生命周期管理

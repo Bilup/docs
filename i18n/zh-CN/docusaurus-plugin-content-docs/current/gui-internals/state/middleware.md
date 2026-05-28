@@ -454,7 +454,7 @@ const store = createStore(
 
 - 保持中间件轻量级
 - 避免在中间件中进行复杂操作
-- 对频繁动作使用防抖：
+- 对频繁动作使用防抖处理：
 
 ```javascript
 const debounceMiddleware = (store) => (next) => {

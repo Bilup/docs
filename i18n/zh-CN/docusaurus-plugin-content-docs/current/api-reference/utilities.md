@@ -241,7 +241,7 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-// 对频繁事件使用防抖(手动实现)
+// 对频繁事件使用防抖处理(手动实现)
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
