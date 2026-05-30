@@ -23,7 +23,7 @@ New projects include:
 - **Empty scripts**: Ready for your code
 - **Standard variables**: No variables pre-defined
 
-### Project Templates
+<!-- ### Project Templates
 
 Bilup offers several starting templates:
 
@@ -37,7 +37,7 @@ Bilup offers several starting templates:
 - **Math Games**: Mathematical concept starters
 - **Science Simulations**: Physics and chemistry setups
 - **Storytelling**: Narrative project structure
-- **Music Projects**: Audio-focused templates
+- **Music Projects**: Audio-focused templates -->
 
 ## Loading Projects
 

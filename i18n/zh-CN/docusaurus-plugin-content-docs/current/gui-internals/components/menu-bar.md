@@ -174,7 +174,7 @@ const keyboardShortcuts = {
   'Ctrl+S': 'saveProject',
   'Ctrl+Z': 'undo',
   'Ctrl+Y': 'redo',
-  'Ctrl+Shift+Z': 'redo',
+  'Ctrl+Y': 'redo',
   'F11': 'toggleFullScreen'
 };
 
@@ -230,7 +230,7 @@ const handleKeyDown = (event) => {
 
 - 记忆化菜单项
 - 懒加载重量级菜单
-- 语言选择器中的防抖搜索
+- 语言选择器中使用防抖搜索
 - 使用 React.memo 进行高效重渲染
 
 ## 测试

@@ -620,7 +620,7 @@ useEffect(() => cleanup, []);
 ### 性能
 
 ```javascript
-// 防抖频繁操作
+// 对频繁操作进行防抖处理
 const debouncedSave = debounce(() => {
   saveProject();
 }, 1000);

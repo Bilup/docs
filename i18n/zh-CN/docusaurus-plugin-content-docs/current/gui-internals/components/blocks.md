@@ -299,7 +299,7 @@ const optimizeBlockRendering = () => {
     });
   };
   
-  // 防抖工作区变化
+  // 对工作区变化使用防抖
   const debouncedUpdate = debounce(batchUpdate, 16);
   
   workspace.addChangeListener(debouncedUpdate);

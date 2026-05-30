@@ -1,5 +1,5 @@
 module.exports = {
-  // Main sidebar with all sections organized
+  // Main sidebar with all sections organized 
   tutorialSidebar: [
     'intro',
     {

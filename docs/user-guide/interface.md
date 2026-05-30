@@ -43,7 +43,7 @@ The top menu bar provides access to file operations, settings, and tools.
 
 ### Edit Menu
 - **Undo**: Reverse last action (Ctrl/Cmd+Z)
-- **Redo**: Restore undone action (Ctrl/Cmd+Shift+Z)
+- **Redo**: Restore undone action (Ctrl/Cmd+Y)
 - **Turbo Mode**: Toggle high-speed execution
 
 ### Settings
@@ -211,7 +211,7 @@ Advanced users can inject custom styles:
 | Open Project | Ctrl+O | Cmd+O |
 | Save Project | Ctrl+S | Cmd+S |
 | Undo | Ctrl+Z | Cmd+Z |
-| Redo | Ctrl+Shift+Z | Cmd+Shift+Z |
+| Redo | Ctrl+Y | Cmd+Y |
 | Full Screen | F11 | F11 |
 | Start Project | Ctrl+Enter | Cmd+Enter |
 | Stop Project | Ctrl+Shift+Enter | Cmd+Shift+Enter |
