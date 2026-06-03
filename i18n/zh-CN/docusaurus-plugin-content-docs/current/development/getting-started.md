@@ -29,7 +29,7 @@ Scratch 被分成许多不同的包，每个包实现应用的一部分。
 - **scratch-render-fonts** 包含 SVG 造型可以使用的所有字体
 - **scratch-paint** 是造型编辑器
 - **scratch-parser** 提取和验证 sb2 和 sb3 文件
-- **scratch-storage** 是围绕 fetch() 的抽象，用于下载(理论上也用于上传)文件(我们将其重命名为 **@turbowarp/scratch-storage**)
+- **scratch-storage** 是围绕 fetch() 的抽象，用于下载(理论上也用于上传)文件(我们将其重命名为 **@bilup/scratch-storage**)
 - **scratch-l10n** 包含一些翻译(我们将其重命名为 **@bilup/scratch-l10n**)
 
 此外，桌面应用和打包器也是支持仓库。

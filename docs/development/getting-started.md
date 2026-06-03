@@ -29,7 +29,7 @@ Scratch is broken up into a bunch of different packages, each implementing one p
  - **scratch-render-fonts** contains all the fonts that SVG costumes can use
  - **scratch-paint** is the costume editor
  - **scratch-parser** extracts and validates sb2 and sb3 files
- - **scratch-storage** is an abstraction around fetch() used for downloading (and theoretically uploading) files (we rename this to **@turbowarp/scratch-storage**)
+ - **scratch-storage** is an abstraction around fetch() used for downloading (and theoretically uploading) files (we rename this to **@bilup/scratch-storage**)
  - **scratch-l10n** contains some translations (we rename this to **@bilup/scratch-l10n**)
 
 In addition, the desktop app and packager are also support repositories.
