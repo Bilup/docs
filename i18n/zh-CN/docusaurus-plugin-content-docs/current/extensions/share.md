@@ -16,11 +16,11 @@ hide_table_of_contents: true
 
 ## 非沙盒化扩展
 
-分享非沙盒化扩展的最佳方式是将其提交到 extensions.turbowarp.org：https://github.com/TurboWarp/extensions/blob/master/CONTRIBUTING.md
+分享非沙盒化扩展的最佳方式是将其提交到 extensions.bilup.org：https://github.com/TurboWarp/extensions/blob/master/CONTRIBUTING.md
 
 ## 练习
 
-1. 探索 Bilup 扩展库问题跟踪器以获取灵感：https://github.com/TurboWarp/extensions/issues
+1. 探索 Bilup 扩展库问题跟踪器以获取灵感：https://github.com/Bilup/extensions/issues
 
 ## 下一步
 
