@@ -8,7 +8,7 @@ title: 扩展库
 
 ## 功能
 
-- **动态扩展加载：** 从 TurboWarp、Mistium、SharkPools、PenguinMod 和 Bilup 扩展仓库获取扩展元数据。
+- **动态扩展加载：** 从 TurboWarp、Mistium、SharkPools、AstraEditor 和 Bilup 扩展仓库获取扩展元数据。
 - **国际化：** 支持扩展名称和描述的多种语言。
 - **贡献和文档：** 显示扩展作者的贡献信息，以及文档或示例项目的链接(如果可用)。
 - **与 Scratch VM 集成：** 选中扩展时将其加载到 Scratch VM 中。
@@ -17,7 +17,7 @@ title: 扩展库
 ## 数据流
 
 1. **获取扩展：**  
-   挂载时，组件异步从 TurboWarp、Mistium、SharkPools、PenguinMod 和 Bilup 端点获取扩展元数据。它处理并合并结果，将它们缓存以供将来使用。
+   挂载时，组件异步从 TurboWarp、Mistium、SharkPools、AstraEditor 和 Bilup 端点获取扩展元数据。它处理并合并结果，将它们缓存以供将来使用。
 
 2. **显示扩展：**  
    库将内置扩展与获取的画廊扩展组合在一起。每个扩展都显示其图标、名称、描述和贡献信息。
