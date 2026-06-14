@@ -16,7 +16,9 @@ hide_table_of_contents: true
 
 ## 非沙盒化扩展
 
-分享非沙盒化扩展的最佳方式是将其提交到 extensions.bilup.org：https://github.com/TurboWarp/extensions/blob/master/CONTRIBUTING.md
+分享非沙盒化扩展的最佳方式是将其提交到 extensions.bilup.org：https://github.com/Bilup/extensions/blob/master/CONTRIBUTING.md
+
+关于提交扩展的详细信息，请参阅[提交扩展](./push-rules)。
 
 ## 练习
 

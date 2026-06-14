@@ -18,6 +18,8 @@ A common choice is [GitHub Pages](https://pages.github.com/). Note that GitHub's
 
 The best way to share your unsandboxed extension is to submit it to extensions.bilup.org: https://github.com/Bilup/extensions/blob/master/CONTRIBUTING.md
 
+For detailed information on submitting extensions, see [Submitting Extensions](./push-rules).
+
 ## Exercises
 
 1. Explore the Bilup Extension Gallery issue tracker for inspiration: https://github.com/Bilup/extensions/issues
