@@ -197,30 +197,30 @@ if (target) {
 }
 ```
 
-### 创建和管理克隆
+### 创建和管理克隆体
 
 ```javascript
-// 创建克隆
+// 创建克隆体
 const originalSprite = runtime.getSpriteTargetByName('Sprite1');
 if (originalSprite) {
   const clone = originalSprite.makeClone();
   if (clone) {
     runtime.addTarget(clone);
     
-    // 设置克隆的位置
+    // 设置克隆体的位置
     clone.setXY(100, 50);
     clone.setDirection(90);
   }
 }
 
-// 查找角色的所有克隆
+// 查找角色的所有克隆体
 const clones = runtime.targets.filter(target => 
   !target.isStage && 
   !target.isOriginal && 
   target.sprite === originalSprite.sprite
 );
 
-// 删除克隆
+// 删除克隆体
 const cloneToDelete = clones[0];
 if (cloneToDelete && !cloneToDelete.isOriginal) {
   runtime.disposeTarget(cloneToDelete);
@@ -256,10 +256,10 @@ stage.createVariable('newVar', 'myVariable', '');
 ```javascript
 const sprite = runtime.getSpriteTargetByName('Sprite1');
 if (sprite) {
-  // 局部变量
+  // 角色变量
   const localVars = sprite.variables;
   
-  // 获取/设置局部变量
+  // 获取/设置角色变量
   const localVar = sprite.lookupVariableByNameAndType('localScore', '');
   if (localVar) {
     localVar.value = 50;
