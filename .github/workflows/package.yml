@@ -37,4 +37,4 @@ jobs:
           
           git add package-lock.json
           git commit -m "chore: update package-lock.json" || echo "No changes"
-          git push origin develop
+          git push origin main
