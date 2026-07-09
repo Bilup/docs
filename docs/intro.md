@@ -6,17 +6,15 @@ hide_table_of_contents: true
 
 # Bilup Documentation
 
-Technical documentation for [Bilup](https://editor.bilup.org/) - a modified Scratch environment for developers.
+Technical documentation for [Bilup](https://editor.bilup.org/) - a graphical editor based on TurboWarp(MistWarp).
 
 ## What is Bilup?
 
-Bilup is a Scratch modification built on TurboWarp, designed for developers and advanced users:
+[Bilup](https://editor.bilup.org/) is a graphical editor based on TurboWarp(MistWarp):
 
-- **Enhanced VM** - Modified virtual machine with developer features
-- **No Cloud Storage** - Local execution only
-- **JavaScript Integration** - Enhanced extension capabilities
-- **Developer Tools** - Technical documentation and APIs
-- **Modified Interface** - Delete default sprite and variable
+- **More Addons** - Provides additional functionality and extensions
+- **Comprehensive Extension Gallery** - Includes extensions from Scratch, TurboWarp, MistWarp, Bilup and other extension galleries
+- **New Optimized Interface** - More intuitive interface
 
 ## Quick Navigation
 
@@ -34,20 +32,29 @@ Programming interfaces and technical specifications.
 
 ## Related Projects
 
-- **[Bilup Web](https://editor.bilup.org/)** - Main web application
+- **[Bilup](https://editor.bilup.org/)** - Main web application
+- **[Bilup Desktop](https://desktop.bilup.org/)** - Desktop version available offline
 - **[Bilup Packager](https://packager.bilup.org/)** - Package projects for web deployment
-- **[TurboWarp](https://turbowarp.org/)** - Base project that Bilup is built on
+- **[Bilup Extension Gallery](https://extensions.bilup.org/)** - Provides additional functionality and extensions
+- **[Bilup Documentation](https://docs.bilup.org/)** (this page) - Provides detailed documentation and tutorials
+- **[Bilup Official Website](https://bilup.org/)**
 
 ## Development
 
 - **GitHub**: [https://github.com/Bilup](https://github.com/Bilup)
 - **Issues**: Report technical issues and bugs
 - **Contributions**: Submit pull requests for improvements
+
+## Contact Us
+
+- **Email**: [support@bilup.org](mailto:support@bilup.org)
+- **QQ Group**: 1023375209 (User Group)
+
 ---
 
-*Technical documentation for developers. For general Scratch help, see [Scratch documentation](https://scratch.mit.edu/help/).*
+*For general Scratch help, see [Scratch documentation](https://scratch.mit.edu/help/).*
 
-These pages are [open source](https://github.com/Bilup/docs). ~~Contributions are welcome.~~ See why in [GitHub](https://github.com/Bilup/docs).
+These pages are [open source](https://github.com/Bilup/docs). ~~Contributions are welcome.~~
 
 ## Why I see TurboWarp pages here?
 

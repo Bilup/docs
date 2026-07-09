@@ -26,12 +26,12 @@ Bilup works in any modern web browser that supports JavaScript and WebGL:
 - **Edge 80+**
 
 ### Hardware Requirements
-- **RAM**: 2GB minimum, 4GB+ recommended for complex projects
+- **RAM**: 4GB minimum, 8GB+ recommended for complex projects
 - **Internet**: Stable connection required for loading and saving projects
 - **Storage**: Projects are saved to your browser's local storage or cloud storage
 
 ### Recommended Setup
-- **RAM**: 4GB+ for large projects with many sprites and scripts
+- **RAM**: 8GB+ for large projects with many sprites and scripts
 - **Processor**: Modern multi-core processor for smooth performance
 - **Internet**: Broadband connection for faster project loading
 - **Graphics**: WebGL 2.0 support for optimal rendering

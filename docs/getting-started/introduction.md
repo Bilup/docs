@@ -11,22 +11,19 @@ Bilup is a powerful, feature-rich modification of Scratch that enhances the orig
 ## What Makes Bilup Special?
 
 ### 🚀 Performance Enhancements
-- **Turbo Compilation**: Projects run significantly faster with our optimized compiler
+- **Turbo Compilation**: Projects run faster in our optimized compiler
 - **Advanced Rendering**: Improved graphics performance and reduced lag
 - **Memory Optimization**: Better memory management for large projects
 - **60+ FPS Support**: Smooth animations at higher frame rates
 
 ### 🎨 Theming & Customization
-- **Dark Mode**: Easy on the eyes with multiple dark theme variants
-- **Custom Themes**: Create and share your own visual themes
-- **Interface Customization**: Customize the editor layout and appearance
-- **CSS Variables**: Fine-tune every aspect of the visual design
+- **Dark Mode**: Multiple dark theme variants
+- **Custom Themes**: Create and share your own themes
 
 ### 🔧 Addon System
-- **80+ Built-in Addons**: Enhance functionality with our extensive addon library
+- **100+ Built-in Addons**: Enhance functionality with our extensive addon library
 - **Custom Addons**: Develop your own addons with our powerful API
 - **Addon Manager**: Easy installation and management of addons
-- **Real-time Configuration**: Change addon settings without reloading
 
 ### 💻 Developer Tools
 - **Advanced Debugger**: Step through code, set breakpoints, and inspect variables
@@ -36,13 +33,14 @@ Bilup is a powerful, feature-rich modification of Scratch that enhances the orig
 
 ## Key Differences from Scratch
 
-| Feature | Scratch | TurboWarp | Bilup |
-|---------|---------|----------|----------|
-| **Performance** | Slow | Fast | Highly optimized compiler |
-| **Themes** | Light only | Dark mode | Custom themes |
-| **Addons** | None | 80+ built-in addons | ~90 built-in addons |
-| **Frame Rate** | 30 FPS | 60 FPS | Custom FPS |
-| **Customization** | Limited | Limited | Extensive customization |
+| Feature | Scratch | TurboWarp | MistWarp | Bilup |
+|---------|----------|---------|----------|----------|
+| **Performance** | Slow | Fast | Medium | Faster |
+| **Frame Rate** | 30 FPS | 60 FPS | 60+ FPS | Custom FPS |
+| **Themes** | Light only | Dark mode | Customizable | Highly customizable |
+| **Animations** | Mostly none | Mostly none | Mostly none | Mostly available |
+| **Addons** | None | 80+ built-in addons | 90+ built-in addons | 100+ built-in addons |
+| **Translation** | Mostly translated | Partially translated | Mostly untranslated | Well translated |
 
 ## Architecture Overview
 

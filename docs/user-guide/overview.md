@@ -55,7 +55,7 @@ If you're coming from Scratch, here are the major enhancements you'll find in Bi
 - **🔧 Customizable Layout**: Adjust interface to your preferences
 
 ### Powerful Addons
-- **80+ Built-in Addons**: Extensive functionality extensions
+- **100+ Built-in Addons**: Extensive functionality extensions
 - **🎛️ Addon Manager**: Easy installation and configuration
 - **🔌 Extension System**: Load custom extensions
 - **🎨 Visual Enhancements**: Improved editor appearance
