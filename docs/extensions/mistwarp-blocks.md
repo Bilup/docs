@@ -1,13 +1,13 @@
 ---
-title: MistWarp Blocks
+title: Bilup Blocks
 sidebar_position: 2
 ---
 
-# MistWarp Blocks
+# Bilup Blocks
 
-The **MistWarp Blocks** extension (internal id `tw`) adds a small set of extra input blocks that vanilla Scratch does not have. It is built in, loads instantly, and is marked as incompatible with Scratch, so projects that use it will not run on scratch.mit.edu.
+The **Bilup Blocks** extension (internal id `tw`) adds a small set of extra input blocks that vanilla Scratch does not have. It is built in, loads instantly, and is marked as incompatible with Scratch, so projects that use it will not run on scratch.mit.edu.
 
-Load it from **Add Extension** and choose **MistWarp Blocks**.
+Load it from **Add Extension** and choose **Bilup Blocks**.
 
 ## Blocks
 
@@ -36,7 +36,7 @@ The dropdown accepts a reporter, so you can compute the button number at runtime
 ## Tips
 
 - These blocks read the same keyboard and mouse state that the standard sensing blocks use, so they work everywhere in the editor and in the packager.
-- Because the extension is Scratch-incompatible, avoid it if you plan to publish the project to scratch.mit.edu. For MistWarp-only projects it is safe to rely on.
+- Because the extension is Scratch-incompatible, avoid it if you plan to publish the project to scratch.mit.edu. For Bilup-only projects it is safe to rely on.
 
 ## See also
 

@@ -1,173 +1,50 @@
 ---
-title: 开始使用
+title: 安装
 sidebar_position: 2
 ---
 
-# 开始使用
+# 安装
 
-Bilup 是一个基于网页的应用，可以直接在浏览器中运行。无需安装!
+Bilup 是免费开源的。没有任何需要购买的东西，网页版也无需安装。您可以通过三种方式使用它：在浏览器中、作为桌面应用，或者作为单个项目的打包独立构建。
 
-## 访问 Bilup
+## 在网页上使用
 
-Bilup 仅作为网页应用提供，可以访问：
+在任何现代浏览器中打开 [editor.bilup.org](https://editor.bilup.org/)。编辑器加载完成后即可立即开始创作。创建、编辑、保存到电脑或打开 `.sb3` 文件都不需要账户。
 
-**🌐 [https://editor.bilup.org/](https://editor.bilup.org/)**
+当您想要以下功能时，可以使用 **Rotur 账户**登录：
 
-只需在任何浏览器(版本不要过低)中打开链接，就可以开始创作了!
+- 将项目发布到 Bilup 社区，
+- 关注他人、评论并显示在您的个人资料中，
+- 在设备之间同步设置和主题。
 
-## 系统要求
+这些功能以后再做也可以；开始创作并不需要账户。
 
+### 保存工作成果
 
-### 支持的浏览器
-- **Chrome 80+**(推荐，以获得最佳性能)
-- **Firefox 78+**
-- **Safari 14+**(macOS/iOS)
-- **Edge 80+**
+没有账户时，使用 **文件然后保存到电脑** 下载 `.sb3` 文件，使用 **文件然后从电脑加载** 重新打开。有账户时，**文件然后保存到 Bilup** 会将项目发布到社区平台并保存在您的账户中。完整的保存与分享流程请参阅[项目管理](/editor/project-management)。
 
-### 硬件要求
-- **内存**：最低 4GB，推荐 8GB+ 用于复杂项目
-- **网络**：加载和保存项目需要稳定的网络连接
-- **存储**：项目保存到浏览器的本地存储或云存储
+## 桌面应用
 
-### 推荐配置
-- **内存**：大型项目(包含多个角色和脚本)推荐 8GB+
-- **处理器**：现代多核处理器以获得流畅性能
-- **网络**：宽带连接以加快项目加载速度
-- **显卡**：WebGL 2.0 支持以获得最佳渲染效果
+Bilup 有一个桌面应用，可以在自己的窗口中运行相同的编辑器，而不是浏览器标签页。桌面版增加了网页无法提供的便利功能，例如多编辑器窗口和原生文件处理。请从 [github.com/Bilup/desktop/releases](https://github.com/Bilup/desktop/releases) 下载当前版本。
 
-## 浏览器兼容性
+桌面应用是可选的。所有核心功能在网页版中都可用。
 
-| 浏览器 | 最低版本 | 推荐版本 |
-|---------|----------------|-------------|
-| Chrome | 80+ | 最新版 |
-| Firefox | 78+ | 最新版 |
-| Safari | 14+ | 最新版 |
-| Edge | 80+ | 最新版 |
+## 打包项目
 
-### 必需功能
-- ES2020 支持
-- WebGL 1.0(推荐 WebGL 2.0)
-- Web Audio API
-- 本地存储
-- WebAssembly(用于最佳性能)
+[Bilup 打包器](https://packager.bilup.org/) 可以将单个项目转换为可分发独立程序：HTML 文件、zip 压缩包或原生可执行文件，所有这些都不需要编辑器即可运行。这不是 Bilup 本身的安装程序；而是用于制作项目的构建工具。
 
-## 首次设置
+您可以通过 **文件然后打包项目**（Ctrl+P）将当前项目直接发送到打包器。更多选项（如离线构建、自定义舞台缩放和商业用途）请参阅[打包器概览](/packager/overview)。
 
-当你首次访问 Bilup 时：
+## 浏览器支持
 
-1. **打开浏览器**并访问 [editor.bilup.org](https://editor.bilup.org/)
-2. **如果提示，允许 JavaScript**(Bilup 运行所必需)
-3. **如果计划使用感知积木，允许摄像头/麦克风权限**
-4. **创建账户**(可选)以便将项目保存到云端
+Bilup 支持当前版本的 Chrome、Edge、Firefox 和 Safari。它需要 JavaScript、WebGL 和 Web Audio API，这些浏览器默认都提供。如果舞台无法渲染，请检查浏览器设置中是否启用了硬件加速和 WebGL。
 
-## 浏览器配置
+## 下一步
 
-### 启用必需功能
+- [快速开始](/getting-started/quick-start)：构建您的第一个项目。
+- [编辑器导览](/getting-started/editor-tour)：熟悉界面。
 
-为获得最佳 Bilup 体验，请确保这些浏览器功能已启用：
+## 另请参阅
 
-- **JavaScript**：所有功能所必需
-- **WebGL**：舞台渲染和效果所必需
-- **本地存储**：用于本地保存项目
-- **摄像头/麦克风**：感知积木所需(可选)
-
-### 性能提示
-
-- **关闭不必要的标签页**以释放内存
-- **如果浏览器设置中有硬件加速选项，请启用**
-- **如果 Bilup 变慢，偶尔清除浏览器缓存**
-- **禁用可能影响性能的浏览器扩展**
-
-## 开发设置
-
-对于想要修改或为 Bilup 做贡献的开发者：
-
-### 前置要求
-- Node.js 18+
-- npm 或 yarn
-- Git
-
-### 克隆和构建
-
-```bash
-# 克隆仓库
-git clone https://github.com/Bilup/scratch-gui.git
-cd scratch-gui
-
-# 安装依赖(这一步可能很慢，耐心等待)
-npm ci
-
-# 启动开发服务器
-npm start
-```
-
-开发服务器将在 `http://localhost:8601/` 可用。
-
-### 构建其他组件
-
-要开发完整的 Bilup 技术栈：
-
-```bash
-# 克隆所有仓库
-git clone https://github.com/Bilup/scratch-vm.git
-git clone https://github.com/Bilup/scratch-gui.git
-git clone https://github.com/Bilup/scratch-render.git
-
-# 链接本地包(从各个目录)
-cd scratch-vm && npm link
-cd ../scratch-render && npm link
-cd ../scratch-gui && npm link scratch-vm scratch-render
-
-# 开始开发
-cd scratch-gui && npm start
-```
-
-## 故障排除
-
-### 常见问题
-
-**Bilup 无法加载：**
-1. 检查网络连接
-2. 暂时禁用浏览器扩展
-3. 清除浏览器缓存和 Cookie
-4. 尝试使用其他浏览器
-
-**性能不佳：**
-1. 关闭其他浏览器标签页
-2. 重启浏览器
-3. 检查可用内存
-4. 尝试使用 Chrome 以获得最佳性能
-5. 在浏览器设置中启用硬件加速
-
-**项目无法保存：**
-1. 检查浏览器本地存储是否已满
-2. 如果使用云端保存，请启用第三方 Cookie
-3. 创建账户以使用云存储
-
-**积木缺失或行为异常：**
-1. 刷新页面
-2. 清除浏览器缓存
-3. 检查浏览器控制台错误
-
-**图形/渲染问题：**
-1. 更新显卡驱动程序
-2. 在浏览器设置中启用 WebGL
-3. 尝试其他浏览器
-
-### 获取帮助
-
-如果你遇到问题：
-- 查看 [故障排除指南](../user-guide/troubleshooting.md)
-<!-- - 访问我们的 [社区论坛]() -->
-- 在 [GitHub Issues](https://github.com/Bilup/scratch-gui/issues) 上报告漏洞
-
-## 下一步是什么?
-
-现在你可以访问 Bilup 了：
-
-1. **[快速入门指南](./quick-start.md)** - 创建你的第一个项目
-2. **[用户界面](../user-guide/interface.md)** - 学习界面
-3. **[项目管理](../user-guide/projects.md)** - 保存和分享项目
-4. **[迁移指南](./migrating-from-scratch.md)** - 导入现有的 Scratch 项目
-
-*继续阅读 [快速入门](./quick-start.md) 来创建你的第一个项目。*
+- [打包器概览](/packager/overview)
+- [项目管理](/editor/project-management)

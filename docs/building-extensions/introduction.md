@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Introduction to custom extensions
 
-Custom extensions add new blocks to MistWarp using JavaScript. This tutorial builds up from the simplest possible extension to full featured ones, one concept at a time. Read the pages in order and do the exercises before moving on; each page assumes you understood the last.
+Custom extensions add new blocks to Bilup using JavaScript. This tutorial builds up from the simplest possible extension to full featured ones, one concept at a time. Read the pages in order and do the exercises before moving on; each page assumes you understood the last.
 
 If you just want to use existing blocks, you do not need any of this. Open the editor, click the "Add Extension" button (a plus next to two blocks at the bottom-left of the block palette), and pick one of the built-in extensions. This tutorial is for people who want to write their own.
 
@@ -13,7 +13,7 @@ If you just want to use existing blocks, you do not need any of this. Open the e
 
 The word gets used for a few different things:
 
-| | Can access MistWarp internals | Can be loaded by URL |
+| | Can access Bilup internals | Can be loaded by URL |
 |:-:|:-:|:-:|
 | Built-in extensions (Pen, Music, etc.) | Yes | No |
 | Sandboxed custom extensions | No | Yes |
@@ -23,7 +23,7 @@ These pages cover only **custom** extensions (the sandboxed and unsandboxed kind
 
 ## Compatibility
 
-Custom extensions are a MistWarp and TurboWarp feature. Projects that use them cannot be uploaded to the Scratch website. They work in the MistWarp editor and can be bundled into a standalone app or web page with the [MistWarp Packager](/packager/overview), which always runs extensions unsandboxed.
+Custom extensions are a Bilup and TurboWarp feature. Projects that use them cannot be uploaded to the Scratch website. They work in the Bilup editor and can be bundled into a standalone app or web page with the [Bilup Packager](/packager/overview), which always runs extensions unsandboxed.
 
 ## Prerequisites
 
@@ -41,7 +41,7 @@ In the editor, "Add Extension", scroll to the bottom, and choose "Custom Extensi
 
 ### Local HTTP server (recommended)
 
-A local web server lets MistWarp fetch your extension by URL, so you only have to reload the page after a change. If you have Python installed, you already have a server:
+A local web server lets Bilup fetch your extension by URL, so you only have to reload the page after a change. If you have Python installed, you already have a server:
 
 ```bash
 cd path/to/your/extensions
@@ -50,7 +50,7 @@ python3 -m http.server 8080
 
 That serves the current folder at `http://localhost:8080/`. Put a file called `hello-world.js` in that folder and confirm you can open [http://localhost:8080/hello-world.js](http://localhost:8080/hello-world.js) in your browser before continuing.
 
-For now use a port **other than 8000**. Port 8000 is special: it is one of the URLs MistWarp trusts to run [unsandboxed](/building-extensions/unsandboxed), which comes with extra responsibilities we are not ready for yet. Start sandboxed.
+For now use a port **other than 8000**. Port 8000 is special: it is one of the URLs Bilup trusts to run [unsandboxed](/building-extensions/unsandboxed), which comes with extra responsibilities we are not ready for yet. Start sandboxed.
 
 Later we introduce [a purpose-built development server](/building-extensions/better-development-server), but starting with the most primitive setup keeps the moving parts visible.
 

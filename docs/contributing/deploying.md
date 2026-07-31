@@ -5,7 +5,7 @@ sidebar_position: 6
 
 # Deploying
 
-MistWarp's editor is a static site. A production build is a folder of HTML, JavaScript, and assets that can be served by any static host. This page covers how to build that folder and publish it, which is what you need if you run your own instance of the editor.
+Bilup's editor is a static site. A production build is a folder of HTML, JavaScript, and assets that can be served by any static host. This page covers how to build that folder and publish it, which is what you need if you run your own instance of the editor.
 
 You do not need this to contribute changes. It matters only when you want to host a build yourself.
 
@@ -47,7 +47,7 @@ Committing to your default branch does not deploy anything. Publishing is a deli
 
 ## Hosting the build
 
-Because the output is static, you can serve it from any static host. The MistWarp setup publishes the `gh-pages` branch and points a host at it.
+Because the output is static, you can serve it from any static host. The Bilup setup publishes the `gh-pages` branch and points a host at it.
 
 ### Cloudflare Pages
 

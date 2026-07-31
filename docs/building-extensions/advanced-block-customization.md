@@ -5,15 +5,15 @@ sidebar_position: 10
 
 # Advanced block customization
 
-This page covers a few techniques that go beyond the normal block-description format. They all require [unsandboxed extensions](/building-extensions/unsandboxed), and they all reach into MistWarp internals that are not stable APIs.
+This page covers a few techniques that go beyond the normal block-description format. They all require [unsandboxed extensions](/building-extensions/unsandboxed), and they all reach into Bilup internals that are not stable APIs.
 
 :::warning
-Everything here manipulates internal objects and the editor's DOM. It can break when MistWarp or Blockly updates, it is invisible to screen readers, and it does not run in the [packager](/packager/overview) or the player. Use it only when the normal block format genuinely cannot do what you need, and test after every MistWarp update.
+Everything here manipulates internal objects and the editor's DOM. It can break when Bilup or Blockly updates, it is invisible to screen readers, and it does not run in the [packager](/packager/overview) or the player. Use it only when the normal block format genuinely cannot do what you need, and test after every Bilup update.
 :::
 
 ## A runtime patching helper
 
-Many advanced extensions wrap an existing MistWarp method to add behavior while still calling the original. This small helper is the common pattern for doing that safely, including only patching once:
+Many advanced extensions wrap an existing Bilup method to add behavior while still calling the original. This small helper is the common pattern for doing that safely, including only patching once:
 
 ```js
 const PATCHES_ID = '__myextension_patches';
@@ -47,7 +47,7 @@ Keep a matching `unpatch` if your extension can be disabled, and store the origi
 
 ## Replacing a block's visuals
 
-MistWarp renders blocks as SVG through Blockly. An unsandboxed extension can find its own blocks in the workspace DOM and replace their contents, for example to show an image instead of text. The "Image Blocks" extension does this.
+Bilup renders blocks as SVG through Blockly. An unsandboxed extension can find its own blocks in the workspace DOM and replace their contents, for example to show an image instead of text. The "Image Blocks" extension does this.
 
 The idea: give the block empty (or near-empty) text, then, whenever the workspace changes, find the block's `<g>` element by category and opcode and rewrite its contents.
 

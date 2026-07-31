@@ -111,7 +111,7 @@ These act on the editing target unless a target ID is passed. Most return a `Pro
 
 - `setTurboMode(on)`: turbo mode (loops do not yield to redraw).
 - `setCompatibilityMode(on)`: 30 TPS "2.0" timing.
-- `setFramerate(fps)`: target frame rate. MistWarp allows arbitrary values.
+- `setFramerate(fps)`: target frame rate. Bilup allows arbitrary values.
 - `setInterpolation(enabled)`: frame interpolation, which smooths motion above the project's
   native frame rate.
 - `setStageSize(width, height)`: custom stage dimensions.

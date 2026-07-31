@@ -1,322 +1,86 @@
 ---
 title: 事件
-sidebar_position: 5
+sidebar_position: 8
 ---
 
-# 事件系统
+`VirtualMachine` 扩展 Node 的 `EventEmitter`。编辑器和播放器监听这些事件以保持 UI 同步，您也可以：
 
-Bilup 提供了全面的事件系统，用于组件、插件和扩展之间的通信。
-
-## 概述
-
-事件系统支持：
-- 组件间通信
-- 插件与编辑器事件的集成
-- 扩展生命周期管理
-- 状态更改通知
-- 用户交互跟踪
-
-## Redux 事件
-
-### 状态更改事件
-监听 Redux 状态更改：
-
-```javascript
-// 监听所有状态更改
-addon.tab.redux.addEventListener('statechanged', (event) => {
-  const { action, prev, next } = event.detail;
-  console.log('动作:', action.type);
-});
-
-// 筛选特定动作
-addon.tab.redux.addEventListener('statechanged', (event) => {
-  const { action } = event.detail;
-  
-  switch (action.type) {
-    case 'scratch-gui/targets/SET_TARGET':
-      handleTargetChange(action.targetId);
-      break;
-    case 'scratch-gui/mode/SET_PLAYER':
-      handleModeChange(action.isPlayerOnly);
-      break;
-  }
+```js
+vm.on('PROJECT_CHANGED', () => {
+    console.log('the project was edited');
 });
 ```
 
-### 常见 Redux 动作
+VM 以相同名称重新发出运行时的大部分事件，因此您通常监听 `vm`。少数只在 `vm.runtime` 上触发；下面已注明。此列表取自 `scratch-vm/src/virtual-machine.js` 和 `scratch-vm/src/engine/runtime.js`。
 
-```javascript
-// 目标(角色/舞台)选择
-'scratch-gui/targets/SET_TARGET'
-'scratch-gui/targets/UPDATE_TARGET_LIST'
+## 播放与运行
 
-// 项目状态
-'scratch-gui/project-state/SET_PROJECT_TITLE'
-'scratch-gui/project-state/SET_PROJECT_SAVED'
+| 事件 | 触发时 |
+| --- | --- |
+| `PROJECT_START` | 绿旗被按下。 |
+| `PROJECT_RUN_START` | 线程本帧开始运行（从空闲到活动）。 |
+| `PROJECT_RUN_STOP` | 所有线程已停止（从活动到空闲）。 |
+| `PROJECT_CHANGED` | 项目以影响序列化的方式被编辑。 |
+| `PROJECT_LOADED` | 项目完成加载。在 `vm.runtime` 上触发。 |
+| `TURBO_MODE_ON` / `TURBO_MODE_OFF` | 涡轮模式被切换。 |
+| `RUNTIME_STARTED` / `RUNTIME_STOPPED` | 运行时的步进循环开始或停止。 |
 
-// 编辑器模式
-'scratch-gui/mode/SET_PLAYER'
-'scratch-gui/mode/SET_FULLSCREEN'
+## 加载进度
 
-// 积木工作区
-'scratch-gui/workspace-blocks/UPDATE_BLOCKS'
-'scratch-gui/workspace-blocks/SET_BLOCKS'
+| 事件 | 负载 |
+| --- | --- |
+| `LOAD_PROGRESS` | `{stage, loaded, total}`，其中 `stage` 是 `unzipping`、`parsing`、`checking`、`building`、`installing` 之一。 |
+| `ASSET_PROGRESS` | 项目资产下载时的 `(finished, total)`。 |
 
-// 模态框
-'scratch-gui/modals/OPEN_MODAL'
-'scratch-gui/modals/CLOSE_MODAL'
-```
+## 目标、积木和工作区
 
-## DOM 事件
+| 事件 | 负载 |
+| --- | --- |
+| `targetsUpdate` | `{targetList, editingTarget}`。目标列表更改或选择更改。 |
+| `workspaceUpdate` | 编辑目标的积木，用于重建积木工作区。 |
+| `MONITORS_UPDATE` | 当前监视器（舞台观察器）状态。 |
+| `BLOCK_DRAG_UPDATE` / `BLOCK_DRAG_END` | 积木正在 GUI 上拖动 / 拖动完成。 |
+| `VISUAL_REPORT` | 要在被点击的报告积木旁边显示为气泡的值。 |
+| `SCRIPT_GLOW_ON` / `SCRIPT_GLOW_OFF` | 脚本开始或停止发光。 |
+| `BLOCK_GLOW_ON` / `BLOCK_GLOW_OFF` | 单个积木开始或停止发光。 |
+| `PROJECT_STOP_ALL`、`STOP_FOR_TARGET` | 停止按钮被点击 / 一个目标被停止。在 `vm.runtime` 上触发。 |
 
-### 编辑器导航
-跟踪 URL 和导航更改：
+## 扩展
 
-```javascript
-addon.tab.addEventListener('urlChange', (event) => {
-  const { oldURL, newURL } = event.detail;
-  
-  if (newURL.includes('/editor')) {
-    console.log('进入编辑器模式');
-  } else if (newURL.includes('/player')) {
-    console.log('进入播放器模式');
-  }
-});
-```
+| 事件 | 触发时 |
+| --- | --- |
+| `EXTENSION_ADDED` | 扩展的积木分类被注册。负载是分类信息。 |
+| `EXTENSION_REMOVED` | 扩展被移除。 |
+| `EXTENSIONS_REORDERED` | 扩展顺序更改。 |
+| `EXTENSION_FIELD_ADDED` | 扩展注册了一个自定义字段类型。 |
+| `BLOCKSINFO_UPDATE` | 扩展的积木被刷新（例如 locale 更改后）。 |
+| `PERIPHERAL_LIST_UPDATE`、`USER_PICKED_PERIPHERAL`、`PERIPHERAL_CONNECTED`、`PERIPHERAL_DISCONNECTED`、`PERIPHERAL_REQUEST_ERROR`、`PERIPHERAL_CONNECTION_LOST_ERROR`、`PERIPHERAL_SCAN_TIMEOUT` | 外设扫描和连接生命周期。 |
 
-### 组件事件
-监听特定组件交互：
+## 设置已更改
 
-```javascript
-// 积木工作区事件
-addon.tab.addEventListener('workspaceUpdate', (event) => {
-  console.log('工作区已更新:', event.detail);
-});
+这些在匹配的设置器运行后触发，因此 UI 可以更新：
 
-// 舞台事件
-addon.tab.addEventListener('stageClick', (event) => {
-  const { x, y } = event.detail;
-  console.log(`舞台点击位置: (${x}, ${y})`);
-});
+| 事件 | 负载 |
+| --- | --- |
+| `RUNTIME_OPTIONS_CHANGED` | 当前的运行时选项。 |
+| `COMPILER_OPTIONS_CHANGED` | 当前的编译器选项。 |
+| `FRAMERATE_CHANGED` | 新的帧率。 |
+| `INTERPOLATION_CHANGED` | 插值是否开启。 |
+| `STAGE_SIZE_CHANGED` | `(width, height)`。 |
+| `COMPILE_ERROR` | 脚本编译失败时的 `(target, error)`。 |
+| `HAS_CLOUD_DATA_UPDATE` | 项目是否使用云变量。 |
+| `MIC_LISTENING` | 麦克风是否活动。 |
+| `LOCALE_CHANGED` | `setLocale` 之后的新 locale。 |
 
-// 角色列表事件
-addon.tab.addEventListener('spriteSelected', (event) => {
-  console.log('角色已选中:', event.detail.spriteId);
-});
-```
+## 积木询问宿主
 
-## 自定义事件
+一些积木需要宿主 UI 响应。这些在 `vm.runtime` 上触发：
 
-### 调用事件
-创建并调用自定义事件：
+- `SAY`：角色说话或思考（`say`/`think` 积木）。
+- `QUESTION`：一个"询问并等待"积木正在等待输入。宿主收集答案并在运行时上发出 `ANSWER` 事件以解除脚本阻塞。
 
-```javascript
-// 简单的自定义事件
-addon.tab.dispatchEvent(new CustomEvent('myEvent', {
-  detail: { data: 'example' }
-}));
+## 另请参阅
 
-// 包含多个数据的复杂事件
-addon.tab.dispatchEvent(new CustomEvent('projectAnalyzed', {
-  detail: {
-    spriteCount: 5,
-    blockCount: 127,
-    complexity: 'medium',
-    timestamp: Date.now()
-  }
-}));
-```
-
-### 事件监听器
-监听自定义事件：
-
-```javascript
-// 监听特定的自定义事件
-addon.tab.addEventListener('projectAnalyzed', (event) => {
-  const { spriteCount, blockCount, complexity } = event.detail;
-  updateProjectStats(spriteCount, blockCount, complexity);
-});
-
-// 通用事件监听器
-addon.tab.addEventListener('myEvent', handleMyEvent);
-
-function handleMyEvent(event) {
-  console.log('收到自定义事件:', event.detail);
-}
-```
-
-## 扩展事件
-
-### 扩展生命周期
-跟踪扩展的加载和卸载：
-
-```javascript
-// 扩展已加载
-vm.runtime.on('EXTENSION_ADDED', (extensionId) => {
-  console.log('扩展已加载:', extensionId);
-});
-
-// 扩展已移除
-vm.runtime.on('EXTENSION_REMOVED', (extensionId) => {
-  console.log('扩展已移除:', extensionId);
-});
-```
-
-### 积木事件
-监控积木执行和交互：
-
-```javascript
-// 积木执行开始
-vm.runtime.on('BLOCK_GLOW_ON', (blockId) => {
-  console.log('积木执行中:', blockId);
-});
-
-// 积木执行结束
-vm.runtime.on('BLOCK_GLOW_OFF', (blockId) => {
-  console.log('积木执行完成:', blockId);
-});
-
-// 积木已添加到工作区
-vm.runtime.on('BLOCKS_ADDED', (blockIds) => {
-  console.log('积木已添加:', blockIds);
-});
-```
-
-## 项目事件
-
-### 项目生命周期
-跟踪项目的加载、保存和更改：
-
-```javascript
-// 项目已加载
-vm.runtime.on('PROJECT_LOADED', () => {
-  console.log('项目加载成功');
-});
-
-// 项目已保存
-addon.tab.addEventListener('projectSaved', (event) => {
-  console.log('项目已保存:', event.detail.title);
-});
-
-// 项目已修改
-addon.tab.addEventListener('projectModified', (event) => {
-  console.log('项目有未保存的更改');
-});
-```
-
-### 资源事件
-监控造型和声音更改：
-
-```javascript
-// 造型已添加
-vm.runtime.on('COSTUME_ADDED', (costumeId, targetId) => {
-  console.log(`造型 ${costumeId} 已添加到 ${targetId}`);
-});
-
-// 声音已添加
-vm.runtime.on('SOUND_ADDED', (soundId, targetId) => {
-  console.log(`声音 ${soundId} 已添加到 ${targetId}`);
-});
-```
-
-## 性能事件
-
-### 监控性能
-跟踪运行时性能数据：
-
-```javascript
-// 帧率变化
-vm.runtime.on('FRAMERATE_CHANGED', (fps) => {
-  console.log('FPS:', fps);
-});
-
-// 编译事件
-vm.runtime.on('COMPILE_START', () => {
-  console.log('编译开始');
-});
-
-vm.runtime.on('COMPILE_END', (success, errors) => {
-  if (success) {
-    console.log('编译成功');
-  } else {
-    console.error('编译错误:', errors);
-  }
-});
-```
-
-## 事件最佳实践
-
-### 内存管理
-正确清理事件监听器：
-
-```javascript
-export default async function ({ addon }) {
-  const handleStateChange = (event) => {
-    // 处理事件
-  };
-  
-  // 添加监听器
-  addon.tab.redux.addEventListener('statechanged', handleStateChange);
-  
-  // 插件禁用时清理
-  addon.onDisabled = () => {
-    addon.tab.redux.removeEventListener('statechanged', handleStateChange);
-  };
-}
-```
-
-### 事件筛选
-筛选事件以避免性能问题：
-
-```javascript
-let lastUpdate = 0;
-const THROTTLE_MS = 100;
-
-addon.tab.redux.addEventListener('statechanged', (event) => {
-  const now = Date.now();
-  if (now - lastUpdate < THROTTLE_MS) {
-    return; // 跳过此更新
-  }
-  lastUpdate = now;
-  
-  // 处理事件
-  handleStateChange(event);
-});
-```
-
-### 错误处理
-完美地处理事件监听器中的错误：
-
-```javascript
-addon.tab.addEventListener('myEvent', (event) => {
-  try {
-    processEvent(event.detail);
-  } catch (error) {
-    console.error('处理事件时出错:', error);
-    // 回退行为
-  }
-});
-```
-
-## 事件文档
-
-### 创建事件文档
-为其他开发者记录自定义事件：
-
-```javascript
-/**
- * 项目分析完成时调用
- * @event projectAnalyzed
- * @type {CustomEvent}
- * @property {Object} detail - 事件数据
- * @property {number} detail.spriteCount - 角色数量
- * @property {number} detail.blockCount - 积木总数
- * @property {string} detail.complexity - 项目复杂度等级
- */
-```
-
-## 相关文档
-
-- [插件 API 参考](./addon-api)
-- [VM API 参考](./vm-api)
-- [GUI API 参考](./gui-api)
+- [VM API](/api-reference/vm-api)
+- [线程](/api-reference/threads)
+- [积木注册](/api-reference/block-registration)

@@ -5,7 +5,7 @@ sidebar_position: 9
 
 # Custom C blocks
 
-C blocks are the ones that wrap other blocks: `if`, `if/else`, `repeat`, `forever`. MistWarp lets extensions define their own.
+C blocks are the ones that wrap other blocks: `if`, `if/else`, `repeat`, `forever`. Bilup lets extensions define their own.
 
 :::warning
 Custom C blocks only work in [unsandboxed extensions](/building-extensions/unsandboxed).

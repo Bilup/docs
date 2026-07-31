@@ -13,16 +13,16 @@ My Blocks lets you define your own blocks, also called custom blocks or procedur
 
 When you make a block you add labels and inputs (number or text, or boolean), and you can tick "Run without screen refresh" to make the whole block run in one frame, like [warp mode](/advanced/warp-timer).
 
-## MistWarp and TurboWarp extras
+## Bilup and TurboWarp extras
 
 - **return `value`** (`procedures_return`) stops the current custom block and, when the block was defined to report a value, hands that value back to the caller. This turns a custom block into a reporter that computes and returns a result. Used outside a custom block, it simply stops the script.
 
-Boolean argument reporters also recognise two special names even when no such argument exists: an `is compiled?` boolean reports true when the [compiler](/advanced/disable-compiler) is running the project, and an `is mistwarp?` boolean always reports true in MistWarp. They let a project detect its runtime.
+Boolean argument reporters also recognise two special names even when no such argument exists: an `is compiled?` boolean reports true when the [compiler](/advanced/disable-compiler) is running the project, and an `is mistwarp?` boolean always reports true in Bilup. They let a project detect its runtime.
 
-See [MistWarp extras](/blocks/mistwarp-extras).
+See [Bilup extras](/blocks/mistwarp-extras).
 
 ## See also
 
 - [Custom blocks](/editor/custom-blocks)
 - [Control blocks](/blocks/control)
-- [MistWarp extras](/blocks/mistwarp-extras)
+- [Bilup extras](/blocks/mistwarp-extras)

@@ -5,7 +5,7 @@ sidebar_position: 6
 
 # Pen
 
-The **Pen** extension lets sprites draw on the stage. A sprite leaves a trail as it moves, stamps its costume, or prints text. It is built in, works offline, and is compatible with Scratch. MistWarp adds a few extra pen blocks on top of the Scratch set (triangle drawing and text printing).
+The **Pen** extension lets sprites draw on the stage. A sprite leaves a trail as it moves, stamps its costume, or prints text. It is built in, works offline, and is compatible with Scratch. Bilup adds a few extra pen blocks on top of the Scratch set (triangle drawing and text printing).
 
 Load it from **Add Extension** and choose **Pen**.
 
@@ -79,7 +79,7 @@ change pen color by (10)
 
 These older *shade* and numeric *hue* blocks are kept for compatibility with projects made before the newer color-parameter blocks existed. Prefer the *set pen color* and *set pen ... to* blocks in new projects.
 
-## Extra drawing blocks (MistWarp)
+## Extra drawing blocks (Bilup)
 
 ### draw triangle between `[x0] [y0]`, `[x1] [y1]` and `[x2] [y2]`
 

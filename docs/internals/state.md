@@ -69,7 +69,7 @@ Every entry below is a real slice combined into `scratchGui`, with the file that
 - `theme` (`theme.js`) holds the current `Theme` object and applies its colors when it changes.
 - `mwProjectTheme` (`mw-project-theme.js`) backs the prompt for applying a theme embedded in a project. See [Theming](/internals/theming).
 
-**MistWarp additions and misc**
+**Bilup additions and misc**
 
 - `rotur` (`rotur.js`) holds Rotur account and session state used by the community integration.
 - `collaboration` (`collaboration.js`) holds live-collaboration state.

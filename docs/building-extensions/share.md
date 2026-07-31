@@ -19,8 +19,8 @@ Once it is at a public HTTPS URL, load it in the editor with "Add Extension", "C
 
 An [unsandboxed extension](/building-extensions/unsandboxed) only runs unsandboxed automatically from a trusted origin (see the trusted prefixes on the [unsandboxed page](/building-extensions/unsandboxed)). Since you do not control those gallery domains, the practical options are:
 
-- **Host it yourself and let users opt in.** Serve it at any public HTTPS URL as above. When someone loads that URL, MistWarp loads it sandboxed unless they explicitly choose to trust it, so document that step for your users.
-- **Get it into the MistWarp extension gallery.** The gallery lives at [extensions.mistium.com](https://extensions.mistium.com); extensions served from that origin run unsandboxed automatically. Follow the submission instructions on the gallery site itself.
+- **Host it yourself and let users opt in.** Serve it at any public HTTPS URL as above. When someone loads that URL, Bilup loads it sandboxed unless they explicitly choose to trust it, so document that step for your users.
+- **Get it into the Bilup extension gallery.** The gallery lives at [extensions.bilup.org](https://extensions.bilup.org); extensions served from that origin run unsandboxed automatically. Follow the submission instructions on the gallery site itself.
 
 ## Next steps
 

@@ -7,7 +7,7 @@ slug: /packager/dynamic-stage-resize
 # Dynamic stage resize
 
 :::info
-This is a [MistWarp Packager](/packager/overview) option.
+This is a [Bilup Packager](/packager/overview) option.
 :::
 
 Dynamic stage resize makes the stage match whatever size and aspect ratio it is being shown at, instead of a fixed [stage size](/advanced/custom-stage-size).

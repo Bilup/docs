@@ -5,7 +5,7 @@ sidebar_position: 3
 
 # Building and Running
 
-This page walks through setting up a local MistWarp editor build. The examples use scratch-gui because that is where most development happens, but the same clone-and-link pattern applies to the other engine packages.
+This page walks through setting up a local Bilup editor build. The examples use scratch-gui because that is where most development happens, but the same clone-and-link pattern applies to the other engine packages.
 
 ## Prerequisites
 
@@ -22,11 +22,11 @@ The engine packages link to each other by relative path, so they must be sibling
 ```bash
 mkdir mistwarp
 cd mistwarp
-git clone https://github.com/MistWarp/scratch-gui
-git clone https://github.com/MistWarp/scratch-vm
-git clone https://github.com/MistWarp/scratch-blocks
-git clone https://github.com/MistWarp/scratch-render
-git clone https://github.com/MistWarp/scratch-paint
+git clone https://github.com/Bilup/scratch-gui
+git clone https://github.com/Bilup/scratch-vm
+git clone https://github.com/Bilup/scratch-blocks
+git clone https://github.com/Bilup/scratch-render
+git clone https://github.com/Bilup/scratch-paint
 ```
 
 You only need the packages you intend to change. If you are just modifying the editor UI, scratch-gui alone is enough; its dependencies fall back to the versions pinned in `package.json`.

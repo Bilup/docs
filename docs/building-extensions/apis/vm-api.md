@@ -15,7 +15,7 @@ const vm = Scratch.vm;
 const runtime = vm.runtime;
 ```
 
-These are internal objects, not a frozen public API. Guard for missing values (sprites get deleted, extensions unload) and prefer listening to events over polling. Most of these methods exist on both MistWarp and TurboWarp; MistWarp-specific behavior is noted where it matters.
+These are internal objects, not a frozen public API. Guard for missing values (sprites get deleted, extensions unload) and prefer listening to events over polling. Most of these methods exist on both Bilup and TurboWarp; Bilup-specific behavior is noted where it matters.
 
 ## Project control
 
@@ -30,7 +30,7 @@ vm.setRuntimeOptions({ maxClones: 300, miscLimits: true, fencing: true });
 vm.setStageSize(width, height);
 ```
 
-MistWarp compiles projects by default (`compilerOptions.enabled` is `true`). Framerate and stage size are not limited to Scratch's 30 FPS / 480x360.
+Bilup compiles projects by default (`compilerOptions.enabled` is `true`). Framerate and stage size are not limited to Scratch's 30 FPS / 480x360.
 
 ## Targets
 
@@ -194,7 +194,7 @@ runtime.extensionStorage.myextension = { volume: 0.5 };
 
 ## Compiler internals
 
-To generate JavaScript directly (native-speed blocks), MistWarp exposes a supported compiler-extension API via `vm.exports.compiler`. That is its own topic; see [Compiled extensions](/building-extensions/compiled/overview).
+To generate JavaScript directly (native-speed blocks), Bilup exposes a supported compiler-extension API via `vm.exports.compiler`. That is its own topic; see [Compiled extensions](/building-extensions/compiled/overview).
 
 ## See also
 

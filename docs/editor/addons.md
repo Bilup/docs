@@ -21,7 +21,7 @@ At the bottom of the window, **Reset all** restores every addon to its defaults,
 
 ## Notes
 
-- Some features that began as addons are now built into MistWarp directly and are configured on the [settings](/editor/settings) pages instead of here.
+- Some features that began as addons are now built into Bilup directly and are configured on the [settings](/editor/settings) pages instead of here.
 - Addon settings are stored in your browser and sync to your account when you are signed in.
 
 ## See also

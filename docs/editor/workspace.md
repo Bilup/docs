@@ -28,7 +28,7 @@ Click any block or stack to run it once. While a script runs, its blocks **glow*
 
 ## Large projects and deferred rendering
 
-MistWarp does not render every block up front. When a project has many scripts (roughly 100 blocks or more), the workspace **loads scripts lazily**, rendering only the ones near your view and filling in the rest as you scroll. This keeps switching sprites and opening big projects fast. A consequence worth knowing: tools that count or search blocks read them from the project data (the VM), not from what is currently drawn on screen, so they stay accurate even for scripts you have not scrolled to.
+Bilup does not render every block up front. When a project has many scripts (roughly 100 blocks or more), the workspace **loads scripts lazily**, rendering only the ones near your view and filling in the rest as you scroll. This keeps switching sprites and opening big projects fast. A consequence worth knowing: tools that count or search blocks read them from the project data (the VM), not from what is currently drawn on screen, so they stay accurate even for scripts you have not scrolled to.
 
 To move quickly around a big project, use the [find bar](/editor/find-bar) to jump to a block, variable, or custom block, and [workspace bookmarks](/editor/bookmarks) to save and return to script locations.
 

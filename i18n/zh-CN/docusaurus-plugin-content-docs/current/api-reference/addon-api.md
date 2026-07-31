@@ -1,284 +1,85 @@
 ---
 title: 插件 API
-sidebar_position: 4
+sidebar_position: 7
 ---
 
-# 插件 API
+插件是修改编辑器和播放器的 userscript 和 userstyle。每个插件是 `scratch-gui/src/addons/addons/` 下的一个文件夹，带有一个清单和一个或多个脚本。当插件的 userscript 运行时，它接收一个 API 对象。本页是该对象的参考，定义在 `scratch-gui/src/addons/api.js`。插件是什么以及如何使用请参阅[插件](/editor/addons)。
 
-插件 API 提供了通过插件系统修改和扩展 Bilup 界面和行为的工具。
+## userscript 入口点
 
-## 概述
+插件 userscript 导出一个接收 API 对象的默认异步函数：
 
-插件 API 允许开发者：
-- 修改 Bilup 用户界面
-- 向编辑器添加新功能
-- 自定义外观和行为
-- 与外部服务和工具集成
-
-## 基本插件结构
-
-```javascript
-// userscript.js
-export default async function ({ addon, msg, console }) {
-  // 插件初始化代码
-  console.log('插件已加载:', addon.info.name);
-  
-  // 添加自定义功能
-  addon.tab.addEventListener('urlChange', handleUrlChange);
-  
-  function handleUrlChange(event) {
-    console.log('URL 已更改:', event.detail.newURL);
-  }
+```js
+export default async function ({addon, console, msg}) {
+    const vm = addon.tab.traps.vm;
+    // ... 修改编辑器 ...
 }
 ```
 
-## API 对象
+传入的对象具有以下成员：
 
-### addon.tab
-用于 DOM 操作和编辑器交互的接口：
+- `addon`：插件 API，分为 `addon.tab`、`addon.settings` 和 `addon.self`（见下文）。
+- `console`：浏览器控制台。
+- `global`：全局对象。
+- `msg(key, vars)`：来自插件翻译的本地化消息。
+- `safeMsg(key, vars)`：相同，但经过 HTML 转义。
 
-```javascript
-// 等待元素
-const blocksPalette = await addon.tab.waitForElement('[class*="blocks_blocks"]');
+## addon.tab
 
-// 添加自定义样式
-addon.tab.addStyle(`
-  .my-custom-class {
-    background: var(--ui-primary);
-  }
-`);
+`addon.tab` 是触及页面的主要表面。它是一个事件目标。
 
-// 监听事件
-addon.tab.addEventListener('urlChange', callback);
-addon.tab.addEventListener('statechanged', callback);
+- `tab.traps`：到编辑器内部的逃生舱口：
+  - `traps.vm`：实时的 [`VirtualMachine`](/api-reference/vm-api)。
+  - `traps.getBlockly()`：在 Blockly 实例就绪后解析它。
+  - `traps.getWorkspace()`：当前的 Blockly 工作区。
+  - `traps.getPaper()`：在造型编辑器打开时解析 paper.js 作用域。
+- `tab.redux`：访问 GUI 的 Redux store，包括 `tab.redux.state` 和 `statechanged` 事件。
+- `tab.waitForElement(selector, options)`：在匹配的 DOM 元素出现后解析它。选项包括 `markAsSeen`（这样同一元素不会返回两次）、`condition` 回调、`reduxCondition` 回调和 `reduxEvents` 以等待特定的 store 操作。
+- `tab.appendToSharedSpace({space, element, order, scope})`：将元素插入已知的编辑器区域（例如 `stageHeader`），相对于其他插件保持在稳定位置。
+- `tab.createBlockContextMenu(callback, {workspace, blocks, flyout, comments})`：向积木或工作区上下文菜单添加项目。
+- `tab.scratchClass(...names, {others})`：将 Bilup 的哈希 CSS 类名（例如 `green-flag`）解析为它们真实的运行时类名，让您的样式和查询匹配。
+- `tab.scratchMessage(id)`：查找编辑器自己本地化字符串之一。
+- `tab.copyImage(dataURL)`：将 PNG 数据 URL 复制到剪贴板。
+- `tab.createModal(title, {isOpen})`、`tab.confirm(...)`、`tab.prompt(...)`：编辑器风格的对话框。
+- `tab.displayNoneWhileDisabled(el, options)`：在插件被禁用时隐藏元素。
+- `tab.editorMode`：当前编辑器模式字符串。
+- `tab.direction`：当前语言环境的 `'ltr'` 或 `'rtl'`。
+- `tab.recolorable()`：一个 `<img>`，其 SVG 根据当前主题强调色重新着色。
 
-// Redux 状态访问
-const currentMode = addon.tab.redux.state.scratchGui.mode;
-```
+## addon.settings
 
-### addon.settings
-访问插件配置：
+`addon.settings` 读取插件自己的设置，按其清单声明。它是一个事件目标。
 
-```javascript
-// 获取设置值
-const isEnabled = addon.settings.get('enabled');
-const maxItems = addon.settings.get('maxItems');
+- `settings.get(id)`：设置的当前值。
+- 监听 `change` 事件以在用户更改设置时做出反应：
 
-// 监听设置更改
-addon.settings.addEventListener('change', (event) => {
-  console.log('设置已更改:', event.detail);
+```js
+addon.settings.addEventListener('change', () => {
+    const speed = addon.settings.get('speed');
+    // ... 应用新值 ...
 });
 ```
 
-### addon.info
-当前插件的元数据：
+## addon.self
 
-```javascript
-console.log('插件 ID:', addon.info.id);
-console.log('插件名称:', addon.info.name);
-console.log('版本:', addon.info.version);
+`addon.self` 是插件自己的状态。它是一个事件目标。
+
+- `self.id`：插件的 ID。
+- `self.disabled`：插件当前是否被禁用。
+- `self.getResource(path)`：将捆绑的资源路径解析为可用的 URL。
+- 当用户打开编辑器时切换插件时，会触发 `disabled` 和 `reenabled` 事件，因此插件无需重新加载即可清理或重新应用其更改：
+
+```js
+addon.self.addEventListener('disabled', () => { /* 撤销更改 */ });
+addon.self.addEventListener('reenabled', () => { /* 重做更改 */ });
 ```
 
-## DOM 操作
+## Userstyles
 
-### 元素选择
-安全地等待和选择 DOM 元素：
+插件还可以携带 CSS。静态样式表自动应用，设置可以驱动 CSS 自定义属性：清单设置产生名为 `--<addonId>-<settingId>` 的变量，清单 `customCssVariables` 可以计算在设置更改时更新的颜色（混合、增亮、阈值等）。
 
-```javascript
-// 等待特定元素
-const menuBar = await addon.tab.waitForElement('[class*="menu-bar"]');
-const stageArea = await addon.tab.waitForElement('[class*="stage"]');
+## 另请参阅
 
-// 选择现有元素
-const blocks = addon.tab.querySelector('[class*="blocks_blocks"]');
-```
-
-### 添加自定义元素
-
-```javascript
-// 创建并添加自定义按钮
-const customButton = document.createElement('button');
-customButton.textContent = msg('my-button');
-customButton.className = 'my-addon-button';
-customButton.addEventListener('click', handleButtonClick);
-
-// 找到插入点并添加按钮
-const menuBar = await addon.tab.waitForElement('[class*="menu-bar"]');
-menuBar.appendChild(customButton);
-```
-
-## 事件系统
-
-### 内置事件
-
-```javascript
-// URL 导航更改
-addon.tab.addEventListener('urlChange', (event) => {
-  const { oldURL, newURL } = event.detail;
-  console.log(`导航: ${oldURL} → ${newURL}`);
-});
-
-// Redux 状态更改
-addon.tab.addEventListener('statechanged', (event) => {
-  const { action, prev, next } = event.detail;
-  if (action.type === 'scratch-gui/targets/SET_TARGET') {
-    console.log('目标已更改:', action.targetId);
-  }
-});
-```
-
-### 自定义事件
-
-```javascript
-// 调用自定义事件
-addon.tab.dispatchEvent(new CustomEvent('myAddonEvent', {
-  detail: { data: 'example' }
-}));
-
-// 监听自定义事件
-addon.tab.addEventListener('myAddonEvent', (event) => {
-  console.log('自定义事件:', event.detail);
-});
-```
-
-## 上下文菜单
-
-### 积木上下文菜单
-向积木的右键菜单添加项目：
-
-```javascript
-addon.tab.createBlockContextMenu((items, target) => {
-  if (target.isStage === false) {
-    items.push({
-      enabled: true,
-      text: msg('duplicate-sprite'),
-      callback: () => {
-        // 复制角色功能
-      },
-      separator: true
-    });
-  }
-});
-```
-
-## 存储
-
-### 本地存储
-跨会话持久化数据：
-
-```javascript
-// 存储数据
-await addon.storage.setItem('myData', { count: 42 });
-
-// 检索数据
-const data = await addon.storage.getItem('myData');
-console.log('存储的计数:', data?.count);
-
-// 删除数据
-await addon.storage.removeItem('myData');
-```
-
-## 本地化
-
-### 消息函数
-支持多种语言：
-
-```javascript
-// 简单消息
-const buttonText = msg('save-project');
-
-// 带参数的消息
-const confirmText = msg('confirm-delete', { name: spriteName });
-
-// 条件消息
-const statusText = msg(isOnline ? 'online-status' : 'offline-status');
-```
-
-### 消息文件
-在 `addons-l10n/` 中定义翻译：
-
-```json
-// en.json
-{
-  "my-addon/save-project": "Save Project",
-  "my-addon/confirm-delete": "Delete {name}?",
-  "my-addon/online-status": "Connected",
-  "my-addon/offline-status": "Disconnected"
-}
-```
-
-## 设置集成
-
-### 设置类型
-定义可配置选项：
-
-```json
-// 在插件清单中
-"settings": [
-  {
-    "name": "启用功能",
-    "id": "enabled",
-    "type": "boolean",
-    "default": true
-  },
-  {
-    "name": "最大项目数",
-    "id": "maxItems", 
-    "type": "positive_integer",
-    "default": 10,
-    "min": 1,
-    "max": 100
-  },
-  {
-    "name": "配色方案",
-    "id": "colorScheme",
-    "type": "select",
-    "options": [
-      { "value": "auto", "name": "自动" },
-      { "value": "light", "name": "亮色" },
-      { "value": "dark", "name": "暗色" }
-    ],
-    "default": "auto"
-  }
-]
-```
-
-## 性能最佳实践
-
-1. **使用 waitForElement()** 而不是轮询
-2. **缓存 DOM 查询**(如果可能)
-3. **插件禁用时移除事件监听器**
-4. **对频繁操作进行防抖处理**
-5. **对动画使用 requestAnimationFrame**
-
-## 生命周期管理
-
-```javascript
-export default async function ({ addon }) {
-  // 初始化
-  console.log('插件启动');
-  
-  // 设置功能
-  const cleanup = setupFeatures();
-  
-  // 禁用时清理
-  addon.onDisabled = () => {
-    console.log('插件停止');
-    cleanup();
-  };
-}
-
-function setupFeatures() {
-  // 设置代码
-  
-  return () => {
-    // 清理代码
-  };
-}
-```
-
-## 相关文档
-
-- [插件开发指南](../gui-internals/addons/home)
-- [GUI API 参考](./gui-api)
-- [扩展 API 参考](./extension-api)
+- [插件](/editor/addons) 了解面向用户的功能
+- [内部：插件系统](/internals/addons-system)
+- [VM API](/api-reference/vm-api)

@@ -46,7 +46,7 @@ The object passed in has these members:
   region (for example `stageHeader`) in a stable position relative to other addons.
 - `tab.createBlockContextMenu(callback, {workspace, blocks, flyout, comments})`: add items to
   block or workspace context menus.
-- `tab.scratchClass(...names, {others})`: resolve MistWarp's hashed CSS class names (for example
+- `tab.scratchClass(...names, {others})`: resolve Bilup's hashed CSS class names (for example
   `green-flag`) to their real runtime class names, so your styles and queries match.
 - `tab.scratchMessage(id)`: look up one of the editor's own localized strings.
 - `tab.copyImage(dataURL)`: copy a PNG data URL to the clipboard.

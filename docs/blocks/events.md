@@ -15,7 +15,7 @@ Events blocks start scripts. Most of them are hat blocks that sit at the top of 
 - **when `loudness` > `10`** runs when a sensed value (loudness or timer) rises above a threshold. This is an edge-triggered hat: it fires on the crossing, not continuously.
 - **when I receive `message1`** runs when a matching broadcast is sent.
 
-MistWarp also exposes **when touching `mouse-pointer`** as an edge-triggered hat that runs when the sprite starts touching a target.
+Bilup also exposes **when touching `mouse-pointer`** as an edge-triggered hat that runs when the sprite starts touching a target.
 
 ## Broadcasting
 

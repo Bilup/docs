@@ -1,9 +1,9 @@
 ---
-title: MistWarp extras
+title: Bilup extras
 sidebar_position: 11
 ---
 
-MistWarp is built on TurboWarp, which is built on Scratch. Along the way both projects added blocks that stock Scratch does not have. This page collects those extra blocks in one place. Each one lives in its normal category and is also linked from that category's page. For extension blocks (Pen, Music, and so on) see [Extensions](/extensions/overview) instead; this page is only the built-in extras.
+Bilup is built on TurboWarp, which is built on Scratch. Along the way both projects added blocks that stock Scratch does not have. This page collects those extra blocks in one place. Each one lives in its normal category and is also linked from that category's page. For extension blocks (Pen, Music, and so on) see [Extensions](/extensions/overview) instead; this page is only the built-in extras.
 
 Some of these blocks are shown in the palette by default; others are compatibility or advanced blocks that come from imported projects or from turning on the right addon. They all run the same way in the [compiler](/advanced/disable-compiler) and interpreter.
 
@@ -63,4 +63,4 @@ See [My Blocks](/blocks/my-blocks).
 
 - [Blocks overview](/blocks/overview)
 - [Extensions overview](/extensions/overview)
-- [MistWarp block extension](/extensions/mistwarp-blocks)
+- [Bilup block extension](/extensions/mistwarp-blocks)

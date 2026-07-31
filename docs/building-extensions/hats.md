@@ -169,7 +169,7 @@ Scratch.vm.runtime.on('BEFORE_EXECUTE', () => {
 });
 ```
 
-MistWarp does not start predicate hats for you, so you call `startHats` yourself. Here it runs on the runtime's `BEFORE_EXECUTE` event, which fires once per frame before scripts run, so the hat is evaluated every frame. As with event blocks, you can trigger it from anywhere you get a callback.
+Bilup does not start predicate hats for you, so you call `startHats` yourself. Here it runs on the runtime's `BEFORE_EXECUTE` event, which fires once per frame before scripts run, so the hat is evaluated every frame. As with event blocks, you can trigger it from anywhere you get a callback.
 
 ## Edge-activated hat blocks
 
@@ -212,7 +212,7 @@ Scratch.extensions.register(new TimerReimplementationExample());
 ```
 
 :::info
-Edge-activated hats work in **any** extension, even sandboxed ones, because MistWarp calls `startHats` for them automatically at the start of each frame. Do not use `shouldRestartExistingThreads: true` with them.
+Edge-activated hats work in **any** extension, even sandboxed ones, because Bilup calls `startHats` for them automatically at the start of each frame. Do not use `shouldRestartExistingThreads: true` with them.
 :::
 
 The block returns `true` while the condition holds, but the script only starts on the transition from false to true. Once true, it will not fire again until the condition becomes false and then true again. Like predicate hats, edge hats can take inputs and return a Promise.

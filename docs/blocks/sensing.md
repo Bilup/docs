@@ -33,7 +33,7 @@ Sensing blocks read the world around a script: collisions, the mouse and keyboar
 - **days since 2000** reports the number of days (with fraction) since the year 2000.
 - **username** reports the signed-in player's username, when available.
 
-## MistWarp and TurboWarp extras
+## Bilup and TurboWarp extras
 
 - **online?** This `sensing_online` boolean reports whether the device currently has a network connection (`navigator.onLine`).
 - **stage width** (`sensing_stagewidth`) reports the stage width in pixels (480 by default, but the [stage size](/editor/stage) can be changed).
@@ -41,10 +41,10 @@ Sensing blocks read the world around a script: collisions, the mouse and keyboar
 
 There is also a **loudness > `10`?** style boolean used by the `when ... >` hat.
 
-See [MistWarp extras](/blocks/mistwarp-extras).
+See [Bilup extras](/blocks/mistwarp-extras).
 
 ## See also
 
 - [Events blocks](/blocks/events) for `when key pressed` and `when this sprite clicked`
 - [Operators blocks](/blocks/operators) for comparing sensed values
-- [MistWarp extras](/blocks/mistwarp-extras)
+- [Bilup extras](/blocks/mistwarp-extras)

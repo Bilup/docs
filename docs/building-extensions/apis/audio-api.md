@@ -5,7 +5,7 @@ sidebar_position: 4
 
 # Audio API
 
-MistWarp plays sound through the scratch-audio engine. [Unsandboxed extensions](/building-extensions/unsandboxed) reach it at `util.runtime.audioEngine` (equivalently `Scratch.vm.runtime.audioEngine`).
+Bilup plays sound through the scratch-audio engine. [Unsandboxed extensions](/building-extensions/unsandboxed) reach it at `util.runtime.audioEngine` (equivalently `Scratch.vm.runtime.audioEngine`).
 
 The engine builds on the browser's [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API). On some browsers (notably mobile Safari) the audio context stays suspended until the user interacts with the page.
 

@@ -14,7 +14,7 @@ The Python HTTP server from the [introduction](/building-extensions/introduction
 
 ## Serve on port 8000 to develop unsandboxed
 
-`http://localhost:8000/` is one of the origins MistWarp trusts, so an extension served from there loads [unsandboxed](/building-extensions/unsandboxed) automatically, with no per-load prompt. Point your static server at port 8000 and load the file directly:
+`http://localhost:8000/` is one of the origins Bilup trusts, so an extension served from there loads [unsandboxed](/building-extensions/unsandboxed) automatically, with no per-load prompt. Point your static server at port 8000 and load the file directly:
 
 ```bash
 cd path/to/your/extensions

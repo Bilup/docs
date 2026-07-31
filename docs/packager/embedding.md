@@ -7,7 +7,7 @@ slug: /packager/embedding
 # Embedding a packaged project
 
 :::info
-This page is about embedding the output of the [MistWarp Packager](/packager/overview). If you just want to embed a shared project without packaging it, see [Embedding](/advanced/embedding) instead.
+This page is about embedding the output of the [Bilup Packager](/packager/overview). If you just want to embed a shared project without packaging it, see [Embedding](/advanced/embedding) instead.
 :::
 
 When you package a project to HTML, you get a self-contained file you can host yourself and drop into any page with an `<iframe>`:

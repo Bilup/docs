@@ -11,7 +11,7 @@ Open **Add Extension** and choose **Custom Extension**.
 
 ## Ways to load
 
-- **From a URL** - paste a link ending in `.js`. This is how community extensions from galleries like [extensions.mistium.com](https://extensions.mistium.com/) are loaded. The URL is saved with the project, so the extension reloads from the same URL whenever the project is opened.
+- **From a URL** - paste a link ending in `.js`. This is how community extensions from galleries like [extensions.bilup.org](https://extensions.bilup.org/) are loaded. The URL is saved with the project, so the extension reloads from the same URL whenever the project is opened.
 - **From a file** - upload a `.js` file from your computer. The extension's code is embedded in the project.
 - **From text** - paste the JavaScript source directly.
 
@@ -30,7 +30,7 @@ As a user, prefer sandboxed unless the extension specifically needs unsandboxed 
 Loading a custom extension runs someone else's code. Only load extensions from sources you trust.
 :::
 
-Before an extension from a URL or file runs, MistWarp shows a prompt telling you where it came from and letting you cancel. Unsandboxed extensions carry more risk because they are not isolated. If you did not intend to load an extension, or you do not recognise the source, cancel. A malicious extension can read your project, make network requests, and interfere with the page.
+Before an extension from a URL or file runs, Bilup shows a prompt telling you where it came from and letting you cancel. Unsandboxed extensions carry more risk because they are not isolated. If you did not intend to load an extension, or you do not recognise the source, cancel. A malicious extension can read your project, make network requests, and interfere with the page.
 
 ## After loading
 

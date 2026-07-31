@@ -15,7 +15,7 @@ Cloud variables are how projects build leaderboards, visitor counters, simple mu
 - **Shared while connected.** Values live on a cloud server only while people are in the project. There is no long-term history, and values can reset when the server restarts or when the project is empty for a while. Do not treat cloud variables as permanent storage.
 - **Every viewer sees changes.** When one player changes a cloud variable, everyone else connected to the same project sees the new value shortly after.
 
-MistWarp connects to a shared cloud server (`wss://clouddata.turbowarp.org`) by default, the same one TurboWarp uses. There is no limit on how many cloud variables a project may create (Scratch caps it at 10).
+Bilup connects to a shared cloud server (`wss://clouddata.turbowarp.org`) by default, the same one TurboWarp uses. There is no limit on how many cloud variables a project may create (Scratch caps it at 10).
 
 ## When cloud variables do not connect
 
@@ -30,14 +30,14 @@ Cloud variables need all of the following to be true:
 You can point a project at a different cloud server with the [`cloud_host` URL parameter](/advanced/url-parameters#accounts-and-cloud):
 
 ```
-https://warp.mistium.com/12785898?cloud_host=wss://clouddata.turbowarp.org
+https://editor.bilup.org/12785898?cloud_host=wss://clouddata.turbowarp.org
 ```
 
-Use a `wss://` (secure) URL. Insecure `ws://` servers usually fail because MistWarp is served over HTTPS. You cannot connect to Scratch's own cloud server this way, as that requires Scratch account credentials MistWarp does not have.
+Use a `wss://` (secure) URL. Insecure `ws://` servers usually fail because Bilup is served over HTTPS. You cannot connect to Scratch's own cloud server this way, as that requires Scratch account credentials Bilup does not have.
 
 ## Working with more than numbers
 
-Because only numbers are allowed, projects that need lists, text, or structured data usually encode everything into one long number or a delimited numeric string and decode it on read. This is a normal Scratch technique and works the same in MistWarp. Keep updates infrequent (see below) and keep values reasonably sized.
+Because only numbers are allowed, projects that need lists, text, or structured data usually encode everything into one long number or a delimited numeric string and decode it on read. This is a normal Scratch technique and works the same in Bilup. Keep updates infrequent (see below) and keep values reasonably sized.
 
 ## For bot and library developers {#advanced}
 

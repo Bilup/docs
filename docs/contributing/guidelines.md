@@ -5,19 +5,19 @@ sidebar_position: 5
 
 # Contributing
 
-This page covers the practical workflow for getting a change into MistWarp: where the code lives, how the packages link together while you work, the style rules, and how to open a pull request. If you have not set up a local build yet, read [Building and Running](/contributing/building-running) first.
+This page covers the practical workflow for getting a change into Bilup: where the code lives, how the packages link together while you work, the style rules, and how to open a pull request. If you have not set up a local build yet, read [Building and Running](/contributing/building-running) first.
 
 ## Where the code lives
 
-MistWarp is spread across several repositories under the [MistWarp organization on GitHub](https://github.com/MistWarp). The ones you are most likely to touch:
+Bilup is spread across several repositories under the [Bilup organization on GitHub](https://github.com/Bilup). The ones you are most likely to touch:
 
-- [scratch-gui](https://github.com/MistWarp/scratch-gui) is the editor and the community site. Most UI work happens here.
-- [scratch-vm](https://github.com/MistWarp/scratch-vm) runs projects and holds the block definitions and the compiler.
-- [scratch-blocks](https://github.com/MistWarp/scratch-blocks), [scratch-render](https://github.com/MistWarp/scratch-render), [scratch-paint](https://github.com/MistWarp/scratch-paint), and [scratch-audio](https://github.com/MistWarp/scratch-audio) are the other engine packages.
+- [scratch-gui](https://github.com/Bilup/scratch-gui) is the editor and the community site. Most UI work happens here.
+- [scratch-vm](https://github.com/Bilup/scratch-vm) runs projects and holds the block definitions and the compiler.
+- [scratch-blocks](https://github.com/Bilup/scratch-blocks), [scratch-render](https://github.com/Bilup/scratch-render), [scratch-paint](https://github.com/Bilup/scratch-paint), and [scratch-audio](https://github.com/Bilup/scratch-audio) are the other engine packages.
 
 See [Project Structure](/contributing/project-structure) for what each package does.
 
-MistWarp is a fork of TurboWarp, which is a fork of [Scratch](https://scratch.mit.edu/). Because of that lineage, a lot of the code you read (and a lot of the fixes you make) are not MistWarp-specific. Bugs that also exist in upstream are often best reported or fixed upstream too.
+Bilup is a fork of TurboWarp, which is a fork of [Scratch](https://scratch.mit.edu/). Because of that lineage, a lot of the code you read (and a lot of the fixes you make) are not Bilup-specific. Bugs that also exist in upstream are often best reported or fixed upstream too.
 
 ## The pnpm link workflow
 
@@ -47,7 +47,7 @@ pnpm run fmt    # eslint --fix
 
 Two conventions the linter does not catch, but which are hard project rules across every repository:
 
-- **No code comments.** Do not add explanatory comments to code. The only comments allowed are lint-required markers such as `eslint-disable` lines. This applies to every MistWarp repository.
+- **No code comments.** Do not add explanatory comments to code. The only comments allowed are lint-required markers such as `eslint-disable` lines. This applies to every Bilup repository.
 - **No emdashes.** Do not use emdashes anywhere: not in code, not in UI strings, not in prose. Use commas, parentheses, or "to" for ranges.
 
 A few package-specific rules that are easy to trip over:
@@ -66,12 +66,12 @@ Run the relevant test suite before opening a pull request. scratch-gui and scrat
 1. Fork the repository you are changing, or push a branch if you have access. Do not commit directly to the default branch.
 2. Make your change on a topic branch with a descriptive name.
 3. Run `pnpm run lint` (and the tests) and make sure the build succeeds.
-4. Open a pull request against the corresponding MistWarp repository. Describe what the change does and why. If it fixes a bug, describe how to reproduce it.
+4. Open a pull request against the corresponding Bilup repository. Describe what the change does and why. If it fixes a bug, describe how to reproduce it.
 5. If your change spans multiple packages (for example a VM change that the GUI depends on), note that in the description so reviewers can check out matching branches.
 
 ## Licensing
 
-MistWarp inherits TurboWarp's and Scratch's licensing. TurboWarp's modifications to Scratch are under the GNU General Public License v3.0, and the original Scratch BSD license is retained where required. By contributing you agree your changes are released under the same terms. The bundled addons come from the [Scratch Addons](https://scratchaddons.com/) project; see [The Addons System](/internals/addons-system).
+Bilup inherits TurboWarp's and Scratch's licensing. TurboWarp's modifications to Scratch are under the GNU General Public License v3.0, and the original Scratch BSD license is retained where required. By contributing you agree your changes are released under the same terms. The bundled addons come from the [Scratch Addons](https://scratchaddons.com/) project; see [The Addons System](/internals/addons-system).
 
 ## See also
 

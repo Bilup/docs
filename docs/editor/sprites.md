@@ -5,7 +5,7 @@ sidebar_position: 4
 
 Sprites are the objects in your project: characters, buttons, backgrounds of movement, anything with its own scripts, costumes, and sounds. The sprite pane sits below the [stage](/editor/stage) and lists every sprite, shows the selected sprite's properties, and lets you add new ones.
 
-A new MistWarp project starts with one sprite named **Misty**.
+A new Bilup project starts with one sprite named **Misty**.
 
 ## The sprite list
 

@@ -5,11 +5,11 @@ sidebar_position: 1
 
 # Introduction
 
-MistWarp is a modification of Scratch, built on top of TurboWarp, made by Mistium. If you have used Scratch, MistWarp will feel familiar: the same blocks, sprites, costumes, and stage. On top of that base it adds performance, customization, developer tooling, and a community platform.
+Bilup is a modification of Scratch, built on top of TurboWarp, made by Mistium. If you have used Scratch, Bilup will feel familiar: the same blocks, sprites, costumes, and stage. On top of that base it adds performance, customization, developer tooling, and a community platform.
 
-The editor and the community site are one application. You can open the editor at [warp.mistium.com](https://warp.mistium.com/) and start building immediately, with no account and nothing to install.
+The editor and the community site are one application. You can open the editor at [editor.bilup.org](https://editor.bilup.org/) and start building immediately, with no account and nothing to install.
 
-## What MistWarp adds
+## What Bilup adds
 
 - A **compiler** that translates your blocks into JavaScript so projects run faster than the standard Scratch interpreter. See [Disable compiler](/advanced/disable-compiler) if you ever need to turn it off for comparison.
 - **Arbitrary frame rate** and a **custom stage size** instead of a fixed 30 FPS and 480x360. See [Custom FPS](/advanced/custom-fps) and [Custom stage size](/advanced/custom-stage-size).
@@ -23,18 +23,18 @@ The editor and the community site are one application. You can open the editor a
 
 ## Who this is for
 
-MistWarp serves two kinds of reader at once, and these docs are written for both:
+Bilup serves two kinds of reader at once, and these docs are written for both:
 
 - If you are **coming from Scratch**, everything you already know still applies. Start with [Migrating from Scratch](/getting-started/migrating-from-scratch) and the [Quick start](/getting-started/quick-start).
-- If you are an **advanced user or developer**, MistWarp exposes the runtime through JavaScript, custom extensions, and a documented API. See [JavaScript](/advanced/javascript), [Building extensions](/building-extensions/introduction), and the [API reference](/api-reference/overview).
+- If you are an **advanced user or developer**, Bilup exposes the runtime through JavaScript, custom extensions, and a documented API. See [JavaScript](/advanced/javascript), [Building extensions](/building-extensions/introduction), and the [API reference](/api-reference/overview).
 
 ## The default sprite
 
-New MistWarp projects start with **Misty**, MistWarp's own default sprite, in place of the Scratch Cat. Every sprite from the standard Scratch library is still available in the sprite picker.
+New Bilup projects start with **Misty**, Bilup's own default sprite, in place of the Scratch Cat. Every sprite from the standard Scratch library is still available in the sprite picker.
 
 ## Next steps
 
-- [Installation](/getting-started/installation): use MistWarp on the web, as a desktop app, or via the packager.
+- [Installation](/getting-started/installation): use Bilup on the web, as a desktop app, or via the packager.
 - [Quick start](/getting-started/quick-start): build a first project.
 - [Editor tour](/getting-started/editor-tour): learn where everything is.
 

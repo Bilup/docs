@@ -40,5 +40,5 @@ The debugger's options live on the **Debugger** page of the [settings window](/e
 
 - [The variable manager](/editor/variable-manager)
 - [The block workspace](/editor/workspace)
-- [MistWarp extra blocks](/blocks/mistwarp-extras)
+- [Bilup extra blocks](/blocks/mistwarp-extras)
 - [Settings](/editor/settings)

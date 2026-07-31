@@ -3,7 +3,7 @@ title: Variables and lists
 sidebar_position: 9
 ---
 
-The Variables category (internally called "data") holds two kinds of storage: variables, which each hold one value, and lists, which hold many values in order. You create variables and lists with the "Make a Variable" and "Make a List" buttons at the top of the category; MistWarp also has a dedicated [variable manager](/editor/variable-manager) for editing them in bulk.
+The Variables category (internally called "data") holds two kinds of storage: variables, which each hold one value, and lists, which hold many values in order. You create variables and lists with the "Make a Variable" and "Make a List" buttons at the top of the category; Bilup also has a dedicated [variable manager](/editor/variable-manager) for editing them in bulk.
 
 A variable or list can be **for all sprites** (global) or **for this sprite only** (local to one sprite and its clones).
 
@@ -28,7 +28,7 @@ A variable or list can be **for all sprites** (global) or **for this sprite only
 - **`list` contains `thing` ?** reports whether the list holds an item.
 - **show list `list`** / **hide list `list`** shows or hides the list monitor on the stage.
 
-## MistWarp and TurboWarp extras
+## Bilup and TurboWarp extras
 
 - **`list` as JSON** (`data_listjson`) reports the whole list as a JSON array string, useful for saving or sending list data as text.
 
@@ -37,4 +37,4 @@ A variable or list can be **for all sprites** (global) or **for this sprite only
 - [The variable manager](/editor/variable-manager)
 - [Cloud variables](/advanced/cloud-variables)
 - [Operators blocks](/blocks/operators) for working with values
-- [MistWarp extras](/blocks/mistwarp-extras)
+- [Bilup extras](/blocks/mistwarp-extras)

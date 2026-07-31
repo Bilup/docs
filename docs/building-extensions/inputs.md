@@ -66,7 +66,7 @@ Argument types:
 
 ## Placing arguments in the block
 
-MistWarp cannot guess where each input goes in the label, so you mark it in `text` with `[ARGUMENT_NAME]`. Each argument must appear in `text` exactly once. Order does not matter.
+Bilup cannot guess where each input goes in the label, so you mark it in `text` with `[ARGUMENT_NAME]`. Each argument must appear in `text` exactly once. Order does not matter.
 
 When the block runs, your function receives an object as its first parameter with a property for each argument. It is conventional to call it `args`, or to destructure it:
 

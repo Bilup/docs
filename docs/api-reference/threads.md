@@ -5,7 +5,7 @@ sidebar_position: 6
 
 A project is a set of scripts, and each running script is a thread. The runtime steps every
 thread a little on each frame; that stepping is what makes blocks run. This page describes the
-`Thread` and `Sequencer` model in `scratch-vm/src/engine/`. MistWarp can also compile scripts to
+`Thread` and `Sequencer` model in `scratch-vm/src/engine/`. Bilup can also compile scripts to
 JavaScript, which changes how a thread runs but not the surrounding model.
 
 ## What a thread is
@@ -88,7 +88,7 @@ the runtime emits the `*_GLOW_*`, `PROJECT_RUN_START`, and `PROJECT_RUN_STOP`
 
 ## Compiled threads
 
-MistWarp's compiler turns a script into a JavaScript generator function. When a thread compiles,
+Bilup's compiler turns a script into a JavaScript generator function. When a thread compiles,
 `isCompiled` becomes true and its `generator` is stepped instead of the interpreter walking
 blocks. The thread model above (status, warp, starting and stopping) is unchanged; only the
 per-block execution is faster. The compiler is on by default and can be turned off from

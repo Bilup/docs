@@ -3,7 +3,7 @@ title: Git version control
 sidebar_position: 22
 ---
 
-MistWarp has a full Git version-control system built into the editor. It tracks the history of your project so you can commit snapshots, look back through changes, work on branches, and push to a hosted repository. The whole repository, including its history, lives **inside the project file**, so it travels with the `.sb3`.
+Bilup has a full Git version-control system built into the editor. It tracks the history of your project so you can commit snapshots, look back through changes, work on branches, and push to a hosted repository. The whole repository, including its history, lives **inside the project file**, so it travels with the `.sb3`.
 
 Version control suits larger or longer-lived projects, and it is the foundation for collaborating through pull requests rather than live editing.
 
@@ -17,19 +17,19 @@ If the project is not under version control yet, you are offered **Initialize re
 
 The **Changes** view lists every file that has changed since your last commit, each tagged with a status: modified, added, or deleted. Write a message describing the change and click **Commit**. **Undo last commit** reverses the most recent one. Clicking a changed file opens its diff.
 
-You can also have MistWarp commit for you on every save: turn on **Commit automatically when the project is saved** on the **Version Control** [settings](/editor/settings) page, where you also set your commit author name and email.
+You can also have Bilup commit for you on every save: turn on **Commit automatically when the project is saved** on the **Version Control** [settings](/editor/settings) page, where you also set your commit author name and email.
 
 ## History and diffs
 
 **History** lists your commits, each with its message, short hash, and a colour-coded branch graph. Select a commit to see the files it changed, restore the project to it, or download it as an `.sb3`.
 
-**Diff** shows a readable, line-by-line comparison of your working changes against the last commit. Because MistWarp diffs a text representation of the project rather than raw JSON, additions and removals are legible: you can actually read what changed in a script.
+**Diff** shows a readable, line-by-line comparison of your working changes against the last commit. Because Bilup diffs a text representation of the project rather than raw JSON, additions and removals are legible: you can actually read what changed in a script.
 
 ## Branches and merging
 
 **Branches** lets you create, switch, and delete branches so you can develop a feature without disturbing your main line. To combine branches, pick a source branch and **Preview** the merge.
 
-If the merge has conflicts, MistWarp lists each conflicting file and asks you to choose a side, **Ours** or **Theirs**, for each one, then **Apply merge**. For anything more involved, **Resolve in editor** opens the conflicting files in the code editor with the usual conflict markers so you can resolve them by hand.
+If the merge has conflicts, Bilup lists each conflicting file and asks you to choose a side, **Ours** or **Theirs**, for each one, then **Apply merge**. For anything more involved, **Resolve in editor** opens the conflicting files in the code editor with the usual conflict markers so you can resolve them by hand.
 
 ## Remotes and hosting
 

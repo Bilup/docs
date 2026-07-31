@@ -1,24 +1,39 @@
 ---
+title: 嵌入
+sidebar_position: 2
 slug: /packager/embedding
-hide_table_of_contents: true
-sidebar_label: 嵌入
 ---
 
-# 嵌入打包器
+# 嵌入打包项目
 
-:::info
-此页面是关于 [Bilup 打包器](https://packager.bilup.org/) 的。如果你只是想要一种将 Scratch 项目轻松嵌入网站的方法，请参阅 [另一个嵌入页面](/embedding)。
-:::
+::::info
+本页讲述嵌入[Bilup 打包器](/packager/overview)的输出。如果您只是想嵌入共享项目而不打包它，请参阅[嵌入](/advanced/embedding)。
+::::
 
-你可以将 Bilup 打包器的输出嵌入到另一个网站：
+当您将项目打包为 HTML 时，您会得到一个自包含的文件，可以自己托管，并用 `<iframe>` 放入任何页面：
 
 ```html
-<iframe src="path_to_project.html" width="480" height="360" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+<iframe
+  src="path_to_project.html"
+  width="480"
+  height="360"
+  allowtransparency="true"
+  frameborder="0"
+  scrolling="no"
+  allowfullscreen
+></iframe>
 ```
 
-根据你使用的环境、你存储项目的位置以及你命名的方式，`src` 属性会有所不同。
+`src` 取决于您如何导出：
 
- - 如果你使用「纯 HTML」，它就是 HTML 文件的路径。
- - 如果你使用「Zip」，它是解压后的 ZIP 中包含的 `index.html` 文件的路径。
+- **纯 HTML**：单个 HTML 文件的路径。
+- **Zip**：解压后的 zip 中 `index.html` 的路径。
 
-如果你启用了控制项，将 `height` 的值加 48 以避免舞台被缩小。
+如果您在打包器中启用了屏幕控件（绿旗、停止、全屏），请在 `height` 上加上 `48`，这样控制栏不会缩小舞台。
+
+因为打包项目只是您托管的文件，嵌入它对未在 Scratch 上共享的项目也有效，与[托管嵌入播放器](/advanced/embedding)不同。
+
+## 另请参阅
+
+- [打包器概览](/packager/overview)
+- [嵌入共享项目](/advanced/embedding)

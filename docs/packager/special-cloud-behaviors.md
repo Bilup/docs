@@ -7,7 +7,7 @@ slug: /packager/special-cloud-behaviors
 # Special cloud behaviors
 
 :::info
-This is a [MistWarp Packager](/packager/overview) option.
+This is a [Bilup Packager](/packager/overview) option.
 :::
 
 "Special cloud behaviors" is an option (off by default) that gives specially named [cloud variables](/advanced/cloud-variables) special powers, so a packaged project can interact with the page it runs on. It is based on the [same feature in HTMLifier](https://github.com/SheepTester/htmlifier/wiki/Special-cloud-behaviours), and you enable it in the packager's "Cloud variables" section.

@@ -26,7 +26,7 @@ Operators do maths, compare values, combine logic, and manipulate text. They are
 - **length of `apple`** returns the number of characters.
 - **`apple` contains `a` ?** reports whether the text contains a substring (case-insensitive).
 
-## MistWarp and TurboWarp extras
+## Bilup and TurboWarp extras
 
 These operators are not in stock Scratch:
 
@@ -41,10 +41,10 @@ These operators are not in stock Scratch:
 - **pi** reports the constant 3.14159..., handy for circle maths.
 - **newline** reports a line-break character, for building multi-line strings.
 
-See [MistWarp extras](/blocks/mistwarp-extras) for the full list.
+See [Bilup extras](/blocks/mistwarp-extras) for the full list.
 
 ## See also
 
 - [Variables and lists](/blocks/variables)
 - [Sensing blocks](/blocks/sensing)
-- [MistWarp extras](/blocks/mistwarp-extras)
+- [Bilup extras](/blocks/mistwarp-extras)

@@ -43,7 +43,7 @@ getInfo() {
 
 ## disableMonitor
 
-MistWarp automatically offers a monitor checkbox next to any input-less `REPORTER` block (and, unlike Scratch, `BOOLEAN` blocks too). Set `disableMonitor: true` on a block to hide that checkbox ([download](/example-extensions/unmonitorable.js)). Note this does not remove monitors someone already created with an older version of the extension.
+Bilup automatically offers a monitor checkbox next to any input-less `REPORTER` block (and, unlike Scratch, `BOOLEAN` blocks too). Set `disableMonitor: true` on a block to hide that checkbox ([download](/example-extensions/unmonitorable.js)). Note this does not remove monitors someone already created with an older version of the extension.
 
 ## Scratch.Cast
 

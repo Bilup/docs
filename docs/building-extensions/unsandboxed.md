@@ -5,15 +5,15 @@ sidebar_position: 6
 
 # Unsandboxed extensions
 
-Unsandboxed extensions run as plain `<script>` tags in the main page instead of in a sandbox. That gives them access to MistWarp's internals, and a matching set of responsibilities.
+Unsandboxed extensions run as plain `<script>` tags in the main page instead of in a sandbox. That gives them access to Bilup's internals, and a matching set of responsibilities.
 
 ## When an extension runs unsandboxed
 
-MistWarp decides how to load each extension:
+Bilup decides how to load each extension:
 
 - **Loaded from a file or pasted code**: the custom-extension dialog has a "Run extension without sandbox" checkbox. You choose.
 - **Loaded from a URL**: it runs unsandboxed automatically only if the URL begins with one of these trusted prefixes exactly:
-  - `https://extensions.mistium.com/`
+  - `https://extensions.bilup.org/`
   - `https://extensions.turbowarp.org/`
   - `http://localhost:8000/`
 
@@ -87,7 +87,7 @@ if (!Scratch.extensions.unsandboxed) {
 }
 ```
 
-## Accessing MistWarp internals
+## Accessing Bilup internals
 
 The headline feature is `Scratch.vm`, the actual VM object:
 
@@ -165,7 +165,7 @@ doesVariableExist(args, util) {
 ```
 
 :::warning
-Every sprite, script, and block shares **one** `util` object. Rather than allocating a fresh one per call, MistWarp updates the properties of the shared object. So `util` is only valid at the exact moment the block runs. Reading it later (inside a `setTimeout`, a Promise callback, an event handler) gives the wrong target. Save what you need into a local variable first:
+Every sprite, script, and block shares **one** `util` object. Rather than allocating a fresh one per call, Bilup updates the properties of the shared object. So `util` is only valid at the exact moment the block runs. Reading it later (inside a `setTimeout`, a Promise callback, an event handler) gives the wrong target. Save what you need into a local variable first:
 
 ```js
 // UNRELIABLE: util.target may have changed

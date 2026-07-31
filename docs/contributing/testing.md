@@ -5,7 +5,7 @@ sidebar_position: 4
 
 # Testing
 
-MistWarp inherits Scratch's test setup: [Jest](https://jestjs.io/) in scratch-gui and [tap](https://node-tap.io/) in scratch-vm. This page lists the suites and how to run them.
+Bilup inherits Scratch's test setup: [Jest](https://jestjs.io/) in scratch-gui and [tap](https://node-tap.io/) in scratch-vm. This page lists the suites and how to run them.
 
 ## scratch-gui
 

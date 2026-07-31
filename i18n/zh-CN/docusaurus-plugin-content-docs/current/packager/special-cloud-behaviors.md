@@ -1,70 +1,57 @@
 ---
+title: 特殊云行为
+sidebar_position: 5
 slug: /packager/special-cloud-behaviors
-hide_table_of_contents: true
 ---
 
-# 特殊云变量行为
+# 特殊云行为
 
-:::info
-此页面是关于 [Bilup 打包器](https://packager.bilup.org/) 的。
-:::
+::::info
+这是[Bilup 打包器](/packager/overview)的选项。
+::::
 
-默认禁用的「特殊云变量行为」选项会更改特定名称的云变量行为，以解锁项目的新兼容性。这基于 [HTMLifier 中的类似功能](https://github.com/SheepTester/htmlifier/wiki/Special-cloud-behaviours)。此功能可以在「云变量」部分启用。
+"特殊云行为"是一个选项（默认关闭），它给具有特殊名称的[云变量](/advanced/cloud-variables)特殊能力，使打包项目可以与它运行的页面交互。它基于 [HTMLifier 中的相同功能](https://github.com/SheepTester/htmlifier/wiki/Special-cloud-behaviours)，您可以在打包器的"云变量"部分启用它。
 
-要创建这些，只需像平常一样创建云变量，但给它们下面找到的特定名称。例如，要使用 `☁ url` 变量，创建一个名为 `url` 的变量并将其标记为云变量。
+要使用一个，请创建一个名称与下面列出完全相同的普通云变量。例如，对于 `☁ url`，创建一个名为 `url` 的云变量。
 
-启用特殊云变量行为将覆盖这些变量的任何其他设置，因此像 `☁ username` 这样的变量永远不会存储在本地或与其他用户同步。
+启用特殊云行为会覆盖这些名称的正常云处理，因此像 `☁ username` 这样的变量永远不会在本地存储或与其他玩家同步。
 
-## ☁ url {#url}
+## 只读
 
-`☁ url` 的值将设置为页面的当前 URL。更改 `☁ url` 的值没有任何作用。
+### ☁ url
+设置为页面当前的 URL。写入它不做任何事情。
 
-## ☁ redirect {#redirect}
+### ☁ pasted
+当用户在页面上粘贴文本时（例如用 Ctrl+V），粘贴的文本会放在这里。
 
-当 `☁ redirect` 的值被设置为 URL 时，当前标签页将导航到该 URL。
+## 操作
 
-## ☁ open link {#open-link}
+### ☁ redirect
+将其设置为一个 URL，当前标签页会导航到那里。
 
-当 `☁ open link` 的值被设置为 URL 时，项目将尝试在新标签页中打开该 URL。请注意，由于大多数浏览器内置的弹出窗口阻止程序，这并不总是可靠的。
+### ☁ open link
+将其设置为一个 URL，在新标签页中打开该 URL。浏览器弹出窗口拦截器可能会阻止这一点。
 
-## ☁ username {#username}
+### ☁ username
+更改它会在侦测分类中更改 `用户名` 积木返回的值。
 
-当 `☁ username` 的值被更改时，「感知」类别中「用户名」积木的值将被更改。
+### ☁ set clipboard
+更改它会尝试将文本复制到用户的剪贴板。浏览器并不总是允许。
 
-## ☁ pasted {#pasted}
+### ☁ room id
+更改它会改变用于同步云变量的项目 ID。如果原始 ID 是 `1234`，您将 `☁ room id` 设置为 `xyz`，同步 ID 变成 `1234-xyz`。将其设置回空字符串以恢复原始值。只有共享房间 ID 的玩家彼此同步，这使它成为无需额外变量的简单服务器选择器。重新连接可能需要几秒钟。这不影响本地存储的云变量。
 
-当用户使用 ctrl+v 等快捷方式将某些文本粘贴到页面时，文本将存储在 `☁ pasted` 中。
+## 运行代码
 
-## ☁ set clipboard {#set-clipboard}
+### ☁ eval
 
-当 `☁ set clipboard` 的值被更改时，页面将尝试将文本存储在用户的剪贴板中。这可能并不总是有效。
+::::warning
+这需要单独的"不安全的特殊云行为"选项。不安全的行为让打包项目在正常项目沙箱之外运行任意代码。根据您打包的内容，这可以给项目对其运行的电脑的完全控制权，包括安装恶意软件。除非您信任该项目并实际使用此功能，否则请保持关闭。
+::::
 
-## ☁ room id {#room-id}
+设置 `☁ eval`，其值会作为 JavaScript 运行。结果写入 `☁ eval output`，错误写入 `☁ eval error`。如果代码返回一个 [Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)，解析值或拒绝错误会在它结算时写入这些变量。设置 `☁ eval` 会立即返回，因此输出变量可能不会在同一帧更新。
 
-当 `☁ room id` 的值被更改时，用于同步云变量的项目 ID 将被更改。例如，如果项目的原始 ID 是 1234，并且 `☁ room id` 被设置为 `xyz`，则新的项目 ID 将是 `1234-xyz`。要将项目 ID 重置为原始 ID，请将 `☁ room id` 的值设置为空字符串。
+## 另请参阅
 
-这可以作为向云变量项目添加服务器选择器的一种方式，而无需创建一堆额外的变量。只有具有相同 room ID 的人才能在他们之间同步变量。云变量可能需要几秒钟才能再次开始工作，因为它必须重新连接到云变量服务器。
-
-room ID 不影响本地存储的云变量。
-
-## ☁ eval {#eval}
-
-:::warning
-此选项需要启用「不安全的特殊云变量行为」。
-
-不安全的云变量行为允许打包的项目在项目通常执行的「沙箱」之外执行任意代码。根据你打包的环境，这会授予项目对你的电脑的完全控制权，包括安装病毒的能力。
-
-如果你不信任你要打包的项目或不使用此功能，请关闭此选项。
-:::
-
-当 `☁ eval` 的值被更改时，它的值将被作为 JavaScript 执行。
-
-如果 JavaScript 执行成功，其输出将存储在 `☁ eval output` 中。
-
-如果执行 JavaScript 时出错，错误将存储在 `☁ eval error` 中。
-
-如果 JavaScript 返回一个 [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)，如果 promise 解决，resolved 值将存储在 `☁ eval output` 中；如果拒绝，错误将存储在 `☁ eval error` 中。请注意，设置 `☁ eval` 始终是一个即时过程，因此输出变量可能不会立即更新。
-
-## 更多信息和讨论 {#further-information}
-
-请参阅 https://github.com/TurboWarp/packager/issues/48
+- [云变量](/advanced/cloud-variables)
+- [打包器概览](/packager/overview)

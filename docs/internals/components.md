@@ -51,7 +51,7 @@ Some component directories you will meet often:
 - `components/stage/`, `components/stage-header/`, `components/target-pane/`, and `components/sprite-selector/` build the stage side.
 - `components/loader/`, `components/box/`, `components/modal/`, and similar are small shared building blocks.
 
-Many editor features (settings, custom extensions, the git modal, restore points, and others) are prefixed `tw-` or `mw-`, marking them as TurboWarp or MistWarp additions on top of the original Scratch components.
+Many editor features (settings, custom extensions, the git modal, restore points, and others) are prefixed `tw-` or `mw-`, marking them as TurboWarp or Bilup additions on top of the original Scratch components.
 
 ## See also
 

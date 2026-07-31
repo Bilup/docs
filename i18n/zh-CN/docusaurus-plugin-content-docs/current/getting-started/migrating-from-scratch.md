@@ -1,60 +1,46 @@
 ---
 title: 从 Scratch 迁移
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # 从 Scratch 迁移
 
-Bilup 可以以增强的性能和附加功能运行大多数 Scratch 项目。
+Bilup 是功能更丰富的 Scratch。您在 Scratch 中掌握的一切都以相同方式工作，因此迁移主要是打开项目并注意新增内容。
 
-## 项目兼容性
+## 导入项目
 
-### 支持的功能
-- 所有标准 Scratch 积木
-- 自定义积木和过程
-- 大多数扩展
-- 角色、造型和声音
+Bilup 使用与 Scratch 相同的 `.sb3` 项目格式。
 
-### 增强的功能
-- 更快的执行速度
-- 额外的扩展 API
-- 自定义舞台尺寸
-- 开发者工具集成
+1. 在 Scratch 中，使用 **文件然后保存到电脑** 将项目下载为 `.sb3` 文件。
+2. 在 Bilup 中，使用 **文件然后从电脑加载** 并选择该文件。
 
-## 加载 Scratch 项目
+您的角色、造型、声音、变量和脚本都会完整保留。只要您没有使用 Bilup 独有的积木，也可以从 Bilup 保存回 `.sb3` 并在 Scratch 中再次打开。
 
-1. 从 Scratch 网站下载 `.sb3` 文件
-2. 在 [editor.bilup.org](https://editor.bilup.org/) 打开 Bilup
-3. 文件 → 从电脑加载
-4. 选择 `.sb3` 文件
+## 相同之处
 
-## 主要区别
+- 积木、分类、角色、造型、声音和舞台的行为与 Scratch 完全一致。请参阅[积木概览](/blocks/overview)。
+- 标准 Scratch 角色和背景素材库仍然存在。
+- 画板编辑器和声音编辑器的工作方式相同。请参阅[造型](/editor/costumes)和[声音](/editor/sounds)。
 
-### 技术变化
-- 删除默认角色和变量。
-- 无云变量(仅本地执行)
-- 增强的 JavaScript 扩展功能
-- 为更好性能而改良的虚拟机
+## 不同之处
 
-### 开发者功能
-- 用于调试的浏览器控制台访问
-- 扩展开发 API
-- 自定义积木创建
-- 性能监控工具
+- **项目运行更快。** Bilup 会将积木编译为 JavaScript。大多数项目只是运行更快；少数依赖 Scratch 精确时序的项目可能会有细微差异。如需对照解释器检查行为，请参阅[禁用编译器](/advanced/disable-compiler)。
+- **默认角色是 Misty**，而不是 Scratch 猫。所有 Scratch 角色仍然在素材库中。
+- **不再受限于 30 FPS 或 480x360 舞台。** 请参阅[自定义 FPS](/advanced/custom-fps)和[自定义舞台大小](/advanced/custom-stage-size)。
+- **有更多积木和扩展**，包括画笔、视频与人脸感知、硬件等。请参阅[扩展概览](/extensions/overview)。
+- **可以使用插件和主题自定义编辑器。** 请参阅[插件](/editor/addons)和[主题](/editor/themes)。
+- **有开发者工具**：调试器、还原点、git 和协作。请参阅[调试器](/editor/debugger)、[还原点](/editor/restore-points)、[Git](/editor/git)和[协作](/editor/collaboration)。
 
-## 故障排除
+## 账户与分享
 
-### 常见问题
-- **项目无法加载**：检查文件格式(必须是 `.sb3`)
-- **积木缺失**：某些自定义扩展可能不可用
-- **性能差异**：Turbo 模式可能会改变计时行为
+Scratch 账户和 Bilup 账户是相互独立的。Bilup 有自己的社区平台；您可以使用 **Rotur 账户**登录来发布项目、关注他人和评论。构建、运行或保存项目到电脑不需要账户。保存与分享请参阅[项目管理](/editor/project-management)。
 
-### 解决方案
-- 使用「从 Scratch 网站加载」来解决兼容性问题
-- 检查浏览器控制台中的错误消息
-- 如果计时至关重要，禁用 Turbo 模式
+## 关于云变量
 
-## 下一步
+Bilup 支持云变量，但它们与 Scratch 的云不互通。使用了 Scratch 云变量的项目仍然可以加载；云数据本身不会转移。请参阅[云变量](/advanced/cloud-variables)。
 
-- [GUI 内部结构](../gui-internals/home.md) - 了解 Bilup 的架构
-- [开发指南](../development/home.md) - 为 Bilup 做贡献
+## 另请参阅
+
+- [快速开始](/getting-started/quick-start)
+- [编辑器导览](/getting-started/editor-tour)
+- [从 TurboWarp 迁移](/getting-started/migrating-from-turbowarp)

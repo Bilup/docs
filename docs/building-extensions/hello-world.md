@@ -43,9 +43,9 @@ Now let's walk through the file in the order it runs.
 Scratch.extensions.register(new HelloWorld());
 ```
 
-`Scratch` is the global object MistWarp hands to every extension. `Scratch.extensions.register` is how your extension tells MistWarp it exists. The class name (`HelloWorld`) does not matter and does not need to be unique.
+`Scratch` is the global object Bilup hands to every extension. `Scratch.extensions.register` is how your extension tells Bilup it exists. The class name (`HelloWorld`) does not matter and does not need to be unique.
 
-Call `register()` **exactly once**. If you never call it, MistWarp waits forever for your extension to load. If you call it more than once, the behavior is undefined.
+Call `register()` **exactly once**. If you never call it, Bilup waits forever for your extension to load. If you call it more than once, the behavior is undefined.
 
 ## getInfo()
 
@@ -65,7 +65,7 @@ getInfo() {
 }
 ```
 
-After you call `register()`, MistWarp calls `getInfo()` on your object to learn about the extension. It must return an object describing the extension:
+After you call `register()`, Bilup calls `getInfo()` on your object to learn about the extension. It must return an object describing the extension:
 
 | Field | Type | Description |
 |:-:|:-:|:--|
@@ -108,7 +108,7 @@ This is the method named by `opcode: 'hello'`. Reporter blocks return a string o
 
 Change the file, then reload the editor page. Two things make this faster:
 
-- The `?extension=` URL parameter auto-loads an extension. If your file is at `http://localhost:8080/hello-world.js`, open `https://warp.mistium.com/editor?extension=http://localhost:8080/hello-world.js` to load it without going through the library.
+- The `?extension=` URL parameter auto-loads an extension. If your file is at `http://localhost:8080/hello-world.js`, open `https://editor.bilup.org/editor?extension=http://localhost:8080/hello-world.js` to load it without going through the library.
 - If changes are not showing up after a reload, use your browser's "hard refresh" (reload ignoring cache).
 
 ## Exercises

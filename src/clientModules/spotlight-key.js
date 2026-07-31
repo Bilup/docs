@@ -1,5 +1,5 @@
-// When the docs are embedded in the MistWarp Help window, Cmd/Ctrl+K should open
-// the main MistWarp spotlight instead of the docs' own search. Capture-phase so it
+// When the docs are embedded in the Bilup Help window, Cmd/Ctrl+K should open
+// the main Bilup spotlight instead of the docs' own search. Capture-phase so it
 // beats DocSearch's own handler.
 if (typeof window !== 'undefined' && window.parent !== window) {
     window.addEventListener('keydown', e => {

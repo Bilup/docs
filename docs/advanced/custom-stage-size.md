@@ -5,7 +5,7 @@ sidebar_position: 8
 
 # Custom Stage Size
 
-MistWarp can change the stage from Scratch's default 480x360 (4:3) to any other size, from the [editor settings](/editor/settings) or the [`size` URL parameter](/advanced/url-parameters) (`size=640x360`).
+Bilup can change the stage from Scratch's default 480x360 (4:3) to any other size, from the [editor settings](/editor/settings) or the [`size` URL parameter](/advanced/url-parameters) (`size=640x360`).
 
 :::caution
 Most projects are not built for a different stage size and will not lay out correctly when you change it.

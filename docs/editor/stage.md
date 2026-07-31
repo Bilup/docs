@@ -9,7 +9,7 @@ The stage is where your project runs. Sprites move, draw, and respond to input o
 
 The stage uses a coordinate grid centred on `(0, 0)`. By default it is 480 wide by 360 tall, so `x` runs from `-240` (left) to `240` (right) and `y` from `-180` (bottom) to `180` (top).
 
-MistWarp lets you change these dimensions with [custom stage size](/advanced/custom-stage-size). Everything on this page still applies; only the numbers change.
+Bilup lets you change these dimensions with [custom stage size](/advanced/custom-stage-size). Everything on this page still applies; only the numbers change.
 
 ## Green flag and stop
 
@@ -18,7 +18,7 @@ Above the stage are the run controls:
 - **Green flag** starts the project. It broadcasts the "when green flag clicked" event to every sprite.
 - **Stop** (the red octagon) halts every running script.
 
-Next to them is the **turbo mode** indicator. Turbo mode runs scripts without the usual per-frame pause; it is toggled in [settings](/editor/settings). MistWarp's [custom FPS](/advanced/custom-fps) and [interpolation](/advanced/interpolation) settings also change how the stage updates.
+Next to them is the **turbo mode** indicator. Turbo mode runs scripts without the usual per-frame pause; it is toggled in [settings](/editor/settings). Bilup's [custom FPS](/advanced/custom-fps) and [interpolation](/advanced/interpolation) settings also change how the stage updates.
 
 ## Stage size controls
 

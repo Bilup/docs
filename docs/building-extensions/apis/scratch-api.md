@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Scratch object API
 
-The global `Scratch` object is how an extension talks to MistWarp. It carries the registration function, the type constants, casting helpers, and (for unsandboxed extensions) direct access to the VM and permission APIs.
+The global `Scratch` object is how an extension talks to Bilup. It carries the registration function, the type constants, casting helpers, and (for unsandboxed extensions) direct access to the VM and permission APIs.
 
 Sandboxed extensions get a limited `Scratch`; the VM, renderer, and block utility are unsandboxed only.
 

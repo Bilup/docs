@@ -11,7 +11,7 @@ Load it from **Add Extension** and choose **micro:bit**.
 
 ## Requirements
 
-The micro:bit talks to MistWarp over Bluetooth, so you need:
+The micro:bit talks to Bilup over Bluetooth, so you need:
 
 - A computer with Bluetooth and a browser that supports it.
 - **Scratch Link** (or the Scratch app) running to bridge Bluetooth to the browser.

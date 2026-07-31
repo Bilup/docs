@@ -104,7 +104,7 @@ The key mental model: `compile` runs at compile time and returns **text**. The `
 
 ## Real built-in examples
 
-MistWarp's own operators are registered exactly this way. A few, verbatim from the engine:
+Bilup's own operators are registered exactly this way. A few, verbatim from the engine:
 
 ```js
 // number result
@@ -129,7 +129,7 @@ pi: () => 'Math.PI',
 
 ## Fallback functions
 
-The block still needs its normal method in the class (`square(args)` above). It runs when the block is not compiled: when a reporter feeds a monitor, when the compiler is disabled, or in any environment without MistWarp's compiler. Keep the fallback behavior identical to the compiled version so results never differ.
+The block still needs its normal method in the class (`square(args)` above). It runs when the block is not compiled: when a reporter feeds a monitor, when the compiler is disabled, or in any environment without Bilup's compiler. Keep the fallback behavior identical to the compiled version so results never differ.
 
 ## Next steps
 

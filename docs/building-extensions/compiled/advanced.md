@@ -5,7 +5,7 @@ sidebar_position: 5
 
 # Advanced compiled techniques
 
-This page covers the parts of the [`compiler.register` API](/building-extensions/compiled/structure) beyond a plain reporter: command blocks, fields, variadic inputs, raw inputs, and reaching runtime state. Everything here is verified against how MistWarp's own built-in operators are compiled.
+This page covers the parts of the [`compiler.register` API](/building-extensions/compiled/structure) beyond a plain reporter: command blocks, fields, variadic inputs, raw inputs, and reaching runtime state. Everything here is verified against how Bilup's own built-in operators are compiled.
 
 Keep the mental model front of mind: `compile` runs **once, at compile time**, and returns a **string of JavaScript**. It cannot do runtime work itself; it decides what runtime work the generated code will do. Anything that must react to the running project has to be inside the string you return.
 
@@ -84,7 +84,7 @@ Only use `raw` with values you control or a fixed menu. Splicing an arbitrary us
 
 ## Variadic inputs
 
-Blocks that accept a variable number of inputs (like `min`/`max` of several values) read the count from `mutation`. This is verbatim how MistWarp compiles its variadic `min` and `max`:
+Blocks that accept a variable number of inputs (like `min`/`max` of several values) read the count from `mutation`. This is verbatim how Bilup compiles its variadic `min` and `max`:
 
 ```js
 const variadic = (name, input, mutation) => {

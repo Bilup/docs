@@ -5,7 +5,7 @@ sidebar_position: 7
 
 # Custom FPS
 
-Frame rate (frames per second) controls how many times per second your scripts run. Scratch runs at 30 FPS. MistWarp lets you change this, most commonly to 60 FPS, from the [editor settings](/editor/settings) or the [`fps` URL parameter](/advanced/url-parameters).
+Frame rate (frames per second) controls how many times per second your scripts run. Scratch runs at 30 FPS. Bilup lets you change this, most commonly to 60 FPS, from the [editor settings](/editor/settings) or the [`fps` URL parameter](/advanced/url-parameters).
 
 A value of `0` is special: the project runs at the same rate as the display's refresh rate instead of a fixed interval. At `0`, scripts may stop running when the project's tab is hidden.
 

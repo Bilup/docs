@@ -5,7 +5,7 @@ sidebar_position: 6
 
 # Theming
 
-A MistWarp theme is a set of colors and options that turn into CSS custom properties on the document, plus a set of block colors that recolor the workspace. This page describes how a theme is represented, how it gets applied, and the things to watch out for when working near the theme system.
+A Bilup theme is a set of colors and options that turn into CSS custom properties on the document, plus a set of block colors that recolor the workspace. This page describes how a theme is represented, how it gets applied, and the things to watch out for when working near the theme system.
 
 The engine lives in `src/lib/themes/`.
 

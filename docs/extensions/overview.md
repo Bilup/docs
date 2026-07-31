@@ -18,10 +18,10 @@ Some extensions do more than add blocks:
 
 ## Built-in vs remote extensions
 
-MistWarp ships with two kinds of extension in the library:
+Bilup ships with two kinds of extension in the library:
 
-- **Built-in** extensions are bundled with the editor and load instantly, offline. These include MistWarp Blocks, Patching, Music, Pen, Video Sensing, Text to Speech, Translate, Makey Makey, and the hardware extensions.
-- **Remote** extensions are downloaded from a URL the first time you load them, so they need an internet connection to load. Face Sensing is one of these. The library also links out to the full MistWarp extension gallery at [extensions.mistium.com](https://extensions.mistium.com/), which hosts hundreds of community extensions.
+- **Built-in** extensions are bundled with the editor and load instantly, offline. These include Bilup Blocks, Patching, Music, Pen, Video Sensing, Text to Speech, Translate, Makey Makey, and the hardware extensions.
+- **Remote** extensions are downloaded from a URL the first time you load them, so they need an internet connection to load. Face Sensing is one of these. The library also links out to the full Bilup extension gallery at [extensions.bilup.org](https://extensions.bilup.org/), which hosts hundreds of community extensions.
 
 A few built-in extensions also need the internet to actually work (not just to load): Text to Speech and Translate call an online service every time you use them, and hardware extensions may fetch firmware or connection assets.
 
@@ -31,7 +31,7 @@ If an extension is not in the library, you can load it yourself from a URL, a lo
 
 ## Compatibility with Scratch
 
-Some extensions are marked as incompatible with Scratch (MistWarp Blocks, Patching, and most custom extensions). Projects that use them will not run on scratch.mit.edu. The library warns you before loading one of these. Extensions that came from Scratch itself (Music, Pen, Video Sensing, Text to Speech, Translate, Makey Makey, and the LEGO / micro:bit / Vernier hardware extensions) stay compatible with Scratch.
+Some extensions are marked as incompatible with Scratch (Bilup Blocks, Patching, and most custom extensions). Projects that use them will not run on scratch.mit.edu. The library warns you before loading one of these. Extensions that came from Scratch itself (Music, Pen, Video Sensing, Text to Speech, Translate, Makey Makey, and the LEGO / micro:bit / Vernier hardware extensions) stay compatible with Scratch.
 
 ## Writing your own
 
@@ -40,6 +40,6 @@ If you want to build an extension rather than just use one, start with [Building
 ## See also
 
 - [Custom Extensions](/extensions/custom-extension)
-- [MistWarp Blocks](/extensions/mistwarp-blocks)
+- [Bilup Blocks](/extensions/mistwarp-blocks)
 - [Patching](/extensions/patching)
 - [Building Extensions: Introduction](/building-extensions/introduction)

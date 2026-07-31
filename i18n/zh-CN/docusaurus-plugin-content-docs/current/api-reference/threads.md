@@ -1,628 +1,71 @@
 ---
-title: 线程 API
-sidebar_position: 7
+title: 线程
+sidebar_position: 6
 ---
 
-# 线程管理 API
+项目是一组脚本，每个运行中的脚本是一个线程。运行时每帧对每个线程步进一点；正是这种步进让积木运行。本页描述 `scratch-vm/src/engine/` 中的 `Thread` 和 `Sequencer` 模型。Bilup 也可以将脚本编译为 JavaScript，这改变线程的运行方式，但不改变周围的模型。
 
-Bilup 提供了广泛的线程管理功能，用于高级脚本控制和执行。此 API 允许你在运行时监控、控制和操作脚本的执行。
+## 线程是什么
 
-## 概述
+`Thread`（`engine/thread.js`）是一个运行中的脚本。它重要的字段：
 
-Bilup 中的线程代表正在执行的脚本。每个运行的脚本(从绿旗、积木点击、广播等)都会创建一个线程，管理其执行状态、栈帧和局部变量。
+- `topBlock`：脚本顶部（帽子或第一个）积木的 ID。
+- `target`：运行脚本的角色或舞台。
+- `blockContainer`：线程从中执行的 `Blocks` 容器。通常是目标自己的积木，但积木区中点击的脚本从 `runtime.flyoutBlocks` 执行。编译器也读取它，因此空容器会跳过编译。
+- `stack`：从顶部积木到当前执行积木的积木 ID。进入 C 积木（循环或 `如果`）会压入此栈；完成时弹出。
+- `stackFrames`：每个栈级别一个 `_StackFrame`，持有每级别的执行状态（`warpMode`、`isLoop`、`justReported`、`waitingReporter`、过程 `params` 以及积木方法可以在让出期间使用的暂存 `executionContext`）。帧通过空闲列表池化和回收。
+- `status`：线程的状态（见下文）。
+- `requestScriptGlowInFrame` / `blockGlowInFrame`：脚本本帧是否应发光以及发光哪个积木 ID。运行时在发出发光事件时读取这些（见下文）。
+- `warpTimer`：线程进入 warp 模式时创建的 `Timer`；请参阅[Warp 模式](#warp-mode)。
+- `isKilled`：线程在中间被停止时设置，因此恢复的积木不会越过终点。
+- `isCompiled`、`generator`、`procedures`：线程被编译为 JavaScript 时设置。
 
-## 线程基础
-
-### 什么是线程?
-
-线程是脚本的执行上下文。它包含：
-- 脚本的执行栈
-- 当前正在执行的积木
-- 局部变量和存储
-- 执行状态(运行中、暂停、完成)
-- Warp 模式状态
-
-### 访问线程
-
-```javascript
-// 获取所有活动线程
-const allThreads = vm.runtime.threads;
-
-// 获取特定目标的线程
-const targetThreads = vm.runtime.threads.filter(thread => 
-    thread.target === specificTarget
-);
-
-// 检查线程是否活动
-const isRunning = vm.runtime.isActiveThread(someThread);
-```
-
-## 线程监控
-
-### 基本线程信息
-
-```javascript
-// 线程属性
-const thread = vm.runtime.threads[0];
-
-console.log(thread.topBlock);        // 顶层积木的 ID
-console.log(thread.target);          // 运行线程的目标(角色/舞台)
-console.log(thread.isKilled);        // 线程是否已停止
-console.log(thread.stack);           // 当前执行栈
-console.log(thread.stackClick);      // 是否通过点击积木启动
-console.log(thread.updateMonitor);   // 是否应更新变量监视器
-```
+每个线程从其目标和顶部积木获得一个稳定 ID，`target.id & topBlock`（`Thread.getIdFromTargetAndBlock`）。
 
 ### 线程状态
 
-```javascript
-// 线程状态常量
-const ThreadStatus = {
-    RUNNING: 0,
-    PROMISE_WAIT: 1,
-    YIELD: 2,
-    YIELD_TICK: 3,
-    DONE: 4
-};
+`status` 是五个常量之一：
 
-// 检查线程状态
-if (thread.status === ThreadStatus.RUNNING) {
-    console.log('线程正在运行');
-} else if (thread.status === ThreadStatus.DONE) {
-    console.log('线程已完成执行');
-}
-```
+| 常量 | 值 | 含义 |
+| --- | --- | --- |
+| `Thread.STATUS_RUNNING` | 0 | 正常执行；逐积木步进。 |
+| `Thread.STATUS_PROMISE_WAIT` | 1 | 等待异步积木的 promise。 |
+| `Thread.STATUS_YIELD` | 2 | 已让出；下一步恢复。 |
+| `Thread.STATUS_YIELD_TICK` | 3 | 为单个 tick 让出；恢复时清除。 |
+| `Thread.STATUS_DONE` | 4 | 已完成；没有剩余积木。 |
 
-## 线程控制
+### 栈
 
-### 启动线程
+`Thread` 暴露解释器和 C 积木实现使用的栈辅助工具：`pushStack(blockId)`、`popStack()`、`peekStack()`、`peekStackFrame()`、`goToNextBlock()`、`reuseStackForNextBlock(blockId)`、`stopThisScript()`，以及过程参数辅助工具 `pushParam`、`getParam`、`initParams`。
 
-```javascript
-// 从积木启动新线程
-const newThread = vm.runtime._pushThread(
-    blockId,           // 要从其开始的积木 ID
-    target,            // 要在其上运行的目标
-    {
-        stackClick: true,      // 标记为点击启动
-        updateMonitor: false   // 不更新监视器
-    }
-);
+## 序列器 {#the-sequencer}
 
-// 如果可用，启用编译
-if (vm.runtime.compilerOptions.enabled) {
-    newThread.tryCompile();
-}
-```
+`Sequencer`（`engine/sequencer.js`）运行线程。每帧运行时调用一次 `stepThreads()`，它：
 
-### 停止线程
+1. 设置工作预算：`WORK_TIME = 0.75 * runtime.currentStepTime`（帧间隔的 75%）。
+2. 遍历 `runtime.threads`，对每个运行中或已让出的线程调用 `stepThread(thread)`。
+3. 只要有活动线程、工作预算未用完，并且要么涡轮模式开启要么没有积木请求屏幕重绘，就继续循环。
+4. 移除已完成的线程并返回它们。
 
-```javascript
-// 停止特定线程
-thread.stopThisScript();
+`stepThread(thread)` 运行一个线程。如果线程已编译，它交给编译执行器；否则它从当前积木开始走解释器，处理报告积木、C 积木分支、promise 和让出。当积木请求重绘（或预算用完）时，序列器为本帧停止，并在下一帧从停下的地方继续。
 
-// 强制终止线程
-vm.runtime._stopThread(thread);
+### Warp 模式 {#warp-mode}
 
-// 停止所有线程
-vm.runtime.stopAll();
+Warp 模式（"运行时不刷新屏幕"，也是自定义积木 warp 的基础）让一个部分完整运行到完成，不对重绘让出。warp 线程使用线程自己的 `warpTimer` 对照 `Sequencer.WARP_TIME`（500 毫秒）计时，而不是共享的 `WORK_TIME` 预算，因此失控的 warp 循环不能永远冻结页面。
 
-// 停止目标的所有线程
-vm.runtime.stopForTarget(target);
-```
+## 启动线程
 
-### 重新启动线程
+线程由运行时创建，而不是大多数代码直接创建。点击绿旗调用 `vm.greenFlag()`，它启动每个绿旗帽子。触发帽子（广播、按键、扩展 `EVENT` 积木）通过 `runtime.startHats(opcode, optMatchFields, optTarget)`，它找到每个匹配的脚本，尊重帽子的 `restartExistingThreads` 元数据，并返回新线程。在编辑器中点击脚本调用 `runtime.toggleScript`，并启动一个保持在线程映射之外的临时"堆栈点击"线程。线程启动、停止和发光时，运行时发出 `*_GLOW_*`、`PROJECT_RUN_START` 和 `PROJECT_RUN_STOP` [事件](/api-reference/events)。要自己启动线程或监视现有的线程，请参阅[运行时 API](/api-reference/runtime)。
 
-```javascript
-// 重新启动线程(如果可能)
-vm.runtime._restartThread(thread);
+## 编译线程 {#compiled-threads}
 
-// 通过创建新线程强制重新启动
-const restartedThread = vm.runtime._pushThread(
-    thread.topBlock,
-    thread.target,
-    { stackClick: true }
-);
-```
+Bilup 的编译器将脚本变成 JavaScript 生成器函数。线程编译时，`isCompiled` 变为真，步进的是它的 `generator`，而不是解释器走积木。上面的线程模型（状态、warp、启动和停止）不变；只有逐积木执行更快。编译器默认开启，可以从[项目设置](/advanced/disable-compiler)关闭。
 
-## 高级线程管理
+## 另请参阅
 
-### 线程监控系统
-
-创建监控系统以跟踪特定线程：
-
-```javascript
-// 线程监控存储
-const monitoredThreads = {};
-
-// 用自定义 ID 监控线程
-function monitorThread(threadId, thread) {
-    monitoredThreads[threadId] = thread;
-    
-    // 添加自定义属性
-    thread.customStorage = {};
-    thread.monitorId = threadId;
-}
-
-// 检查监控线程是否正在运行
-function isMonitoredThreadRunning(threadId) {
-    const thread = monitoredThreads[threadId];
-    return thread && vm.runtime.isActiveThread(thread);
-}
-
-// 停止监控线程
-function stopMonitoredThread(threadId) {
-    const thread = monitoredThreads[threadId];
-    if (thread) {
-        thread.stopThisScript();
-    }
-}
-```
-
-### 自定义线程存储
-
-在线程中存储数据以在积木间持久化：
-
-```javascript
-// 在线程中存储数据
-function storeInThread(thread, key, value) {
-    if (!thread.customStorage) {
-        thread.customStorage = {};
-    }
-    thread.customStorage[key] = value;
-}
-
-// 从线程检索数据
-function getFromThread(thread, key) {
-    if (!thread.customStorage) {
-        thread.customStorage = {};
-    }
-    return thread.customStorage[key];
-}
-
-// 在自定义积木中的示例用法
-function myCustomBlock(args, util) {
-    const thread = util.thread;
-    
-    // 存储一些状态
-    storeInThread(thread, 'counter', 
-        (getFromThread(thread, 'counter') || 0) + 1
-    );
-    
-    return getFromThread(thread, 'counter');
-}
-```
-
-## 栈帧管理
-
-### 理解栈帧
-
-栈帧表示脚本嵌套每个级别的执行上下文：
-
-```javascript
-// 访问当前栈帧
-const currentFrame = thread.peekStackFrame();
-
-console.log(currentFrame.isLoop);          // 是否在循环积木中
-console.log(currentFrame.warpMode);        // 是否在 warp 模式
-console.log(currentFrame.params);          // 积木参数
-console.log(currentFrame.executionContext); // 执行上下文
-```
-
-### 栈帧创建
-
-```javascript
-// 创建新栈帧(高级用法)
-const StackFrame = vm.runtime.sequencer.constructor.StackFrame;
-
-const newFrame = new StackFrame(warpMode);
-newFrame.op = blockInfo;
-newFrame.params = blockParams;
-
-// 推送到线程栈
-thread.pushStackFrame(newFrame);
-```
-
-## 积木执行控制
-
-### 控制积木执行
-
-```javascript
-// 跳转到下一个积木
-thread.goToNextBlock();
-
-// 获取当前正在执行的积木
-const currentBlock = thread.peekStack();
-
-// 推送新积木执行
-thread.pushStack(blockId);
-
-// 从栈弹出当前积木
-const poppedBlock = thread.popStack();
-```
-
-### 分支执行
-
-```javascript
-// 执行特定分支(子栈)
-const branchBlockId = target.blocks.getBranch(parentBlockId);
-if (branchBlockId) {
-    thread.pushStack(branchBlockId);
-}
-
-// 使用自定义目标执行分支
-function executeBranchInTarget(branchId, newTarget) {
-    const newThread = vm.runtime._pushThread(
-        branchId,
-        newTarget,
-        { stackClick: true }
-    );
-    return newThread;
-}
-```
-
-## 内联执行
-
-### 内联运行代码
-
-创建立即执行并返回值的线程：
-
-```javascript
-function executeInline(blockId, target, parentThread) {
-    // 创建用于内联执行的模拟线程
-    const inlineThread = new parentThread.constructor(
-        parentThread.topBlock,
-        target,
-        { stackClick: false, updateMonitor: false }
-    );
-    
-    // 设置线程属性
-    inlineThread.topBlock = blockId;
-    inlineThread.stack = [blockId];
-    inlineThread.target = target;
-    inlineThread.blockContainer = target.blocks;
-    
-    // 立即执行
-    const sequencer = vm.runtime.sequencer;
-    sequencer.stepThread(inlineThread);
-    
-    // 如果完成则返回结果
-    if (inlineThread.status === 4) { // 完成
-        return inlineThread.inlineReturn || '';
-    }
-    
-    // 处理异步执行
-    return new Promise((resolve) => {
-        vm.runtime.on('AFTER_EXECUTE', function checkComplete() {
-            if (inlineThread.status === 4 || inlineThread.inlineReturn !== undefined) {
-                vm.runtime.off('AFTER_EXECUTE', checkComplete);
-                resolve(inlineThread.inlineReturn || '');
-            }
-        });
-    });
-}
-```
-
-## 线程事件
-
-### 监听线程事件
-
-```javascript
-// 监听线程生命周期事件
-vm.runtime.on('THREAD_STEP_UPDATE', (threads) => {
-    console.log('线程已更新:', threads.length);
-});
-
-vm.runtime.on('AFTER_EXECUTE', () => {
-    console.log('执行周期完成');
-});
-
-// 监控特定线程完成
-function waitForThreadCompletion(thread) {
-    return new Promise((resolve) => {
-        function checkThread() {
-            if (!vm.runtime.isActiveThread(thread)) {
-                resolve();
-                return;
-            }
-            vm.runtime.once('AFTER_EXECUTE', checkThread);
-        }
-        checkThread();
-    });
-}
-```
-
-## 实用示例
-
-### 示例 1：脚本管理器
-
-```javascript
-class ScriptManager {
-    constructor() {
-        this.monitoredThreads = {};
-    }
-    
-    // 用自定义 ID 监控线程
-    monitorThread(threadId, thread) {
-        this.monitoredThreads[threadId] = thread;
-        thread.customStorage = {};
-    }
-    
-    // 检查线程是否运行
-    isThreadRunning(threadId) {
-        const thread = this.monitoredThreads[threadId];
-        return thread && vm.runtime.isActiveThread(thread);
-    }
-    
-    // 停止线程
-    stopThread(threadId) {
-        const thread = this.monitoredThreads[threadId];
-        if (thread) {
-            thread.stopThisScript();
-        }
-    }
-    
-    // 重新启动线程
-    restartThread(threadId) {
-        const thread = this.monitoredThreads[threadId];
-        if (thread) {
-            const newThread = vm.runtime._pushThread(
-                thread.topBlock,
-                thread.target,
-                { stackClick: true }
-            );
-            this.monitoredThreads[threadId] = newThread;
-        }
-    }
-    
-    // 获取角色中的所有脚本
-    getScriptsInSprite(threadId) {
-        const thread = this.monitoredThreads[threadId];
-        if (thread) {
-            return thread.blockContainer.getScripts();
-        }
-        return [];
-    }
-}
-
-// 使用
-const scriptManager = new ScriptManager();
-
-// 在自定义积木中
-function monitorThisScript(args, util) {
-    scriptManager.monitorThread(args.ID, util.thread);
-}
-```
-
-### 示例 2：跨角色执行
-
-```javascript
-function runCodeInSprite(spriteNameOrTarget, blockId) {
-    // 找到目标角色
-    let target;
-    if (typeof spriteNameOrTarget === 'string') {
-        if (spriteNameOrTarget === '_stage_') {
-            target = vm.runtime.getTargetForStage();
-        } else {
-            target = vm.runtime.getSpriteTargetByName(spriteNameOrTarget);
-        }
-    } else {
-        target = spriteNameOrTarget;
-    }
-    
-    if (!target) {
-        console.warn('目标未找到:', spriteNameOrTarget);
-        return null;
-    }
-    
-    // 在目标角色中创建并启动线程
-    const thread = vm.runtime._pushThread(
-        blockId,
-        target,
-        { stackClick: true }
-    );
-    
-    return thread;
-}
-```
-
-## 性能考虑
-
-### 线程优化
-
-```javascript
-// 批处理线程操作
-function batchThreadOperations(operations) {
-    vm.runtime.requestUpdateState(); // 批处理期间阻止更新
-    
-    operations.forEach(op => op());
-    
-    vm.runtime.requestBlocksUpdate(); // 最后更新一次
-}
-
-// 高效线程监控
-function efficientThreadMonitor() {
-    const activeThreads = vm.runtime.threads.filter(
-        thread => thread.status === 0 // 仅运行中
-    );
-    
-    // 仅处理运行中的线程
-    activeThreads.forEach(thread => {
-        // 监控逻辑
-    });
-}
-```
-
-### 内存管理
-
-```javascript
-// 清理已完成的线程
-function cleanupCompletedThreads() {
-    Object.keys(monitoredThreads).forEach(threadId => {
-        const thread = monitoredThreads[threadId];
-        if (!vm.runtime.isActiveThread(thread)) {
-            delete monitoredThreads[threadId];
-        }
-    });
-}
-
-// 定期调用
-setInterval(cleanupCompletedThreads, 5000);
-```
-
-## 安全和安全准则
-
-### 线程安全指南
-
-1. **操作前始终检查线程有效性**
-2. **清理引用**以防止内存泄漏
-3. **避免线程监控中的无限循环**
-4. **对可能失败的线程操作使用 try-catch**
-
-```javascript
-// 安全线程操作
-function safeThreadOperation(thread, operation) {
-    try {
-        if (vm.runtime.isActiveThread(thread)) {
-            return operation(thread);
-        }
-    } catch (error) {
-        console.warn('线程操作失败:', error);
-    }
-    return null;
-}
-```
-
-
-## 相关 API
-
-- [VM API 参考](./vm-api) - 核心 VM 功能
-- [运行时信息](./vm-api#运行时信息) - 运行时管理
-- [积木管理](./vm-api#积木管理) - 积木操作
-- [扩展 API](./extension-api) - 自定义积木创建
-
-## 最佳实践
-
-1. **选择性监控** - 仅监控需要控制的线程
-2. **正确清理** - 移除对已完成线程的引用
-3. **完美处理错误** - 线程操作可能失败
-4. **详细测试** - 线程操作可能破坏项目
-5. **记录自定义存储** - 使线程数据使用清晰
-
-此 API 提供强大的线程控制功能，但应谨慎使用，因为不当的线程操作可能会破坏项目执行。
-
-## 高级运行时集成
-
-### 线程原型扩展
-
-扩展可以向 Thread 原型添加方法以进行高级控制：
-
-```javascript
-// 向线程添加 break 功能
-Thread.prototype.breakCurrentLoop = function() {
-    const blocks = this.blockContainer;
-    const stackFrame = this.peekStackFrame();
-    
-    // 找到当前循环帧
-    const frameData = Thread.getLoopFrame(this, false);
-    if (!frameData) return; // 不在循环中
-    
-    const loopFrameBlock = frameData[0];
-    const afterLoop = blocks.getBlock(loopFrameBlock).next;
-    
-    // 移除积木直到到达循环积木
-    let currentBlock;
-    while ((currentBlock = this.stack.at(-1)) !== loopFrameBlock) {
-        if (blocks.getBlock(currentBlock)?.opcode === 'procedures_call') return;
-        this.popStack();
-    }
-    
-    // 移除循环积木并在其后继续
-    this.popStack();
-    if (afterLoop) {
-        this.pushStack(afterLoop);
-    }
-};
-
-// 添加 continue 功能
-Thread.prototype.continueCurrentLoop = function() {
-    const blocks = this.blockContainer;
-    const frameData = Thread.getLoopFrame(this, true);
-    if (!frameData) return;
-    
-    const loopBlock = frameData[0];
-    
-    // 弹出栈直到到达循环积木
-    let currentBlock;
-    while (this.stack[0] && (currentBlock = this.stack.at(-1)) !== loopBlock) {
-        if (blocks.getBlock(currentBlock)?.opcode === 'procedures_call') return;
-        this.popStack();
-    }
-    
-    // Yield 并重启动循环
-    this.status = Thread.STATUS_YIELD;
-};
-```
-
-### 循环帧检测
-
-在执行栈中查找循环和可中断积木：
-
-```javascript
-// 向 Thread 类添加静态方法
-Thread.getLoopFrame = function(thread, iterableOnly = false) {
-    const stackFrames = thread.stackFrames;
-    const frameCount = stackFrames.length;
-    
-    for (let i = frameCount - 1; i >= 0; i--) {
-        if (i < 0) break;
-        
-        const frame = stackFrames[i];
-        const isValidFrame = iterableOnly 
-            ? frame.isIterable
-            : (frame.isLoop || frame.isBreakable || frame.isIterable);
-            
-        if (isValidFrame) {
-            return [frame.op.id, i]; // [blockId, frameIndex]
-        }
-    }
-    
-    return false; // 未找到循环帧
-};
-```
-
-### 自定义栈帧属性
-
-使用自定义执行上下文数据扩展栈帧：
-
-```javascript
-// 在自定义积木实现中
-function myCustomBlock(args, util) {
-    const frame = util.stackFrame;
-    
-    // 向帧添加自定义属性
-    frame.myCustomProperty = 'value';
-    frame.isBreakable = true;
-    frame.isIterable = true;
-    
-    // 访问父帧上下文
-    const parentFrame = getParentFrame(util.thread, util.thread.peekStack());
-    if (parentFrame.someProperty) {
-        // 处理继承行为
-    }
-    
-    // 在执行上下文中存储数据
-    if (!frame.executionContext) {
-        frame.executionContext = {};
-    }
-    frame.executionContext.customData = args.VALUE;
-}
-
-// 查找父帧的辅助函数
-function getParentFrame(thread, childFrameId) {
-    const frameIndex = thread.stackFrames.findIndex(
-        frame => frame?.op?.id === childFrameId
-    );
-    const parentIndex = frameIndex - 1;
-    return (thread.stackFrames[parentIndex] || { executionContext: {} }).executionContext;
-}
-```
+- [运行时 API](/api-reference/runtime) 了解启动线程、目标和 IO 设备
+- [积木注册](/api-reference/block-registration)
+- [VM API](/api-reference/vm-api)
+- [内部：架构](/internals/architecture)
+- [编译扩展](/building-extensions/compiled/overview)
+- [防卡死计时器](/advanced/warp-timer)和[移除限制](/advanced/remove-limits)

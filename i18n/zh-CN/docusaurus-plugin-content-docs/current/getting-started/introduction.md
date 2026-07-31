@@ -1,75 +1,45 @@
 ---
-slug: /getting-started/
-title: Bilup 简介
+title: 简介
 sidebar_position: 1
 ---
 
-# Bilup 简介
+# 简介
 
-Bilup 是一个功能强大、内容丰富的 Scratch 修改版，它在原始平台的基础上增强了性能优化、扩展了自定义选项，并提供了全面的插件系统。
+Bilup 是一个基于 TurboWarp 的 Scratch 修改版，由 Mistium 制作。如果您用过 Scratch，Bilup 会让您感到熟悉：相同的积木、角色、造型和舞台。在此基础之上，它还增加了性能优化、自定义能力、开发者工具和社区平台。
 
-## Bilup 的特别之处
+编辑器和社区站点是同一个应用。您可以打开 [editor.bilup.org](https://editor.bilup.org/) 立即开始创作，无需账户，也无需安装任何东西。
 
-### 🚀 性能增强
-- **Turbo 编译**：项目在我们优化的编译器中运行得更快
-- **高级渲染**：改进的图形性能和减少的延迟
-- **内存优化**：更好地管理大型项目的内存
-- **60+ FPS 支持**：更高帧率的流畅动画
+## Bilup 新增了什么
 
-### 🎨 主题与自定义
-- **深色主题**：多种深色主题变体
-- **自定义主题**：创建和分享自己的主题
+- **编译器**：将您的积木编译为 JavaScript，使项目比标准 Scratch 解释器运行得更快。如需关闭它做对比，请参阅[禁用编译器](/advanced/disable-compiler)。
+- **任意帧率**和**自定义舞台大小**，取代固定的 30 FPS 和 480x360。请参阅[自定义 FPS](/advanced/custom-fps)和[自定义舞台大小](/advanced/custom-stage-size)。
+- **插件**：可改变编辑器和播放器行为的小型可选功能。请参阅[插件](/editor/addons)。
+- **主题**，包括深色模式和完全自定义的配色方案。请参阅[主题](/editor/themes)。
+- **调试器**，用于单步执行和检查运行中的项目。请参阅[调试器](/editor/debugger)。
+- **还原点**和自动保存，避免丢失工作成果。请参阅[还原点](/editor/restore-points)。
+- **Git 版本控制**和**实时协作**，便于长期管理和多人共同开发项目。请参阅[Git](/editor/git)和[协作](/editor/collaboration)。
+- **打包器**，可将项目转换为独立应用或网页。请参阅[打包器](/packager/overview)。
+- **社区平台**，支持账户、发布项目、关注他人和评论。账户通过 Rotur 处理；关于社区功能如何运作，请参阅[从 TurboWarp 迁移](/getting-started/migrating-from-turbowarp)。
 
-### 🔧 插件系统
-- **100+ 内置插件**：通过我们丰富的插件库增强功能
-- **自定义插件**：使用我们强大的 API 开发你自己的插件
-- **插件管理器**：轻松安装和管理插件
+## 面向的读者
 
-### 💻 开发者工具
-- **高级调试器**：单步执行代码、设置断点、检查变量
-- **性能分析器**：分析项目性能并优化瓶颈
-- **扩展开发**：创建自定义积木和扩展
-- **API 访问**：对编辑器和运行时进行编程控制
+Bilup 同时面向两类读者，本文档也为他们而写：
 
+- 如果您**来自 Scratch**，您已经掌握的所有知识仍然适用。请从[从 Scratch 迁移](/getting-started/migrating-from-scratch)和[快速开始](/getting-started/quick-start)开始。
+- 如果您是**高级用户或开发者**，Bilup 通过 JavaScript、自定义扩展和文档化的 API 开放了运行时。请参阅[JavaScript](/advanced/javascript)、[构建扩展](/building-extensions/introduction)和[API 参考](/api-reference/overview)。
 
-## 与其他编辑器的对比
+## 默认角色
 
-| 功能 | Scratch | TurboWarp | MistWarp  | Bilup |
-|---------|----------|---------|----------|----------|
-| **性能** | 慢 | 快 | 中 | 更快 |
-| **帧率** | 30 FPS | 60 FPS | 60+ FPS  | 自定义 FPS |
-| **主题** | 浅色 | 深色 | 可自定义 | 高度可自定义 |
-| **动画** | 大部分没有 | 大部分没有 | 大部分没有  | 大部分有 |
-| **插件** | 无 | 80+ 个内置插件 | 90+ 个内置插件  | 100+ 个内置插件 |
-| **翻译** | 基本翻译完毕 | 小部分没翻译 | 大部分没翻译 | 翻译十分到位 |
+新的 Bilup 项目默认使用 Bilup 自己的角色 **Misty**，而不是 Scratch 猫。标准 Scratch 素材库中的所有角色仍然可以在角色选择器中找到。
 
+## 下一步
 
-## 架构概述
+- [安装](/getting-started/installation)：在网页端、桌面端或通过打包器使用 Bilup。
+- [快速开始](/getting-started/quick-start)：构建第一个项目。
+- [编辑器导览](/getting-started/editor-tour)：了解各个区域的位置。
 
-Bilup 构建在模块化架构上，由几个关键组件组成：
+## 另请参阅
 
-- **scratch-gui**：用户界面和编辑器
-- **scratch-vm**：执行项目的运行时引擎
-- **scratch-render**：角色和舞台的渲染引擎
-- **scratch-blocks**：可视化积木编辑器
-- **插件系统**：模块化增强系统
-- **主题引擎**：动态主题和样式系统
-
-## 开始使用
-
-准备好开始了吗?下面是你可以做的：
-
-1. **[访问 Bilup](./installation.md)** - 开始使用 Bilup 网页应用
-2. **[快速入门指南](./quick-start.md)** - 了解与 Scratch 的主要区别
-3. **[迁移指南](./migrating-from-scratch.md)** - 从 Scratch 迁移到 Bilup
-4. **[GUI 内部结构](../gui-internals/home.md)** - 技术架构文档
-
-## 开发
-
-- **GitHub**: [https://github.com/Bilup](https://github.com/Bilup) - 源代码和问题追踪
-- **问题反馈**：报告技术问题和漏洞
-- **贡献**：提交改进和修复
-
----
-
-*继续阅读 [开始使用](./installation.md) 来访问 Bilup。*
+- [编辑器界面](/editor/interface)
+- [从 Scratch 迁移](/getting-started/migrating-from-scratch)
+- [从 TurboWarp 迁移](/getting-started/migrating-from-turbowarp)

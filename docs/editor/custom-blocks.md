@@ -19,7 +19,7 @@ You get two things: a **define** hat block in the workspace, and a new block in 
 
 ## Run without screen refresh
 
-By default a custom block redraws the stage between steps like any other script. **Run without screen refresh** makes the whole block finish in a single frame, without pausing to redraw. This is the standard way to make a fast helper (drawing, list processing, maths) run instantly instead of one loop iteration per frame. Be careful with long or infinite loops inside such a block: they can freeze the project. MistWarp's [warp timer](/advanced/warp-timer) setting guards against many of these freezes.
+By default a custom block redraws the stage between steps like any other script. **Run without screen refresh** makes the whole block finish in a single frame, without pausing to redraw. This is the standard way to make a fast helper (drawing, list processing, maths) run instantly instead of one loop iteration per frame. Be careful with long or infinite loops inside such a block: they can freeze the project. Bilup's [warp timer](/advanced/warp-timer) setting guards against many of these freezes.
 
 ## Editing and deleting
 
@@ -27,12 +27,12 @@ Right-click the **define** hat to edit the block's inputs, or right-click the bl
 
 ## Reporter and boolean custom blocks
 
-Vanilla Scratch custom blocks are commands only (they run, but do not report a value). MistWarp adds **Custom Reporters** so a custom block can return a value:
+Vanilla Scratch custom blocks are commands only (they run, but do not report a value). Bilup adds **Custom Reporters** so a custom block can return a value:
 
 - Right-click a custom block's define hat and choose **Change To Reporter** (or **Change To Statement** to turn it back). A reporter-shaped custom block can be dropped into any input, just like `x position`.
-- Inside the definition, use the **return** block to hand back a value and stop the block. The return block comes from the Custom Reporters feature that MistWarp enables automatically.
+- Inside the definition, use the **return** block to hand back a value and stop the block. The return block comes from the Custom Reporters feature that Bilup enables automatically.
 
-These blocks are a MistWarp extension of Scratch. Projects that use them will not run unchanged on scratch.mit.edu. If you need vanilla compatibility, the **Vanilla Compatible Blocks Only** [setting](/editor/settings) hides them.
+These blocks are a Bilup extension of Scratch. Projects that use them will not run unchanged on scratch.mit.edu. If you need vanilla compatibility, the **Vanilla Compatible Blocks Only** [setting](/editor/settings) hides them.
 
 ## See also
 

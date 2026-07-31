@@ -20,16 +20,14 @@ module.exports = {
   ],
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'zh-CN'],
     localeConfigs: {
       en: {
         label: 'English',
       },
-      // zh-CN temporarily disabled: the existing Chinese translations target the
-      // old doc structure and need to be re-mapped to the new structure first.
-      // 'zh-CN': {
-      //   label: '中文',
-      // },
+      'zh-CN': {
+        label: '中文',
+      },
     },
   },
   themeConfig: {
@@ -42,7 +40,7 @@ module.exports = {
       items: [
         {
           type: 'dropdown',
-          label: 'Use MistWarp',
+          label: 'Use Bilup',
           position: 'left',
           items: [
             {to: '/getting-started/introduction', label: 'Getting Started'},

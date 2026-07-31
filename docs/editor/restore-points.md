@@ -3,7 +3,7 @@ title: Restore points and autosave
 sidebar_position: 21
 ---
 
-MistWarp keeps safety nets so a crash, a mistake, or a forgotten save does not cost you your work. There are two separate features: **restore points**, which snapshot the whole project into your browser, and **autosave**, which re-saves the project file on a timer.
+Bilup keeps safety nets so a crash, a mistake, or a forgotten save does not cost you your work. There are two separate features: **restore points**, which snapshot the whole project into your browser, and **autosave**, which re-saves the project file on a timer.
 
 ## Restore points
 
@@ -11,7 +11,7 @@ A restore point is a full snapshot of your project (all sprites, scripts, costum
 
 ### Automatic restore points
 
-While you edit, MistWarp saves a restore point on a timer. The default is every **5 minutes**. You can change the interval, or turn automatic restore points off, from the manager (options are every 1, 5, 10, 15, or 30 minutes, or never). Turning them off is discouraged, since they are your main protection against losing work.
+While you edit, Bilup saves a restore point on a timer. The default is every **5 minutes**. You can change the interval, or turn automatic restore points off, from the manager (options are every 1, 5, 10, 15, or 30 minutes, or never). Turning them off is discouraged, since they are your main protection against losing work.
 
 ### Making one by hand
 
@@ -28,7 +28,7 @@ While you edit, MistWarp saves a restore point on a timer. The default is every 
 The footer shows the estimated storage used. Costumes and sounds shared between restore points are stored only once to save space.
 
 :::warning
-Restore points live in your browser, on this computer. They are not uploaded anywhere, and the browser can clear them without warning (for example when clearing site data or freeing space). Treat restore points as a convenience, not a backup: save projects you care about to [your computer](/editor/project-management) or [your MistWarp account](/editor/project-management) as well.
+Restore points live in your browser, on this computer. They are not uploaded anywhere, and the browser can clear them without warning (for example when clearing site data or freeing space). Treat restore points as a convenience, not a backup: save projects you care about to [your computer](/editor/project-management) or [your Bilup account](/editor/project-management) as well.
 :::
 
 Automatic restore points are pruned over time to stay within a modest limit; manual ones are kept.

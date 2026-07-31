@@ -3,12 +3,12 @@ title: API Reference overview
 sidebar_position: 1
 ---
 
-MistWarp is built from a set of JavaScript packages: `scratch-vm` (the engine that runs
+Bilup is built from a set of JavaScript packages: `scratch-vm` (the engine that runs
 projects), `scratch-render` (the WebGL renderer), `scratch-blocks` (the block editor), and
 `scratch-gui` (the React app that ties them together and also serves the community site).
 This section documents the programmatic surfaces those packages expose.
 
-It is aimed at advanced users, extension authors, and people embedding MistWarp in their own
+It is aimed at advanced users, extension authors, and people embedding Bilup in their own
 pages. If you just want to make projects, you do not need any of this. If you want to script
 the running project, build an extension, or drive the VM yourself, start here.
 
@@ -64,7 +64,7 @@ instead, which passes `Scratch.vm` in explicitly.
 
 ## Embedding
 
-If you want to put a MistWarp project on your own page, you usually do not build against the
+If you want to put a Bilup project on your own page, you usually do not build against the
 VM directly; you use the [packager](/packager/overview) or an
 [embed iframe](/advanced/embedding). Build directly against the VM/GUI only when you need
 control those tools do not give you.

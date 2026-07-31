@@ -1,22 +1,27 @@
 ---
+title: 商业使用
+sidebar_position: 3
 slug: /packager/commercial-use
-hide_table_of_contents: true
 ---
 
-# 我可以销售使用 Bilup 打包器制作的项目吗?
+# 我可以出售用打包器制作的项目吗?
 
-:::note
-我们不是律师。本页不是法律建议。如果这对你很重要，请咨询真正的律师。
-:::
+::::note
+我们不是律师，这不是法律建议。如果这对您很重要，请咨询真正的律师。
+::::
 
-是的，如果你拥有打包项目中所有服装、声音、脚本和扩展的权利，就有可能销售它。
+可以。如果您拥有项目内所有内容（其造型、声音、脚本和扩展）的权利，您可以出售用[Bilup 打包器](/packager/overview)打包的项目。
 
-打包器使用的 Scratch 和 Bilup 的开源组件采用开源许可证，允许你使用、修改、分发和销售打包后的项目，无需费用或版税。同样重要的是要注意，这些许可证不提供保证。Bilup 的某些部分使用「弱」 copyleft 许可证，例如 [Mozilla 公共许可证版本 2.0](https://mozilla.org/MPL/2.0/)。粗略地说，这意味着如果你修改了代码的这些部分，你必须在同一许可证下分享那部分特定的代码。
+打包器捆绑的 Scratch 和 Bilup 开源组件在允许您免费（无费用或版税）使用、修改、分发和出售打包项目的许可证下发布。这些许可证也不附带任何保证。某些部分使用"弱"copyleft 许可证，如[Mozilla Public License 2.0](https://mozilla.org/MPL/2.0/)：粗略地说，如果您修改了那些特定文件，您必须在同一许可证下分享那部分特定代码。仅仅打包项目不会触发这一点。
 
-如果你使用了其他人创建的服装、声音、脚本或扩展，请确保你有这些人的许可来销售他们的作品。你在 Scratch 网站上找到的大多数内容都应该遵循 [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) 许可证，从技术上讲，这并不会阻止你转售作品，但它要求署名，而且相同方式分享条款可能产生重大影响。如果创作者选择，他们可以授予你 CC BY-SA 2.0 之外的额外权限。
+## 资源和他人的作品
 
-请注意，Scratch 商标(如 Scratch 标志、Scratch 猫、Gobo、Pico 等)是 CC BY-SA 2.0 许可证的例外，你可能没有使用它们的许可。
+如果您的项目使用他人制作的造型、声音、脚本或扩展，请确保您拥有出售它的许可。Scratch 网站上的大多数材料旨在 [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) 下提供，它不禁止转售，但确实要求署名并带有可能产生实际影响的相同方式共享条款。创作者可以选择在此基础上授予您额外许可。
 
-有关更多信息，请参阅「我可以使用/混用我在网站上找到的 Scratch 支持造型、角色、图片、声音或示例项目吗?」和「我可以销售我的 Scratch 项目吗?」https://scratch.mit.edu/faq
+Scratch 商标（Scratch 徽标、Scratch 猫、Gobo、Pico 等）不在该许可证范围内，因此您可能没有商业使用它们的许可。
 
-如果你通过打包器赚钱，我们鼓励你 [向我们和我们依赖的项目捐款](/donate)。❤️
+有关 Scratch 自己的指南，请参阅[Scratch FAQ](https://scratch.mit.edu/faq) 中"我是否可以使用/改编 Scratch 支持材料..."和"我可以出售我的 Scratch 项目吗?"的答案。
+
+## 另请参阅
+
+- [打包器概览](/packager/overview)

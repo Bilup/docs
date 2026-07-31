@@ -27,7 +27,7 @@ myBlock(args, util) {
 }
 ```
 
-These are internal APIs. They can change between MistWarp versions, so guard your code and clean up skins and drawables you create.
+These are internal APIs. They can change between Bilup versions, so guard your code and clean up skins and drawables you create.
 
 ## Skins
 

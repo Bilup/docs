@@ -7,7 +7,7 @@ sidebar_position: 4
 
 Sometimes a block has to wait for an asynchronous operation before the script continues. Network requests are the classic example: no matter how fast your connection is, a request is never instant.
 
-The way a block signals "I am not done yet" is to return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). MistWarp waits for the Promise to resolve before running the next block, and may run other scripts in the meantime ([download](/example-extensions/async.js)):
+The way a block signals "I am not done yet" is to return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). Bilup waits for the Promise to resolve before running the next block, and may run other scripts in the meantime ([download](/example-extensions/async.js)):
 
 ```js
 class AsyncExtension {
@@ -31,7 +31,7 @@ class AsyncExtension {
           arguments: {
             URL: {
               type: Scratch.ArgumentType.STRING,
-              defaultValue: 'https://extensions.mistium.com/hello.txt'
+              defaultValue: 'https://extensions.bilup.org/hello.txt'
             }
           }
         }

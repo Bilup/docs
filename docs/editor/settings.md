@@ -21,7 +21,7 @@ The **Settings** button in the [menu bar](/editor/menu-bar) opens the settings w
 
 ## Appearance
 
-- **Theme** chooses block colours and links to your MistWarp account settings, where the overall light/dark theme and accent colour live. See [themes](/editor/themes).
+- **Theme** chooses block colours and links to your Bilup account settings, where the overall light/dark theme and accent colour live. See [themes](/editor/themes).
 - **Wallpaper** sets a background image for the editor, with opacity, darkness, and a grid toggle.
 - **Fonts** sets a custom editor font.
 - **Editor** collects interface toggles under three headers:
@@ -37,7 +37,7 @@ The **Settings** button in the [menu bar](/editor/menu-bar) opens the settings w
 - **Version Control** sets your commit author name and email, the default branch name, and whether to commit automatically on save. See [git](/editor/git).
 - **Variable Manager** configures the [variable manager](/editor/variable-manager): default view, live updates, and display limits.
 - **Debugger** holds the [debugger](/editor/debugger) toggles: highlight running blocks, and various logging options.
-- **Rotur** controls whether your MistWarp editing activity shows on your Rotur profile.
+- **Rotur** controls whether your Bilup editing activity shows on your Rotur profile.
 
 On the desktop app a **Desktop** page adds app-level options (update channel, microphone and camera, hardware acceleration, and more).
 

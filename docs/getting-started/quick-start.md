@@ -5,11 +5,11 @@ sidebar_position: 3
 
 # Quick start
 
-This page builds a small working project from an empty editor. It takes a few minutes and assumes no prior MistWarp experience. If you have never used Scratch either, the block system is the same one Scratch uses; see [Migrating from Scratch](/getting-started/migrating-from-scratch) for the concepts.
+This page builds a small working project from an empty editor. It takes a few minutes and assumes no prior Bilup experience. If you have never used Scratch either, the block system is the same one Scratch uses; see [Migrating from Scratch](/getting-started/migrating-from-scratch) for the concepts.
 
 ## Open the editor
 
-Go to [warp.mistium.com](https://warp.mistium.com/). A new project opens with the default sprite, **Misty**, already on the stage. You do not need an account for anything on this page.
+Go to [editor.bilup.org](https://editor.bilup.org/). A new project opens with the default sprite, **Misty**, already on the stage. You do not need an account for anything on this page.
 
 ## Add code
 
@@ -38,9 +38,9 @@ If the sprite walks off the edge, add an `if on edge, bounce` block from **Motio
 
 - **File then Save to your computer** downloads a `.sb3` file. This works with no account, and the file also opens in Scratch and TurboWarp.
 - **File then Load from your computer** reopens a `.sb3` later.
-- With a Rotur account, **File then Save to MistWarp** publishes the project to your account and the community. See [Project management](/editor/project-management).
+- With a Rotur account, **File then Save to Bilup** publishes the project to your account and the community. See [Project management](/editor/project-management).
 
-MistWarp also keeps [restore points](/editor/restore-points) and autosaves in the background, so a crash or accidental reload does not lose your work.
+Bilup also keeps [restore points](/editor/restore-points) and autosaves in the background, so a crash or accidental reload does not lose your work.
 
 ## Where to go next
 

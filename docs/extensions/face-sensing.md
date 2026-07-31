@@ -11,7 +11,7 @@ Load it from **Add Extension** and choose **Face Sensing**.
 
 ## Loaded remotely, needs a camera
 
-Face Sensing is not bundled with the editor. The first time you load it, MistWarp downloads it from a remote URL, so you need an internet connection to load it (once loaded and saved, it reloads with the project). Like Video Sensing, it needs webcam permission to run.
+Face Sensing is not bundled with the editor. The first time you load it, Bilup downloads it from a remote URL, so you need an internet connection to load it (once loaded and saved, it reloads with the project). Like Video Sensing, it needs webcam permission to run.
 
 ## Blocks
 

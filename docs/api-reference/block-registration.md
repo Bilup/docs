@@ -74,7 +74,7 @@ block runs. Placeholders in `text` (like `[INPUT]`) are matched to keys in `argu
 ## Compiled blocks
 
 The interpreter path uses the block methods directly. For extensions that want their blocks to
-run through MistWarp's JavaScript compiler, `vm.exports.compiler.register(extensionId, blocks)`
+run through Bilup's JavaScript compiler, `vm.exports.compiler.register(extensionId, blocks)`
 registers a descriptor per opcode with a `type` (one of `any`, `number`, `numberOrNaN`, `string`,
 `boolean`, `command`) and a `compile` function. See
 [Compiled extensions](/building-extensions/compiled/overview).

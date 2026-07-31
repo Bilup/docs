@@ -13,10 +13,10 @@ That is the core of custom extension development. From here, the reference pages
 - [Audio API](/building-extensions/apis/audio-api): the audio engine, sound players, and effects.
 - [Utility APIs](/building-extensions/apis/utility-apis): `Scratch.Cast` and related helpers in detail.
 
-If you need native-speed blocks, the [compiled extensions](/building-extensions/compiled/overview) section shows how to generate JavaScript directly through MistWarp's compiler.
+If you need native-speed blocks, the [compiled extensions](/building-extensions/compiled/overview) section shows how to generate JavaScript directly through Bilup's compiler.
 
 ## Getting help and contributing
 
-You can browse the MistWarp extension gallery, and find its submission instructions, at [extensions.mistium.com](https://extensions.mistium.com).
+You can browse the Bilup extension gallery, and find its submission instructions, at [extensions.bilup.org](https://extensions.bilup.org).
 
 Thanks for reading this far.

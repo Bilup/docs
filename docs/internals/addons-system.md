@@ -5,13 +5,13 @@ sidebar_position: 7
 
 # The Addons System
 
-Addons are small features that modify the editor: editor tweaks, extra tools, cosmetic changes. MistWarp's addon framework is inherited from the [Scratch Addons](https://scratchaddons.com/) browser extension, adapted to run inside the editor build. This page describes the two pieces you are most likely to work with: the settings store and the window system.
+Addons are small features that modify the editor: editor tweaks, extra tools, cosmetic changes. Bilup's addon framework is inherited from the [Scratch Addons](https://scratchaddons.com/) browser extension, adapted to run inside the editor build. This page describes the two pieces you are most likely to work with: the settings store and the window system.
 
 The addon code lives in `src/addons/`.
 
 ## Where addons come from
 
-The addons and their translations are pulled from Scratch Addons and patched for use in TurboWarp and MistWarp. Most of `src/addons/` is generated: the `pull.js` script fetches the upstream source, applies patches, and writes the `addons/`, `addons-l10n/`, `libraries/`, and `generated/` folders. You normally do not edit those by hand. As the addons README puts it, feature requests go upstream, but bugs caused by the TurboWarp or MistWarp port are reported here.
+The addons and their translations are pulled from Scratch Addons and patched for use in TurboWarp and Bilup. Most of `src/addons/` is generated: the `pull.js` script fetches the upstream source, applies patches, and writes the `addons/`, `addons-l10n/`, `libraries/`, and `generated/` folders. You normally do not edit those by hand. As the addons README puts it, feature requests go upstream, but bugs caused by the TurboWarp or Bilup port are reported here.
 
 The list of bundled addons is defined in `src/addons/addons.js` (used only by `pull.js`, not at runtime). It includes editor tools such as `editor-devtools`, `debugger`, `variable-manager`, `folders`, `block-switching`, and the `editor-theme3` addon that powers custom block themes.
 

@@ -3,7 +3,7 @@ title: GUI API
 sidebar_position: 3
 ---
 
-`scratch-gui` is the React application that renders the MistWarp editor and player (and also
+`scratch-gui` is the React application that renders the Bilup editor and player (and also
 serves the community site). Its package entry point, `scratch-gui/src/index.js`, exports the
 pieces you need to mount the editor or a player in your own React app.
 

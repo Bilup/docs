@@ -5,11 +5,11 @@ sidebar_position: 2
 
 # Architecture
 
-MistWarp looks like one app but is really a set of independent packages wired together at build time. This page is the top-down map: what the packages are, how a project flows from blocks in the workspace to pixels on the stage, how it is saved and loaded, and where the editor, the addons, the theme engine, and the community layer sit around that core. The later pages in this section zoom into individual pieces; start here to see how they connect.
+Bilup looks like one app but is really a set of independent packages wired together at build time. This page is the top-down map: what the packages are, how a project flows from blocks in the workspace to pixels on the stage, how it is saved and loaded, and where the editor, the addons, the theme engine, and the community layer sit around that core. The later pages in this section zoom into individual pieces; start here to see how they connect.
 
 ## The packages
 
-MistWarp is a fork of TurboWarp, which is a fork of Scratch, and it inherits Scratch's split into separate npm packages. Each is its own repository, developed independently and linked into the editor build.
+Bilup is a fork of TurboWarp, which is a fork of Scratch, and it inherits Scratch's split into separate npm packages. Each is its own repository, developed independently and linked into the editor build.
 
 - **scratch-gui** is the editor and the community site: a React plus Redux application bundled by webpack. It owns the interface, the Redux store, the theme engine, the addon framework, and the community SPA. Everything you see is scratch-gui; almost everything in this Internals section is about it.
 - **scratch-vm** is the engine. It is plain JavaScript, no React. It owns the runtime, the targets (sprites and the stage), the blocks, the threads, the interpreter, and the JS compiler. It is the source of truth for what a project actually does.
@@ -45,14 +45,14 @@ The next sections follow a project through that loop: from the workspace into th
 
 ## From blocks to execution
 
-Blocks live in two places that stay in sync. In the workspace, **scratch-blocks** owns the visual blocks. In the VM, each target has a `blocks` container (`scratch-vm/src/engine/blocks.js`) that stores the same scripts as plain data keyed by block id. When you drag or edit a block, scratch-blocks fires an event, the VM applies the corresponding change to its block container, and the two representations stay aligned. MistWarp builds the workspace from the VM's block objects rather than round-tripping XML, so this bridge is the real coupling point (the palette and shadow inputs are built lazily).
+Blocks live in two places that stay in sync. In the workspace, **scratch-blocks** owns the visual blocks. In the VM, each target has a `blocks` container (`scratch-vm/src/engine/blocks.js`) that stores the same scripts as plain data keyed by block id. When you drag or edit a block, scratch-blocks fires an event, the VM applies the corresponding change to its block container, and the two representations stay aligned. Bilup builds the workspace from the VM's block objects rather than round-tripping XML, so this bridge is the real coupling point (the palette and shadow inputs are built lazily).
 
 Running a project means running threads. When a hat block fires (green flag, key press, broadcast), the runtime starts a **thread** (`engine/thread.js`) for that script. On every frame the **sequencer** (`engine/sequencer.js`) steps every active thread for a slice of a time budget (`WORK_TIME`, three quarters of the frame) and then yields so the frame can render. That step-a-little, render, step-a-little cadence is what makes scripts appear to run in parallel. The thread and sequencer model is documented in full under [Threads](/api-reference/threads).
 
 Each thread runs one of two ways:
 
 - **Interpreted.** `engine/execute.js` walks the block tree directly, looking up each opcode's function and calling it. This is the always-available path and how a script runs the first time it is stepped.
-- **Compiled.** MistWarp's JS compiler (`scratch-vm/src/compiler/`) turns a script into a real JavaScript function. `compile.js` runs an intermediate-representation generator (`irgen.js`), an optimizer (`iroptimizer.js`), and a JS generator (`jsgen.js`); the generated function is executed by `jsexecute.js`. Compiled scripts run far faster than interpreted ones. Compilation is on by default (`runtime.compilerOptions.enabled`) and can be turned off in settings, in which case everything falls back to the interpreter.
+- **Compiled.** Bilup's JS compiler (`scratch-vm/src/compiler/`) turns a script into a real JavaScript function. `compile.js` runs an intermediate-representation generator (`irgen.js`), an optimizer (`iroptimizer.js`), and a JS generator (`jsgen.js`); the generated function is executed by `jsexecute.js`. Compiled scripts run far faster than interpreted ones. Compilation is on by default (`runtime.compilerOptions.enabled`) and can be turned off in settings, in which case everything falls back to the interpreter.
 
 Both paths produce the same visible behavior; the compiler is a speed layer over the same semantics. The runtime, its options, and how it decides to compile are covered in the [VM API](/api-reference/vm-api).
 
@@ -109,9 +109,9 @@ Two editor subsystems sit alongside the React tree rather than inside it.
 
 ## The identity and community layer
 
-MistWarp is not local-only. scratch-gui also ships the community site (`src/community/`) from the same webpack build, and the editor has hooks into it.
+Bilup is not local-only. scratch-gui also ships the community site (`src/community/`) from the same webpack build, and the editor has hooks into it.
 
-Identity is Rotur-based (`src/lib/rotur/identity.js` is the single source of truth for both apps). A user logs in with a Rotur token, which is exchanged for a 7-day MistWarp session token; both apps subscribe to that state and logout clears it. The frontend calls the backend at `https://mwapi.mistium.com/api` with Bearer-token auth. Rotur social features (posts, likes, follows, avatars) go straight to `https://api.rotur.dev`.
+Identity is Rotur-based (`src/lib/rotur/identity.js` is the single source of truth for both apps). A user logs in with a Rotur token, which is exchanged for a 7-day Bilup session token; both apps subscribe to that state and logout clears it. The frontend calls the backend at `https://mwapi.mistium.com/api` with Bearer-token auth. Rotur social features (posts, likes, follows, avatars) go straight to `https://api.rotur.dev`.
 
 Publishing a project is upload-first: the editor creates a project record, uploads the sb3 and a thumbnail (the server unzips it and stores content-addressed assets), and the user shares it on the site. Settings and themes sync to the account with last-write-wins. These flows are backed by the `rotur` and `collaboration` Redux slices (see [State Management](/internals/state)) and are out of scope for this Internals section, which focuses on the editor engine; they are noted here so the whole picture is visible.
 

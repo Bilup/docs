@@ -3,11 +3,11 @@ title: Themes
 sidebar_position: 18
 ---
 
-MistWarp's appearance is themeable: a light or dark editor, an accent colour, the colours of the blocks, and fully custom themes you can build and share. This page explains where each of these lives.
+Bilup's appearance is themeable: a light or dark editor, an accent colour, the colours of the blocks, and fully custom themes you can build and share. This page explains where each of these lives.
 
 ## Editor theme and accent
 
-The overall **light or dark** look and the **accent colour** apply across all of MistWarp (the editor and the community site), so they live in your MistWarp account settings rather than the editor's own window. Open the [settings window](/editor/settings), go to the **Theme** page, and follow **Edit my MistWarp settings** to change them on the site.
+The overall **light or dark** look and the **accent colour** apply across all of Bilup (the editor and the community site), so they live in your Bilup account settings rather than the editor's own window. Open the [settings window](/editor/settings), go to the **Theme** page, and follow **Edit my Bilup settings** to change them on the site.
 
 Accent colours are grouped into plain colours, a set of pride flags, and richer gradient accents (such as Sunset, Ocean, and Aurora). Your choice is saved to your account and syncs across your devices when you are signed in.
 
@@ -45,7 +45,7 @@ The gradient builder designs a gradient accent for a custom theme:
 
 ## Bundling a theme with a project
 
-A project can carry its own theme. When you save, MistWarp can store your current theme in the project (via **Store settings in project** on the [settings](/editor/settings) General page, with **Store theme in project** ticked). When someone opens that project in the editor, MistWarp asks whether to **apply** the project's theme or **keep** their own, with a "do not ask again" option. On a project's community page the stored theme is applied automatically to the player.
+A project can carry its own theme. When you save, Bilup can store your current theme in the project (via **Store settings in project** on the [settings](/editor/settings) General page, with **Store theme in project** ticked). When someone opens that project in the editor, Bilup asks whether to **apply** the project's theme or **keep** their own, with a "do not ask again" option. On a project's community page the stored theme is applied automatically to the player.
 
 ## See also
 

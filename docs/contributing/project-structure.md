@@ -5,7 +5,7 @@ sidebar_position: 2
 
 # Project Structure
 
-MistWarp is a multi-repository workspace. Each package is its own Git checkout, and they are placed as siblings in one parent directory so they can link to each other. The parent directory itself is not a repository.
+Bilup is a multi-repository workspace. Each package is its own Git checkout, and they are placed as siblings in one parent directory so they can link to each other. The parent directory itself is not a repository.
 
 ```
 mistwarp/
@@ -24,9 +24,9 @@ mistwarp/
 
 ## The packages
 
-Scratch is split into packages that each implement one part of the app. MistWarp forks several of them.
+Scratch is split into packages that each implement one part of the app. Bilup forks several of them.
 
-- **scratch-gui** implements most of the interface (menu bar, sprite list, tabs), wires everything together, and is where addons live. It is a set of React components plus a Redux store. Uniquely to MistWarp, the same build also ships the community site.
+- **scratch-gui** implements most of the interface (menu bar, sprite list, tabs), wires everything together, and is where addons live. It is a set of React components plus a Redux store. Uniquely to Bilup, the same build also ships the community site.
 - **scratch-vm** runs projects. It holds the block definitions (`src/blocks/scratch3_*.js`), the extensions (`src/extensions/`), and the compiler that turns blocks into JavaScript (`src/compiler/`).
 - **scratch-render** draws the stage: sprites, pen, text bubbles, and collision blocks like "touching". Note that overlays such as variable monitors are drawn by scratch-gui, not scratch-render.
 - **scratch-blocks** is the block palette and workspace, a fork of Google Blockly. Edits under its `core/` directory require a Closure recompile (see [Building and Running](/contributing/building-running)).
@@ -53,7 +53,7 @@ scratch-gui/src/
 - `components/` holds pure UI. Each component is a folder with a `.jsx` and a matching CSS module.
 - `containers/` connects components to the Redux store. See [The Container Pattern](/internals/containers).
 - `reducers/` is the Redux state. See [State Management](/internals/state).
-- `lib/` is the largest directory: higher-order components under `lib/components/`, the theme engine under `lib/themes/`, project persistence under `lib/persistence/`, plus the MistWarp service layers `lib/community/` and `lib/rotur/` used by both the editor and the community site.
+- `lib/` is the largest directory: higher-order components under `lib/components/`, the theme engine under `lib/themes/`, project persistence under `lib/persistence/`, plus the Bilup service layers `lib/community/` and `lib/rotur/` used by both the editor and the community site.
 - `addons/` is the addon framework, ported from Scratch Addons. See [The Addons System](/internals/addons-system).
 
 The build produces several entry points, defined under `src/playground/`: `editor`, `player`, `community`, `fullscreen`, `embed`, `addons`, and `credits`. Routing is handled so that `/editor` serves the editor, `/embed.html` serves the embed player, and client routes such as `/project/*` and `/explore` serve the community app.
@@ -69,12 +69,12 @@ pnpm run link
 
 This means your directory layout matters: the engine packages must be siblings of scratch-gui, exactly as shown above.
 
-## The MistWarp-only services
+## The Bilup-only services
 
 Two pieces are not Scratch or TurboWarp code at all:
 
 - **mistwarp-api** is the community backend (accounts, projects, comments, notifications, settings sync). It is written in OSL and stores data as flat JSON, using Cloudflare R2 for project blobs. The frontend talks to it at `https://mwapi.mistium.com/api`.
-- Identity and social features run through **Rotur**. Signing in exchanges a Rotur token for a MistWarp session; social features (posts, likes, follows) go to `https://api.rotur.dev`.
+- Identity and social features run through **Rotur**. Signing in exchanges a Rotur token for a Bilup session; social features (posts, likes, follows) go to `https://api.rotur.dev`.
 
 You do not need either running to work on the editor itself. They matter when you are working on the community site.
 

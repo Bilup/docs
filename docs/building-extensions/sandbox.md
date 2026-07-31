@@ -9,11 +9,11 @@ There are two kinds of custom extension: **sandboxed** and **unsandboxed**. Ever
 
 ## The sandbox
 
-In MistWarp, the sandbox is an `<iframe>`. A sandboxed extension runs in a cross-origin iframe that cannot reach the main page where the editor and VM live. It is isolated in its own world.
+In Bilup, the sandbox is an `<iframe>`. A sandboxed extension runs in a cross-origin iframe that cannot reach the main page where the editor and VM live. It is isolated in its own world.
 
 That isolation means a sandboxed extension:
 
-- Cannot access MistWarp internals (the VM, the runtime, the renderer)
+- Cannot access Bilup internals (the VM, the runtime, the renderer)
 - Cannot read any part of the project that was not passed to it as an argument, including variables
 - Cannot interact with sprites directly
 
@@ -22,7 +22,7 @@ It can still:
 - Call most public web APIs, subject to [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 - Use many browser APIs that do not require page access, such as the [Gamepad API](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
 
-Some other Scratch mods sandbox extensions in a `Worker` instead. MistWarp uses an iframe because it is cross-origin (more secure) and exposes more web APIs.
+Some other Scratch mods sandbox extensions in a `Worker` instead. Bilup uses an iframe because it is cross-origin (more secure) and exposes more web APIs.
 
 ## The big limitation
 
@@ -32,15 +32,15 @@ That single-frame-per-block cost makes sandboxed extensions nearly useless for a
 
 ## Unsandboxed extensions
 
-An unsandboxed extension does not run in an iframe. It runs in the same page as MistWarp itself, loaded as a `<script>` tag. So it:
+An unsandboxed extension does not run in an iframe. It runs in the same page as Bilup itself, loaded as a `<script>` tag. So it:
 
-- **Can** access MistWarp internals
+- **Can** access Bilup internals
 - **Can** read any part of the project, including variables
 - **Can** interact with any sprite directly
 
 And, crucially, running one of its blocks is instantaneous. There is no forced one-frame delay.
 
-The trade-off is trust and responsibility: because unsandboxed code can do anything the page can do, MistWarp only runs it unsandboxed under specific conditions, and you take on some extra rules. That is the subject of the [next page](/building-extensions/unsandboxed).
+The trade-off is trust and responsibility: because unsandboxed code can do anything the page can do, Bilup only runs it unsandboxed under specific conditions, and you take on some extra rules. That is the subject of the [next page](/building-extensions/unsandboxed).
 
 ## Exercises
 
