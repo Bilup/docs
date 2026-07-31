@@ -1,129 +1,50 @@
 ---
-title: Quick Start Guide
+title: Quick start
 sidebar_position: 3
 ---
 
-# Quick Start Guide
+# Quick start
 
-Get started with Bilup in minutes! This guide will help you create your first project and understand the key differences from Scratch.
+This page builds a small working project from an empty editor. It takes a few minutes and assumes no prior MistWarp experience. If you have never used Scratch either, the block system is the same one Scratch uses; see [Migrating from Scratch](/getting-started/migrating-from-scratch) for the concepts.
 
-## Creating Your First Project
+## Open the editor
 
-1. **Open Bilup** - Navigate to [editor.bilup.org](https://editor.bilup.org/)
-2. **Familiarize yourself** - The interface is similar to Scratch with some enhancements
-3. **Start Creating** - Begin adding sprites and blocks just like in Scratch
+Go to [warp.mistium.com](https://warp.mistium.com/). A new project opens with the default sprite, **Misty**, already on the stage. You do not need an account for anything on this page.
 
-## Key Differences from Scratch
+## Add code
 
-### 🚀 Enhanced Performance
-- Projects run faster thanks to the optimized compiler
-- Supports higher frame rates (up to 60+ FPS)
-- Improved rendering for smoother animations
+The editor opens on the **Code** tab. The [blocks palette](/editor/blocks-palette) is on the left, grouped by category; the [workspace](/editor/workspace) where scripts go is in the middle.
 
-### 🎨 Customization Options
-- **Dark Mode** - Toggle between light and dark themes
-- **Custom Themes** - Create and apply your own visual themes
-- **Stage Sizing** - Customize stage dimensions beyond the standard 480x360
+1. From the **Events** category, drag a `when green flag clicked` block into the workspace. This is a hat block: it starts a script when the project runs.
+2. From **Looks**, drag a `say [Hello!] for (2) seconds` block and snap it under the hat.
+3. From **Motion**, drag a `move (10) steps` block underneath.
+4. From **Control**, drag a `forever` block and wrap it around the `move` block so the sprite keeps moving.
 
-### 🔧 Developer Features
-- **Browser Console Access** - Use `window.vm` to access the virtual machine
-- **Advanced Extensions** - Create custom blocks with JavaScript
-- **Performance Profiling** - Monitor and optimize project performance
+Blocks snap together when their notches line up. To pull a block out, drag it away; to delete one, drag it back onto the palette.
 
-### 💻 Default Sprite
-- Bilup delete default sprite and variable.
-- All Scratch sprites are still available in the sprite library
+## Run it
 
-## Your First Bilup Project
+Above the [stage](/editor/stage) on the right is the green flag and the stop sign. Click the **green flag** to run your script; Misty says hello and starts moving. Click the **stop sign** to stop. Pressing the space bar also toggles running.
 
-Let's create a simple project to get familiar with Bilup:
+If the sprite walks off the edge, add an `if on edge, bounce` block from **Motion** inside the `forever` loop.
 
-### Step 1: Add a Sprite
-1. Click the **Choose a Sprite** button in the bottom right
-2. Select any sprite from the library
-3. The sprite appears on the stage
+## Change how it looks
 
-### Step 2: Add Some Code
-1. Drag a `when green flag clicked` block from the Events category
-2. Add a `say Hello! for 2 seconds` block from the Looks category
-3. Add a `move 10 steps` block from the Motion category
-4. Add a `forever` block to make it repeat
+- The **Costumes** tab lets you draw or edit the sprite's appearance. See [Costumes](/editor/costumes).
+- The **Sounds** tab manages audio. See [Sounds](/editor/sounds).
+- Add more sprites with the sprite button at the bottom right of the [sprite pane](/editor/sprites), and change the backdrop from the [stage selector](/editor/stage) next to it.
 
-### Step 3: Run Your Project
-1. Click the **Green Flag** above the stage
-2. Watch your sprite move and talk!
+## Save it
 
-## Exploring Advanced Features
+- **File then Save to your computer** downloads a `.sb3` file. This works with no account, and the file also opens in Scratch and TurboWarp.
+- **File then Load from your computer** reopens a `.sb3` later.
+- With a Rotur account, **File then Save to MistWarp** publishes the project to your account and the community. See [Project management](/editor/project-management).
 
-### Using the Compiler
-Bilup automatically compiles your blocks into JavaScript for faster execution. You can:
-- View compiled code in the browser console
-- Profile performance to find bottlenecks
-- Optimize your project based on insights
+MistWarp also keeps [restore points](/editor/restore-points) and autosaves in the background, so a crash or accidental reload does not lose your work.
 
-### Custom Extensions
-Create custom blocks with JavaScript:
-1. Open the **Extensions** menu
-2. Browse available extensions
-3. Load custom extensions from URLs
-4. Access advanced APIs not available in standard Scratch
+## Where to go next
 
-### Saving and Sharing
-
-**Save Locally:**
-- File → Save to your computer
-- Projects save as `.sb3` files compatible with Scratch
-
-**Save to Cloud:**
-- Create an account to save projects online
-- Access your projects from any device
-- Share project links with others
-
-## Common Tasks
-
-### Importing Scratch Projects
-1. Download your `.sb3` file from Scratch
-2. In Bilup: File → Load from your computer
-3. Select the `.sb3` file
-4. Your project loads with all sprites and code intact
-
-### Changing Themes
-1. Click the **View** icon in the menu bar
-2. Select **Theme** from the dropdown
-3. Choose from available themes or create your own
-
-### Adjusting Performance
-1. Access **Advanced Settings** from the menu
-2. Adjust frame rate (30 FPS or 60 FPS)
-3. Enable/disable compiler for compatibility testing
-4. Configure stage size and rendering options
-
-## Keyboard Shortcuts
-
-- **Ctrl/Cmd + S** - Save project
-- **Ctrl/Cmd + Shift + S** - Save as new file
-- **Ctrl/Cmd + O** - Open project
-- **Ctrl/Cmd + Enter** - Start/stop project (alternative to green flag/stop button)
-- **Ctrl/Cmd + Shift + E** - Export project
-
-## Getting Help
-
-If you encounter issues or have questions:
-
-- **Documentation** - Browse the [full documentation](/)
-<!-- - **Community Forums** - Visit []() -->
-- **GitHub Issues** - Report bugs at [github.com/Bilup/scratch-gui/issues](https://github.com/Bilup/scratch-gui/issues)
-- **Troubleshooting** - Check the [Troubleshooting Guide](../user-guide/troubleshooting.md)
-
-## Next Steps
-
-Now that you've created your first project, explore more:
-
-1. **[User Interface Guide](../user-guide/interface.md)** - Master the Bilup interface
-2. **[Advanced Features](../user-guide/advanced-settings.md)** - Unlock powerful capabilities
-3. **[Extension Development](../extensions/introduction.md)** - Create custom blocks
-4. **[Project Management](../user-guide/projects.md)** - Save, load, and share projects
-
----
-
-*Ready to create amazing projects? Start exploring Bilup's features and unleash your creativity!*
+- [Editor tour](/getting-started/editor-tour) names every region of the interface.
+- [Blocks overview](/blocks/overview) is the reference for each block category.
+- [Extensions overview](/extensions/overview) adds blocks for pen, music, translation, hardware, and more.
+- [Advanced settings](/advanced/custom-fps) unlock higher frame rates, a custom stage size, and other limits.

@@ -1,73 +1,45 @@
 ---
-slug: /getting-started/
-title: Introduction to Bilup
+title: Introduction
 sidebar_position: 1
 ---
 
-# Introduction to Bilup
+# Introduction
 
-Bilup is a powerful, feature-rich modification of Scratch that enhances the original platform with advanced performance optimizations, extensive customization options, and a comprehensive addon system.
+MistWarp is a modification of Scratch, built on top of TurboWarp, made by Mistium. If you have used Scratch, MistWarp will feel familiar: the same blocks, sprites, costumes, and stage. On top of that base it adds performance, customization, developer tooling, and a community platform.
 
-## What Makes Bilup Special?
+The editor and the community site are one application. You can open the editor at [warp.mistium.com](https://warp.mistium.com/) and start building immediately, with no account and nothing to install.
 
-### 🚀 Performance Enhancements
-- **Turbo Compilation**: Projects run faster in our optimized compiler
-- **Advanced Rendering**: Improved graphics performance and reduced lag
-- **Memory Optimization**: Better memory management for large projects
-- **60+ FPS Support**: Smooth animations at higher frame rates
+## What MistWarp adds
 
-### 🎨 Theming & Customization
-- **Dark Mode**: Multiple dark theme variants
-- **Custom Themes**: Create and share your own themes
+- A **compiler** that translates your blocks into JavaScript so projects run faster than the standard Scratch interpreter. See [Disable compiler](/advanced/disable-compiler) if you ever need to turn it off for comparison.
+- **Arbitrary frame rate** and a **custom stage size** instead of a fixed 30 FPS and 480x360. See [Custom FPS](/advanced/custom-fps) and [Custom stage size](/advanced/custom-stage-size).
+- **Addons**: small optional features that change how the editor and player behave. See [Addons](/editor/addons).
+- **Themes**, including dark mode and fully custom color schemes. See [Themes](/editor/themes).
+- A **debugger** for stepping through and inspecting a running project. See [Debugger](/editor/debugger).
+- **Restore points** and autosave so you do not lose work. See [Restore points](/editor/restore-points).
+- **Git version control** and **live collaboration** for working on projects over time and with other people. See [Git](/editor/git) and [Collaboration](/editor/collaboration).
+- A **packager** that turns a project into a standalone app or web page. See the [Packager](/packager/overview).
+- A **community platform** with accounts, where you publish projects, follow people, and comment. Accounts are handled through Rotur; see [Migrating from TurboWarp](/getting-started/migrating-from-turbowarp) for how the community side fits together.
 
-### 🔧 Addon System
-- **100+ Built-in Addons**: Enhance functionality with our extensive addon library
-- **Custom Addons**: Develop your own addons with our powerful API
-- **Addon Manager**: Easy installation and management of addons
+## Who this is for
 
-### 💻 Developer Tools
-- **Advanced Debugger**: Step through code, set breakpoints, and inspect variables
-- **Performance Profiler**: Analyze project performance and optimize bottlenecks
-- **Extension Development**: Create custom blocks and extensions
-- **API Access**: Programmatic control over the editor and runtime
+MistWarp serves two kinds of reader at once, and these docs are written for both:
 
-## Key Differences from Scratch
+- If you are **coming from Scratch**, everything you already know still applies. Start with [Migrating from Scratch](/getting-started/migrating-from-scratch) and the [Quick start](/getting-started/quick-start).
+- If you are an **advanced user or developer**, MistWarp exposes the runtime through JavaScript, custom extensions, and a documented API. See [JavaScript](/advanced/javascript), [Building extensions](/building-extensions/introduction), and the [API reference](/api-reference/overview).
 
-| Feature | Scratch | TurboWarp | MistWarp | Bilup |
-|---------|----------|---------|----------|----------|
-| **Performance** | Slow | Fast | Medium | Faster |
-| **Frame Rate** | 30 FPS | 60 FPS | 60+ FPS | Custom FPS |
-| **Themes** | Light only | Dark mode | Customizable | Highly customizable |
-| **Animations** | Mostly none | Mostly none | Mostly none | Mostly available |
-| **Addons** | None | 80+ built-in addons | 90+ built-in addons | 100+ built-in addons |
-| **Translation** | Mostly translated | Partially translated | Mostly untranslated | Well translated |
+## The default sprite
 
-## Architecture Overview
+New MistWarp projects start with **Misty**, MistWarp's own default sprite, in place of the Scratch Cat. Every sprite from the standard Scratch library is still available in the sprite picker.
 
-Bilup is built on a modular architecture consisting of several key components:
+## Next steps
 
-- **scratch-gui**: The user interface and editor
-- **scratch-vm**: The runtime engine that executes projects
-- **scratch-render**: The rendering engine for sprites and stage
-- **scratch-blocks**: The visual block editor
-- **Addon System**: Modular enhancement system
-- **Theme Engine**: Dynamic theming and styling system
+- [Installation](/getting-started/installation): use MistWarp on the web, as a desktop app, or via the packager.
+- [Quick start](/getting-started/quick-start): build a first project.
+- [Editor tour](/getting-started/editor-tour): learn where everything is.
 
-## Getting Started
+## See also
 
-Ready to dive in? Here's what you can do next:
-
-1. **[Access Bilup](./installation.md)** - Get started with Bilup web app
-2. **[Quick Start Guide](./quick-start.md)** - Understand key differences from Scratch
-3. **[Migration Guide](./migrating-from-scratch.md)** - Move from Scratch to Bilup
-4. **[GUI Internals](../gui-internals/home.md)** - Technical architecture documentation
-
-## Development
-
-- **GitHub**: [https://github.com/Bilup](https://github.com/Bilup) - Source code and issue tracking
-- **Issues**: Report technical problems and bugs
-- **Contributions**: Submit improvements and fixes
-
----
-
-*Continue to [Getting Started](./installation.md) to access Bilup.*
+- [Editor interface](/editor/interface)
+- [Migrating from Scratch](/getting-started/migrating-from-scratch)
+- [Migrating from TurboWarp](/getting-started/migrating-from-turbowarp)

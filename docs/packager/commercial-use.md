@@ -1,22 +1,27 @@
 ---
+title: Commercial Use
+sidebar_position: 3
 slug: /packager/commercial-use
-hide_table_of_contents: true
 ---
 
-# Can I sell projects made with the Bilup Packager?
+# Can I sell projects made with the packager?
 
 :::note
-We are not lawyers. This page is not legal advice. Talk to a real lawyer if this is important.
+We are not lawyers and this is not legal advice. If this matters to you, talk to a real lawyer.
 :::
 
-Yes, if you have the rights to all the costumes, sounds, scripts, and extensions inside the project you package, it is possible to sell it.
+Yes. If you have the rights to everything inside the project (its costumes, sounds, scripts, and extensions), you can sell a project packaged with the [MistWarp Packager](/packager/overview).
 
-The open source components of Scratch and Bilup used by the packager are available under open source licenses that allow you to use, modify, distribute, and sell packaged projects without fees or royalties. It is also important to note that these licenses do not offer a warranty. Some parts of Bilup use "weak" copyleft licenses such as the [Mozilla Public License version 2.0](https://mozilla.org/MPL/2.0/). Grossly simplified, this means that if you modify the those parts of the code, you must share just that specific code under the same license.
+The open-source components of Scratch and MistWarp that the packager bundles are released under licenses that let you use, modify, distribute, and sell packaged projects without fees or royalties. Those licenses also come with no warranty. Some parts use a "weak" copyleft license such as the [Mozilla Public License 2.0](https://mozilla.org/MPL/2.0/): grossly simplified, if you modify those specific files, you must share that specific code under the same license. Simply packaging a project does not trigger this.
 
-If you used costumes, sounds, scripts, or extensions created by other people, make sure you have permission from those people to sell their work. Most things you find on the Scratch website are supposed to be available under the [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) license which technically doesn't prevent you from re-selling the work, but it requires attribution and the share-alike clause may have significant implications. Creators can grant you additional permissions on top of the CC BY-SA 2.0 if they choose.
+## Assets and other people's work
 
-Note that the Scratch trademarks such as the Scratch Logo, Scratch cat, Gobo, Pico, etc. are an exception to the CC BY-SA 2.0 license, and you might not have permission to use them.
+If your project uses costumes, sounds, scripts, or extensions made by other people, make sure you have their permission to sell it. Most material on the Scratch website is meant to be available under [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/), which does not forbid resale but does require attribution and carries a share-alike clause that can have real implications. Creators can grant you extra permissions on top of that if they choose.
 
-For more information, see "May I use / remix Scratch support materials, sprites, images, sounds or sample projects I’ve found on the website?" and "Can I sell my Scratch projects?" in https://scratch.mit.edu/faq
+The Scratch trademarks (the Scratch logo, the Scratch cat, Gobo, Pico, and so on) are excluded from that license, so you may not have permission to use them commercially.
 
-If you make money off of the packager, you are encouraged to [donate to us and the projects we rely upon](/donate). ❤️
+For Scratch's own guidance, see the answers to "May I use / remix Scratch support materials..." and "Can I sell my Scratch projects?" in the [Scratch FAQ](https://scratch.mit.edu/faq).
+
+## See also
+
+- [Packager overview](/packager/overview)

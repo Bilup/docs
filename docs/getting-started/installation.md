@@ -1,174 +1,50 @@
 ---
-title: Getting Started
+title: Installation
 sidebar_position: 2
 ---
 
-# Getting Started
+# Installation
 
-Bilup is a web-based application that runs directly in your browser. No installation is required!
+MistWarp is free and open source. There is nothing to buy and, for the web version, nothing to install. You can use it three ways: in your browser, as a desktop app, or as a packaged standalone build of a single project.
 
-## Accessing Bilup
+## Use it on the web
 
-Bilup is exclusively available as a web application and can be accessed at:
+Open [warp.mistium.com](https://warp.mistium.com/) in any modern browser. The editor loads and you can start building right away. No account is required to create, edit, save to your computer, or open `.sb3` files.
 
-**🌐 [https://editor.bilup.org/](https://editor.bilup.org/)**
+Sign in with a **Rotur account** when you want to:
 
-Simply open the link in any modern web browser and you're ready to start creating!
+- publish projects to the MistWarp community,
+- follow people, comment, and appear on your profile,
+- sync your settings and themes across devices.
 
-## System Requirements
+You can do all of that later; you do not need it to start.
 
-Bilup works in any modern web browser that supports JavaScript and WebGL:
+### Saving your work
 
-### Supported Browsers
-- **Chrome 80+** (recommended for best performance)
-- **Firefox 78+**
-- **Safari 14+** (macOS/iOS)
-- **Edge 80+**
+Without an account, use **File then Save to your computer** to download a `.sb3` file, and **File then Load from your computer** to open one again. With an account, **File then Save to MistWarp** publishes the project to the community platform and keeps it in your account. See [Project management](/editor/project-management) for the full save and share flow.
 
-### Hardware Requirements
-- **RAM**: 4GB minimum, 8GB+ recommended for complex projects
-- **Internet**: Stable connection required for loading and saving projects
-- **Storage**: Projects are saved to your browser's local storage or cloud storage
+## Desktop app
 
-### Recommended Setup
-- **RAM**: 8GB+ for large projects with many sprites and scripts
-- **Processor**: Modern multi-core processor for smooth performance
-- **Internet**: Broadband connection for faster project loading
-- **Graphics**: WebGL 2.0 support for optimal rendering
+MistWarp has a desktop application that runs the same editor in its own window instead of a browser tab. The desktop build adds conveniences that a web page cannot offer, such as multiple editor windows and native file handling. Download the current release from [github.com/MistWarp/desktop/releases](https://github.com/MistWarp/desktop/releases).
 
-## Browser Compatibility
+The desktop app is optional. Every core feature is available on the web.
 
-| Browser | Minimum Version | Recommended |
-|---------|----------------|-------------|
-| Chrome | 80+ | Latest |
-| Firefox | 78+ | Latest |
-| Safari | 14+ | Latest |
-| Edge | 80+ | Latest |
+## Packaging a project
 
-### Required Features
-- ES2020 support
-- WebGL 1.0 (WebGL 2.0 recommended)
-- Web Audio API
-- Local Storage
-- WebAssembly (for optimal performance)
+The [MistWarp Packager](https://packager.warp.mistium.com/) turns a single project into a standalone program you can distribute: an HTML file, a zip, or a native executable, all runnable without the editor. This is not an installer for MistWarp itself; it is a build tool for the projects you make with it.
 
-## First Time Setup
+You can open the current project directly in the packager from **File then Package project** (Ctrl+P). See the [Packager overview](/packager/overview) for options like offline builds, custom stage resizing, and commercial use.
 
-When you first visit Bilup:
+## Browser support
 
-1. **Open your browser** and navigate to [editor.bilup.org](https://editor.bilup.org/)
-2. **Allow JavaScript** if prompted (required for Bilup to function)
-3. **Accept camera/microphone permissions** if you plan to use sensing blocks
-4. **Create an account** (optional) to save projects to the cloud
+MistWarp runs in current versions of Chrome, Edge, Firefox, and Safari. It needs JavaScript, WebGL, and the Web Audio API, all of which those browsers provide by default. If the stage will not render, check that hardware acceleration and WebGL are enabled in your browser settings.
 
-## Browser Configuration
+## Next steps
 
-### Enable Required Features
+- [Quick start](/getting-started/quick-start): build your first project.
+- [Editor tour](/getting-started/editor-tour): learn the interface.
 
-For the best Bilup experience, ensure these browser features are enabled:
+## See also
 
-- **JavaScript**: Required for all functionality
-- **WebGL**: Needed for stage rendering and effects
-- **Local Storage**: Used for saving projects locally
-- **Camera/Microphone**: Required for sensing blocks (optional)
-
-### Performance Tips
-
-- **Close unnecessary tabs** to free up RAM
-- **Use hardware acceleration** if available in browser settings
-- **Clear browser cache** occasionally if Bilup becomes slow
-- **Disable browser extensions** that might interfere with performance
-
-## Development Setup
-
-For developers who want to modify or contribute to Bilup:
-
-### Prerequisites
-- Node.js 18+ 
-- npm or yarn
-- Git
-
-### Clone and Build
-
-```bash
-# Clone the repository
-git clone https://github.com/Bilup/scratch-gui.git
-cd scratch-gui
-
-# Install dependencies
-npm ci
-
-# Start development server
-npm start
-```
-
-The development server will be available at `http://localhost:8601/`.
-
-### Building Other Components
-
-To work on the full Bilup stack:
-
-```bash
-# Clone all repositories
-git clone https://github.com/Bilup/scratch-vm.git
-git clone https://github.com/Bilup/scratch-gui.git  
-git clone https://github.com/Bilup/scratch-render.git
-
-# Link local packages (from each directory)
-cd scratch-vm && npm link
-cd ../scratch-render && npm link
-cd ../scratch-gui && npm link scratch-vm scratch-render
-
-# Start development
-cd scratch-gui && npm start
-```
-
-## Troubleshooting
-
-### Common Issues
-
-**Bilup won't load:**
-1. Check your internet connection
-2. Disable browser extensions temporarily
-3. Clear browser cache and cookies
-4. Try a different browser
-
-**Poor performance:**
-1. Close other browser tabs
-2. Restart your browser
-3. Check available RAM
-4. Try using Chrome for best performance
-5. Enable hardware acceleration in browser settings
-
-**Projects won't save:**
-1. Check browser local storage isn't full
-2. Enable third-party cookies if using cloud saves
-3. Create an account for cloud storage
-
-**Blocks are missing or behave strangely:**
-1. Refresh the page
-2. Clear browser cache
-3. Check for browser console errors
-
-**Graphics/rendering issues:**
-1. Update your graphics drivers
-2. Enable WebGL in browser settings
-3. Try a different browser
-
-### Getting Help
-
-If you encounter issues:
-- Check the [Troubleshooting Guide](../user-guide/troubleshooting.md)
-<!-- - Visit our [Community Forums]() -->
-- Report bugs on [GitHub Issues](https://github.com/Bilup/scratch-gui/issues)
-
-## What's Next?
-
-Now that you can access Bilup:
-
-1. **[Quick Start Guide](./quick-start.md)** - Create your first project
-2. **[User Interface](../user-guide/interface.md)** - Learn the interface
-3. **[Project Management](../user-guide/projects.md)** - Save and share projects
-4. **[Migration Guide](./migrating-from-scratch.md)** - Import existing Scratch projects
-
-*Continue to [Quick Start](./quick-start.md) to create your first project.*
+- [Packager overview](/packager/overview)
+- [Project management](/editor/project-management)

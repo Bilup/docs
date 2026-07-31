@@ -14,16 +14,22 @@ module.exports = {
       onBrokenMarkdownLinks: 'warn',
     },
   },
+  clientModules: [
+    require.resolve('./src/clientModules/spotlight-key.js'),
+    require.resolve('./src/clientModules/sidebar-toggle.js'),
+  ],
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'zh-CN'],
+    locales: ['en'],
     localeConfigs: {
       en: {
         label: 'English',
       },
-      'zh-CN': {
-        label: '中文',
-      },
+      // zh-CN temporarily disabled: the existing Chinese translations target the
+      // old doc structure and need to be re-mapped to the new structure first.
+      // 'zh-CN': {
+      //   label: '中文',
+      // },
     },
   },
   themeConfig: {
@@ -35,29 +41,35 @@ module.exports = {
       },
       items: [
         {
-          to: '/getting-started/',
-          label: 'Getting Started',
-          position: 'left'
+          type: 'dropdown',
+          label: 'Use MistWarp',
+          position: 'left',
+          items: [
+            {to: '/getting-started/introduction', label: 'Getting Started'},
+            {to: '/editor/interface', label: 'Using the Editor'},
+            {to: '/blocks/overview', label: 'Blocks Reference'},
+            {to: '/extensions/overview', label: 'Extensions'},
+            {to: '/advanced/cloud-variables', label: 'Advanced Features'}
+          ]
         },
         {
-          to: '/development/',
-          label: 'Development',
-          position: 'left'
+          type: 'dropdown',
+          label: 'Build & Extend',
+          position: 'left',
+          items: [
+            {to: '/building-extensions/introduction', label: 'Building Extensions'},
+            {to: '/packager/overview', label: 'Packager'},
+            {to: '/api-reference/overview', label: 'API Reference'}
+          ]
         },
         {
-          to: '/gui-internals/',
-          label: 'GUI Internals',
-          position: 'left'
-        },
-        {
-          to: '/packager/',
-          label: 'Packager',
-          position: 'left'
-        },
-        {
-          to: '/api-reference/',
-          label: 'API Reference',
-          position: 'left'
+          type: 'dropdown',
+          label: 'Contribute',
+          position: 'left',
+          items: [
+            {to: '/contributing/overview', label: 'Contributing'},
+            {to: '/internals/overview', label: 'Architecture & Internals'}
+          ]
         },
         {
           href: 'https://editor.bilup.org/',
@@ -82,6 +94,8 @@ module.exports = {
       apiKey: '2e6593daef4974ad3d144ebd2fdf488f'
     },
     colorMode: {
+      // The editor syncs the docs to its own theme, so no in-page toggle.
+      disableSwitch: true,
       respectPrefersColorScheme: true,
     },
     prism: {

@@ -1,61 +1,40 @@
 ---
 slug: /
-title: Intro
+title: MistWarp Documentation
 hide_table_of_contents: true
 ---
 
-# Bilup Documentation
+# MistWarp Documentation
 
-Technical documentation for [Bilup](https://editor.bilup.org/) - a graphical editor based on TurboWarp(MistWarp).
+[MistWarp](https://warp.mistium.com/) is a Scratch modification built on TurboWarp, by Mistium. It keeps the Scratch editor you already know and adds a compiler that turns blocks into JavaScript, a large set of addons and themes, a project packager, a debugger, git version control, live collaboration, and a full community platform with accounts.
 
-## What is Bilup?
+The editor and the community site ship from one build. You can use MistWarp entirely in the browser at [warp.mistium.com](https://warp.mistium.com/), with no account and no install required. Sign in with a Rotur account when you want to publish projects, follow other people, and sync your settings across devices.
 
-[Bilup](https://editor.bilup.org/) is a graphical editor based on TurboWarp(MistWarp):
+## Start here
 
-- **More Addons** - Provides additional functionality and extensions
-- **Comprehensive Extension Gallery** - Includes extensions from Scratch, TurboWarp, MistWarp, Bilup and other extension galleries
-- **New Optimized Interface** - More intuitive interface
+- [Introduction](/getting-started/introduction) covers what MistWarp is and who it is for.
+- [Installation](/getting-started/installation) explains how to use MistWarp on the web, as a desktop app, or through the packager.
+- [Quick start](/getting-started/quick-start) walks you through building your first project.
+- [Editor tour](/getting-started/editor-tour) labels every region of the editor and links to its reference page.
 
-## Quick Navigation
+## Coming from Scratch or TurboWarp
 
-### 🚀 [Getting Started](./getting-started)
-Access Bilup and understand the technical differences from Scratch.
+- [Migrating from Scratch](/getting-started/migrating-from-scratch) if you are new to modifications.
+- [Migrating from TurboWarp](/getting-started/migrating-from-turbowarp) if you already know TurboWarp and want to know what MistWarp adds.
 
-### 🛠️ [Development](./development)
-Contribute to Bilup development and understand the codebase.
+## Browse the docs
 
-### ⚙️ [GUI Internals](./gui-internals)
-Technical documentation of the user interface architecture.
+- [Editor](/editor/interface) is the reference for every part of the editor UI.
+- [Blocks](/blocks/overview) documents each block category.
+- [Extensions](/extensions/overview) covers the built-in and loadable extensions.
+- [Advanced](/advanced/javascript) explains performance settings, URL parameters, embedding, and cloud variables.
+- [Packager](/packager/overview) turns a project into a standalone app or web page.
+- [Building extensions](/building-extensions/introduction) and the [API reference](/api-reference/overview) are for developers writing custom blocks and tooling.
 
-### 📖 [API Reference](./api-reference)
-Programming interfaces and technical specifications.
+## Related sites
 
-## Related Projects
+- [MistWarp editor](https://warp.mistium.com/)
+- [MistWarp packager](https://packager.warp.mistium.com/)
+- [MistWarp on GitHub](https://github.com/MistWarp)
 
-- **[Bilup](https://editor.bilup.org/)** - Main web application
-- **[Bilup Desktop](https://desktop.bilup.org/)** - Desktop version available offline
-- **[Bilup Packager](https://packager.bilup.org/)** - Package projects for web deployment
-- **[Bilup Extension Gallery](https://extensions.bilup.org/)** - Provides additional functionality and extensions
-- **[Bilup Documentation](https://docs.bilup.org/)** (this page) - Provides detailed documentation and tutorials
-- **[Bilup Official Website](https://bilup.org/)**
-
-## Development
-
-- **GitHub**: [https://github.com/Bilup](https://github.com/Bilup)
-- **Issues**: Report technical issues and bugs
-- **Contributions**: Submit pull requests for improvements
-
-## Contact Us
-
-- **Email**: [support@bilup.org](mailto:support@bilup.org)
-- **QQ Group**: 1023375209 (User Group)
-
----
-
-*For general Scratch help, see [Scratch documentation](https://scratch.mit.edu/help/).*
-
-These pages are [open source](https://github.com/Bilup/docs). ~~Contributions are welcome.~~
-
-## Why I see TurboWarp pages here?
-
-Due to compatibility and some pages truly helps you understand our project, we decided to keep them here.
+MistWarp is free and open source. These docs are on [GitHub](https://github.com/MistWarp/docs) and contributions are welcome. For general Scratch help, see the [Scratch help pages](https://scratch.mit.edu/help/).

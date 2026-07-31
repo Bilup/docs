@@ -1,19 +1,27 @@
 ---
+title: Dynamic Stage Resize
+sidebar_position: 4
 slug: /packager/dynamic-stage-resize
-hide_table_of_contents: true
 ---
 
 # Dynamic stage resize
 
 :::info
-This page is about the [Bilup Packager](https://packager.bilup.org/).
+This is a [MistWarp Packager](/packager/overview) option.
 :::
 
-Dynamic stage resize will change the size of the stage to match whatever aspect ratio and resolution it's being displayed at.
+Dynamic stage resize makes the stage match whatever size and aspect ratio it is being shown at, instead of a fixed [stage size](/advanced/custom-stage-size).
 
-The stage isn't scaled; the [size](/custom-stage-size) actually changes. For example, if the user enables fullscreen on a 1920x1080 monitor, then the stage resizes to 1920x1080. If the user resizes the window to 1x1, it will also resize to that, so you should consider adding a minimum size check.
+The stage is not scaled, its actual dimensions change. If the user goes fullscreen on a 1920x1080 monitor, the stage becomes 1920x1080. If they shrink the window to 1x1, the stage becomes 1x1, so add a minimum-size check in your project to avoid degenerate cases.
 
-Almost no projects will handle this properly. To make your project compatible:
+## Making a project compatible
 
- - First, make it compatible with [custom stage size](/custom-stage-size) at all (see that page for information)
- - Then, change your stage size detection logic to run every frame and make sure to always update the positions of items (yes this is inefficient and strange, but it's plenty fast and the best choice for now)
+Almost no projects handle this out of the box. To support it:
+
+1. First make the project work with a [custom stage size](/advanced/custom-stage-size) at all.
+2. Then move your stage-size detection into a loop that runs every frame, and re-position everything based on the current size each frame. This is not elegant, but it is fast enough and is the most reliable approach.
+
+## See also
+
+- [Custom stage size](/advanced/custom-stage-size)
+- [Packager overview](/packager/overview)

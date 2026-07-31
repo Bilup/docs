@@ -1,180 +1,132 @@
 ---
 title: Extension API
-sidebar_position: 3
+sidebar_position: 4
 ---
 
-# Extension API
+An extension adds a category of blocks to the palette. This page is the reference for the
+author-facing runtime API: the global `Scratch` object, the `BlockType` and `ArgumentType`
+enums, and the registration entry point. For a step-by-step guide, start with
+[Building Extensions](/building-extensions/introduction).
 
-The Extension API allows developers to create custom blocks and functionality that integrates with the Scratch programming environment in Bilup.
+An extension is a class with a `getInfo()` method that describes its blocks, plus one method per
+block. It registers itself with `Scratch.extensions.register`.
 
-## Overview
-
-Extensions in Bilup provide:
-- Custom blocks with unique functionality
-- Integration with external services and hardware
-- Advanced programming constructs beyond standard Scratch blocks
-- Custom block categories and organization
-
-## Basic Extension Structure
-
-```javascript
-// Basic extension template
+```js
 class MyExtension {
-  getInfo() {
-    return {
-      id: 'myextension',
-      name: 'My Extension',
-      blocks: [
-        {
-          opcode: 'myBlock',
-          blockType: Scratch.BlockType.COMMAND,
-          text: 'do something with [VALUE]',
-          arguments: {
-            VALUE: {
-              type: Scratch.ArgumentType.STRING,
-              defaultValue: 'hello'
-            }
-          }
-        }
-      ]
-    };
-  }
-
-  myBlock(args) {
-    console.log('Doing something with:', args.VALUE);
-  }
+    getInfo () {
+        return {
+            id: 'myextension',
+            name: 'My Extension',
+            color1: '#ff4c4c',
+            blocks: [
+                {
+                    opcode: 'addTwo',
+                    blockType: Scratch.BlockType.REPORTER,
+                    text: 'add [A] and [B]',
+                    arguments: {
+                        A: {type: Scratch.ArgumentType.NUMBER, defaultValue: 1},
+                        B: {type: Scratch.ArgumentType.NUMBER, defaultValue: 2}
+                    }
+                }
+            ]
+        };
+    }
+    addTwo (args) {
+        return Scratch.Cast.toNumber(args.A) + Scratch.Cast.toNumber(args.B);
+    }
 }
-
 Scratch.extensions.register(new MyExtension());
 ```
 
-## Block Types
+## The `Scratch` object
 
-### Command Blocks
-Execute actions without returning values:
+For unsandboxed extensions, `Scratch` is a global. Its always-present members come from
+`scratch-vm/src/extension-support/tw-extension-api-common.js`:
 
-```javascript
-{
-  opcode: 'myCommand',
-  blockType: Scratch.BlockType.COMMAND,
-  text: 'execute command [INPUT]'
-}
-```
+- `Scratch.ArgumentType`, `Scratch.BlockType`, `Scratch.TargetType`, `Scratch.BlockShape`: the
+  enums below.
+- `Scratch.Cast`: the [type coercion helpers](/api-reference/utilities) blocks use to normalize
+  their inputs. Use these instead of raw `Number(...)`/`String(...)`.
 
-### Reporter Blocks
-Return values that can be used in other blocks:
+Unsandboxed extensions get more, added per extension when the script runs
+(`tw-unsandboxed-extension-runner.js`):
 
-```javascript
-{
-  opcode: 'myReporter',
-  blockType: Scratch.BlockType.REPORTER,
-  text: 'get value from [SOURCE]'
-}
-```
+- `Scratch.extensions.register(extensionObject)`: register your extension. `Scratch.extensions.unsandboxed`
+  is `true` in this environment.
+- `Scratch.vm`: the live [`VirtualMachine`](/api-reference/vm-api).
+- `Scratch.renderer`: the attached renderer.
+- `Scratch.translate`: format-message helper for localized strings.
+- Permission checks (each returns a `Promise<boolean>`): `Scratch.canFetch(url)`,
+  `Scratch.canOpenWindow(url)`, `Scratch.canRedirect(url)`, `Scratch.canDownload(url, name)`,
+  `Scratch.canEmbed(url)`, `Scratch.canRecordAudio()`, `Scratch.canRecordVideo()`,
+  `Scratch.canReadClipboard()`, `Scratch.canNotify()`, `Scratch.canGeolocate()`.
+- Guarded actions (each checks the matching permission first, then acts):
+  `Scratch.fetch(url, options)`, `Scratch.download(url, file)`, `Scratch.openWindow(url, features)`,
+  `Scratch.redirect(url)`.
 
-### Boolean Blocks
-Return true/false values for conditional logic:
+Always route network and window access through these helpers. They ask the VM's security manager,
+which is how the user stays in control of what an extension may reach. See
+[Sandboxed vs unsandboxed](/building-extensions/unsandboxed).
 
-```javascript
-{
-  opcode: 'myBoolean',
-  blockType: Scratch.BlockType.BOOLEAN,
-  text: 'is [CONDITION] true?'
-}
-```
+## BlockType
 
-### Hat Blocks
-Trigger scripts when specific events occur:
+From `extension-support/block-type.js`:
 
-```javascript
-{
-  opcode: 'myHat',
-  blockType: Scratch.BlockType.HAT,
-  text: 'when something happens'
-}
-```
+| Value | Meaning |
+| --- | --- |
+| `BlockType.COMMAND` (`'command'`) | Stack block that runs an action. |
+| `BlockType.REPORTER` (`'reporter'`) | Returns a number or string. |
+| `BlockType.BOOLEAN` (`'Boolean'`) | Hexagonal reporter returning true/false. |
+| `BlockType.HAT` (`'hat'`) | Starts a stack when its condition becomes true. |
+| `BlockType.EVENT` (`'event'`) | Hat with no predicate; runs when the matching event is fired. |
+| `BlockType.CONDITIONAL` (`'conditional'`) | C-block; may run a branch, then continues. |
+| `BlockType.LOOP` (`'loop'`) | C-block; re-evaluates after each branch run. |
+| `BlockType.BUTTON` (`'button'`) | A palette button, not a runnable block. |
+| `BlockType.LABEL` (`'label'`) | A text label in the palette, not a block. |
+| `BlockType.XML` (`'xml'`) | Arbitrary scratch-blocks XML. |
 
-## Argument Types
+## ArgumentType
 
-```javascript
-arguments: {
-  STRING_ARG: {
-    type: Scratch.ArgumentType.STRING,
-    defaultValue: 'hello world'
-  },
-  NUMBER_ARG: {
-    type: Scratch.ArgumentType.NUMBER,
-    defaultValue: 42
-  },
-  BOOLEAN_ARG: {
-    type: Scratch.ArgumentType.BOOLEAN
-  },
-  COLOR_ARG: {
-    type: Scratch.ArgumentType.COLOR,
-    defaultValue: '#ff0000'
-  },
-  ANGLE_ARG: {
-    type: Scratch.ArgumentType.ANGLE,
-    defaultValue: 90
-  }
-}
-```
+From `extension-support/argument-type.js`. The type controls which input editor the argument
+shows:
 
-## Advanced Features
+| Value | Input shown |
+| --- | --- |
+| `ArgumentType.NUMBER` (`'number'`) | Number field. |
+| `ArgumentType.STRING` (`'string'`) | Text field. |
+| `ArgumentType.BOOLEAN` (`'Boolean'`) | Hexagonal boolean slot (no default value). |
+| `ArgumentType.ANGLE` (`'angle'`) | Number field with an angle picker. |
+| `ArgumentType.COLOR` (`'color'`) | Color picker. |
+| `ArgumentType.MATRIX` (`'matrix'`) | 5x5 matrix field. |
+| `ArgumentType.NOTE` (`'note'`) | Piano note picker. |
+| `ArgumentType.IMAGE` (`'image'`) | Inline image in the block label (not a real input). |
+| `ArgumentType.COSTUME` (`'costume'`) | Dropdown of the current target's costumes. |
+| `ArgumentType.SOUND` (`'sound'`) | Dropdown of the current target's sounds. |
 
-### Custom Menus
-Create dropdown menus for block arguments:
+In `getInfo`, each argument entry takes `type`, an optional `defaultValue`, and an optional `menu`
+(the name of a menu defined in the extension's `menus`).
 
-```javascript
-{
-  opcode: 'selectOption',
-  text: 'choose [OPTION]',
-  arguments: {
-    OPTION: {
-      type: Scratch.ArgumentType.STRING,
-      menu: 'myMenu'
-    }
-  }
-}
+## TargetType
 
-// Define menu in getInfo()
-menus: {
-  myMenu: {
-    acceptReporters: true,
-    items: [
-      'option 1',
-      'option 2',
-      'option 3'
-    ]
-  }
-}
-```
+From `extension-support/target-type.js`: `TargetType.SPRITE` (`'sprite'`) and `TargetType.STAGE`
+(`'stage'`). Used by filter fields such as a block's `filter` array.
 
-### Asynchronous Operations
-Handle promises and async operations:
+## Block methods
 
-```javascript
-async myAsyncBlock(args) {
-  try {
-    const result = await fetch(args.URL);
-    const data = await result.json();
-    return data.value;
-  } catch (error) {
-    console.error('Failed to fetch data:', error);
-    return '';
-  }
-}
-```
+Each block's `opcode` maps to a method on the extension instance. It receives `(args, util)`:
 
-## Best Practices
+- `args`: an object keyed by argument name, holding the current input values (coerce with
+  `Scratch.Cast`).
+- `util`: block utilities, including `util.target` (the running target), `util.thread`, and
+  `util.startBranch(n, isLoop)` for C-blocks. See [Threads](/api-reference/threads) and
+  [Custom C blocks](/building-extensions/custom-c-blocks).
 
-1. **Error Handling**: Always include proper error handling
-2. **Performance**: Avoid blocking operations in block execution
-3. **User Experience**: Provide clear block text and helpful defaults
-4. **Compatibility**: Test across different project types and scenarios
+A reporter returns its value. A command returns nothing. Returning a `Promise` makes the block
+asynchronous. See [Asynchronicity](/building-extensions/async).
 
-## Related Documentation
+## See also
 
-- [Development Extensions Guide](../extensions/introduction)
-- [VM API Reference](./vm-api)
-- [Extension Development Examples](../extensions/hello-world)
+- [Building Extensions: hello world](/building-extensions/hello-world)
+- [Block registration](/api-reference/block-registration) for how `getInfo` becomes real blocks
+- [Utilities](/api-reference/utilities) for `Cast` and friends
+- [Scratch API for extensions](/building-extensions/apis/scratch-api)

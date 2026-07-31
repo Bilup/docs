@@ -1,70 +1,57 @@
 ---
+title: Special Cloud Behaviors
+sidebar_position: 5
 slug: /packager/special-cloud-behaviors
-hide_table_of_contents: true
 ---
 
 # Special cloud behaviors
 
 :::info
-This page is about the [Bilup Packager](https://packager.bilup.org/).
+This is a [MistWarp Packager](/packager/overview) option.
 :::
 
-The disabled-by-default "Special cloud behaviors" option changes the behavior of specifically named cloud variables to unlock new compatibilities for your project. This is based on a [similar feature in HTMLifier](https://github.com/SheepTester/htmlifier/wiki/Special-cloud-behaviours). This feature can be enabled in the "Cloud variables" section.
+"Special cloud behaviors" is an option (off by default) that gives specially named [cloud variables](/advanced/cloud-variables) special powers, so a packaged project can interact with the page it runs on. It is based on the [same feature in HTMLifier](https://github.com/SheepTester/htmlifier/wiki/Special-cloud-behaviours), and you enable it in the packager's "Cloud variables" section.
 
-To make these, just create a cloud variable as you normally would but give them the specific name found below. For example, to use the `☁ url` variable, create a variable named `url` and mark it as a cloud variable.
+To use one, create a normal cloud variable with the exact name listed below. For example, for `☁ url`, make a cloud variable named `url`.
 
-Enabling special cloud behaviors will override any other settings for these variables, so a variable like `☁ username` will never be stored locally or synced with other users.
+Enabling special cloud behaviors overrides normal cloud handling for these names, so a variable like `☁ username` is never stored locally or synced to other players.
 
-## ☁ url {#url}
+## Read-only
 
-The value of `☁ url` will be set to the page's current URL. Changing the value of `☁ url` does nothing.
+### ☁ url
+Set to the page's current URL. Writing to it does nothing.
 
-## ☁ redirect {#redirect}
+### ☁ pasted
+When the user pastes text onto the page (for example with Ctrl+V), the pasted text is placed here.
 
-When the value of `☁ redirect` is set to a URL, the current tab will navigate to that URL.
+## Actions
 
-## ☁ open link {#open-link}
+### ☁ redirect
+Set it to a URL and the current tab navigates there.
 
-When the value of `☁ open link` is set to a URL, the project will attempt to open a new tab with that URL open. Note that this isn't always reliable due to the popup blockers built in to most browsers.
+### ☁ open link
+Set it to a URL to open that URL in a new tab. Browser popup blockers may prevent this.
 
-## ☁ username {#username}
+### ☁ username
+Changing it changes the value returned by the `username` block in the Sensing category.
 
-When the value of `☁ username` is changed, the value of the `username` block in the sensing category will change.
+### ☁ set clipboard
+Changing it tries to copy the text to the user's clipboard. Not always permitted by the browser.
 
-## ☁ pasted {#pasted}
+### ☁ room id
+Changing it changes the project ID used to sync cloud variables. If the original ID is `1234` and you set `☁ room id` to `xyz`, the sync ID becomes `1234-xyz`. Set it back to an empty string to restore the original. Only players sharing a room ID sync with each other, which makes it an easy server selector without extra variables. Reconnecting can take a few seconds. This does not affect locally stored cloud variables.
 
-When the user pastes some text onto the page using a shortcut like ctrl+v, the text is stored in `☁ pasted`.
+## Running code
 
-## ☁ set clipboard {#set-clipboard}
-
-When the value of `☁ set clipboard` is changed, the page will try to store the text in the user's clipboard. This might not always work.
-
-## ☁ room id {#room-id}
-
-When the value of `☁ room id` is changed, the project ID used for syncronizing cloud variables is changed. For example, if the the project's original ID is 1234 and `☁ room id` is set to `xyz`, the new project ID will be `1234-xyz`. To reset the project ID to the original ID, set the value of `☁ room id` to an empty string.
-
-This can be useful as a way to add a server selector to cloud variable projects without having to create a bunch of extra variables. Only people with the same room ID will have variables synced between them. It could take a couple seconds for cloud variables to begin working again as it has to reconnect to the cloud variable server.
-
-The room ID does not affect locally stored cloud variables.
-
-## ☁ eval {#eval}
+### ☁ eval
 
 :::warning
-This option requires "Unsafe special cloud behaviors" to be enabled.
-
-Unsafe cloud behaviors allows the packaged project to execute arbitrary code outside of the "sandbox" that projects are typically executed in. Depending on the environment you're packaging for, this grants projects full control over your computer, including the ability to install viruses.
-
-If you do not trust the project you're packaging or don't make use of this feature, please turn off this option.
+This requires the separate "Unsafe special cloud behaviors" option. Unsafe behaviors let the packaged project run arbitrary code outside the normal project sandbox. Depending on what you package for, that can give the project full control over the computer it runs on, including installing malware. Leave it off unless you trust the project and actually use this feature.
 :::
 
-When the value of `☁ eval` is changed, its value will be evaluated as JavaScript.
+Set `☁ eval` and its value is run as JavaScript. The result is written to `☁ eval output`, or the error to `☁ eval error`. If the code returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), the resolved value or rejection error is written to those variables when it settles. Setting `☁ eval` returns immediately, so the output variables may not update on the same frame.
 
-If the JavaScript is successfully evaluated, its output will be stored in `☁ eval output`.
+## See also
 
-If there was an error evaluating the JavaScript, the error will be stored in `☁ eval error`.
-
-If the JavaScript returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), it will store the resolved value in `☁ eval output` if the promise resolves, or the error in `☁ eval error` if it rejects. Note that setting `☁ eval` is always an instant process, so the output variables may not update immediately.
-
-## Further information and discussion {#further-information}
-
-See https://github.com/TurboWarp/packager/issues/48
+- [Cloud variables](/advanced/cloud-variables)
+- [Packager overview](/packager/overview)

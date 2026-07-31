@@ -1,322 +1,90 @@
 ---
 title: Events
-sidebar_position: 5
+sidebar_position: 8
 ---
 
-# Event System
+`VirtualMachine` extends Node's `EventEmitter`. The editor and player listen to these events to
+keep the UI in sync, and you can too:
 
-Bilup provides a comprehensive event system for communication between components, addons, and extensions.
-
-## Overview
-
-The event system enables:
-- Component-to-component communication
-- Addon integration with editor events
-- Extension lifecycle management
-- State change notifications
-- User interaction tracking
-
-## Redux Events
-
-### State Change Events
-Listen for Redux state changes:
-
-```javascript
-// Listen to all state changes
-addon.tab.redux.addEventListener('statechanged', (event) => {
-  const { action, prev, next } = event.detail;
-  console.log('Action:', action.type);
-});
-
-// Filter specific actions
-addon.tab.redux.addEventListener('statechanged', (event) => {
-  const { action } = event.detail;
-  
-  switch (action.type) {
-    case 'scratch-gui/targets/SET_TARGET':
-      handleTargetChange(action.targetId);
-      break;
-    case 'scratch-gui/mode/SET_PLAYER':
-      handleModeChange(action.isPlayerOnly);
-      break;
-  }
+```js
+vm.on('PROJECT_CHANGED', () => {
+    console.log('the project was edited');
 });
 ```
 
-### Common Redux Actions
+The VM re-emits most of the runtime's events under the same name, so you usually listen on `vm`.
+A few things fire only on `vm.runtime`; those are noted below. This list is drawn from
+`scratch-vm/src/virtual-machine.js` and `scratch-vm/src/engine/runtime.js`.
 
-```javascript
-// Target (sprite/stage) selection
-'scratch-gui/targets/SET_TARGET'
-'scratch-gui/targets/UPDATE_TARGET_LIST'
+## Playback and running
 
-// Project state
-'scratch-gui/project-state/SET_PROJECT_TITLE'
-'scratch-gui/project-state/SET_PROJECT_SAVED'
+| Event | Fires when |
+| --- | --- |
+| `PROJECT_START` | The green flag is pressed. |
+| `PROJECT_RUN_START` | Threads begin running this frame (was idle, now active). |
+| `PROJECT_RUN_STOP` | All threads have stopped (was active, now idle). |
+| `PROJECT_CHANGED` | The project was edited in a way that affects serialization. |
+| `PROJECT_LOADED` | A project finished loading. Fires on `vm.runtime`. |
+| `TURBO_MODE_ON` / `TURBO_MODE_OFF` | Turbo mode was toggled. |
+| `RUNTIME_STARTED` / `RUNTIME_STOPPED` | The runtime's step loop started or stopped. |
 
-// Editor mode
-'scratch-gui/mode/SET_PLAYER'
-'scratch-gui/mode/SET_FULLSCREEN'
+## Loading progress
 
-// Blocks workspace
-'scratch-gui/workspace-blocks/UPDATE_BLOCKS'
-'scratch-gui/workspace-blocks/SET_BLOCKS'
+| Event | Payload |
+| --- | --- |
+| `LOAD_PROGRESS` | `{stage, loaded, total}` where `stage` is one of `unzipping`, `parsing`, `checking`, `building`, `installing`. |
+| `ASSET_PROGRESS` | `(finished, total)` as project assets download. |
 
-// Modals
-'scratch-gui/modals/OPEN_MODAL'
-'scratch-gui/modals/CLOSE_MODAL'
-```
+## Targets, blocks, and the workspace
 
-## DOM Events
+| Event | Payload |
+| --- | --- |
+| `targetsUpdate` | `{targetList, editingTarget}`. The list of targets changed or the selection changed. |
+| `workspaceUpdate` | The editing target's blocks, for rebuilding the block workspace. |
+| `MONITORS_UPDATE` | The current monitor (stage watcher) state. |
+| `BLOCK_DRAG_UPDATE` / `BLOCK_DRAG_END` | A block is being dragged over the GUI / a drag finished. |
+| `VISUAL_REPORT` | A value to show as a bubble next to a clicked reporter. |
+| `SCRIPT_GLOW_ON` / `SCRIPT_GLOW_OFF` | A script started or stopped glowing. |
+| `BLOCK_GLOW_ON` / `BLOCK_GLOW_OFF` | A single block started or stopped glowing. |
+| `PROJECT_STOP_ALL`, `STOP_FOR_TARGET` | The stop button was hit / one target was stopped. Fire on `vm.runtime`. |
 
-### Editor Navigation
-Track URL and navigation changes:
+## Extensions
 
-```javascript
-addon.tab.addEventListener('urlChange', (event) => {
-  const { oldURL, newURL } = event.detail;
-  
-  if (newURL.includes('/editor')) {
-    console.log('Entered editor mode');
-  } else if (newURL.includes('/player')) {
-    console.log('Entered player mode');
-  }
-});
-```
+| Event | Fires when |
+| --- | --- |
+| `EXTENSION_ADDED` | An extension's block category was registered. Payload is the category info. |
+| `EXTENSION_REMOVED` | An extension was removed. |
+| `EXTENSIONS_REORDERED` | Extension order changed. |
+| `EXTENSION_FIELD_ADDED` | An extension registered a custom field type. |
+| `BLOCKSINFO_UPDATE` | An extension's blocks were refreshed (for example after a locale change). |
+| `PERIPHERAL_LIST_UPDATE`, `USER_PICKED_PERIPHERAL`, `PERIPHERAL_CONNECTED`, `PERIPHERAL_DISCONNECTED`, `PERIPHERAL_REQUEST_ERROR`, `PERIPHERAL_CONNECTION_LOST_ERROR`, `PERIPHERAL_SCAN_TIMEOUT` | Peripheral scanning and connection lifecycle. |
 
-### Component Events
-Listen for specific component interactions:
+## Settings that changed
 
-```javascript
-// Block workspace events
-addon.tab.addEventListener('workspaceUpdate', (event) => {
-  console.log('Workspace updated:', event.detail);
-});
+These fire after the matching setter runs, so the UI can update:
 
-// Stage events
-addon.tab.addEventListener('stageClick', (event) => {
-  const { x, y } = event.detail;
-  console.log(`Stage clicked at: (${x}, ${y})`);
-});
+| Event | Payload |
+| --- | --- |
+| `RUNTIME_OPTIONS_CHANGED` | The current runtime options. |
+| `COMPILER_OPTIONS_CHANGED` | The current compiler options. |
+| `FRAMERATE_CHANGED` | The new frame rate. |
+| `INTERPOLATION_CHANGED` | Whether interpolation is on. |
+| `STAGE_SIZE_CHANGED` | `(width, height)`. |
+| `COMPILE_ERROR` | `(target, error)` when a script fails to compile. |
+| `HAS_CLOUD_DATA_UPDATE` | Whether the project uses cloud variables. |
+| `MIC_LISTENING` | Whether the microphone is active. |
+| `LOCALE_CHANGED` | The new locale, after `setLocale`. |
 
-// Sprite list events
-addon.tab.addEventListener('spriteSelected', (event) => {
-  console.log('Sprite selected:', event.detail.spriteId);
-});
-```
+## Blocks that ask the host something
 
-## Custom Events
+Some blocks need the host UI to respond. These fire on `vm.runtime`:
 
-### Dispatching Events
-Create and dispatch custom events:
+- `SAY`: a sprite says or thinks something (`say`/`think` blocks).
+- `QUESTION`: an `ask and wait` block is waiting for input. The host collects an answer and emits
+  an `ANSWER` event on the runtime to unblock the script.
 
-```javascript
-// Simple custom event
-addon.tab.dispatchEvent(new CustomEvent('myEvent', {
-  detail: { data: 'example' }
-}));
+## See also
 
-// Complex event with multiple data
-addon.tab.dispatchEvent(new CustomEvent('projectAnalyzed', {
-  detail: {
-    spriteCount: 5,
-    blockCount: 127,
-    complexity: 'medium',
-    timestamp: Date.now()
-  }
-}));
-```
-
-### Event Listeners
-Listen for custom events:
-
-```javascript
-// Listen for specific custom events
-addon.tab.addEventListener('projectAnalyzed', (event) => {
-  const { spriteCount, blockCount, complexity } = event.detail;
-  updateProjectStats(spriteCount, blockCount, complexity);
-});
-
-// Generic event listener
-addon.tab.addEventListener('myEvent', handleMyEvent);
-
-function handleMyEvent(event) {
-  console.log('Custom event received:', event.detail);
-}
-```
-
-## Extension Events
-
-### Extension Lifecycle
-Track extension loading and unloading:
-
-```javascript
-// Extension loaded
-vm.runtime.on('EXTENSION_ADDED', (extensionId) => {
-  console.log('Extension loaded:', extensionId);
-});
-
-// Extension removed
-vm.runtime.on('EXTENSION_REMOVED', (extensionId) => {
-  console.log('Extension removed:', extensionId);
-});
-```
-
-### Block Events
-Monitor block execution and interactions:
-
-```javascript
-// Block execution started
-vm.runtime.on('BLOCK_GLOW_ON', (blockId) => {
-  console.log('Block executing:', blockId);
-});
-
-// Block execution ended
-vm.runtime.on('BLOCK_GLOW_OFF', (blockId) => {
-  console.log('Block finished:', blockId);
-});
-
-// Block added to workspace
-vm.runtime.on('BLOCKS_ADDED', (blockIds) => {
-  console.log('Blocks added:', blockIds);
-});
-```
-
-## Project Events
-
-### Project Lifecycle
-Track project loading, saving, and changes:
-
-```javascript
-// Project loaded
-vm.runtime.on('PROJECT_LOADED', () => {
-  console.log('Project loaded successfully');
-});
-
-// Project saved
-addon.tab.addEventListener('projectSaved', (event) => {
-  console.log('Project saved:', event.detail.title);
-});
-
-// Project modified
-addon.tab.addEventListener('projectModified', (event) => {
-  console.log('Project has unsaved changes');
-});
-```
-
-### Asset Events
-Monitor costume and sound changes:
-
-```javascript
-// Costume added
-vm.runtime.on('COSTUME_ADDED', (costumeId, targetId) => {
-  console.log(`Costume ${costumeId} added to ${targetId}`);
-});
-
-// Sound added
-vm.runtime.on('SOUND_ADDED', (soundId, targetId) => {
-  console.log(`Sound ${soundId} added to ${targetId}`);
-});
-```
-
-## Performance Events
-
-### Monitoring Performance
-Track runtime performance metrics:
-
-```javascript
-// Frame rate changes
-vm.runtime.on('FRAMERATE_CHANGED', (fps) => {
-  console.log('FPS:', fps);
-});
-
-// Compile events
-vm.runtime.on('COMPILE_START', () => {
-  console.log('Compilation started');
-});
-
-vm.runtime.on('COMPILE_END', (success, errors) => {
-  if (success) {
-    console.log('Compilation successful');
-  } else {
-    console.error('Compilation errors:', errors);
-  }
-});
-```
-
-## Event Best Practices
-
-### Memory Management
-Properly clean up event listeners:
-
-```javascript
-export default async function ({ addon }) {
-  const handleStateChange = (event) => {
-    // Handle event
-  };
-  
-  // Add listener
-  addon.tab.redux.addEventListener('statechanged', handleStateChange);
-  
-  // Clean up when addon disabled
-  addon.onDisabled = () => {
-    addon.tab.redux.removeEventListener('statechanged', handleStateChange);
-  };
-}
-```
-
-### Event Filtering
-Filter events to avoid performance issues:
-
-```javascript
-let lastUpdate = 0;
-const THROTTLE_MS = 100;
-
-addon.tab.redux.addEventListener('statechanged', (event) => {
-  const now = Date.now();
-  if (now - lastUpdate < THROTTLE_MS) {
-    return; // Skip this update
-  }
-  lastUpdate = now;
-  
-  // Handle the event
-  handleStateChange(event);
-});
-```
-
-### Error Handling
-Handle errors in event listeners gracefully:
-
-```javascript
-addon.tab.addEventListener('myEvent', (event) => {
-  try {
-    processEvent(event.detail);
-  } catch (error) {
-    console.error('Error processing event:', error);
-    // Fallback behavior
-  }
-});
-```
-
-## Event Documentation
-
-### Creating Event Documentation
-Document custom events for other developers:
-
-```javascript
-/**
- * Dispatched when project analysis is complete
- * @event projectAnalyzed
- * @type {CustomEvent}
- * @property {Object} detail - Event data
- * @property {number} detail.spriteCount - Number of sprites
- * @property {number} detail.blockCount - Total blocks
- * @property {string} detail.complexity - Project complexity level
- */
-```
-
-## Related Documentation
-
-- [Addon API Reference](./addon-api)
-- [VM API Reference](./vm-api)
-- [GUI API Reference](./gui-api)
+- [VM API](/api-reference/vm-api)
+- [Threads](/api-reference/threads)
+- [Block registration](/api-reference/block-registration)

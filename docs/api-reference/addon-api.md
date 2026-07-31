@@ -1,284 +1,100 @@
 ---
 title: Addon API
-sidebar_position: 4
+sidebar_position: 7
 ---
 
-# Addon API
+Addons are userscripts and userstyles that modify the editor and player. Each addon is a folder
+under `scratch-gui/src/addons/addons/` with a manifest and one or more scripts. When an addon's
+userscript runs, it receives an API object. This page is the reference for that object, defined in
+`scratch-gui/src/addons/api.js`. For what addons are and how to use them, see
+[Addons](/editor/addons).
 
-The Addon API provides tools for modifying and extending the Bilup interface and behavior through the addon system.
+## The userscript entry point
 
-## Overview
+An addon userscript exports a default async function that receives the API object:
 
-The Addon API allows developers to:
-- Modify the Bilup user interface
-- Add new functionality to the editor
-- Customize the appearance and behavior
-- Integrate with external services and tools
-
-## Basic Addon Structure
-
-```javascript
-// userscript.js
-export default async function ({ addon, msg, console }) {
-  // Addon initialization code
-  console.log('Addon loaded:', addon.info.name);
-  
-  // Add custom functionality
-  addon.tab.addEventListener('urlChange', handleUrlChange);
-  
-  function handleUrlChange(event) {
-    console.log('URL changed:', event.detail.newURL);
-  }
+```js
+export default async function ({addon, console, msg}) {
+    const vm = addon.tab.traps.vm;
+    // ... modify the editor ...
 }
 ```
 
-## API Objects
+The object passed in has these members:
 
-### addon.tab
-Interface for DOM manipulation and editor interaction:
+- `addon`: the addon API, split into `addon.tab`, `addon.settings`, and `addon.self` (below).
+- `console`: the browser console.
+- `global`: the global object.
+- `msg(key, vars)`: a localized message from the addon's translations.
+- `safeMsg(key, vars)`: the same, but HTML-escaped.
 
-```javascript
-// Wait for elements
-const blocksPalette = await addon.tab.waitForElement('[class*="blocks_blocks"]');
+## addon.tab
 
-// Add custom styles
-addon.tab.addStyle(`
-  .my-custom-class {
-    background: var(--ui-primary);
-  }
-`);
+`addon.tab` is the main surface for reaching into the page. It is an event target.
 
-// Listen for events
-addon.tab.addEventListener('urlChange', callback);
-addon.tab.addEventListener('statechanged', callback);
+- `tab.traps`: escape hatches to editor internals:
+  - `traps.vm`: the live [`VirtualMachine`](/api-reference/vm-api).
+  - `traps.getBlockly()`: resolves with the Blockly instance once it is ready.
+  - `traps.getWorkspace()`: the current Blockly workspace.
+  - `traps.getPaper()`: resolves with the paper.js scope when the costume editor is open.
+- `tab.redux`: access to the GUI's Redux store, including `tab.redux.state` and the
+  `statechanged` event.
+- `tab.waitForElement(selector, options)`: resolves with a matching DOM element once it appears.
+  Options include `markAsSeen` (so the same element is not returned twice), a `condition`
+  callback, a `reduxCondition` callback, and `reduxEvents` to wait for specific store actions.
+- `tab.appendToSharedSpace({space, element, order, scope})`: insert an element into a known editor
+  region (for example `stageHeader`) in a stable position relative to other addons.
+- `tab.createBlockContextMenu(callback, {workspace, blocks, flyout, comments})`: add items to
+  block or workspace context menus.
+- `tab.scratchClass(...names, {others})`: resolve MistWarp's hashed CSS class names (for example
+  `green-flag`) to their real runtime class names, so your styles and queries match.
+- `tab.scratchMessage(id)`: look up one of the editor's own localized strings.
+- `tab.copyImage(dataURL)`: copy a PNG data URL to the clipboard.
+- `tab.createModal(title, {isOpen})`, `tab.confirm(...)`, `tab.prompt(...)`: editor-styled dialogs.
+- `tab.displayNoneWhileDisabled(el, options)`: hide an element while the addon is disabled.
+- `tab.editorMode`: the current editor mode string.
+- `tab.direction`: `'ltr'` or `'rtl'` for the current locale.
+- `tab.recolorable()`: an `<img>` whose SVG recolors itself to the current theme accent.
 
-// Redux state access
-const currentMode = addon.tab.redux.state.scratchGui.mode;
-```
+## addon.settings
 
-### addon.settings
-Access to addon configuration:
+`addon.settings` reads the addon's own settings, as declared in its manifest. It is an event
+target.
 
-```javascript
-// Get setting values
-const isEnabled = addon.settings.get('enabled');
-const maxItems = addon.settings.get('maxItems');
+- `settings.get(id)`: the current value of a setting.
+- Listen for the `change` event to react when the user changes a setting:
 
-// Listen for setting changes
-addon.settings.addEventListener('change', (event) => {
-  console.log('Setting changed:', event.detail);
+```js
+addon.settings.addEventListener('change', () => {
+    const speed = addon.settings.get('speed');
+    // ... apply the new value ...
 });
 ```
 
-### addon.info
-Metadata about the current addon:
+## addon.self
 
-```javascript
-console.log('Addon ID:', addon.info.id);
-console.log('Addon name:', addon.info.name);
-console.log('Version:', addon.info.version);
+`addon.self` is the addon's own state. It is an event target.
+
+- `self.id`: the addon's ID.
+- `self.disabled`: whether the addon is currently disabled.
+- `self.getResource(path)`: resolve a bundled resource path to a usable URL.
+- The `disabled` and `reenabled` events fire when the user toggles the addon while the editor is
+  open, so an addon can clean up or re-apply its changes without a reload:
+
+```js
+addon.self.addEventListener('disabled', () => { /* undo changes */ });
+addon.self.addEventListener('reenabled', () => { /* redo changes */ });
 ```
 
-## DOM Manipulation
+## Userstyles
 
-### Element Selection
-Wait for and select DOM elements safely:
+Addons can also ship CSS. Static stylesheets are applied automatically, and settings can drive CSS
+custom properties: a manifest setting produces a variable named
+`--<addonId>-<settingId>`, and manifest `customCssVariables` can compute colors (blend, brighten,
+threshold, and so on) that update when settings change.
 
-```javascript
-// Wait for specific elements
-const menuBar = await addon.tab.waitForElement('[class*="menu-bar"]');
-const stageArea = await addon.tab.waitForElement('[class*="stage"]');
+## See also
 
-// Select existing elements
-const blocks = addon.tab.querySelector('[class*="blocks_blocks"]');
-```
-
-### Adding Custom Elements
-
-```javascript
-// Create and add custom buttons
-const customButton = document.createElement('button');
-customButton.textContent = msg('my-button');
-customButton.className = 'my-addon-button';
-customButton.addEventListener('click', handleButtonClick);
-
-// Find insertion point and add button
-const menuBar = await addon.tab.waitForElement('[class*="menu-bar"]');
-menuBar.appendChild(customButton);
-```
-
-## Event System
-
-### Built-in Events
-
-```javascript
-// URL navigation changes
-addon.tab.addEventListener('urlChange', (event) => {
-  const { oldURL, newURL } = event.detail;
-  console.log(`Navigation: ${oldURL} → ${newURL}`);
-});
-
-// Redux state changes
-addon.tab.addEventListener('statechanged', (event) => {
-  const { action, prev, next } = event.detail;
-  if (action.type === 'scratch-gui/targets/SET_TARGET') {
-    console.log('Target changed:', action.targetId);
-  }
-});
-```
-
-### Custom Events
-
-```javascript
-// Dispatch custom events
-addon.tab.dispatchEvent(new CustomEvent('myAddonEvent', {
-  detail: { data: 'example' }
-}));
-
-// Listen for custom events
-addon.tab.addEventListener('myAddonEvent', (event) => {
-  console.log('Custom event:', event.detail);
-});
-```
-
-## Context Menus
-
-### Block Context Menus
-Add items to right-click menus on blocks:
-
-```javascript
-addon.tab.createBlockContextMenu((items, target) => {
-  if (target.isStage === false) {
-    items.push({
-      enabled: true,
-      text: msg('duplicate-sprite'),
-      callback: () => {
-        // Duplicate sprite functionality
-      },
-      separator: true
-    });
-  }
-});
-```
-
-## Storage
-
-### Local Storage
-Persist data across sessions:
-
-```javascript
-// Store data
-await addon.storage.setItem('myData', { count: 42 });
-
-// Retrieve data
-const data = await addon.storage.getItem('myData');
-console.log('Stored count:', data?.count);
-
-// Remove data
-await addon.storage.removeItem('myData');
-```
-
-## Localization
-
-### Message Functions
-Support multiple languages:
-
-```javascript
-// Simple messages
-const buttonText = msg('save-project');
-
-// Messages with parameters
-const confirmText = msg('confirm-delete', { name: spriteName });
-
-// Conditional messages
-const statusText = msg(isOnline ? 'online-status' : 'offline-status');
-```
-
-### Message Files
-Define translations in `addons-l10n/`:
-
-```json
-// en.json
-{
-  "my-addon/save-project": "Save Project",
-  "my-addon/confirm-delete": "Delete {name}?",
-  "my-addon/online-status": "Connected",
-  "my-addon/offline-status": "Disconnected"
-}
-```
-
-## Settings Integration
-
-### Setting Types
-Define configurable options:
-
-```json
-// In addon manifest
-"settings": [
-  {
-    "name": "Enable feature",
-    "id": "enabled",
-    "type": "boolean",
-    "default": true
-  },
-  {
-    "name": "Max items",
-    "id": "maxItems", 
-    "type": "positive_integer",
-    "default": 10,
-    "min": 1,
-    "max": 100
-  },
-  {
-    "name": "Color scheme",
-    "id": "colorScheme",
-    "type": "select",
-    "options": [
-      { "value": "auto", "name": "Automatic" },
-      { "value": "light", "name": "Light" },
-      { "value": "dark", "name": "Dark" }
-    ],
-    "default": "auto"
-  }
-]
-```
-
-## Performance Best Practices
-
-1. **Use waitForElement()** instead of polling
-2. **Cache DOM queries** when possible
-3. **Remove event listeners** when addon is disabled
-4. **Debounce frequent operations**
-5. **Use requestAnimationFrame** for animations
-
-## Lifecycle Management
-
-```javascript
-export default async function ({ addon }) {
-  // Initialization
-  console.log('Addon starting');
-  
-  // Setup functionality
-  const cleanup = setupFeatures();
-  
-  // Cleanup when disabled
-  addon.onDisabled = () => {
-    console.log('Addon stopping');
-    cleanup();
-  };
-}
-
-function setupFeatures() {
-  // Setup code here
-  
-  return () => {
-    // Cleanup code here
-  };
-}
-```
-
-## Related Documentation
-
-- [Addon Development Guide](../gui-internals/addons/home)
-- [GUI API Reference](./gui-api)
-- [Extension API Reference](./extension-api)
+- [Addons](/editor/addons) for the user-facing feature
+- [Internals: addons system](/internals/addons-system)
+- [VM API](/api-reference/vm-api)

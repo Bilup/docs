@@ -1,323 +1,66 @@
 ---
 title: Utilities
-sidebar_position: 6
+sidebar_position: 9
 ---
 
-# Available Utilities
-
-This page documents utilities and helper functions that are actually available in the Bilup codebase.
-
-## Project Operations
-
-### Project Loading and Saving
-The following project operations are available through the VM and GUI APIs:
-
-```javascript
-// Load a project (available through VM API)
-await vm.loadProject(projectData);
-
-// Save project state
-const projectData = vm.toJSON();
-
-// Download project as SB3 (through GUI components)
-// This is typically handled by GUI components like SB3Downloader
-```
-
-## Browser APIs and DOM Utilities
-
-### Basic DOM Operations
-Standard DOM APIs are available for addon development:
-
-```javascript
-// Element selection
-const element = document.querySelector('.selector');
-const elements = document.querySelectorAll('.selector');
-
-// Element creation
-const button = document.createElement('button');
-button.textContent = 'Click me';
-button.className = 'custom-button';
-
-// Event handling
-element.addEventListener('click', handleClick);
-```
-
-### Addon-Specific Utilities
-Addons have access to specialized utilities through the addon API:
-
-```javascript
-export default async function ({ addon, msg }) {
-    // Wait for elements (addon-specific utility)
-    const button = await addon.tab.waitForElement('.green-flag');
-    
-    // Add CSS (addon-specific utility)
-    addon.tab.addCSS(`
-        .green-flag {
-            background-color: red !important;
-        }
-    `);
-    
-    // Access VM through addon context
-    const vm = addon.tab.traps.vm;
-}
-```
-
-## Available Third-Party Utilities
-
-### Lodash Functions
-Some lodash utilities are available in the codebase:
-
-```javascript
-import bindAll from 'lodash.bindall';
-
-// Bind methods to instance
-bindAll(this, ['method1', 'method2']);
-```
-
-### Storage APIs
-Browser storage through the Storage API:
-
-```javascript
-// Local storage
-localStorage.setItem('key', 'value');
-const value = localStorage.getItem('key');
-
-// Session storage  
-sessionStorage.setItem('key', 'value');
-```
-
-## Redux Store Operations
-
-### Accessing the Store
-The Redux store is available globally:
-
-```javascript
-// Access the store (note: capital R in ReduxStore)
-const store = window.ReduxStore;
-
-// Get current state
-const state = store.getState();
-
-// Dispatch actions
-store.dispatch({
-    type: 'ACTION_TYPE',
-    payload: data
-});
-```
-
-### Common State Selectors
-```javascript
-// Get VM state
-const vm = state.scratchGui.vm;
-
-// Get current project state
-const projectState = state.scratchGui.projectState;
-
-// Get targets/sprites
-const targets = state.scratchGui.targets;
-```
-
-## VM Utilities
-
-### Target Management
-```javascript
-// Get all targets
-const targets = vm.runtime.targets;
-
-// Get sprites (non-stage targets)
-const sprites = vm.runtime.targets.filter(target => !target.isStage);
-
-// Get stage
-const stage = vm.runtime.targets.find(target => target.isStage);
-
-// Get target by ID
-const target = vm.runtime.getTargetById(targetId);
-```
-
-### Project Control
-```javascript
-// Start/stop project
-vm.start();
-vm.stop();
-
-// Green flag
-vm.greenFlag();
-
-// Set turbo mode
-vm.setTurboMode(true);
-```
-
-## Event Handling
-
-### VM Events
-```javascript
-// Listen to VM events
-vm.on('PROJECT_LOADED', () => {
-    console.log('Project loaded');
-});
-
-vm.on('PROJECT_CHANGED', () => {
-    console.log('Project changed');
-});
-
-vm.on('PROJECT_START', () => {
-    console.log('Project started');
-});
-
-vm.on('PROJECT_STOP_ALL', () => {
-    console.log('Project stopped');
-});
-```
-
-### Standard DOM Events
-```javascript
-// Standard event listeners
-document.addEventListener('keydown', handleKeyDown);
-window.addEventListener('resize', handleResize);
-element.addEventListener('click', handleClick);
-```
-
-## File Operations
-
-### File API
-Modern browsers provide File API access:
-
-```javascript
-// File input handling
-const input = document.createElement('input');
-input.type = 'file';
-input.accept = '.sb3,.sb2';
-
-input.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            const data = e.target.result;
-            // Process file data
-        };
-        reader.readAsArrayBuffer(file);
-    }
-});
-```
-
-### Blob and URL Operations
-```javascript
-// Create blob
-const blob = new Blob([data], { type: 'application/json' });
-
-// Create download URL
-const url = URL.createObjectURL(blob);
-
-// Trigger download
-const a = document.createElement('a');
-a.href = url;
-a.download = 'project.sb3';
-a.click();
-
-// Clean up
-URL.revokeObjectURL(url);
-```
-
-## Performance Considerations
-
-### Memory Management
-```javascript
-// Clean up event listeners
-element.removeEventListener('click', handler);
-
-// Clean up VM listeners
-vm.off('PROJECT_LOADED', handler);
-
-// Clean up object URLs
-URL.revokeObjectURL(url);
-```
-
-### Efficient Operations
-```javascript
-// Use requestAnimationFrame for animations
-function animate() {
-    // Animation code
-    requestAnimationFrame(animate);
-}
-
-// Use debouncing for frequent events (manual implementation)
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-```
-
-## Available Globals
-
-The following globals are available in Bilup:
-
-```javascript
-// VM instance
-window.vm
-
-// Redux store (note: capital R)
-window.ReduxStore  
-
-// Scratch Blocks (when blocks are loaded)
-window.ScratchBlocks
-
-// Debug flag
-window.DEBUG
-```
-
-## Best Practices
-
-### Error Handling
-```javascript
-try {
-    // Risky operation
-    vm.loadProject(projectData);
-} catch (error) {
-    console.error('Operation failed:', error);
-    // Handle error appropriately
-}
-```
-
-### Async Operations
-```javascript
-// Use async/await for promises
-async function loadProject() {
-    try {
-        await vm.loadProject(projectData);
-        console.log('Project loaded successfully');
-    } catch (error) {
-        console.error('Failed to load project:', error);
-    }
-}
-```
-
-### Resource Cleanup
-```javascript
-// Always clean up resources
-function cleanup() {
-    // Remove event listeners
-    element.removeEventListener('click', handler);
-    
-    // Clear timeouts/intervals
-    clearTimeout(timeoutId);
-    clearInterval(intervalId);
-    
-    // Remove VM listeners
-    vm.off('PROJECT_LOADED', handler);
-}
-```
-
-## Related Documentation
-
-- [VM API Reference](./vm-api)
-- [Addon API Reference](./addon-api)  
-- [GUI API Reference](./gui-api)
-- [Development Guide](../development)
+`scratch-vm/src/util/` holds small helper modules the engine uses everywhere. Extension authors
+most often need `Cast`; the rest are handy when you work with the VM directly. `Cast` is exposed
+to extensions as `Scratch.Cast` (see the [Extension API](/api-reference/extension-api)).
+
+## Cast
+
+`util/cast.js` converts values the way Scratch blocks do. Scratch is loosely typed, so a block
+that expects a number must accept `"5"`, `true`, or `"apple"` and behave predictably. Always
+coerce inputs with `Cast` rather than raw JavaScript conversions, so your blocks match Scratch's
+rules exactly.
+
+- `Cast.toNumber(value)`: to a number, treating non-numeric input as `0` (and `NaN` as `0`).
+- `Cast.toBoolean(value)`: to a boolean using Scratch's rules (the strings `""`, `"0"`, and
+  `"false"` are false).
+- `Cast.toString(value)`: to a string.
+- `Cast.compare(v1, v2)`: Scratch's comparison. Returns a negative number, `0`, or a positive
+  number, comparing numerically when both look like numbers and case-insensitively otherwise.
+- `Cast.toListIndex(index, length, acceptAll)`: turn a Scratch list index (including `"last"`,
+  `"random"`, `"all"`) into a real index, or an out-of-range marker.
+- `Cast.toRgbColorList(value)` / `Cast.toRgbColorObject(value)`: parse a color (a `#rrggbb` string
+  or a decimal) into `[r, g, b]` or `{r, g, b, a}`.
+- `Cast.isInt(value)`: whether the value is an integer (or an integer-valued string).
+- `Cast.isWhiteSpace(value)`: whether the value is `null`, empty, or only whitespace.
+
+## Color
+
+`util/color.js` converts between color representations. Values are `{r, g, b}` objects (0 to 255),
+`#rrggbb` hex strings, HSV objects (`{h, s, v}`), or 24-bit decimals.
+
+`Color.decimalToHex`, `Color.decimalToRgb`, `Color.hexToRgb`, `Color.rgbToHex`,
+`Color.rgbToDecimal`, `Color.hexToDecimal`, `Color.hsvToRgb`, `Color.rgbToHsv`, and
+`Color.mixRgb(rgb0, rgb1, fraction1)` to blend two colors.
+
+## MathUtil
+
+`util/math-util.js`:
+
+- `MathUtil.degToRad(deg)` / `MathUtil.radToDeg(rad)`.
+- `MathUtil.clamp(n, min, max)`: constrain to a range.
+- `MathUtil.wrapClamp(n, min, max)`: wrap around a range (like direction).
+- `MathUtil.tan(angle)`: tangent in degrees, returning `Infinity` at the poles instead of a huge
+  float.
+- `MathUtil.scale(i, iMin, iMax, oMin, oMax)`: remap a number from one range to another.
+- `MathUtil.inclusiveRandIntWithout(lower, upper, excluded)`: a random integer in a range, skipping
+  one value.
+
+## Other helpers
+
+- `util/string-util.js` (`StringUtil`): string helpers, including `StringUtil.unusedName(name,
+  existing)` for de-duplicating names.
+- `util/uid.js`: generate unique IDs for blocks, variables, and targets.
+- `util/base64-util.js` (`Base64Util`): convert between base64 and byte arrays for assets.
+- `util/timer.js` (`Timer`): the millisecond timer the sequencer and blocks use.
+- `util/clone.js` (`Clone`): shallow/deep copy helpers.
+- `util/log.js`: the VM's logger.
+
+## See also
+
+- [Extension API](/api-reference/extension-api) for `Scratch.Cast`
+- [VM API](/api-reference/vm-api)
+- [Block registration](/api-reference/block-registration)
