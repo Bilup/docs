@@ -25,7 +25,6 @@ Your sprites, costumes, sounds, variables, and scripts come across intact. You c
 ## What is different
 
 - **Projects run faster.** Bilup compiles your blocks to JavaScript. Most projects just run quicker; a few that relied on Scratch's exact timing may behave slightly differently. See [Disable compiler](/advanced/disable-compiler) if you need to check behavior against the interpreter.
-- **The default sprite is Misty**, not the Scratch Cat. Every Scratch sprite is still in the library.
 - **You are not limited to 30 FPS or a 480x360 stage.** See [Custom FPS](/advanced/custom-fps) and [Custom stage size](/advanced/custom-stage-size).
 - **There are more blocks and extensions**, including ones for the pen, video and face sensing, hardware, and more. See [Extensions overview](/extensions/overview).
 - **You can customize the editor** with addons and themes. See [Addons](/editor/addons) and [Themes](/editor/themes).

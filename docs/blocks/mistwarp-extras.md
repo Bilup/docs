@@ -55,7 +55,7 @@ See [Variables and lists](/blocks/variables).
 ## My Blocks
 
 - **return `value`** ends a custom block and hands a value back to the caller, letting a custom block act as a reporter.
-- **is compiled?** / **is mistwarp?** are special boolean argument-reporter names: `is compiled?` reports true when the compiler is running, `is mistwarp?` always reports true here.
+- **is compiled?** / **is bilup?** are special boolean argument-reporter names: `is compiled?` reports true when the compiler is running, `is bilup?` always reports true here.
 
 See [My Blocks](/blocks/my-blocks).
 

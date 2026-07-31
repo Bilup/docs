@@ -6,7 +6,7 @@ hide_table_of_contents: true
 
 # Bilup Documentation
 
-[Bilup](https://editor.bilup.org/) is a Scratch modification built on TurboWarp, by Mistium. It keeps the Scratch editor you already know and adds a compiler that turns blocks into JavaScript, a large set of addons and themes, a project packager, a debugger, git version control, live collaboration, and a full community platform with accounts.
+[Bilup](https://editor.bilup.org/) is a Scratch modification built on TurboWarp. It keeps the Scratch editor you already know and adds a compiler that turns blocks into JavaScript, a large set of addons and themes, a project packager, a debugger, git version control, live collaboration, and a full community platform with accounts.
 
 The editor and the community site ship from one build. You can use Bilup entirely in the browser at [editor.bilup.org](https://editor.bilup.org/), with no account and no install required. Sign in with a Rotur account when you want to publish projects, follow other people, and sync your settings across devices.
 

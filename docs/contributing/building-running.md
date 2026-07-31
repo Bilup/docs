@@ -20,8 +20,8 @@ Building the editor can use several gigabytes of disk space and memory, so give 
 The engine packages link to each other by relative path, so they must be siblings in one parent directory.
 
 ```bash
-mkdir mistwarp
-cd mistwarp
+mkdir bilup
+cd bilup
 git clone https://github.com/Bilup/scratch-gui
 git clone https://github.com/Bilup/scratch-vm
 git clone https://github.com/Bilup/scratch-blocks

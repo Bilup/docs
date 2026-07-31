@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # 简介
 
-Bilup 是一个基于 TurboWarp 的 Scratch 修改版，由 Mistium 制作。如果您用过 Scratch，Bilup 会让您感到熟悉：相同的积木、角色、造型和舞台。在此基础之上，它还增加了性能优化、自定义能力、开发者工具和社区平台。
+Bilup 是一个基于 TurboWarp 的 Scratch 修改版。如果您用过 Scratch，Bilup 会让您感到熟悉：相同的积木、角色、造型和舞台。在此基础之上，它还增加了性能优化、自定义能力、开发者工具和社区平台。
 
 编辑器和社区站点是同一个应用。您可以打开 [editor.bilup.org](https://editor.bilup.org/) 立即开始创作，无需账户，也无需安装任何东西。
 

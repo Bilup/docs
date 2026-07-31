@@ -8,7 +8,7 @@ sidebar_position: 2
 Bilup 是一个多仓库工作区。每个包都是自己的 Git 检出，它们作为同一个父目录中的同级放置，以便相互链接。父目录本身不是一个仓库。
 
 ```
-mistwarp/
+bilup/
 ├── scratch-gui/       # 编辑器 + 社区站点（同一个 webpack 构建）
 ├── scratch-vm/        # 运行时和编译器；积木在这里定义
 ├── scratch-blocks/    # 积木编辑器（Blockly 分叉）

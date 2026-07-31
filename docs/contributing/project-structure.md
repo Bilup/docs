@@ -8,7 +8,7 @@ sidebar_position: 2
 Bilup is a multi-repository workspace. Each package is its own Git checkout, and they are placed as siblings in one parent directory so they can link to each other. The parent directory itself is not a repository.
 
 ```
-mistwarp/
+bilup/
 ├── scratch-gui/       # editor + community site (one webpack build)
 ├── scratch-vm/        # runtime and compiler; blocks are defined here
 ├── scratch-blocks/    # the block editor (Blockly fork)

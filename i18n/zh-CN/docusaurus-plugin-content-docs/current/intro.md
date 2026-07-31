@@ -6,7 +6,7 @@ hide_table_of_contents: true
 
 # Bilup 文档
 
-[Bilup](https://editor.bilup.org/) 是一个基于 TurboWarp 的 Scratch 修改版，由 Mistium 制作。它保留了您熟悉的 Scratch 编辑器，并添加了一个将积木编译为 JavaScript 的编译器、大量插件与主题、项目打包器、调试器、git 版本控制、实时协作，以及完整的社区平台与账户系统。
+[Bilup](https://editor.bilup.org/) 是一个基于 TurboWarp 的 Scratch 修改版。它保留了您熟悉的 Scratch 编辑器，并添加了一个将积木编译为 JavaScript 的编译器、大量插件与主题、项目打包器、调试器、git 版本控制、实时协作，以及完整的社区平台与账户系统。
 
 编辑器和社区站点由同一个构建提供。您可以直接在浏览器中访问 [editor.bilup.org](https://editor.bilup.org/)，无需账户、无需安装即可使用 Bilup。当您想发布项目、关注他人并在设备间同步设置时，可以使用 Rotur 账户登录。
 

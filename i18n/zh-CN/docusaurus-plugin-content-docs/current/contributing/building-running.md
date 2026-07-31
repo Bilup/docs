@@ -20,8 +20,8 @@ sidebar_position: 3
 引擎包通过相对路径相互链接，因此它们必须位于同一个父目录中作为同级。
 
 ```bash
-mkdir mistwarp
-cd mistwarp
+mkdir bilup
+cd bilup
 git clone https://github.com/Bilup/scratch-gui
 git clone https://github.com/Bilup/scratch-vm
 git clone https://github.com/Bilup/scratch-blocks

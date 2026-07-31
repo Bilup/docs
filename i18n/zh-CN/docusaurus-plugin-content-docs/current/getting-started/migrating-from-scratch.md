@@ -5,7 +5,7 @@ sidebar_position: 5
 
 # 从 Scratch 迁移
 
-Bilup 是功能更丰富的 Scratch。您在 Scratch 中掌握的一切都以相同方式工作，因此迁移主要是打开项目并注意新增内容。
+Bilup 是功能更丰富的 Scratch 改版。您在 Scratch 中掌握的一切都以相同方式工作，因此迁移主要是打开项目并注意新增内容。
 
 ## 导入项目
 
@@ -25,7 +25,6 @@ Bilup 使用与 Scratch 相同的 `.sb3` 项目格式。
 ## 不同之处
 
 - **项目运行更快。** Bilup 会将积木编译为 JavaScript。大多数项目只是运行更快；少数依赖 Scratch 精确时序的项目可能会有细微差异。如需对照解释器检查行为，请参阅[禁用编译器](/advanced/disable-compiler)。
-- **默认角色是 Misty**，而不是 Scratch 猫。所有 Scratch 角色仍然在素材库中。
 - **不再受限于 30 FPS 或 480x360 舞台。** 请参阅[自定义 FPS](/advanced/custom-fps)和[自定义舞台大小](/advanced/custom-stage-size)。
 - **有更多积木和扩展**，包括画笔、视频与人脸感知、硬件等。请参阅[扩展概览](/extensions/overview)。
 - **可以使用插件和主题自定义编辑器。** 请参阅[插件](/editor/addons)和[主题](/editor/themes)。
