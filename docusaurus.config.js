@@ -70,7 +70,7 @@ module.exports = {
           ]
         },
         {
-          href: 'https://editor.bilup.org/',
+          href: 'https://com.bilup.org/',
           label: 'Bilup',
           position: 'right'
         },

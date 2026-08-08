@@ -111,7 +111,7 @@ const WrappedGui = compose(
 
 Bilup 不是仅本地的。scratch-gui 还从同一个 webpack 构建提供社区站点（`src/community/`），编辑器有通往它的钩子。
 
-身份基于 Rotur（`src/lib/rotur/identity.js` 是两个应用的唯一真相来源）。用户用 Rotur 令牌登录，它被换成一个 7 天的 Bilup 会话令牌；两个应用都订阅该状态，退出会清除它。前端在 `https://mwapi.mistium.com/api` 用 Bearer 令牌认证调用后端。Rotur 社交功能（帖子、点赞、关注、头像）直接转到 `https://api.rotur.dev`。
+身份基于 Bilup Accounts（`src/lib/rotur/identity.js` 是两个应用的唯一真相来源）。用户用 Bilup Accounts 令牌登录，它被换成一个 7 天的 Bilup 会话令牌；两个应用都订阅该状态，退出会清除它。前端在 `https://api.bilup.org/api` 用 Bearer 令牌认证调用后端。Bilup Accounts 社交功能（帖子、点赞、关注、头像）直接转到 `https://api.accounts.bilup.org`。
 
 发布项目是先上传的：编辑器创建项目记录、上传 sb3 和缩略图（服务器解压它并存储内容寻址资产），用户在站点上分享它。设置和主题以最后写入者获胜的方式同步到账户。这些流程由 `rotur` 和 `collaboration` Redux 切片支撑（请参阅[状态管理](/internals/state)），并且超出本内部节的范围，本内部节聚焦于编辑器引擎；在此注明它们以便整个图景可见。
 

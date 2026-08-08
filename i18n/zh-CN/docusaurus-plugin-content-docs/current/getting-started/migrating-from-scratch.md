@@ -32,7 +32,7 @@ Bilup 使用与 Scratch 相同的 `.sb3` 项目格式。
 
 ## 账户与分享
 
-Scratch 账户和 Bilup 账户是相互独立的。Bilup 有自己的社区平台；您可以使用 **Rotur 账户**登录来发布项目、关注他人和评论。构建、运行或保存项目到电脑不需要账户。保存与分享请参阅[项目管理](/editor/project-management)。
+Scratch 账户和 Bilup 账户是相互独立的。Bilup 有自己的社区平台；您可以使用 **Bilup Accounts 账户**登录来发布项目、关注他人和评论。构建、运行或保存项目到电脑不需要账户。保存与分享请参阅[项目管理](/editor/project-management)。
 
 ## 关于云变量
 

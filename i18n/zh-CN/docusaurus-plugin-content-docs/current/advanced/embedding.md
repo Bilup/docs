@@ -9,7 +9,7 @@ sidebar_position: 4
 
 ```html
 <iframe
-  src="https://editor.bilup.org/414716080/embed"
+  src="https://com.bilup.org/414716080/embed"
   width="482"
   height="412"
   frameborder="0"
@@ -25,10 +25,10 @@ sidebar_position: 4
 URL 中的 ID 可以是两种项目之一：
 
 - **Scratch 项目 ID**（纯数字，如 `414716080`）嵌入在 Scratch 上共享的项目。
-- **Bilup 社区项目 ID**（如 `p1784079025833421000VYnQRa`）嵌入在 Bilup 社区网站上共享的项目。这是项目页面 URL 中的 ID，`https://editor.bilup.org/project/p1784079025833421000VYnQRa`。
+- **Bilup 社区项目 ID**（如 `p1784079025833421000VYnQRa`）嵌入在 Bilup 社区网站上共享的项目。这是项目页面 URL 中的 ID，`https://com.bilup.org/project/p1784079025833421000VYnQRa`。
 
 ```html
-<iframe src="https://editor.bilup.org/p1784079025833421000VYnQRa/embed"></iframe>
+<iframe src="https://com.bilup.org/p1784079025833421000VYnQRa/embed"></iframe>
 ```
 
 两者使用相同的 `/embed` 路径、参数和下文描述的 postMessage API。
@@ -49,7 +49,7 @@ URL 中的 ID 可以是两种项目之一：
 | `addons` | 启用特定插件（见下文）。 |
 
 ```html
-<iframe src="https://editor.bilup.org/15832807/embed?autoplay&settings-button"></iframe>
+<iframe src="https://com.bilup.org/15832807/embed?autoplay&settings-button"></iframe>
 ```
 
 声音积木可能直到用户与项目交互（例如点击）后才会播放。这是浏览器限制，不是 Bilup 可以绕过的，因此 autoplay 无法在加载时强制播放音频。
@@ -59,7 +59,7 @@ URL 中的 ID 可以是两种项目之一：
 嵌入默认不启用任何插件。`addons` 参数接受逗号分隔的插件 ID 列表：
 
 ```
-https://editor.bilup.org/15832807/embed?addons=pause,gamepad,mute-project
+https://com.bilup.org/15832807/embed?addons=pause,gamepad,mute-project
 ```
 
 嵌入中有用的插件包括：
@@ -80,7 +80,7 @@ https://editor.bilup.org/15832807/embed?addons=pause,gamepad,mute-project
 ```html
 <div style="position: relative; padding-bottom: 75%; height: 0;">
   <iframe
-    src="https://editor.bilup.org/123456789/embed"
+    src="https://com.bilup.org/123456789/embed"
     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
     frameborder="0"
     allowfullscreen
@@ -136,7 +136,7 @@ window.addEventListener('message', (event) => {
 
 ```html
 <iframe
-  src="https://editor.bilup.org/123456789/embed"
+  src="https://com.bilup.org/123456789/embed"
   sandbox="allow-scripts allow-same-origin allow-fullscreen"
 ></iframe>
 ```

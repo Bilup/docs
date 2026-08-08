@@ -16,7 +16,7 @@ Keyboard shortcuts shown below use `Ctrl` on Windows/Linux and `⌘` on macOS. T
 - **Save now** (`Ctrl+S`) saves to wherever the project currently lives. When you are signed in and the project belongs to you, this uploads to Bilup. See [project management](/editor/project-management).
 - **Save as a copy** (`Ctrl+Shift+S`) saves a new, independent copy.
 - **Remix** starts a new project based on the current one.
-- **Save to Bilup** / **Remix to Bilup** (shown when you are signed in with a [Rotur account](/editor/project-management)) uploads the project to your account. Uploading never publishes it on its own; sharing happens separately on the site.
+- **Save to Bilup** / **Remix to Bilup** (shown when you are signed in with a [Bilup Accounts account](/editor/project-management)) uploads the project to your account. Uploading never publishes it on its own; sharing happens separately on the site.
 - **See project page** opens this project's page on the community site (shown once the project exists on Bilup).
 - **Load from your computer** (`Ctrl+O`) opens an `.sb3` file from disk.
 - **Save to (filename)** and **Save as...** save an `.sb3` to your computer. On browsers that support the File System Access API you can save back to the same file; otherwise you get a normal download.
@@ -68,7 +68,7 @@ The account area on the right of the menu bar shows:
 - **Save status**, which reflects whether the project has unsaved changes.
 - A **live collaboration** presence indicator when a session is active.
 - Navigation to the rest of the Bilup site.
-- Your **Rotur account**, or a sign-in prompt. Signing in enables Save to Bilup, sharing, and cloud sync of your settings.
+- Your **Bilup Accounts account**, or a sign-in prompt. Signing in enables Save to Bilup, sharing, and cloud sync of your settings.
 
 A **project title** field sits in the middle when you own the project. On project pages you may also see a view counter, a **Share** button, a **Remix** button, and a **See community** button, depending on the project and whether you are signed in. A **Feedback** link is always available.
 

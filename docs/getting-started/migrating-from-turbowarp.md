@@ -9,11 +9,11 @@ Bilup is built on TurboWarp, so if you already use TurboWarp the editor will loo
 
 This page focuses on what Bilup adds on top of TurboWarp.
 
-## Community platform and Rotur accounts
+## Community platform and Bilup Accounts
 
 The biggest addition is a full community platform. The Bilup editor and community site ship from one build, so publishing, profiles, and browsing projects are built into the same application.
 
-- You sign in with a **Rotur account**. From the menu bar you can save a project straight to your account with **File then Save to Bilup**, then open its project page.
+- You sign in with a **Bilup Accounts account**. From the menu bar you can save a project straight to your account with **File then Save to Bilup**, then open its project page.
 - Signed in, you get a profile, notifications, and social features (following, comments, and posts).
 - Your settings and themes sync across devices while you are signed in.
 

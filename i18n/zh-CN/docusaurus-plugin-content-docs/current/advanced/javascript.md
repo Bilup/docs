@@ -35,7 +35,7 @@ JavaScript 以三种方式出现在 Bilup 中：**编译器**会自动将您的�
 这是真正的编程任务，不是积木。完整指南在[构建扩展](/building-extensions/introduction)，非沙箱环境的具体细节在[非沙箱扩展](/building-extensions/unsandboxed)。您可以通过 [`extension` URL 参数](/advanced/url-parameters#extension) 从 URL 加载扩展：
 
 ```
-https://editor.bilup.org/?extension=https://example.com/extension.js
+https://com.bilup.org/?extension=https://example.com/extension.js
 ```
 
 ::::warning

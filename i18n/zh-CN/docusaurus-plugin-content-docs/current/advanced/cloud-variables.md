@@ -30,7 +30,7 @@ Bilup 默认连接到一个共享的云服务器（`wss://clouddata.turbowarp.or
 您可以通过 [`cloud_host` URL 参数](/advanced/url-parameters#accounts-and-cloud) 将项目指向不同的云服务器：
 
 ```
-https://editor.bilup.org/12785898?cloud_host=wss://clouddata.turbowarp.org
+https://com.bilup.org/12785898?cloud_host=wss://clouddata.turbowarp.org
 ```
 
 请使用 `wss://`（安全）URL。不安全的 `ws://` 服务器通常会失败，因为 Bilup 通过 HTTPS 提供服务。您无法通过这种方式连接 Scratch 自己的云服务器，因为这需要 Bilup 没有的 Scratch 账户凭据。

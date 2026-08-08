@@ -7,7 +7,7 @@ This page covers the lifecycle of a project: starting a new one, saving it (to y
 
 ## New project
 
-**File, New** clears the workspace and starts a fresh project with one sprite (Misty). If the current project has unsaved changes you are warned first, because a new project replaces what is open.
+**File, New** clears the workspace and starts a fresh project .If the current project has unsaved changes you are warned first, because a new project replaces what is open.
 
 ## Saving
 
@@ -22,7 +22,7 @@ An `.sb3` is a single self-contained file: a ZIP archive holding `project.json` 
 
 ### Save to Bilup
 
-When you are signed in with a [Rotur account](/getting-started/introduction), the File menu shows **Save to Bilup** (and **Save now** / `Ctrl+S` saves to your account once the project lives there). This uploads the project to your account so you can reach it from any device through the community site.
+When you are signed in with a [Bilup Accounts account](/getting-started/introduction), the File menu shows **Save to Bilup** (and **Save now** / `Ctrl+S` saves to your account once the project lives there). This uploads the project to your account so you can reach it from any device through the community site.
 
 - Uploading is **not** publishing. A saved project stays private to you until you share it.
 - Bilup uploads assets efficiently, sending only costumes and sounds it does not already have, so re-saving a project is fast.

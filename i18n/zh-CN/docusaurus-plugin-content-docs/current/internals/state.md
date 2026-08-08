@@ -71,7 +71,7 @@ store 在 `src/lib/components/app-state-hoc.jsx` 中从三个顶层 reducer 创�
 
 **Bilup 添加和其他**
 
-- `rotur`（`rotur.js`）持有社区集成使用的 Rotur 账户和会话状态。
+- `rotur`（`rotur.js`）持有社区集成使用的 Bilup Accounts 账户和会话状态。
 - `collaboration`（`collaboration.js`）持有实时协作状态。
 - `shortcuts`（`shortcuts.js`）持有键盘快捷键配置。
 - `fontsLoaded`（`fonts-loaded.js`）跟踪字体加载，`timeout`（`timeout.js`）是一个小型共享超时切片。

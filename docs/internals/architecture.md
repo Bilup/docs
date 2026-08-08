@@ -111,7 +111,7 @@ Two editor subsystems sit alongside the React tree rather than inside it.
 
 Bilup is not local-only. scratch-gui also ships the community site (`src/community/`) from the same webpack build, and the editor has hooks into it.
 
-Identity is Rotur-based (`src/lib/rotur/identity.js` is the single source of truth for both apps). A user logs in with a Rotur token, which is exchanged for a 7-day Bilup session token; both apps subscribe to that state and logout clears it. The frontend calls the backend at `https://mwapi.mistium.com/api` with Bearer-token auth. Rotur social features (posts, likes, follows, avatars) go straight to `https://api.rotur.dev`.
+Identity is Bilup Accounts-based (`src/lib/rotur/identity.js` is the single source of truth for both apps). A user logs in with a Bilup Accounts token, which is exchanged for a 7-day Bilup session token; both apps subscribe to that state and logout clears it. The frontend calls the backend at `https://api.bilup.org/api` with Bearer-token auth. Bilup Accounts social features (posts, likes, follows, avatars) go straight to `https://api.accounts.bilup.org`.
 
 Publishing a project is upload-first: the editor creates a project record, uploads the sb3 and a thumbnail (the server unzips it and stores content-addressed assets), and the user shares it on the site. Settings and themes sync to the account with last-write-wins. These flows are backed by the `rotur` and `collaboration` Redux slices (see [State Management](/internals/state)) and are out of scope for this Internals section, which focuses on the editor engine; they are noted here so the whole picture is visible.
 

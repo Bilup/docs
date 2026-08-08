@@ -71,7 +71,7 @@ Every entry below is a real slice combined into `scratchGui`, with the file that
 
 **Bilup additions and misc**
 
-- `rotur` (`rotur.js`) holds Rotur account and session state used by the community integration.
+- `rotur` (`rotur.js`) holds Bilup Accounts account and session state used by the community integration.
 - `collaboration` (`collaboration.js`) holds live-collaboration state.
 - `shortcuts` (`shortcuts.js`) holds the keyboard-shortcut configuration.
 - `fontsLoaded` (`fonts-loaded.js`) tracks font loading, and `timeout` (`timeout.js`) is a small shared timeout slice.

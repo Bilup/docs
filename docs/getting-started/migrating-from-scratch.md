@@ -32,7 +32,7 @@ Your sprites, costumes, sounds, variables, and scripts come across intact. You c
 
 ## Accounts and sharing
 
-Scratch accounts and Bilup accounts are separate. Bilup has its own community platform; you sign in with a **Rotur account** to publish projects, follow people, and comment. You do not need an account to build, run, or save projects to your computer. See [Project management](/editor/project-management) for saving and sharing.
+Scratch accounts and Bilup accounts are separate. Bilup has its own community platform; you sign in with a **Bilup Accounts account** to publish projects, follow people, and comment. You do not need an account to build, run, or save projects to your computer. See [Project management](/editor/project-management) for saving and sharing.
 
 ## A note on cloud variables
 

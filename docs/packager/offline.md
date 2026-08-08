@@ -6,9 +6,9 @@ slug: /packager/offline
 
 # Offline packager
 
-The [Bilup Packager](/packager/overview) runs entirely in your browser, and there are ways to run it with no internet connection, which helps when a network blocks `editor.bilup.org` or when you are offline.
+The [Bilup Packager](/packager/overview) runs entirely in your browser, and there are ways to run it with no internet connection, which helps when a network blocks `com.bilup.org` or when you are offline.
 
-Large runtime assets (Electron, NW.js, and WKWebView executables used for native builds) are **not** bundled into the packager. They download separately when a given output format needs them, and the packager caches them after the first download, so you only fetch each once. These downloads usually still work even where `editor.bilup.org` is blocked.
+Large runtime assets (Electron, NW.js, and WKWebView executables used for native builds) are **not** bundled into the packager. They download separately when a given output format needs them, and the packager caches them after the first download, so you only fetch each once. These downloads usually still work even where `com.bilup.org` is blocked.
 
 ## Standalone HTML build
 

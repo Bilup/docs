@@ -108,7 +108,7 @@ This is the method named by `opcode: 'hello'`. Reporter blocks return a string o
 
 Change the file, then reload the editor page. Two things make this faster:
 
-- The `?extension=` URL parameter auto-loads an extension. If your file is at `http://localhost:8080/hello-world.js`, open `https://editor.bilup.org/editor?extension=http://localhost:8080/hello-world.js` to load it without going through the library.
+- The `?extension=` URL parameter auto-loads an extension. If your file is at `http://localhost:8080/hello-world.js`, open `https://com.bilup.org/editor?extension=http://localhost:8080/hello-world.js` to load it without going through the library.
 - If changes are not showing up after a reload, use your browser's "hard refresh" (reload ignoring cache).
 
 ## Exercises

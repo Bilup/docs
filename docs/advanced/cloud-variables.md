@@ -30,7 +30,7 @@ Cloud variables need all of the following to be true:
 You can point a project at a different cloud server with the [`cloud_host` URL parameter](/advanced/url-parameters#accounts-and-cloud):
 
 ```
-https://editor.bilup.org/12785898?cloud_host=wss://clouddata.turbowarp.org
+https://com.bilup.org/12785898?cloud_host=wss://clouddata.turbowarp.org
 ```
 
 Use a `wss://` (secure) URL. Insecure `ws://` servers usually fail because Bilup is served over HTTPS. You cannot connect to Scratch's own cloud server this way, as that requires Scratch account credentials Bilup does not have.

@@ -17,8 +17,8 @@ bilup/
 ├── scratch-audio/     # Web Audio 播放
 ├── packager/          # 独立项目打包器
 ├── unpackager/        # 打包器的逆向
-├── mistwarp-api/      # 社区平台后端
-├── turbowarp-desktop/ # 编辑器的桌面包装
+├── api/               # 社区平台后端
+├── desktop/           # 编辑器的桌面包装
 └── docs/              # 本文档站点（Docusaurus）
 ```
 
@@ -73,8 +73,8 @@ pnpm run link
 
 两个部分根本不是 Scratch 或 TurboWarp 代码：
 
-- **mistwarp-api** 是社区后端（账户、项目、评论、通知、设置同步）。它用 OSL 编写，将数据存储为扁平 JSON，对项目 blob 使用 Cloudflare R2。前端在 `https://mwapi.mistium.com/api` 与它通信。
-- 身份和社交功能通过 **Rotur** 运行。登录将 Rotur 令牌换成 Bilup 会话；社交功能（帖子、点赞、关注）转到 `https://api.rotur.dev`。
+- **api** 是社区后端（账户、项目、评论、通知、设置同步）。它用 OSL 编写，将数据存储为扁平 JSON，对项目 blob 使用 Cloudflare R2。前端在 `https://api.bilup.org/api` 与它通信。
+- 身份和社交功能通过 **Bilup Accounts** 运行。登录将 Bilup Accounts 令牌换成 Bilup 会话；社交功能（帖子、点赞、关注）转到 `https://api.accounts.bilup.org`。
 
 您不需要两者都运行来参与编辑器本身的工作。它们在做社区站点时才有意义。
 

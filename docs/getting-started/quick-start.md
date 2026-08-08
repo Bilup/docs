@@ -9,7 +9,7 @@ This page builds a small working project from an empty editor. It takes a few mi
 
 ## Open the editor
 
-Go to [editor.bilup.org](https://editor.bilup.org/). A new project opens with the default sprite, **Misty**, already on the stage. You do not need an account for anything on this page.
+Go to [com.bilup.org](https://com.bilup.org/).  You do not need an account for anything on this page.
 
 ## Add code
 
@@ -24,7 +24,7 @@ Blocks snap together when their notches line up. To pull a block out, drag it aw
 
 ## Run it
 
-Above the [stage](/editor/stage) on the right is the green flag and the stop sign. Click the **green flag** to run your script; Misty says hello and starts moving. Click the **stop sign** to stop. Pressing the space bar also toggles running.
+Above the [stage](/editor/stage) on the right is the green flag and the stop sign. Click the **green flag** to run your script; Sprite says hello and starts moving. Click the **stop sign** to stop. Pressing the space bar also toggles running.
 
 If the sprite walks off the edge, add an `if on edge, bounce` block from **Motion** inside the `forever` loop.
 
@@ -38,7 +38,7 @@ If the sprite walks off the edge, add an `if on edge, bounce` block from **Motio
 
 - **File then Save to your computer** downloads a `.sb3` file. This works with no account, and the file also opens in Scratch and TurboWarp.
 - **File then Load from your computer** reopens a `.sb3` later.
-- With a Rotur account, **File then Save to Bilup** publishes the project to your account and the community. See [Project management](/editor/project-management).
+- With a Bilup Accounts account, **File then Save to Bilup** publishes the project to your account and the community. See [Project management](/editor/project-management).
 
 Bilup also keeps [restore points](/editor/restore-points) and autosaves in the background, so a crash or accidental reload does not lose your work.
 

@@ -11,7 +11,7 @@ sidebar_position: 7
 
 ## 插件从哪里来
 
-插件及其翻译从 Scratch Addons 拉取，并为在 TurboWarp 和 Bilup 中使用打补丁。`src/addons/` 的大部分是生成的：`pull.js` 脚本获取上游源码、应用补丁并写入 `addons/`、`addons-l10n/`、`libraries/` 和 `generated/` 文件夹。您通常不手动编辑这些。正如 addons README 所说，功能请求去上游，但由 TurboWarp 或 Bilup 移植引起的 bug 在这里报告。
+插件及其翻译从 Scratch Addons 拉取，并为在 Bilup 中使用打补丁。`src/addons/` 的大部分是生成的：`pull.js` 脚本获取上游源码、应用补丁并写入 `addons/`、`addons-l10n/`、`libraries/` 和 `generated/` 文件夹。您通常不手动编辑这些。正如 addons README 所说，功能请求去上游，但由 TurboWarp 移植引起的 bug 在这里报告。
 
 捆绑插件的列表定义在 `src/addons/addons.js` 中（仅由 `pull.js` 使用，不在运行时使用）。它包含 `editor-devtools`、`debugger`、`variable-manager`、`folders`、`block-switching` 等编辑器工具，以及为自定义积木主题提供动力的 `editor-theme3` 插件。
 

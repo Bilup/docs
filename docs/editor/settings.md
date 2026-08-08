@@ -37,7 +37,7 @@ The **Settings** button in the [menu bar](/editor/menu-bar) opens the settings w
 - **Version Control** sets your commit author name and email, the default branch name, and whether to commit automatically on save. See [git](/editor/git).
 - **Variable Manager** configures the [variable manager](/editor/variable-manager): default view, live updates, and display limits.
 - **Debugger** holds the [debugger](/editor/debugger) toggles: highlight running blocks, and various logging options.
-- **Rotur** controls whether your Bilup editing activity shows on your Rotur profile.
+- **Bilup Accounts** controls whether your Bilup editing activity shows on your Bilup Accounts profile.
 
 On the desktop app a **Desktop** page adds app-level options (update channel, microphone and camera, hardware acceleration, and more).
 

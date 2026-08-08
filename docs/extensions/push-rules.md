@@ -1,4 +1,5 @@
 ---
+title: Submitting Extensions
 hide_table_of_contents: true
 ---
 

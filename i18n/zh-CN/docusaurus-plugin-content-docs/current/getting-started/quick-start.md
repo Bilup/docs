@@ -9,7 +9,7 @@ sidebar_position: 3
 
 ## 打开编辑器
 
-前往 [editor.bilup.org](https://editor.bilup.org/)。会打开一个新项目，默认角色 **Misty** 已经在舞台上。本页上的所有操作都不需要账户。
+前往 [com.bilup.org](https://com.bilup.org/)。会打开一个新项目，本页上的所有操作都不需要账户。
 
 ## 添加代码
 
@@ -24,7 +24,7 @@ sidebar_position: 3
 
 ## 运行它
 
-右侧[舞台](/editor/stage)上方是绿旗和停止按钮。点击**绿旗**运行您的脚本；Misty 会问好并开始移动。点击**停止按钮**停止。按空格键也可以切换运行状态。
+右侧[舞台](/editor/stage)上方是绿旗和停止按钮。点击**绿旗**运行您的脚本；角色会问好并开始移动。点击**停止按钮**停止。按空格键也可以切换运行状态。
 
 如果角色走出边缘，请从**运动**中添加一个 `碰到边缘就反弹` 积木，放在 `重复执行` 循环内。
 
@@ -38,7 +38,7 @@ sidebar_position: 3
 
 - **文件然后保存到电脑** 会下载一个 `.sb3` 文件。此操作无需账户，该文件也可以在 Scratch 和 TurboWarp 中打开。
 - **文件然后从电脑加载** 稍后重新打开 `.sb3` 文件。
-- 使用 Rotur 账户时，**文件然后保存到 Bilup** 会将项目发布到您的账户和社区。请参阅[项目管理](/editor/project-management)。
+- 使用 Bilup Accounts 账户时，**文件然后保存到 Bilup** 会将项目发布到您的账户和社区。请参阅[项目管理](/editor/project-management)。
 
 Bilup 还会在后台保存[还原点](/editor/restore-points)并自动保存，因此崩溃或误刷新不会丢失您的工作成果。
 

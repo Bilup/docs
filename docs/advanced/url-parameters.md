@@ -10,7 +10,7 @@ You can control how Bilup loads and runs a project by adding parameters to the U
 Parameters use standard query-string syntax: a `?` after the URL, then `name=value` pairs joined with `&`. Parameters that are just switches take no value:
 
 ```
-https://editor.bilup.org/123456789?turbo&fps=60&username=alice
+https://com.bilup.org/123456789?turbo&fps=60&username=alice
 ```
 
 :::note
@@ -21,14 +21,14 @@ Bilup already stores common settings (turbo mode, FPS, high quality pen, stage s
 
 | Parameter | Value | What it does |
 |-----------|-------|--------------|
-| (path) | project ID | `editor.bilup.org/123456789` loads that project |
+| (path) | project ID | `com.bilup.org/123456789` loads that project |
 | `project_url` | direct URL | Loads a `.sb3` (or `project.json`) from any CORS-enabled URL. Do not combine with a project ID. |
 | `clone` | git repo URL | Clones a project from a Bilup git repository (see [Git integration](/editor/git)). |
 
 `project_url` requires a direct download that supports [CORS](/advanced/cors) (`Access-Control-Allow-Origin: *`). `https://` is assumed if you omit the protocol; `http://` URLs usually will not work. [GitHub Pages](https://pages.github.com/) works well for this.
 
 ```
-https://editor.bilup.org/?project_url=https://example.com/project.sb3
+https://com.bilup.org/?project_url=https://example.com/project.sb3
 ```
 
 ## Performance and runtime
@@ -73,7 +73,7 @@ https://editor.bilup.org/?project_url=https://example.com/project.sb3
 | `extension` | URL | Loads a custom extension. Can be repeated to load several. |
 
 ```
-https://editor.bilup.org/?extension=https://example.com/a.js&extension=https://example.com/b.js
+https://com.bilup.org/?extension=https://example.com/a.js&extension=https://example.com/b.js
 ```
 
 See [Building Extensions](/building-extensions/introduction) for how these work.

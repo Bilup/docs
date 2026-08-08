@@ -9,7 +9,7 @@ Version control suits larger or longer-lived projects, and it is the foundation 
 
 ## Opening version control
 
-Open the **Tools** menu and choose **Git**, which opens the **Version Control** window. A sidebar down the left switches between Changes, History, Branches, Diff, Remote, Rotur Git, and Readme.
+Open the **Tools** menu and choose **Git**, which opens the **Version Control** window. A sidebar down the left switches between Changes, History, Branches, Diff, Remote, Bilup Accounts Git, and Readme.
 
 If the project is not under version control yet, you are offered **Initialize repository** to start one, or a field to **clone** an existing project by URL.
 
@@ -35,7 +35,7 @@ If the merge has conflicts, Bilup lists each conflicting file and asks you to ch
 
 **Remote** manages generic Git remotes (for example a GitHub repository): add a remote with its URL and an access token, then push a branch to it.
 
-**Rotur Git** is the built-in hosted backend, running on git.rotur.dev. When you are signed in with your [Rotur account](/getting-started/introduction), you can create repositories, push your project straight from the editor, and clone any Rotur repository, all without setting up a separate access token. Repositories can be public or private. There is no separate step to configure credentials: your Rotur sign-in is used.
+**Bilup Accounts Git** is the built-in hosted backend, running on git.accounts.bilup.org. When you are signed in with your [Bilup Accounts account](/getting-started/introduction), you can create repositories, push your project straight from the editor, and clone any Bilup Accounts repository, all without setting up a separate access token. Repositories can be public or private. There is no separate step to configure credentials: your Bilup Accounts sign-in is used.
 
 **Readme** edits the project's README, which is stored in the repository and travels inside the `.sb3` with everything else.
 

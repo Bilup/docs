@@ -17,8 +17,8 @@ bilup/
 ├── scratch-audio/     # Web Audio playback
 ├── packager/          # standalone project packager
 ├── unpackager/        # inverse of the packager
-├── mistwarp-api/      # community platform backend
-├── turbowarp-desktop/ # desktop wrapper for the editor
+├── api/               # community platform backend
+├── desktop/           # desktop wrapper for the editor
 └── docs/              # this documentation site (Docusaurus)
 ```
 
@@ -73,8 +73,8 @@ This means your directory layout matters: the engine packages must be siblings o
 
 Two pieces are not Scratch or TurboWarp code at all:
 
-- **mistwarp-api** is the community backend (accounts, projects, comments, notifications, settings sync). It is written in OSL and stores data as flat JSON, using Cloudflare R2 for project blobs. The frontend talks to it at `https://mwapi.mistium.com/api`.
-- Identity and social features run through **Rotur**. Signing in exchanges a Rotur token for a Bilup session; social features (posts, likes, follows) go to `https://api.rotur.dev`.
+- **mistwarp-api** is the community backend (accounts, projects, comments, notifications, settings sync). It is written in OSL and stores data as flat JSON, using Cloudflare R2 for project blobs. The frontend talks to it at `https://api.bilup.org/api`.
+- Identity and social features run through **Bilup Accounts**. Signing in exchanges a Bilup Accounts token for a Bilup session; social features (posts, likes, follows) go to `https://api.accounts.bilup.org`.
 
 You do not need either running to work on the editor itself. They matter when you are working on the community site.
 

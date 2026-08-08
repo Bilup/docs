@@ -9,9 +9,9 @@ Bilup is free and open source. There is nothing to buy and, for the web version,
 
 ## Use it on the web
 
-Open [editor.bilup.org](https://editor.bilup.org/) in any modern browser. The editor loads and you can start building right away. No account is required to create, edit, save to your computer, or open `.sb3` files.
+Open [com.bilup.org](https://com.bilup.org/) in any modern browser. The editor loads and you can start building right away. No account is required to create, edit, save to your computer, or open `.sb3` files.
 
-Sign in with a **Rotur account** when you want to:
+Sign in with a **Bilup Accounts account** when you want to:
 
 - publish projects to the Bilup community,
 - follow people, comment, and appear on your profile,

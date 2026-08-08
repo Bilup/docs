@@ -10,7 +10,7 @@ sidebar_position: 3
 参数使用标准的查询字符串语法：URL 后加 `?`，然后是 `name=value` 对，用 `&` 连接。纯开关参数不取值：
 
 ```
-https://editor.bilup.org/123456789?turbo&fps=60&username=alice
+https://com.bilup.org/123456789?turbo&fps=60&username=alice
 ```
 
 ::::note
@@ -21,14 +21,14 @@ https://editor.bilup.org/123456789?turbo&fps=60&username=alice
 
 | 参数 | 值 | 作用 |
 |-----------|-------|--------------|
-| (路径) | 项目 ID | `editor.bilup.org/123456789` 加载该项目 |
+| (路径) | 项目 ID | `com.bilup.org/123456789` 加载该项目 |
 | `project_url` | 直接 URL | 从任意启用 CORS 的 URL 加载 `.sb3`（或 `project.json`）。不要与项目 ID 组合使用。 |
 | `clone` | git 仓库 URL | 从 Bilup git 仓库克隆项目（请参阅[Git 集成](/editor/git)）。 |
 
 `project_url` 需要一个支持 [CORS](/advanced/cors)（`Access-Control-Allow-Origin: *`）的直接下载。省略协议时默认使用 `https://`；`http://` URL 通常无法工作。[GitHub Pages](https://pages.github.com/) 非常适合此项。
 
 ```
-https://editor.bilup.org/?project_url=https://example.com/project.sb3
+https://com.bilup.org/?project_url=https://example.com/project.sb3
 ```
 
 ## 性能与运行时
@@ -73,7 +73,7 @@ https://editor.bilup.org/?project_url=https://example.com/project.sb3
 | `extension` | URL | 加载自定义扩展。可以重复以加载多个。 |
 
 ```
-https://editor.bilup.org/?extension=https://example.com/a.js&extension=https://example.com/b.js
+https://com.bilup.org/?extension=https://example.com/a.js&extension=https://example.com/b.js
 ```
 
 这些扩展的用法请参阅[构建扩展](/building-extensions/introduction)。

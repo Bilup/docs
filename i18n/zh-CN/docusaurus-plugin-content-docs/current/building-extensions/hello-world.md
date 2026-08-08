@@ -108,7 +108,7 @@ hello() {
 
 更改文件，然后重新加载编辑器页面。有两件事可以让这更快：
 
-- `?extension=` URL 参数会自动加载扩展。如果您的文件在 `http://localhost:8080/hello-world.js`，打开 `https://editor.bilup.org/editor?extension=http://localhost:8080/hello-world.js` 来加载它，无需经过素材库。
+- `?extension=` URL 参数会自动加载扩展。如果您的文件在 `http://localhost:8080/hello-world.js`，打开 `https://com.bilup.org/editor?extension=http://localhost:8080/hello-world.js` 来加载它，无需经过素材库。
 - 如果重新加载后更改没有显示，请使用浏览器的"硬刷新"（忽略缓存重新加载）。
 
 ## 练习
