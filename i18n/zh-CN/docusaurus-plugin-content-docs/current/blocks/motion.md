@@ -36,7 +36,7 @@ sidebar_position: 2
 - **面向 x: `0` y: `0`** 朝向特定坐标，而不是从菜单中选择目标。
 - **从 x: `0` y: `0` 面向 x: `0` y: `0`** 从一个坐标朝向另一个坐标。
 
-完整的额外积木列表请参阅[Bilup 额外积木](/blocks/mistwarp-extras)。
+完整的额外积木列表请参阅[Bilup 额外积木](/blocks/bilup-extras)。
 
 ## 另请参阅
 

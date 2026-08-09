@@ -40,6 +40,6 @@ Bilup 在库中提供两种扩展：
 ## 另请参阅
 
 - [自定义扩展](/extensions/custom-extension)
-- [Bilup 积木](/extensions/mistwarp-blocks)
+- [Bilup 积木](/extensions/bilup-blocks)
 - [补丁](/extensions/patching)
 - [构建扩展：简介](/building-extensions/introduction)

@@ -37,4 +37,4 @@ A variable or list can be **for all sprites** (global) or **for this sprite only
 - [The variable manager](/editor/variable-manager)
 - [Cloud variables](/advanced/cloud-variables)
 - [Operators blocks](/blocks/operators) for working with values
-- [Bilup extras](/blocks/mistwarp-extras)
+- [Bilup extras](/blocks/bilup-extras)

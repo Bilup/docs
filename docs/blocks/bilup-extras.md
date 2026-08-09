@@ -63,4 +63,4 @@ See [My Blocks](/blocks/my-blocks).
 
 - [Blocks overview](/blocks/overview)
 - [Extensions overview](/extensions/overview)
-- [Bilup block extension](/extensions/mistwarp-blocks)
+- [Bilup block extension](/extensions/bilup-blocks)

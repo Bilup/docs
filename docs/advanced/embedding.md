@@ -97,7 +97,7 @@ Instead of putting the project ID in the URL, the host page can send an SB3 to t
 Send a `LOAD_SB3` message:
 
 ```js
-const iframe = document.getElementById('mistwarp-embed');
+const iframe = document.getElementById('bilup-embed');
 iframe.contentWindow.postMessage({
   type: 'LOAD_SB3',
   data: 'https://example.com/project.sb3', // URL string, ArrayBuffer, or Uint8Array

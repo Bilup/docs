@@ -17,7 +17,7 @@ Bilup 不是单一仓库。它是几个分叉的 Scratch 包加上少量 Bilup �
 - **scratch-vm** 运行项目并包含编译器。积木在这里定义。
 - **scratch-render**、**scratch-blocks**、**scratch-paint** 和 **scratch-audio** 是其他分叉的引擎包。
 - **packager** 将项目变成独立的 HTML/可执行文件。
-- **mistwarp-api** 是社区平台后端。
+- **bilup-api** 是社区平台后端。
 - **docs** 就是这个站点。
 
 ## 开始之前

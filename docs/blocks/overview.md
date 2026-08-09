@@ -3,7 +3,7 @@ title: Blocks overview
 sidebar_position: 1
 ---
 
-Blocks are the puzzle pieces you snap together to build a project. Each block is one instruction; a stack of blocks is a script. Bilup uses the same block language as Scratch, so anything you know from Scratch works here, and it adds a handful of extra blocks on top (see [Bilup extras](/blocks/mistwarp-extras)).
+Blocks are the puzzle pieces you snap together to build a project. Each block is one instruction; a stack of blocks is a script. Bilup uses the same block language as Scratch, so anything you know from Scratch works here, and it adds a handful of extra blocks on top (see [Bilup extras](/blocks/bilup-extras)).
 
 ## Block shapes
 
@@ -34,11 +34,11 @@ Below those, each loaded [extension](/extensions/overview) (Pen, Music, and so o
 
 ## Bilup and TurboWarp extra blocks
 
-Bilup inherits TurboWarp's additions and adds its own, so a number of blocks appear that stock Scratch does not have, spread across several categories: extra motion, control, operator, sensing, and data blocks, plus a `return` block for custom blocks. These are documented per category and collected on one page in [Bilup extras](/blocks/mistwarp-extras).
+Bilup inherits TurboWarp's additions and adds its own, so a number of blocks appear that stock Scratch does not have, spread across several categories: extra motion, control, operator, sensing, and data blocks, plus a `return` block for custom blocks. These are documented per category and collected on one page in [Bilup extras](/blocks/bilup-extras).
 
 ## See also
 
 - [The blocks palette](/editor/blocks-palette)
 - [The workspace](/editor/workspace)
 - [Extensions overview](/extensions/overview)
-- [Bilup extras](/blocks/mistwarp-extras)
+- [Bilup extras](/blocks/bilup-extras)

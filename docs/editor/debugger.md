@@ -9,7 +9,7 @@ The debugger is a tool window for inspecting a running project: logging messages
 
 Open the **Tools** menu and choose **Debugger**. It also opens automatically when a `breakpoint` block runs, pausing the project at that point.
 
-The debugger adds two blocks to the [Control-style tools](/blocks/mistwarp-extras) it registers: `log`, `warn`, and `error` blocks that send a message to the log at that severity, and a `breakpoint` block that pauses the project.
+The debugger adds two blocks to the [Control-style tools](/blocks/bilup-extras) it registers: `log`, `warn`, and `error` blocks that send a message to the log at that severity, and a `breakpoint` block that pauses the project.
 
 ## Pausing and stepping
 
@@ -40,5 +40,5 @@ The debugger's options live on the **Debugger** page of the [settings window](/e
 
 - [The variable manager](/editor/variable-manager)
 - [The block workspace](/editor/workspace)
-- [Bilup extra blocks](/blocks/mistwarp-extras)
+- [Bilup extra blocks](/blocks/bilup-extras)
 - [Settings](/editor/settings)

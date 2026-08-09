@@ -68,7 +68,7 @@ Any host that can serve a directory works: GitHub Pages, a plain web server, an 
 
 ## The community backend
 
-The editor build is only the frontend. If you also run the community platform, the backend (mistwarp-api) is a separate OSL service, not part of this static build. It is deployed and run on its own; see [Project Structure](/contributing/project-structure) for what it is. You do not need it to host just the editor.
+The editor build is only the frontend. If you also run the community platform, the backend (bilup-api) is a separate Go service, not part of this static build. It is deployed and run on its own; see [Project Structure](/contributing/project-structure) for what it is. You do not need it to host just the editor.
 
 ## See also
 

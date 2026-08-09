@@ -36,7 +36,7 @@ These motion blocks are not in stock Scratch:
 - **point towards x: `0` y: `0`** faces a specific coordinate instead of picking a target from a menu.
 - **point towards x: `0` y: `0` from x: `0` y: `0`** faces from one coordinate toward another.
 
-See [Bilup extras](/blocks/mistwarp-extras) for the full list of added blocks.
+See [Bilup extras](/blocks/bilup-extras) for the full list of added blocks.
 
 ## See also
 

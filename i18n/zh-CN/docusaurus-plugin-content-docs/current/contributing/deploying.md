@@ -68,7 +68,7 @@ NODE_ENV=production pnpm run build && \
 
 ## 社区后端
 
-编辑器构建只是前端。如果您也运行社区平台，后端（mistwarp-api）是一个单独的 OSL 服务，不是这个静态构建的一部分。它单独部署和运行；它是什么请参阅[项目结构](/contributing/project-structure)。仅托管编辑器不需要它。
+编辑器构建只是前端。如果您也运行社区平台，后端（bilup-api）是一个单独的 Go 服务，不是这个静态构建的一部分。它单独部署和运行；它是什么请参阅[项目结构](/contributing/project-structure)。仅托管编辑器不需要它。
 
 ## 另请参阅
 

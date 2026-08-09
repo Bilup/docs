@@ -25,7 +25,7 @@ sidebar_position: 8
 
 左下角的**添加扩展**按钮打开[扩展库](/extensions/overview)。添加扩展（例如[画笔](/extensions/pen)、[音乐](/extensions/music)或[文字朗读](/extensions/text-to-speech)）会在积木区底部附加一个新分类，包含该扩展的积木。某些扩展还会添加用于连接硬件的状态按钮。
 
-Bilup 还提供标准 Scratch 之外的额外内置积木；请参阅[Bilup 额外积木](/blocks/mistwarp-extras)。
+Bilup 还提供标准 Scratch 之外的额外内置积木；请参阅[Bilup 额外积木](/blocks/bilup-extras)。
 
 ## 调整大小与布局
 

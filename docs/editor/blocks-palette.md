@@ -25,7 +25,7 @@ Type in the search box at the top of the palette to filter blocks by name across
 
 The **Add Extension** button in the bottom-left corner opens the [extension library](/extensions/overview). Adding an extension (such as [Pen](/extensions/pen), [Music](/extensions/music), or [Text to Speech](/extensions/text-to-speech)) appends a new category to the bottom of the palette with that extension's blocks. Some extensions also add a status button for connecting to hardware.
 
-Bilup also ships extra built-in blocks beyond vanilla Scratch; see [Bilup extras](/blocks/mistwarp-extras).
+Bilup also ships extra built-in blocks beyond vanilla Scratch; see [Bilup extras](/blocks/bilup-extras).
 
 ## Resizing and layout
 

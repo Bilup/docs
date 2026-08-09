@@ -21,7 +21,7 @@ You do not need an account to build, run, package, or save projects locally, exa
 
 ## Extra blocks and extensions
 
-Bilup includes additional blocks and extensions beyond TurboWarp's set. Browse them in [Extensions overview](/extensions/overview) and [Bilup extras](/blocks/mistwarp-extras).
+Bilup includes additional blocks and extensions beyond TurboWarp's set. Browse them in [Extensions overview](/extensions/overview) and [Bilup extras](/blocks/bilup-extras).
 
 ## Git version control
 

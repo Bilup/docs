@@ -41,10 +41,10 @@ sidebar_position: 8
 - **圆周率** 报告常数 3.14159...，方便进行圆相关数学计算。
 - **换行符** 报告换行字符，用于构建多行字符串。
 
-完整的列表请参阅[Bilup 额外积木](/blocks/mistwarp-extras)。
+完整的列表请参阅[Bilup 额外积木](/blocks/bilup-extras)。
 
 ## 另请参阅
 
 - [变量和列表](/blocks/variables)
 - [侦测积木](/blocks/sensing)
-- [Bilup 额外积木](/blocks/mistwarp-extras)
+- [Bilup 额外积木](/blocks/bilup-extras)

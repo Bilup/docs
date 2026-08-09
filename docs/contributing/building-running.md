@@ -99,13 +99,14 @@ node universal-python.js build.py
 
 Any new symbols you add must be exported in the `goog.global` block, or Closure will strip them from the build.
 
-### mistwarp-api
+### bilup-api
 
-The community backend is an OSL service. With the OSL interpreter installed:
+The community backend is a Go service. With Go installed:
 
 ```bash
-cd mistwarp-api
-osl run main.osl   # listens on port 5610
+cd bilup-api
+go build .
+./bilup-api
 ```
 
 It stores data as flat JSON under `data/` and falls back to a local `data/blobs/` directory for project files with no additional configuration, so you can run it without any cloud setup.

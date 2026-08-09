@@ -40,6 +40,6 @@ If you want to build an extension rather than just use one, start with [Building
 ## See also
 
 - [Custom Extensions](/extensions/custom-extension)
-- [Bilup Blocks](/extensions/mistwarp-blocks)
+- [Bilup Blocks](/extensions/bilup-blocks)
 - [Patching](/extensions/patching)
 - [Building Extensions: Introduction](/building-extensions/introduction)

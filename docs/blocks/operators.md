@@ -41,10 +41,10 @@ These operators are not in stock Scratch:
 - **pi** reports the constant 3.14159..., handy for circle maths.
 - **newline** reports a line-break character, for building multi-line strings.
 
-See [Bilup extras](/blocks/mistwarp-extras) for the full list.
+See [Bilup extras](/blocks/bilup-extras) for the full list.
 
 ## See also
 
 - [Variables and lists](/blocks/variables)
 - [Sensing blocks](/blocks/sensing)
-- [Bilup extras](/blocks/mistwarp-extras)
+- [Bilup extras](/blocks/bilup-extras)

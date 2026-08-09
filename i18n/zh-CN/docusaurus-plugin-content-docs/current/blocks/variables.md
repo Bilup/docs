@@ -37,4 +37,4 @@ sidebar_position: 9
 - [变量管理器](/editor/variable-manager)
 - [云变量](/advanced/cloud-variables)
 - [运算积木](/blocks/operators) 用于处理值
-- [Bilup 额外积木](/blocks/mistwarp-extras)
+- [Bilup 额外积木](/blocks/bilup-extras)

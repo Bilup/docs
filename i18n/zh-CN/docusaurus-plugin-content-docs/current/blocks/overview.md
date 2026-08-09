@@ -3,7 +3,7 @@ title: 积木概览
 sidebar_position: 1
 ---
 
-积木是您拼在一起构建项目的拼图块。每个积木是一条指令；一叠积木就是一个脚本。Bilup 使用与 Scratch 相同的积木语言，因此您在 Scratch 中知道的一切在这里都适用，并且它在此基础上增加了一些额外积木（请参阅 [Bilup 额外积木](/blocks/mistwarp-extras)）。
+积木是您拼在一起构建项目的拼图块。每个积木是一条指令；一叠积木就是一个脚本。Bilup 使用与 Scratch 相同的积木语言，因此您在 Scratch 中知道的一切在这里都适用，并且它在此基础上增加了一些额外积木（请参阅 [Bilup 额外积木](/blocks/bilup-extras)）。
 
 ## 积木形状
 
@@ -34,11 +34,11 @@ sidebar_position: 1
 
 ## Bilup 和 TurboWarp 额外积木
 
-Bilup 继承了 TurboWarp 的附加积木并添加了自己的积木，因此出现了一些标准 Scratch 没有的积木，分布在几个分类中：额外的运动、控制、运算、侦测和数据积木，以及一个用于自制积木的 `返回` 积木。这些按分类记录，并汇总在[Bilup 额外积木](/blocks/mistwarp-extras)一页中。
+Bilup 继承了 TurboWarp 的附加积木并添加了自己的积木，因此出现了一些标准 Scratch 没有的积木，分布在几个分类中：额外的运动、控制、运算、侦测和数据积木，以及一个用于自制积木的 `返回` 积木。这些按分类记录，并汇总在[Bilup 额外积木](/blocks/bilup-extras)一页中。
 
 ## 另请参阅
 
 - [积木区](/editor/blocks-palette)
 - [工作区](/editor/workspace)
 - [扩展概览](/extensions/overview)
-- [Bilup 额外积木](/blocks/mistwarp-extras)
+- [Bilup 额外积木](/blocks/bilup-extras)

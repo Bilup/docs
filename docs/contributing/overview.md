@@ -17,7 +17,7 @@ Bilup is not a single repository. It is a small collection of forked Scratch pac
 - **scratch-vm** runs projects and contains the compiler. Blocks are defined here.
 - **scratch-render**, **scratch-blocks**, **scratch-paint**, and **scratch-audio** are the other forked engine packages.
 - **packager** turns projects into standalone HTML/executables.
-- **mistwarp-api** is the community platform backend.
+- **bilup-api** is the community platform backend.
 - **docs** is this site.
 
 ## Before you start

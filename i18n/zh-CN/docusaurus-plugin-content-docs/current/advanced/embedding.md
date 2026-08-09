@@ -97,7 +97,7 @@ https://com.bilup.org/15832807/embed?addons=pause,gamepad,mute-project
 发送 `LOAD_SB3` 消息：
 
 ```js
-const iframe = document.getElementById('mistwarp-embed');
+const iframe = document.getElementById('bilup-embed');
 iframe.contentWindow.postMessage({
   type: 'LOAD_SB3',
   data: 'https://example.com/project.sb3', // URL 字符串、ArrayBuffer 或 Uint8Array

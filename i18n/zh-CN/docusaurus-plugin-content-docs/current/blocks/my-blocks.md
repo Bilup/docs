@@ -19,10 +19,10 @@ sidebar_position: 10
 
 布尔参数报告积木还识别两个特殊名称，即使不存在这样的参数：`已编译?` 布尔积木在[编译器](/advanced/disable-compiler)运行项目时报告真，`是 bilup?` 布尔积木在 Bilup 中始终报告真。它们让项目可以检测其运行时。
 
-请参阅[Bilup 额外积木](/blocks/mistwarp-extras)。
+请参阅[Bilup 额外积木](/blocks/bilup-extras)。
 
 ## 另请参阅
 
 - [自定义积木](/editor/custom-blocks)
 - [控制积木](/blocks/control)
-- [Bilup 额外积木](/blocks/mistwarp-extras)
+- [Bilup 额外积木](/blocks/bilup-extras)

@@ -21,7 +21,7 @@ Bilup 构建在 TurboWarp 之上，因此如果您已经在使用 TurboWarp，�
 
 ## 额外积木与扩展
 
-Bilup 包含超出 TurboWarp 的额外积木和扩展。请在[扩展概览](/extensions/overview)和[Bilup 额外积木](/blocks/mistwarp-extras)中浏览。
+Bilup 包含超出 TurboWarp 的额外积木和扩展。请在[扩展概览](/extensions/overview)和[Bilup 额外积木](/blocks/bilup-extras)中浏览。
 
 ## Git 版本控制
 

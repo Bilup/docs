@@ -73,7 +73,7 @@ This means your directory layout matters: the engine packages must be siblings o
 
 Two pieces are not Scratch or TurboWarp code at all:
 
-- **mistwarp-api** is the community backend (accounts, projects, comments, notifications, settings sync). It is written in OSL and stores data as flat JSON, using Cloudflare R2 for project blobs. The frontend talks to it at `https://api.bilup.org/api`.
+- **bilup-api** is the community backend (accounts, projects, comments, notifications, settings sync). It is written in Go and stores data as flat JSON, using Cloudflare R2 for project blobs. The frontend talks to it at `https://api.bilup.org/api`.
 - Identity and social features run through **Bilup Accounts**. Signing in exchanges a Bilup Accounts token for a Bilup session; social features (posts, likes, follows) go to `https://api.accounts.bilup.org`.
 
 You do not need either running to work on the editor itself. They matter when you are working on the community site.

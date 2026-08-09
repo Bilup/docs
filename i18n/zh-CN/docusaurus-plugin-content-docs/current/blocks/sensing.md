@@ -41,10 +41,10 @@ sidebar_position: 7
 
 还有一个由 `当 ... >` 帽子积木使用的 **响度 > `10`?** 风格布尔积木。
 
-请参阅[Bilup 额外积木](/blocks/mistwarp-extras)。
+请参阅[Bilup 额外积木](/blocks/bilup-extras)。
 
 ## 另请参阅
 
 - [事件积木](/blocks/events) 中的 `当按下键` 和 `当角色被点击`
 - [运算积木](/blocks/operators) 用于比较侦测值
-- [Bilup 额外积木](/blocks/mistwarp-extras)
+- [Bilup 额外积木](/blocks/bilup-extras)

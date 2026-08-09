@@ -9,7 +9,7 @@ sidebar_position: 19
 
 打开**工具**菜单并选择**调试器**。当 `断点` 积木运行时它也会自动打开，并在该点暂停项目。
 
-调试器在其注册的[控制类工具](/blocks/mistwarp-extras)中增加了两个积木：`日志`、`警告`和`错误`积木，以对应级别向日志发送消息，以及一个暂停项目的`断点`积木。
+调试器在其注册的[控制类工具](/blocks/bilup-extras)中增加了两个积木：`日志`、`警告`和`错误`积木，以对应级别向日志发送消息，以及一个暂停项目的`断点`积木。
 
 ## 暂停与单步
 
@@ -40,5 +40,5 @@ sidebar_position: 19
 
 - [变量管理器](/editor/variable-manager)
 - [积木工作区](/editor/workspace)
-- [Bilup 额外积木](/blocks/mistwarp-extras)
+- [Bilup 额外积木](/blocks/bilup-extras)
 - [设置](/editor/settings)

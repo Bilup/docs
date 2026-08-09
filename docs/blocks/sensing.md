@@ -41,10 +41,10 @@ Sensing blocks read the world around a script: collisions, the mouse and keyboar
 
 There is also a **loudness > `10`?** style boolean used by the `when ... >` hat.
 
-See [Bilup extras](/blocks/mistwarp-extras).
+See [Bilup extras](/blocks/bilup-extras).
 
 ## See also
 
 - [Events blocks](/blocks/events) for `when key pressed` and `when this sprite clicked`
 - [Operators blocks](/blocks/operators) for comparing sensed values
-- [Bilup extras](/blocks/mistwarp-extras)
+- [Bilup extras](/blocks/bilup-extras)

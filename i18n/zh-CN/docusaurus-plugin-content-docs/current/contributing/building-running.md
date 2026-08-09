@@ -99,13 +99,14 @@ node universal-python.js build.py
 
 您添加的任何新符号都必须在 `goog.global` 块中导出，否则 Closure 会从构建中剥离它们。
 
-### mistwarp-api
+### bilup-api
 
-社区后端是一个 OSL 服务。安装了 OSL 解释器后：
+社区后端是一个 Go 服务。安装了 Go 后：
 
 ```bash
-cd mistwarp-api
-osl run main.osl   # 监听端口 5610
+cd bilup-api
+go build .
+./bilup-api
 ```
 
 它将数据存储为 `data/` 下的扁平 JSON，并且在没有任何额外配置的情况下，为项目文件回退到本地 `data/blobs/` 目录，因此您可以在没有云设置的情况下运行它。
